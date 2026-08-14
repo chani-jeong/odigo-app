@@ -3,6 +3,7 @@ import { IconStarFilled, IconStar, IconMapPin, IconPencilPlus } from '@tabler/ic
 import useAuthStore from '../store/useAuthStore';
 import ReviewComposer from './ReviewComposer';
 import useTranslation from '../i18n/useTranslation';
+import useToastStore from '../store/useToastStore';
 
 export default function ReviewTab() {
   const { t, selectedLanguage } = useTranslation();
@@ -19,6 +20,8 @@ export default function ReviewTab() {
       setIsComposerOpen(true);
     }
   };
+
+  const showToast = useToastStore(state => state.showToast);
 
   const toggleTranslation = async (review) => {
     if (showingTranslation[review.id]) {
@@ -41,6 +44,7 @@ export default function ReviewTab() {
       
       if (data.error) {
         console.error('Translation error from API:', data);
+        showToast('Translation failed', 'error');
         return;
       }
       
@@ -48,6 +52,7 @@ export default function ReviewTab() {
       setShowingTranslation(prev => ({ ...prev, [review.id]: true }));
     } catch (e) {
       console.error('Translation network/fetch error:', e);
+      showToast('Network error during translation', 'error');
     } finally {
       setIsTranslating(prev => ({ ...prev, [review.id]: false }));
     }

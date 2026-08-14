@@ -13,7 +13,10 @@ export default async function handler(req, res) {
         'Authorization': `DeepL-Auth-Key ${process.env.DEEPL_API_KEY}`,
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ text: [text], target_lang: targetLang.toUpperCase() }),
+      body: JSON.stringify({ 
+        text: [text], 
+        target_lang: targetLang.toUpperCase() === 'EN' ? 'EN-US' : targetLang.toUpperCase() 
+      }),
     });
     
     const raw = await r.text();

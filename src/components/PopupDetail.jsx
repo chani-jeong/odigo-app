@@ -141,12 +141,12 @@ export default function PopupDetail() {
             <div style={{ display: 'flex', gap: '8px', marginBottom: '24px' }}>
               {popup.dietary?.halal && popup.dietary.halal !== 'unknown' && (
                 <span style={{ display: 'flex', alignItems: 'center', gap: '4px', background: 'rgba(59, 169, 150, 0.1)', color: '#3BA996', padding: '6px 12px', borderRadius: '16px', fontSize: '13px', fontWeight: 'bold' }}>
-                  ☪️ Halal {popup.dietary.halal === 'certified' ? 'Certified' : 'Friendly'}
+                  ☪️ {popup.dietary.halal === 'certified' ? t('card.halal_certified') : t('card.halal_friendly')}
                 </span>
               )}
               {popup.dietary?.vegan && popup.dietary.vegan !== 'unknown' && (
                 <span style={{ display: 'flex', alignItems: 'center', gap: '4px', background: 'rgba(76, 175, 80, 0.1)', color: '#4CAF50', padding: '6px 12px', borderRadius: '16px', fontSize: '13px', fontWeight: 'bold' }}>
-                  🍃 {popup.dietary.vegan === 'vegan' ? 'Vegan' : popup.dietary.vegan === 'vegetarian' ? 'Vegetarian' : 'Options'}
+                  🍃 {popup.dietary.vegan === 'vegan' ? t('card.vegan') : popup.dietary.vegan === 'vegetarian' ? t('card.vegetarian') : t('card.vegan_options')}
                 </span>
               )}
             </div>
