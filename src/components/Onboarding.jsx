@@ -4,6 +4,7 @@ import useDeckStore from '../store/useDeckStore';
 import popups from '../data/popups.sample.json';
 import ALL_COUNTRIES from '../data/countries.json';
 import useTranslation from '../i18n/useTranslation';
+import { flagEmoji } from '../utils/flag';
 
 const INTERESTS = [
   { id: 'beauty_fashion', labelKey: 'categories.beauty_fashion', icon: IconSparkles },
@@ -14,13 +15,13 @@ const INTERESTS = [
 ];
 
 const LANGUAGES = [
-  { id: 'en', label: 'English' },
-  { id: 'ko', label: '한국어' },
-  { id: 'ja', label: '日本語' },
-  { id: 'zh', label: '中文' },
-  { id: 'vi', label: 'Tiếng Việt' },
-  { id: 'es', label: 'Español' },
-  { id: 'fr', label: 'Français' }
+  { id: 'en', label: 'English', flagCode: 'us' },
+  { id: 'ko', label: '한국어', flagCode: 'kr' },
+  { id: 'ja', label: '日本語', flagCode: 'jp' },
+  { id: 'zh', label: '中文', flagCode: 'cn' },
+  { id: 'vi', label: 'Tiếng Việt', flagCode: 'vn' },
+  { id: 'es', label: 'Español', flagCode: 'es' },
+  { id: 'fr', label: 'Français', flagCode: 'fr' }
 ];
 
 const getLanguageForCountry = (countryId) => {
@@ -191,10 +192,11 @@ export default function Onboarding() {
                       border: userCountry === c.id ? '2px solid var(--brand-primary)' : '2px solid transparent',
                       color: 'var(--ink)', fontSize: '15px', fontWeight: 'bold',
                       display: 'flex', alignItems: 'center', justifyContent: 'flex-start',
-                      boxShadow: '0 2px 8px rgba(0,0,0,0.03)', cursor: 'pointer', transition: 'all 0.2s'
+                      boxShadow: '0 2px 8px rgba(0,0,0,0.03)', cursor: 'pointer', transition: 'all 0.2s', gap: '12px'
                     }}
                   >
-                    {c.label}
+                    <span style={{ fontSize: '20px' }}>{flagEmoji(c.id)}</span>
+                    <span>{c.label.replace(/^\[.*?\]\s*/, '') /* in case some labels have old codes */}</span>
                   </button>
                 ))}
               </div>
@@ -213,9 +215,12 @@ export default function Onboarding() {
                   alignItems: 'center', cursor: 'pointer', boxShadow: '0 2px 8px rgba(0,0,0,0.03)'
                 }}
               >
-                <span style={{ fontSize: '15px', fontWeight: 'bold', color: 'var(--ink)' }}>
-                  {LANGUAGES.find(l => l.id === selectedLanguage)?.label || 'English'}
-                </span>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <span style={{ fontSize: '20px' }}>{flagEmoji(LANGUAGES.find(l => l.id === selectedLanguage)?.flagCode || 'us')}</span>
+                  <span style={{ fontSize: '15px', fontWeight: 'bold', color: 'var(--ink)' }}>
+                    {LANGUAGES.find(l => l.id === selectedLanguage)?.label || 'English'}
+                  </span>
+                </div>
                 <IconChevronDown size={20} style={{ color: 'var(--ink-secondary)', transform: isLangOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }} />
               </div>
 
@@ -233,10 +238,11 @@ export default function Onboarding() {
                         background: selectedLanguage === lang.id ? 'var(--brand-tint)' : 'transparent',
                         color: selectedLanguage === lang.id ? 'var(--brand-primary)' : 'var(--ink)',
                         fontSize: '15px', fontWeight: selectedLanguage === lang.id ? 'bold' : 'normal',
-                        textAlign: 'left', cursor: 'pointer'
+                        textAlign: 'left', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '12px'
                       }}
                     >
-                      {lang.label}
+                      <span style={{ fontSize: '20px' }}>{flagEmoji(lang.flagCode)}</span>
+                      <span>{lang.label}</span>
                     </button>
                   ))}
                 </div>

@@ -1,71 +1,71 @@
 {
   "onboarding": {
-    "title_step1": "Discover Korea, your way.",
-    "title_step2": "Where are you traveling from?",
-    "subtitle_step2": "Select your country",
-    "label_language": "Language",
-    "title_step3": "What are you interested in?",
-    "subtitle_step3": "Choose what you want to discover in Korea",
-    "btn_start": "START EXPLORING",
-    "btn_continue": "Continue"
+    "title_step1": "探索你的韩国",
+    "title_step2": "你来自哪里？",
+    "subtitle_step2": "选择国家",
+    "label_language": "语言",
+    "title_step3": "你对什么感兴趣？",
+    "subtitle_step3": "选择你想在韩国探索的内容",
+    "btn_start": "开始探索",
+    "btn_continue": "继续"
   },
   "categories": {
-    "beauty_fashion": "Beauty & Fashion",
+    "beauty_fashion": "美妆与时尚",
     "kpop": "K-Pop",
-    "lifestyle": "Lifestyle",
-    "food": "Food",
-    "character": "Character",
-    "exhibition": "Exhibition"
+    "lifestyle": "生活方式",
+    "food": "美食",
+    "character": "角色周边",
+    "exhibition": "展览"
   },
   "tabs": {
-    "discover": "Discover",
-    "map": "Map",
-    "saved": "Saved",
-    "review": "Review",
-    "home": "Home"
+    "discover": "发现",
+    "map": "地图",
+    "saved": "收藏",
+    "review": "评价",
+    "home": "首页"
   },
   "card": {
-    "save": "Save",
-    "map": "Map",
-    "review": "Review",
-    "book_now": "Book Now",
-    "walkin_guide": "Walk-in Guide",
+    "save": "收藏",
+    "map": "地图",
+    "review": "评价",
+    "book_now": "立即预订",
+    "walkin_guide": "现场指南",
     "foreigner_ready": "Foreigner-Ready",
-    "halal_friendly": "Halal Friendly",
-    "visited": "Visited",
-    "mark_visited": "Visited",
-    "translate": "Translate",
-    "show_original": "Show original",
-    "translating": "Translating..."
+    "halal_friendly": "清真友好",
+    "visited": "已去过",
+    "mark_visited": "去过",
+    "translate": "翻译",
+    "show_original": "查看原文",
+    "translating": "翻译中..."
   },
   "saved": {
-    "title": "Saved Popups",
-    "you_have_saved": "You have saved",
-    "popups": "popups",
-    "no_saved": "No saved pop-ups yet."
+    "title": "收藏的快闪店",
+    "you_have_saved": "你已收藏",
+    "popups": "个快闪店",
+    "no_saved": "暂无收藏。"
   },
   "review": {
-    "title": "Reviews",
-    "write_review": "Write a Review",
-    "post_review": "Post Review",
-    "placeholder": "Share your experience at this pop-up...",
-    "posting_publicly": "Posting publicly",
-    "select_popup": "Select a popup...",
-    "please_select_popup": "Please select a popup",
-    "please_select_rating": "Please select a rating",
-    "posted_success": "Review posted successfully!"
+    "title": "评价",
+    "write_review": "写评价",
+    "post_review": "发布",
+    "placeholder": "分享你的体验...",
+    "posting_publicly": "公开发布",
+    "select_popup": "选择快闪店...",
+    "please_select_popup": "请选择快闪店",
+    "please_select_rating": "请选择评分",
+    "posted_success": "发布成功！"
   },
   "login": {
-    "title": "Sign in to continue",
-    "continue_google": "Continue with Google",
-    "continue_apple": "Continue with Apple",
-    "continue_wechat": "Continue with WeChat"
+    "title": "登录以继续",
+    "continue_google": "通过 Google 登录",
+    "continue_apple": "通过 Apple 登录",
+    "continue_wechat": "通过微信登录"
   },
   "header": {
-    "search_placeholder": "Find your next popup...",
-    "trending": "Trending Popups",
-    "categories": "Categories",
-    "title_discover": "Pop-ups picked for you",
-    "title_map": "Pop-ups near me"
+    "search_placeholder": "寻找下一个快闪店...",
+    "trending": "热门快闪店",
+    "categories": "分类",
+    "title_discover": "为你推荐",
+    "title_map": "附近的快闪店"
   }
 }

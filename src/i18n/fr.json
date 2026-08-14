@@ -1,71 +1,71 @@
 {
   "onboarding": {
-    "title_step1": "Discover Korea, your way.",
-    "title_step2": "Where are you traveling from?",
-    "subtitle_step2": "Select your country",
-    "label_language": "Language",
-    "title_step3": "What are you interested in?",
-    "subtitle_step3": "Choose what you want to discover in Korea",
-    "btn_start": "START EXPLORING",
-    "btn_continue": "Continue"
+    "title_step1": "Découvrez la Corée.",
+    "title_step2": "D'où voyagez-vous ?",
+    "subtitle_step2": "Sélectionnez votre pays",
+    "label_language": "Langue",
+    "title_step3": "Qu'est-ce qui vous intéresse ?",
+    "subtitle_step3": "Choisissez quoi découvrir",
+    "btn_start": "COMMENCER",
+    "btn_continue": "Continuer"
   },
   "categories": {
-    "beauty_fashion": "Beauty & Fashion",
+    "beauty_fashion": "Beauté & Mode",
     "kpop": "K-Pop",
-    "lifestyle": "Lifestyle",
-    "food": "Food",
-    "character": "Character",
-    "exhibition": "Exhibition"
+    "lifestyle": "Style de vie",
+    "food": "Nourriture",
+    "character": "Personnages",
+    "exhibition": "Exposition"
   },
   "tabs": {
-    "discover": "Discover",
-    "map": "Map",
-    "saved": "Saved",
-    "review": "Review",
-    "home": "Home"
+    "discover": "Découvrir",
+    "map": "Carte",
+    "saved": "Sauvegardé",
+    "review": "Avis",
+    "home": "Accueil"
   },
   "card": {
-    "save": "Save",
-    "map": "Map",
-    "review": "Review",
-    "book_now": "Book Now",
-    "walkin_guide": "Walk-in Guide",
+    "save": "Sauvegarder",
+    "map": "Carte",
+    "review": "Avis",
+    "book_now": "Réserver",
+    "walkin_guide": "Guide Walk-in",
     "foreigner_ready": "Foreigner-Ready",
-    "halal_friendly": "Halal Friendly",
-    "visited": "Visited",
-    "mark_visited": "Visited",
-    "translate": "Translate",
-    "show_original": "Show original",
-    "translating": "Translating..."
+    "halal_friendly": "Halal",
+    "visited": "Visité",
+    "mark_visited": "Visité",
+    "translate": "Traduire",
+    "show_original": "Voir l'original",
+    "translating": "Traduction..."
   },
   "saved": {
-    "title": "Saved Popups",
-    "you_have_saved": "You have saved",
-    "popups": "popups",
-    "no_saved": "No saved pop-ups yet."
+    "title": "Pop-ups sauvegardés",
+    "you_have_saved": "Vous avez sauvegardé",
+    "popups": "pop-ups",
+    "no_saved": "Aucun pop-up sauvegardé."
   },
   "review": {
-    "title": "Reviews",
-    "write_review": "Write a Review",
-    "post_review": "Post Review",
-    "placeholder": "Share your experience at this pop-up...",
-    "posting_publicly": "Posting publicly",
-    "select_popup": "Select a popup...",
-    "please_select_popup": "Please select a popup",
-    "please_select_rating": "Please select a rating",
-    "posted_success": "Review posted successfully!"
+    "title": "Avis",
+    "write_review": "Écrire un avis",
+    "post_review": "Publier",
+    "placeholder": "Partagez votre expérience...",
+    "posting_publicly": "Public",
+    "select_popup": "Sélectionner un pop-up...",
+    "please_select_popup": "Veuillez sélectionner un pop-up",
+    "please_select_rating": "Veuillez sélectionner une note",
+    "posted_success": "Avis publié !"
   },
   "login": {
-    "title": "Sign in to continue",
-    "continue_google": "Continue with Google",
-    "continue_apple": "Continue with Apple",
-    "continue_wechat": "Continue with WeChat"
+    "title": "Connectez-vous",
+    "continue_google": "Continuer avec Google",
+    "continue_apple": "Continuer avec Apple",
+    "continue_wechat": "Continuer avec WeChat"
   },
   "header": {
-    "search_placeholder": "Find your next popup...",
-    "trending": "Trending Popups",
-    "categories": "Categories",
-    "title_discover": "Pop-ups picked for you",
-    "title_map": "Pop-ups near me"
+    "search_placeholder": "Rechercher un pop-up...",
+    "trending": "Tendances",
+    "categories": "Catégories",
+    "title_discover": "Sélection pour vous",
+    "title_map": "Pop-ups près de moi"
   }
 }

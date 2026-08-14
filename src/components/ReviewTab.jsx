@@ -38,10 +38,16 @@ export default function ReviewTab() {
         body: JSON.stringify({ text: review.text, targetLang: selectedLanguage })
       });
       const data = await res.json();
+      
+      if (data.error) {
+        console.error('Translation error from API:', data);
+        return;
+      }
+      
       setTranslations(prev => ({ ...prev, [review.id]: data.translated }));
       setShowingTranslation(prev => ({ ...prev, [review.id]: true }));
     } catch (e) {
-      console.error(e);
+      console.error('Translation network/fetch error:', e);
     } finally {
       setIsTranslating(prev => ({ ...prev, [review.id]: false }));
     }
