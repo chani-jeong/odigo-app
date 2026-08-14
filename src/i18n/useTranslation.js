@@ -9,6 +9,7 @@ import fr from './fr.json';
 
 const translations = { en, ko, ja, zh, vi, es, fr };
 
+// Force Vite HMR reload
 export default function useTranslation() {
   const selectedLanguage = useDeckStore(state => state.selectedLanguage) || 'en';
   
