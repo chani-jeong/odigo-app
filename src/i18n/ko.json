@@ -1,0 +1,71 @@
+{
+  "onboarding": {
+    "title_step1": "당신만의 방식으로 한국을 발견하세요.",
+    "title_step2": "어디에서 오셨나요?",
+    "subtitle_step2": "국가를 선택해 주세요",
+    "label_language": "언어 (Language)",
+    "title_step3": "어떤 분야에 관심이 있으신가요?",
+    "subtitle_step3": "한국에서 발견하고 싶은 것들을 선택해 주세요",
+    "btn_start": "탐색 시작하기",
+    "btn_continue": "계속하기"
+  },
+  "categories": {
+    "beauty_fashion": "뷰티 & 패션",
+    "kpop": "K-Pop",
+    "lifestyle": "라이프스타일",
+    "food": "푸드",
+    "character": "캐릭터",
+    "exhibition": "전시"
+  },
+  "tabs": {
+    "discover": "발견",
+    "map": "지도",
+    "saved": "저장됨",
+    "review": "리뷰",
+    "home": "홈"
+  },
+  "card": {
+    "save": "저장",
+    "map": "지도",
+    "review": "리뷰",
+    "book_now": "예약하기",
+    "walkin_guide": "워크인 가이드",
+    "foreigner_ready": "외국인 대응",
+    "halal_friendly": "할랄 프렌들리",
+    "visited": "다녀왔어요",
+    "mark_visited": "다녀왔어요",
+    "translate": "번역하기",
+    "show_original": "원문 보기",
+    "translating": "번역 중..."
+  },
+  "saved": {
+    "title": "저장된 팝업",
+    "you_have_saved": "",
+    "popups": "개의 팝업을 저장했습니다.",
+    "no_saved": "아직 저장된 팝업이 없습니다."
+  },
+  "review": {
+    "title": "리뷰",
+    "write_review": "리뷰 작성하기",
+    "post_review": "리뷰 등록",
+    "placeholder": "이 팝업에서의 경험을 공유해주세요...",
+    "posting_publicly": "공개적으로 게시됨",
+    "select_popup": "팝업을 선택하세요...",
+    "please_select_popup": "팝업을 선택해 주세요",
+    "please_select_rating": "별점을 선택해 주세요",
+    "posted_success": "리뷰가 성공적으로 등록되었습니다!"
+  },
+  "login": {
+    "title": "로그인하여 계속하기",
+    "continue_google": "Google로 계속하기",
+    "continue_apple": "Apple로 계속하기",
+    "continue_wechat": "WeChat으로 계속하기"
+  },
+  "header": {
+    "search_placeholder": "다음 팝업을 찾아보세요...",
+    "trending": "실시간 인기 팝업",
+    "categories": "카테고리",
+    "title_discover": "당신을 위한 팝업 추천",
+    "title_map": "내 주변 팝업"
+  }
+}

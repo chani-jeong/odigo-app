@@ -1,0 +1,71 @@
+{
+  "onboarding": {
+    "title_step1": "Discover Korea, your way.",
+    "title_step2": "Where are you traveling from?",
+    "subtitle_step2": "Select your country",
+    "label_language": "Language",
+    "title_step3": "What are you interested in?",
+    "subtitle_step3": "Choose what you want to discover in Korea",
+    "btn_start": "START EXPLORING",
+    "btn_continue": "Continue"
+  },
+  "categories": {
+    "beauty_fashion": "Beauty & Fashion",
+    "kpop": "K-Pop",
+    "lifestyle": "Lifestyle",
+    "food": "Food",
+    "character": "Character",
+    "exhibition": "Exhibition"
+  },
+  "tabs": {
+    "discover": "Discover",
+    "map": "Map",
+    "saved": "Saved",
+    "review": "Review",
+    "home": "Home"
+  },
+  "card": {
+    "save": "Save",
+    "map": "Map",
+    "review": "Review",
+    "book_now": "Book Now",
+    "walkin_guide": "Walk-in Guide",
+    "foreigner_ready": "Foreigner-Ready",
+    "halal_friendly": "Halal Friendly",
+    "visited": "Visited",
+    "mark_visited": "Visited",
+    "translate": "Translate",
+    "show_original": "Show original",
+    "translating": "Translating..."
+  },
+  "saved": {
+    "title": "Saved Popups",
+    "you_have_saved": "You have saved",
+    "popups": "popups",
+    "no_saved": "No saved pop-ups yet."
+  },
+  "review": {
+    "title": "Reviews",
+    "write_review": "Write a Review",
+    "post_review": "Post Review",
+    "placeholder": "Share your experience at this pop-up...",
+    "posting_publicly": "Posting publicly",
+    "select_popup": "Select a popup...",
+    "please_select_popup": "Please select a popup",
+    "please_select_rating": "Please select a rating",
+    "posted_success": "Review posted successfully!"
+  },
+  "login": {
+    "title": "Sign in to continue",
+    "continue_google": "Continue with Google",
+    "continue_apple": "Continue with Apple",
+    "continue_wechat": "Continue with WeChat"
+  },
+  "header": {
+    "search_placeholder": "Find your next popup...",
+    "trending": "Trending Popups",
+    "categories": "Categories",
+    "title_discover": "Pop-ups picked for you",
+    "title_map": "Pop-ups near me"
+  }
+}

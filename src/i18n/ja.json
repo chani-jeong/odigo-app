@@ -1,0 +1,71 @@
+{
+  "onboarding": {
+    "title_step1": "あなたらしい韓国の発見を。",
+    "title_step2": "どちらから来られましたか？",
+    "subtitle_step2": "国を選択してください",
+    "label_language": "言語 (Language)",
+    "title_step3": "何に興味がありますか？",
+    "subtitle_step3": "韓国で発見したいものを選択してください",
+    "btn_start": "見つけに行く",
+    "btn_continue": "次へ"
+  },
+  "categories": {
+    "beauty_fashion": "ビューティー＆ファッション",
+    "kpop": "K-POP",
+    "lifestyle": "ライフスタイル",
+    "food": "フード",
+    "character": "キャラクター",
+    "exhibition": "展示"
+  },
+  "tabs": {
+    "discover": "見つける",
+    "map": "マップ",
+    "saved": "保存済み",
+    "review": "レビュー",
+    "home": "ホーム"
+  },
+  "card": {
+    "save": "保存",
+    "map": "マップ",
+    "review": "レビュー",
+    "book_now": "予約する",
+    "walkin_guide": "ウォークインガイド",
+    "foreigner_ready": "外国人対応",
+    "halal_friendly": "ハラールフレンドリー",
+    "visited": "訪問済み",
+    "mark_visited": "訪問済み",
+    "translate": "翻訳する",
+    "show_original": "原文を見る",
+    "translating": "翻訳中..."
+  },
+  "saved": {
+    "title": "保存済みのポップアップ",
+    "you_have_saved": "",
+    "popups": "件のポップアップを保存しました。",
+    "no_saved": "保存されたポップアップはまだありません。"
+  },
+  "review": {
+    "title": "レビュー",
+    "write_review": "レビューを書く",
+    "post_review": "投稿する",
+    "placeholder": "このポップアップでの経験をシェアしましょう...",
+    "posting_publicly": "公開で投稿されます",
+    "select_popup": "ポップアップを選択...",
+    "please_select_popup": "ポップアップを選択してください",
+    "please_select_rating": "評価を選択してください",
+    "posted_success": "レビューが正常に投稿されました！"
+  },
+  "login": {
+    "title": "サインインして続行",
+    "continue_google": "Googleで続行",
+    "continue_apple": "Appleで続行",
+    "continue_wechat": "WeChatで続行"
+  },
+  "header": {
+    "search_placeholder": "次のポップアップを探す...",
+    "trending": "トレンドのポップアップ",
+    "categories": "カテゴリー",
+    "title_discover": "おすすめのポップアップ",
+    "title_map": "近くのポップアップ"
+  }
+}
