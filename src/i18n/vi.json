@@ -1,71 +1,71 @@
 {
   "onboarding": {
-    "title_step1": "Discover Korea, your way.",
-    "title_step2": "Where are you traveling from?",
-    "subtitle_step2": "Select your country",
-    "label_language": "Language",
-    "title_step3": "What are you interested in?",
-    "subtitle_step3": "Choose what you want to discover in Korea",
-    "btn_start": "START EXPLORING",
-    "btn_continue": "Continue"
+    "title_step1": "Khám phá Hàn Quốc của bạn.",
+    "title_step2": "Bạn đến từ đâu?",
+    "subtitle_step2": "Chọn quốc gia của bạn",
+    "label_language": "Ngôn ngữ",
+    "title_step3": "Bạn quan tâm đến điều gì?",
+    "subtitle_step3": "Chọn điều bạn muốn khám phá",
+    "btn_start": "BẮT ĐẦU",
+    "btn_continue": "Tiếp tục"
   },
   "categories": {
-    "beauty_fashion": "Beauty & Fashion",
+    "beauty_fashion": "Làm đẹp & Thời trang",
     "kpop": "K-Pop",
-    "lifestyle": "Lifestyle",
-    "food": "Food",
-    "character": "Character",
-    "exhibition": "Exhibition"
+    "lifestyle": "Phong cách sống",
+    "food": "Ẩm thực",
+    "character": "Nhân vật",
+    "exhibition": "Triển lãm"
   },
   "tabs": {
-    "discover": "Discover",
-    "map": "Map",
-    "saved": "Saved",
-    "review": "Review",
-    "home": "Home"
+    "discover": "Khám phá",
+    "map": "Bản đồ",
+    "saved": "Đã lưu",
+    "review": "Đánh giá",
+    "home": "Trang chủ"
   },
   "card": {
-    "save": "Save",
-    "map": "Map",
-    "review": "Review",
-    "book_now": "Book Now",
-    "walkin_guide": "Walk-in Guide",
+    "save": "Lưu",
+    "map": "Bản đồ",
+    "review": "Đánh giá",
+    "book_now": "Đặt ngay",
+    "walkin_guide": "Hướng dẫn Walk-in",
     "foreigner_ready": "Foreigner-Ready",
-    "halal_friendly": "Halal Friendly",
-    "visited": "Visited",
-    "mark_visited": "Visited",
-    "translate": "Translate",
-    "show_original": "Show original",
-    "translating": "Translating..."
+    "halal_friendly": "Thân thiện Halal",
+    "visited": "Đã đến",
+    "mark_visited": "Đã đến",
+    "translate": "Dịch",
+    "show_original": "Xem bản gốc",
+    "translating": "Đang dịch..."
   },
   "saved": {
-    "title": "Saved Popups",
-    "you_have_saved": "You have saved",
-    "popups": "popups",
-    "no_saved": "No saved pop-ups yet."
+    "title": "Pop-up đã lưu",
+    "you_have_saved": "Bạn đã lưu",
+    "popups": "pop-up",
+    "no_saved": "Chưa có pop-up nào."
   },
   "review": {
-    "title": "Reviews",
-    "write_review": "Write a Review",
-    "post_review": "Post Review",
-    "placeholder": "Share your experience at this pop-up...",
-    "posting_publicly": "Posting publicly",
-    "select_popup": "Select a popup...",
-    "please_select_popup": "Please select a popup",
-    "please_select_rating": "Please select a rating",
-    "posted_success": "Review posted successfully!"
+    "title": "Đánh giá",
+    "write_review": "Viết đánh giá",
+    "post_review": "Đăng",
+    "placeholder": "Chia sẻ trải nghiệm của bạn...",
+    "posting_publicly": "Đăng công khai",
+    "select_popup": "Chọn pop-up...",
+    "please_select_popup": "Vui lòng chọn pop-up",
+    "please_select_rating": "Vui lòng chọn điểm đánh giá",
+    "posted_success": "Đăng thành công!"
   },
   "login": {
-    "title": "Sign in to continue",
-    "continue_google": "Continue with Google",
-    "continue_apple": "Continue with Apple",
-    "continue_wechat": "Continue with WeChat"
+    "title": "Đăng nhập để tiếp tục",
+    "continue_google": "Tiếp tục với Google",
+    "continue_apple": "Tiếp tục với Apple",
+    "continue_wechat": "Tiếp tục với WeChat"
   },
   "header": {
-    "search_placeholder": "Find your next popup...",
-    "trending": "Trending Popups",
-    "categories": "Categories",
-    "title_discover": "Pop-ups picked for you",
-    "title_map": "Pop-ups near me"
+    "search_placeholder": "Tìm pop-up tiếp theo...",
+    "trending": "Pop-up thịnh hành",
+    "categories": "Danh mục",
+    "title_discover": "Dành cho bạn",
+    "title_map": "Pop-up gần tôi"
   }
 }
