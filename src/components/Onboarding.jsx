@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { IconMap2, IconPhoto, IconSearch, IconSparkles, IconHeadphones, IconHeart, IconCup, IconMoodSmile, IconMapPin, IconChevronDown } from '@tabler/icons-react';
+import { IconPhoto, IconSearch, IconSparkles, IconHeadphones, IconHeart, IconCup, IconMoodSmile, IconMapPin, IconChevronDown } from '@tabler/icons-react';
 import useDeckStore from '../store/useDeckStore';
 import popups from '../data/popups.sample.json';
 import ALL_COUNTRIES from '../data/countries.json';

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion, useMotionValue, useTransform, useAnimation } from 'framer-motion';
-import { IconPhoto, IconMapPin, IconCalendar, IconCalendarEvent, IconTag, IconShieldCheck, IconX, IconHeart } from '@tabler/icons-react';
+import { IconPhoto, IconMapPin, IconCalendarEvent, IconShieldCheck, IconX, IconHeart } from '@tabler/icons-react';
 import useDeckStore from '../store/useDeckStore';
 import popups from '../data/popups.sample.json';
 import { getForeignerReadyStatus } from '../utils/foreignerReady';
@@ -50,7 +50,7 @@ export default function SwipeDeck() {
     }
   };
 
-  const currentPopup = events[deckOrder[currentIndex]];
+
 
   const renderCard = (popup, index, isTop) => {
     let depth = index - currentIndex;

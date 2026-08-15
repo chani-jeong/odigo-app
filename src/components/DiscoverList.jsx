@@ -1,13 +1,10 @@
 import React from 'react';
 import { IconMapPin, IconBookmark } from '@tabler/icons-react';
 import useDeckStore from '../store/useDeckStore';
-import useTranslation from '../i18n/useTranslation';
 import { getForeignerReadyStatus } from '../utils/foreignerReady';
 
 export default function DiscoverList({ activeFilterKey }) {
   const events = useDeckStore(state => state.events) || [];
-  const openPopup = useDeckStore(state => state.openPopup);
-  const { t } = useTranslation();
 
   const displayPopups = React.useMemo(() => {
     if (!events.length) return [];

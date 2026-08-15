@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { IconSearch, IconUser, IconHome, IconCompass, IconMap, IconBookmark, IconMessageCircle } from '@tabler/icons-react';
+import { IconSearch, IconCompass, IconMap, IconBookmark, IconMessageCircle } from '@tabler/icons-react';
 import './index.css';
 import './styles/tokens.css';
 import SwipeDeck from './components/SwipeDeck';
@@ -13,7 +13,6 @@ import LoginModal from './components/LoginModal';
 import Toast from './components/Toast';
 import SearchOverlay from './components/SearchOverlay';
 import HomeTab from './components/HomeTab';
-import ProfileModal from './components/ProfileModal';
 import useDeckStore from './store/useDeckStore';
 import { motion, AnimatePresence } from 'framer-motion';
 import useTranslation from './i18n/useTranslation';
@@ -32,7 +31,6 @@ function App() {
   const [activeTab, setActiveTab] = useState('discover');
   const [isSwipeMode, setIsSwipeMode] = useState(true);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [isProfileOpen, setIsProfileOpen] = useState(false);
 
   React.useEffect(() => {
     if (hasAgreedToLocation && 'geolocation' in navigator) {

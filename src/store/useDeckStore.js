@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-const useDeckStore = create((set, get) => ({
+const useDeckStore = create((set) => ({
   events: [],
   deckOrder: [],
   currentIndex: 0,
@@ -43,14 +43,7 @@ const useDeckStore = create((set, get) => ({
   })),
 
   setEvents: (events) =>
-    set((state) => {
-      // If we have userLocation, sort events by distance
-      let sortedEvents = [...events];
-      if (state.userLocation) {
-        import('../utils/distance.js').then(({ getDistanceFromLatLonInKm }) => {
-          // Since this is inside set which is sync, we better handle sort outside or trigger it via an action
-        });
-      }
+    set(() => {
       return {
         events,
         deckOrder: events.map((_, i) => i),
