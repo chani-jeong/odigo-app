@@ -39,13 +39,13 @@ export default function SavedList() {
               key={popup.id}
               onClick={() => openPopup(popup.id)}
               style={{
-                background: 'var(--paper)', borderRadius: '20px', padding: '16px',
+                background: 'var(--paper)', borderRadius: '12px', padding: '16px',
                 display: 'flex', gap: '16px', alignItems: 'center',
                 border: '1px solid var(--paper-border)', cursor: 'pointer'
               }}
             >
               {/* Thumbnail */}
-              <div style={{ position: 'relative', width: '100px', height: '100px', borderRadius: '16px', background: 'var(--brand-tint)', flexShrink: 0, overflow: 'hidden' }}>
+              <div style={{ position: 'relative', width: '100px', height: '100px', borderRadius: '8px', background: 'var(--brand-tint)', flexShrink: 0, overflow: 'hidden' }}>
                 {popup.imageUrl && (
                   <img src={popup.imageUrl} alt={popup.name.en} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
                 )}
@@ -54,7 +54,7 @@ export default function SavedList() {
               
               {/* Info */}
               <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                <div style={{ color: 'var(--badge-dday-warning)', fontSize: '11px', fontWeight: 'bold', marginBottom: '4px', fontFamily: 'var(--font-display)' }}>{popup.category === 'beauty_fashion' ? 'BEAUTY & FASHION' : popup.category.toUpperCase().replace('_', ' ')}</div>
+                <div style={{ background: '#E8F5F4', color: '#2D9F98', fontSize: '11px', fontWeight: 'bold', marginBottom: '4px', fontFamily: 'var(--font-display)', padding: '2px 6px', borderRadius: '4px', alignSelf: 'flex-start' }}>{popup.category === 'beauty_fashion' ? 'BEAUTY & FASHION' : popup.category.toUpperCase().replace('_', ' ')}</div>
                 <h3 style={{ margin: '0 0 8px 0', fontSize: '16px', color: 'var(--ink)', display: '-webkit-box', WebkitLineClamp: 1, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{popup.name.en}</h3>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '4px', color: 'var(--ink-secondary)', fontSize: '12px', marginBottom: '12px' }}>
                   <IconMapPin size={12} /> {popup.location.address.split(',')[0]} · {Math.round(popup.distance || 2.5)}km

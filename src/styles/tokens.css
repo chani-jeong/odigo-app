@@ -10,10 +10,19 @@
   --paper: #FFFFFF; /* White card bg */
   --paper-border: rgba(0, 0, 0, 0.05);
   
-  --ink: #1A1A24; /* Main text */
-  --text-secondary: #8E8E8E; /* Subtitles and secondary text */
-  --ink-secondary: rgba(0, 0, 0, 0.6); /* Muted text */
+  --text-primary: #1A1A1A; /* Main text */
+  --text-secondary: #6B7280; /* Subtitles and secondary text */
+  --ink: #1A1A24; /* Legacy ink fallback */
+  --ink-secondary: rgba(0, 0, 0, 0.6); /* Legacy muted text */
   --ink-tertiary: rgba(0, 0, 0, 0.4);
+  
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
   
   /* Badges & Accents */
   --badge-new: #F7C948;
@@ -24,6 +33,12 @@
   --font-sans: 'Noto Sans KR', 'Pretendard', sans-serif;
   --font-display: 'Outfit', 'Noto Sans KR', sans-serif;
   --font-mono: 'DM Mono', monospace;
+  
+  /* Typography Scale */
+  --text-title: 20px;
+  --text-subtitle: 16px;
+  --text-body: 14px;
+  --text-caption: 12px;
 }
 
 body {
@@ -70,7 +85,7 @@ body {
 .card {
   position: absolute;
   inset: 0;
-  border-radius: 20px;
+  border-radius: 12px;
   overflow: hidden;
   display: flex;
   flex-direction: column;

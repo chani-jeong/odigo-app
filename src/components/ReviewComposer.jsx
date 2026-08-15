@@ -139,11 +139,14 @@ export default function ReviewComposer({ isOpen, onClose }) {
             <button
               onClick={handleSubmit}
               className="interactive-btn"
+              disabled={!selectedPopupId || rating === 0}
               style={{
-                width: '100%', padding: '16px', borderRadius: '16px',
-                background: 'var(--brand-primary)', border: 'none',
-                color: '#fff', fontSize: '16px', fontWeight: 'bold',
-                cursor: 'pointer'
+                width: '100%', height: '52px', borderRadius: '26px',
+                background: (!selectedPopupId || rating === 0) ? '#D1D5DB' : 'var(--brand-primary)',
+                border: 'none',
+                color: (!selectedPopupId || rating === 0) ? '#9CA3AF' : '#fff', 
+                fontSize: '16px', fontWeight: '600',
+                cursor: (!selectedPopupId || rating === 0) ? 'not-allowed' : 'pointer'
               }}
             >
               {t('review.post_review')}

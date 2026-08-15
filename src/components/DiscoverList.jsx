@@ -45,7 +45,7 @@ export default function DiscoverList({ activeFilterKey }) {
             key={popup.id} 
             onClick={() => setPopup(popup.id)}
             style={{ 
-              background: 'var(--paper)', borderRadius: '16px', overflow: 'hidden',
+              background: 'var(--paper)', borderRadius: '12px', overflow: 'hidden',
               cursor: 'pointer', border: '1px solid var(--paper-border)',
               display: 'flex', flexDirection: 'column',
               boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
@@ -70,7 +70,7 @@ export default function DiscoverList({ activeFilterKey }) {
 
             {/* Content Area */}
             <div style={{ padding: '16px 12px', display: 'flex', flexDirection: 'column' }}>
-              <div style={{ color: 'var(--brand-primary)', fontSize: '11px', fontWeight: 'bold', marginBottom: '4px', fontFamily: 'var(--font-display)' }}>{popup.name.en.split(' ')[0].toUpperCase()}</div>
+              <div style={{ background: '#E8F5F4', color: '#2D9F98', fontSize: '11px', fontWeight: 'bold', marginBottom: '4px', fontFamily: 'var(--font-display)', padding: '2px 6px', borderRadius: '4px', alignSelf: 'flex-start' }}>{popup.name.en.split(' ')[0].toUpperCase()}</div>
               <div style={{ color: 'var(--ink)', fontSize: '14px', fontWeight: 'bold', lineHeight: 1.3, marginBottom: '8px', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
                 {popup.name.en}
               </div>

@@ -135,7 +135,8 @@ export default function ReviewTab() {
               color: 'var(--ink)',
               lineHeight: '1.5',
               whiteSpace: 'pre-wrap',
-              paddingLeft: '4px'
+              paddingLeft: '4px',
+              textAlign: 'left'
             }}>
               {showingTranslation[review.id] ? translations[review.id] : review.text}
             </div>

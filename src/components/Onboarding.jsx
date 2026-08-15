@@ -86,16 +86,16 @@ export default function Onboarding() {
       <div style={{ padding: '32px 20px 16px', textAlign: 'center' }}>
         <h1 style={{ margin: '0 0 8px', fontSize: '36px', color: 'var(--brand-primary)', fontWeight: 'bold' }}>Odigo</h1>
         
-        {step === 1 && <p style={{ margin: 0, fontSize: '15px', color: 'var(--brand-primary)', fontWeight: 'bold' }}>{t('onboarding.title_step1')}</p>}
+        {step === 1 && <p style={{ margin: 0, fontSize: 'var(--text-subtitle)', color: 'var(--text-primary)', fontWeight: '600' }}>{t('onboarding.title_step1')}</p>}
         {step === 2 && (
           <>
-            <h2 style={{ margin: '0 0 4px', fontSize: '24px', color: 'var(--brand-primary)', fontWeight: '700' }}>{t('onboarding.title_step2')}</h2>
+            <h2 style={{ margin: '0 0 4px', fontSize: 'var(--text-title)', color: 'var(--text-primary)', fontWeight: '700' }}>{t('onboarding.title_step2')}</h2>
             <p style={{ margin: 0, fontSize: '15px', fontWeight: 400, color: 'var(--text-secondary)' }}>{t('onboarding.subtitle_step2')}</p>
           </>
         )}
         {step === 3 && (
           <>
-            <h2 style={{ margin: '0 0 4px', fontSize: '20px', color: 'var(--brand-primary)', fontWeight: 'bold' }}>{t('onboarding.title_step3')}</h2>
+            <h2 style={{ margin: '0 0 4px', fontSize: 'var(--text-title)', color: 'var(--text-primary)', fontWeight: '700' }}>{t('onboarding.title_step3')}</h2>
             <p style={{ margin: 0, fontSize: '15px', fontWeight: 400, color: 'var(--text-secondary)' }}>{t('onboarding.subtitle_step3')}</p>
           </>
         )}
@@ -134,7 +134,7 @@ export default function Onboarding() {
                 return (
                   <div key={popup.id} style={{
                     position: 'absolute', width: '70%', height: '240px',
-                    background: 'var(--paper)', borderRadius: '20px',
+                    background: 'var(--paper)', borderRadius: '12px',
                     boxShadow: '0 8px 24px rgba(0,0,0,0.1)',
                     transform: `translateX(${offset * 90}%) scale(${offset === 0 ? 1 : 0.9})`,
                     opacity: offset === 0 ? 1 : 0.6,
@@ -293,9 +293,9 @@ export default function Onboarding() {
           className="interactive-btn"
           disabled={(step === 2 && !userCountry) || (step === 3 && userInterests.length === 0)}
           style={{
-            width: '100%', padding: '16px', borderRadius: '16px',
-            background: ((step === 2 && !userCountry) || (step === 3 && userInterests.length === 0)) ? '#ccc' : 'var(--brand-primary)',
-            color: '#fff', fontSize: '16px', fontWeight: 'bold', border: 'none',
+            width: '100%', height: '52px', borderRadius: '26px',
+            background: ((step === 2 && !userCountry) || (step === 3 && userInterests.length === 0)) ? '#D1D5DB' : 'var(--brand-primary)',
+            color: ((step === 2 && !userCountry) || (step === 3 && userInterests.length === 0)) ? '#9CA3AF' : '#fff', fontSize: '16px', fontWeight: '600', border: 'none',
             cursor: ((step === 2 && !userCountry) || (step === 3 && userInterests.length === 0)) ? 'not-allowed' : 'pointer',
             transition: 'all 0.2s'
           }}

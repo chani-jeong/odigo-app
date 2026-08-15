@@ -62,7 +62,7 @@ export default function SwipeDeck() {
       display: 'flex',
       flexDirection: 'column',
       background: 'var(--paper)',
-      borderRadius: '24px',
+      borderRadius: '12px',
       overflow: 'hidden',
       boxShadow: '0 8px 24px rgba(0,0,0,0.1)',
       touchAction: 'none',
@@ -94,14 +94,14 @@ export default function SwipeDeck() {
               {popup.category === 'beauty_fashion' ? 'Beauty & Fashion' : popup.category.toUpperCase().replace('_', ' ')}
             </span>
             {status === 'ready' && (
-              <span style={{ background: 'rgba(38,196,133,0.1)', color: '#26C485', padding: '4px 10px', borderRadius: '8px', fontSize: '12px', fontWeight: 'bold', fontFamily: 'var(--font-mono)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+              <span style={{ background: '#E8F5F4', color: '#2D9F98', padding: '4px 10px', borderRadius: '8px', fontSize: '12px', fontWeight: 'bold', fontFamily: 'var(--font-mono)', display: 'flex', alignItems: 'center', gap: '4px' }}>
                 <IconShieldCheck size={14} /> Foreigner-Ready
               </span>
             )}
           </div>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px' }}>
             <h2 style={{ margin: 0, fontSize: '24px', color: 'var(--ink)', fontFamily: 'var(--font-display)', fontWeight: 'bold' }}>{popup.name.en}</h2>
-            <div style={{ background: 'var(--brand-primary)', color: '#000', padding: '4px 12px', borderRadius: '16px', fontSize: '13px', fontWeight: 'bold', fontFamily: 'var(--font-mono)' }}>
+            <div style={{ background: 'transparent', color: 'var(--text-secondary)', padding: '4px 12px', borderRadius: '16px', fontSize: '13px', fontWeight: 'bold', fontFamily: 'var(--font-mono)' }}>
               {Math.round(popup.distance || 0)}km
             </div>
           </div>

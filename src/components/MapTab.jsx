@@ -17,21 +17,21 @@ export default function MapTab() {
       {!hasAgreedToLocation && (
         <div style={{
           position: 'absolute', inset: 0, zIndex: 100,
-          background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(4px)',
+          background: 'rgba(0,0,0,0.4)', backdropFilter: 'blur(4px)',
           display: 'flex', alignItems: 'center', justifyContent: 'center'
         }}>
           <div style={{
-            background: '#222', borderRadius: '16px', padding: '32px 24px', width: '300px',
-            display: 'flex', flexDirection: 'column', color: '#fff', boxShadow: '0 8px 32px rgba(0,0,0,0.5)'
+            background: '#FFFFFF', borderRadius: '16px', padding: '32px 24px', width: '300px',
+            display: 'flex', flexDirection: 'column', color: 'var(--ink)', boxShadow: '0 8px 32px rgba(0,0,0,0.1)'
           }}>
             <h3 style={{ margin: '0 0 16px 0', fontSize: '18px', textAlign: 'center', fontWeight: 'bold', lineHeight: '1.4' }}>
               Please agree to use location info
             </h3>
-            <p style={{ margin: '0 0 24px 0', fontSize: '14px', textAlign: 'center', color: '#ccc', lineHeight: '1.5' }}>
+            <p style={{ margin: '0 0 24px 0', fontSize: '14px', textAlign: 'center', color: 'var(--ink-secondary)', lineHeight: '1.5' }}>
               If you allow location information, you can use nearby services more conveniently.
             </p>
             
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '24px', paddingBottom: '16px', borderBottom: '1px solid #444' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '24px', paddingBottom: '16px', borderBottom: '1px solid var(--paper-border)' }}>
               <label style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }}>
                 <input 
                   type="checkbox" 
@@ -49,9 +49,10 @@ export default function MapTab() {
                 if (isConsentChecked) setAgreedToLocation();
               }}
               style={{
-                background: isConsentChecked ? 'var(--brand-primary)' : '#555',
-                color: isConsentChecked ? '#000' : '#888',
-                border: 'none', borderRadius: '8px', padding: '16px', fontSize: '16px', fontWeight: 'bold',
+                width: '100%', height: '52px', borderRadius: '26px',
+                background: isConsentChecked ? 'var(--brand-primary)' : '#D1D5DB',
+                color: isConsentChecked ? '#fff' : '#9CA3AF',
+                border: 'none', fontSize: '16px', fontWeight: '600',
                 cursor: isConsentChecked ? 'pointer' : 'not-allowed',
                 transition: 'all 0.2s'
               }}

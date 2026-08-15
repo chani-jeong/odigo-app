@@ -140,7 +140,7 @@ function App() {
         {/* Bottom Row: Tab Title with divider */}
         {activeTab !== 'home' && (
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '2px solid var(--brand-tint)', paddingBottom: '12px' }}>
-            <span style={{ color: 'var(--brand-primary)', fontWeight: 'bold', fontSize: '18px' }}>
+            <span style={{ color: 'var(--text-primary)', fontWeight: '600', fontSize: 'var(--text-subtitle)' }}>
               {activeTab === 'discover' && t('header.title_discover')}
               {activeTab === 'map' && t('header.title_map')}
               {activeTab === 'saved' && t('saved.title')}
@@ -158,8 +158,8 @@ function App() {
               key={filterKey}
               onClick={() => setActiveFilterKey(filterKey)}
               style={{
-                background: activeFilterKey === filterKey ? 'var(--brand-primary)' : 'var(--paper)',
-                color: activeFilterKey === filterKey ? '#000' : 'var(--ink-secondary)',
+                background: activeFilterKey === filterKey ? '#E8F5F4' : 'var(--paper)',
+                color: activeFilterKey === filterKey ? '#2D9F98' : 'var(--ink-secondary)',
                 border: '1px solid var(--paper-border)',
                 padding: '8px 16px',
                 borderRadius: '20px',

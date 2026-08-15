@@ -26,7 +26,7 @@ export default function PopupDetail() {
   });
 
   const badgeColors = {
-    ready: { bg: '#26C485', color: '#FFF' },
+    ready: { bg: '#E8F5F4', color: '#2D9F98' },
     assisted: { bg: '#FF9F45', color: '#FFF' },
     blocked: { bg: '#FF5D73', color: '#FFF' },
   };
@@ -140,12 +140,12 @@ export default function PopupDetail() {
           {popup.category === 'food' && (popup.dietary?.halal !== 'unknown' || popup.dietary?.vegan !== 'unknown') && (
             <div style={{ display: 'flex', gap: '8px', marginBottom: '24px' }}>
               {popup.dietary?.halal && popup.dietary.halal !== 'unknown' && (
-                <span style={{ display: 'flex', alignItems: 'center', gap: '4px', background: 'rgba(59, 169, 150, 0.1)', color: '#3BA996', padding: '6px 12px', borderRadius: '16px', fontSize: '13px', fontWeight: 'bold' }}>
+                <span style={{ display: 'flex', alignItems: 'center', gap: '4px', background: '#E8F5F4', color: '#2D9F98', padding: '4px 8px', borderRadius: '4px', fontSize: '12px', fontWeight: 'bold' }}>
                   ☪️ {popup.dietary.halal === 'certified' ? t('card.halal_certified') : t('card.halal_friendly')}
                 </span>
               )}
               {popup.dietary?.vegan && popup.dietary.vegan !== 'unknown' && (
-                <span style={{ display: 'flex', alignItems: 'center', gap: '4px', background: 'rgba(76, 175, 80, 0.1)', color: '#4CAF50', padding: '6px 12px', borderRadius: '16px', fontSize: '13px', fontWeight: 'bold' }}>
+                <span style={{ display: 'flex', alignItems: 'center', gap: '4px', background: '#E8F5F4', color: '#2D9F98', padding: '4px 8px', borderRadius: '4px', fontSize: '12px', fontWeight: 'bold' }}>
                   🍃 {popup.dietary.vegan === 'vegan' ? t('card.vegan') : popup.dietary.vegan === 'vegetarian' ? t('card.vegetarian') : t('card.vegan_options')}
                 </span>
               )}
@@ -156,14 +156,14 @@ export default function PopupDetail() {
             onClick={status === 'blocked' ? null : openUrl}
             style={{
               width: '100%',
-              padding: '16px',
-              background: 'var(--brand-primary)',
-              color: '#fff',
+              height: '52px',
+              background: status === 'blocked' ? '#D1D5DB' : 'var(--brand-primary)',
+              color: status === 'blocked' ? '#9CA3AF' : '#fff',
               border: 'none',
-              borderRadius: '16px',
+              borderRadius: '26px',
               fontSize: '16px',
-              fontWeight: 'bold',
-              cursor: status === 'blocked' ? 'default' : 'pointer',
+              fontWeight: '600',
+              cursor: status === 'blocked' ? 'not-allowed' : 'pointer',
               marginBottom: '24px',
             }}
           >

@@ -44,7 +44,7 @@ export default function HomeTab({ onSearchClick }) {
 
       {/* Categories */}
       <div>
-        <h3 style={{ margin: '0 0 16px', fontSize: '16px', color: 'var(--ink)' }}>Categories</h3>
+        <h3 style={{ margin: '0 0 16px', fontSize: 'var(--text-subtitle)', color: 'var(--text-primary)', fontWeight: '600' }}>Categories</h3>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '12px' }}>
           {originalCategories.map(cat => (
             <div key={cat} style={{ background: 'var(--paper)', padding: '16px 8px', borderRadius: '16px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px', border: '1px solid var(--paper-border)' }}>
@@ -59,7 +59,7 @@ export default function HomeTab({ onSearchClick }) {
       <div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
           <IconFlame size={20} style={{ color: 'var(--badge-dday-warning)' }} />
-          <h2 style={{ margin: 0, fontSize: '18px', color: 'var(--ink)', fontFamily: 'var(--font-display)', fontWeight: 'bold' }}>Trending Popups</h2>
+          <h2 style={{ margin: 0, fontSize: 'var(--text-title)', color: 'var(--text-primary)', fontFamily: 'var(--font-display)', fontWeight: '700' }}>Trending Popups</h2>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
           {events.slice(1, 4).map(item => (
@@ -70,7 +70,7 @@ export default function HomeTab({ onSearchClick }) {
                 )}
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                <div style={{ color: 'var(--brand-primary)', fontSize: '11px', fontWeight: 'bold', marginBottom: '4px' }}>{item.category.toUpperCase()}</div>
+                <div style={{ background: '#E8F5F4', color: '#2D9F98', fontSize: '11px', fontWeight: 'bold', marginBottom: '4px', padding: '4px 8px', borderRadius: '4px', alignSelf: 'flex-start' }}>{item.category.toUpperCase()}</div>
                 <div style={{ color: 'var(--ink)', fontSize: '14px', fontWeight: 'bold', marginBottom: '4px' }}>{item.name.en}</div>
                 <div style={{ color: 'var(--ink-secondary)', fontSize: '12px' }}>{item.location.address.split(',')[0]}</div>
               </div>
