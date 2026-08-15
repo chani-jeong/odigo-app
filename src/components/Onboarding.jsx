@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { IconPhoto, IconSearch, IconSparkles, IconHeadphones, IconHeart, IconCup, IconMoodSmile, IconMapPin, IconChevronDown } from '@tabler/icons-react';
+import { IconPhoto, IconSearch, IconMapPin, IconChevronDown } from '@tabler/icons-react';
+import BeautyIcon from '../../public/icons/BeautyFashion.svg?react';
+import KpopIcon from '../../public/icons/Kpop.svg?react';
+import LifestyleIcon from '../../public/icons/Lifestyle.svg?react';
+import FoodIcon from '../../public/icons/Food.svg?react';
+import CharacterIcon from '../../public/icons/Character.svg?react';
 import useDeckStore from '../store/useDeckStore';
 import popups from '../data/popups.sample.json';
 import ALL_COUNTRIES from '../data/countries.json';
@@ -7,11 +12,11 @@ import useTranslation from '../i18n/useTranslation';
 import { flagEmoji } from '../utils/flag';
 
 const INTERESTS = [
-  { id: 'beauty_fashion', labelKey: 'categories.beauty_fashion', icon: IconSparkles },
-  { id: 'kpop', labelKey: 'categories.kpop', icon: IconHeadphones },
-  { id: 'lifestyle', labelKey: 'categories.lifestyle', icon: IconHeart },
-  { id: 'food', labelKey: 'categories.food', icon: IconCup },
-  { id: 'character', labelKey: 'categories.character', icon: IconMoodSmile },
+  { id: 'beauty_fashion', labelKey: 'categories.beauty_fashion', icon: BeautyIcon },
+  { id: 'kpop', labelKey: 'categories.kpop', icon: KpopIcon },
+  { id: 'lifestyle', labelKey: 'categories.lifestyle', icon: LifestyleIcon },
+  { id: 'food', labelKey: 'categories.food', icon: FoodIcon },
+  { id: 'character', labelKey: 'categories.character', icon: CharacterIcon },
 ];
 
 const LANGUAGES = [
@@ -266,12 +271,12 @@ export default function Onboarding() {
                     padding: '16px', borderRadius: '12px',
                     background: isSelected ? 'var(--brand-tint)' : 'var(--paper)',
                     border: isSelected ? '2px solid var(--brand-primary)' : '2px solid transparent',
-                    color: 'var(--ink)', fontSize: '16px', fontWeight: 'bold',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px',
+                    color: isSelected ? 'var(--brand-primary)' : 'var(--ink)', fontSize: '16px', fontWeight: 'bold',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px',
                     boxShadow: '0 2px 8px rgba(0,0,0,0.03)', cursor: 'pointer', transition: 'all 0.2s'
                   }}
                 >
-                  <interest.icon size={20} style={{ color: isSelected ? 'var(--brand-primary)' : 'var(--ink)' }} />
+                  <interest.icon width={24} height={24} />
                   {t(interest.labelKey)}
                 </button>
               );
@@ -286,12 +291,12 @@ export default function Onboarding() {
         <button
           onClick={handleNext}
           className="interactive-btn"
-          disabled={step === 2 && !userCountry}
+          disabled={(step === 2 && !userCountry) || (step === 3 && userInterests.length === 0)}
           style={{
             width: '100%', padding: '16px', borderRadius: '16px',
-            background: (step === 2 && !userCountry) ? '#ccc' : 'var(--brand-primary)',
+            background: ((step === 2 && !userCountry) || (step === 3 && userInterests.length === 0)) ? '#ccc' : 'var(--brand-primary)',
             color: '#fff', fontSize: '16px', fontWeight: 'bold', border: 'none',
-            cursor: (step === 2 && !userCountry) ? 'not-allowed' : 'pointer',
+            cursor: ((step === 2 && !userCountry) || (step === 3 && userInterests.length === 0)) ? 'not-allowed' : 'pointer',
             transition: 'all 0.2s'
           }}
         >
