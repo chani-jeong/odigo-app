@@ -276,7 +276,7 @@ export default function Onboarding() {
                     boxShadow: '0 2px 8px rgba(0,0,0,0.03)', cursor: 'pointer', transition: 'all 0.2s'
                   }}
                 >
-                  <interest.icon width={22} height={22} />
+                  <interest.icon width={20} height={20} />
                   {t(interest.labelKey)}
                 </button>
               );
