@@ -90,13 +90,13 @@ export default function Onboarding() {
         {step === 2 && (
           <>
             <h2 style={{ margin: '0 0 4px', fontSize: '24px', color: 'var(--brand-primary)', fontWeight: '700' }}>{t('onboarding.title_step2')}</h2>
-            <p style={{ margin: 0, fontSize: '14px', color: 'var(--brand-primary)', opacity: 0.7 }}>{t('onboarding.subtitle_step2')}</p>
+            <p style={{ margin: 0, fontSize: '15px', fontWeight: 400, color: 'var(--text-secondary)' }}>{t('onboarding.subtitle_step2')}</p>
           </>
         )}
         {step === 3 && (
           <>
             <h2 style={{ margin: '0 0 4px', fontSize: '20px', color: 'var(--brand-primary)', fontWeight: 'bold' }}>{t('onboarding.title_step3')}</h2>
-            <p style={{ margin: 0, fontSize: '14px', color: 'var(--brand-primary)', opacity: 0.7 }}>{t('onboarding.subtitle_step3')}</p>
+            <p style={{ margin: 0, fontSize: '15px', fontWeight: 400, color: 'var(--text-secondary)' }}>{t('onboarding.subtitle_step3')}</p>
           </>
         )}
       </div>
