@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { IconMapPin, IconLeaf } from '@tabler/icons-react';
 import useDeckStore from '../store/useDeckStore';
 
@@ -9,6 +9,132 @@ export default function MapTab() {
   const setAgreedToLocation = useDeckStore(state => state.setAgreedToLocation);
 
   const [isConsentChecked, setIsConsentChecked] = useState(false);
+  const [mapInstance, setMapInstance] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  
+  const mapRef = useRef(null);
+  const carouselRef = useRef(null);
+  const markersRef = useRef([]);
+  const currentLocMarkerRef = useRef(null);
+
+  useEffect(() => {
+    if (!window.kakao || !window.kakao.maps) return;
+    
+    window.kakao.maps.load(() => {
+      if (!mapRef.current) return;
+      const options = {
+        center: new window.kakao.maps.LatLng(37.5445, 127.0557),
+        level: 5
+      };
+      const map = new window.kakao.maps.Map(mapRef.current, options);
+      setMapInstance(map);
+    });
+  }, []);
+
+  useEffect(() => {
+    if (!mapInstance || !window.kakao || events.length === 0) return;
+
+    markersRef.current.forEach(m => m.overlay.setMap(null));
+    markersRef.current = [];
+
+    events.forEach((popup, idx) => {
+      if (!popup.location || !popup.location.lat) return;
+
+      const position = new window.kakao.maps.LatLng(popup.location.lat, popup.location.lng);
+      
+      const content = document.createElement('div');
+      content.style.display = 'flex';
+      content.style.flexDirection = 'column';
+      content.style.alignItems = 'center';
+      content.style.cursor = 'pointer';
+      
+      const updateMarkerStyle = (isActive) => {
+        content.innerHTML = `
+          <div style="background: ${isActive ? 'var(--brand-primary)' : 'var(--paper)'}; color: ${isActive ? '#fff' : 'var(--text-secondary)'}; border: ${isActive ? 'none' : '1px solid var(--paper-border)'}; border-radius: 50%; padding: ${isActive ? '8px' : '6px'}; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: all 0.3s ease; display: flex; justify-content: center; align-items: center;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="${isActive ? '20' : '16'}" height="${isActive ? '20' : '16'}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"></path>
+              <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z"></path>
+            </svg>
+          </div>
+          <div style="width: ${isActive ? '8px' : '6px'}; height: ${isActive ? '8px' : '6px'}; border-radius: 50%; background: ${isActive ? 'rgba(89,203,183,0.4)' : 'rgba(0,0,0,0.1)'}; margin-top: 4px; transition: all 0.3s ease;"></div>
+        `;
+      };
+      
+      updateMarkerStyle(idx === activeIndex);
+
+      const customOverlay = new window.kakao.maps.CustomOverlay({
+        position: position,
+        content: content,
+        yAnchor: 1
+      });
+
+      customOverlay.setMap(mapInstance);
+      
+      content.onclick = () => {
+        setActiveIndex(idx);
+        mapInstance.panTo(position);
+        if (carouselRef.current) {
+          const cardWidth = 160 + 12; // card minWidth + gap
+          carouselRef.current.scrollTo({ left: idx * cardWidth, behavior: 'smooth' });
+        }
+      };
+
+      markersRef.current.push({ overlay: customOverlay, update: updateMarkerStyle, position });
+    });
+    
+    return () => {
+      markersRef.current.forEach(m => m.overlay.setMap(null));
+      markersRef.current = [];
+    };
+  }, [mapInstance, events]);
+
+  useEffect(() => {
+    markersRef.current.forEach((marker, idx) => {
+      marker.update(idx === activeIndex);
+    });
+  }, [activeIndex]);
+
+  useEffect(() => {
+    if (!hasAgreedToLocation || !mapInstance || !window.kakao) return;
+    
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((pos) => {
+        const { latitude, longitude } = pos.coords;
+        const locPosition = new window.kakao.maps.LatLng(latitude, longitude);
+        
+        if (currentLocMarkerRef.current) {
+          currentLocMarkerRef.current.setMap(null);
+        }
+
+        const content = document.createElement('div');
+        content.innerHTML = \`
+          <div style="width: 16px; height: 16px; background: #007AFF; border: 3px solid #fff; border-radius: 50%; box-shadow: 0 0 8px rgba(0,0,0,0.3);"></div>
+        \`;
+
+        currentLocMarkerRef.current = new window.kakao.maps.CustomOverlay({
+          position: locPosition,
+          content: content,
+        });
+
+        currentLocMarkerRef.current.setMap(mapInstance);
+      }, (err) => {
+        console.error("Geolocation error", err);
+      });
+    }
+  }, [hasAgreedToLocation, mapInstance]);
+
+  const handleCarouselScroll = (e) => {
+    const scrollLeft = e.target.scrollLeft;
+    const cardWidth = 160 + 12; 
+    const newIndex = Math.round(scrollLeft / cardWidth);
+    
+    if (newIndex !== activeIndex && newIndex >= 0 && newIndex < events.length) {
+      setActiveIndex(newIndex);
+      if (mapInstance && events[newIndex].location?.lat) {
+        mapInstance.panTo(new window.kakao.maps.LatLng(events[newIndex].location.lat, events[newIndex].location.lng));
+      }
+    }
+  };
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', height: '100%', position: 'relative', background: '#e5e3df' }}>
@@ -63,40 +189,17 @@ export default function MapTab() {
         </div>
       )}
 
-      {/* Full-bleed Map Background (Placeholder using an iframe for realistic UI) */}
-      <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
-        <iframe 
-          title="Map"
-          width="100%" 
-          height="100%" 
-          frameBorder="0" 
-          style={{ border: 0, filter: 'saturate(1.2) contrast(1.1)' }} 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.2711674395013!2d126.9749!3d37.5665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDMzJzU5LjQiTiAxMjbCsDU4JzI5LjYiRQ!5e0!3m2!1sen!2skr!4v1620000000000!5m2!1sen!2skr" 
-          allowFullScreen 
-        />
-        {/* Subtle overlay to make map look slightly muted/branded */}
-        <div style={{ position: 'absolute', inset: 0, background: 'var(--brand-tint)', opacity: 0.3, pointerEvents: 'none' }} />
-      </div>
+      {/* Map Container */}
+      <div 
+        ref={mapRef}
+        style={{ position: 'absolute', inset: 0, zIndex: 0 }}
+      />
+      
+      {/* Subtle overlay to make map look slightly muted/branded */}
+      <div style={{ position: 'absolute', inset: 0, background: 'var(--brand-tint)', opacity: 0.2, pointerEvents: 'none', zIndex: 1 }} />
 
       {/* Top Gradient for header readability (if global header overlays) */}
-      <div style={{ position: 'absolute', top: 0, width: '100%', height: '100px', background: 'linear-gradient(to bottom, rgba(255,255,255,0.8), transparent)', zIndex: 1, pointerEvents: 'none' }} />
-
-      {/* Map Pins overlay (Mocked positions for visual effect) */}
-      <div style={{ position: 'absolute', inset: 0, zIndex: 5, pointerEvents: 'none' }}>
-        {events.map((popup, idx) => {
-          // generate an arbitrary top/left position to scatter them
-          const top = 30 + (idx * 15) % 40 + '%';
-          const left = 20 + (idx * 25) % 60 + '%';
-          return (
-            <div key={popup.id} style={{ position: 'absolute', top, left, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <div style={{ background: 'var(--brand-primary)', color: '#fff', borderRadius: '50%', padding: '6px', boxShadow: '0 4px 12px rgba(89,203,183,0.5)' }}>
-                <IconMapPin size={18} />
-              </div>
-              <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'rgba(89,203,183,0.4)', marginTop: '4px' }} />
-            </div>
-          );
-        })}
-      </div>
+      <div style={{ position: 'absolute', top: 0, width: '100%', height: '100px', background: 'linear-gradient(to bottom, rgba(255,255,255,0.8), transparent)', zIndex: 2, pointerEvents: 'none' }} />
 
       {/* Bottom Horizontal Carousel */}
       <div style={{ 
@@ -107,7 +210,10 @@ export default function MapTab() {
         display: 'flex',
         flexDirection: 'column'
       }}>
-        <div style={{ 
+        <div 
+          ref={carouselRef}
+          onScroll={handleCarouselScroll}
+          style={{ 
           display: 'flex', 
           gap: '12px', 
           overflowX: 'auto', 
@@ -115,11 +221,17 @@ export default function MapTab() {
           scrollSnapType: 'x mandatory'
         }} className="hide-scrollbar">
           {events.map((popup, index) => {
-            const isActive = index === 1; 
+            const isActive = index === activeIndex; 
             return (
               <div 
                 key={popup.id}
-                onClick={() => openPopup(popup.id)}
+                onClick={() => {
+                  setActiveIndex(index);
+                  if (mapInstance && popup.location?.lat) {
+                    mapInstance.panTo(new window.kakao.maps.LatLng(popup.location.lat, popup.location.lng));
+                  }
+                  openPopup(popup.id);
+                }}
                 style={{
                   scrollSnapAlign: 'center',
                   minWidth: '160px',
