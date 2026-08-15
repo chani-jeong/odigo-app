@@ -80,10 +80,10 @@ export default function Onboarding() {
   );
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', height: '100%', background: 'var(--surface)' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', height: '100%', background: 'var(--surface)', justifyContent: step === 1 ? 'center' : 'flex-start' }}>
       
       {/* Header */}
-      <div style={{ padding: '32px 20px 16px', textAlign: 'center' }}>
+      <div style={{ padding: step === 1 ? '16px 20px' : '32px 20px 16px', textAlign: 'center' }}>
         <h1 style={{ margin: '0 0 8px', fontSize: '36px', color: 'var(--brand-primary)', fontWeight: 'bold' }}>Odigo</h1>
         
         {step === 1 && <p style={{ margin: 0, fontSize: 'var(--text-subtitle)', color: 'var(--text-primary)', fontWeight: '600' }}>{t('onboarding.title_step1')}</p>}
@@ -102,7 +102,7 @@ export default function Onboarding() {
       </div>
 
       {/* Content Area */}
-      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', overflowY: 'auto' }} className="hide-scrollbar">
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', overflowY: 'auto', paddingBottom: '100px' }} className="hide-scrollbar">
         
         {/* Step 1: Preview Carousel */}
         {step === 1 && (
@@ -287,7 +287,7 @@ export default function Onboarding() {
       </div>
 
       {/* Footer / CTA */}
-      <div style={{ padding: '16px 20px 32px' }}>
+      <div style={{ position: 'fixed', bottom: '34px', left: '20px', right: '20px', zIndex: 100 }}>
         <button
           onClick={handleNext}
           className="interactive-btn"

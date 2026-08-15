@@ -170,7 +170,7 @@ export default function PopupDetail() {
             {status === 'blocked' ? t('card.walkin_guide') : t('card.book_now')}
           </button>
           
-          <div style={{ display: 'flex', justifyContent: 'space-around', borderTop: '1px solid var(--paper-border)', paddingTop: '24px' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-around', borderTop: '1px solid rgba(0,0,0,0.06)', paddingTop: '24px', paddingBottom: '24px' }}>
             <button
               onClick={() => { console.log('saved', popup.id); }}
               style={{ background: 'transparent', border: 'none', cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}
