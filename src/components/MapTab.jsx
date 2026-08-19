@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { IconMapPin, IconLeaf } from '@tabler/icons-react';
 import useDeckStore from '../store/useDeckStore';
 
-export default function MapTab() {
+export default function MapTab({ isVisible }) {
   const events = useDeckStore(state => state.events);
   const openPopup = useDeckStore(state => state.openPopup);
   const hasAgreedToLocation = useDeckStore(state => state.hasAgreedToLocation);
@@ -29,13 +29,28 @@ export default function MapTab() {
       const map = new window.kakao.maps.Map(mapRef.current, options);
       setMapInstance(map);
 
-      // 탭 전환 애니메이션이 끝난 뒤 좌표 재계산 강제
+      // 초기 설정 후 좌표 재계산
       setTimeout(() => {
         map.relayout();
         map.setCenter(options.center);
-      }, 350); // Framer Motion 전환 시간(보통 300ms 내외)보다 살짝 길게
+      }, 100); 
     });
   }, []);
+
+  useEffect(() => {
+    if (isVisible && mapInstance) {
+      // visibility: hidden 상태에서 visible로 바뀔 때, 
+      // DOM이 화면에 그려질 시간을 약간 주고 relayout() 호출
+      setTimeout(() => {
+        mapInstance.relayout();
+        if (events[activeIndex]?.location?.lat) {
+          mapInstance.setCenter(new window.kakao.maps.LatLng(events[activeIndex].location.lat, events[activeIndex].location.lng));
+        } else {
+          mapInstance.setCenter(new window.kakao.maps.LatLng(37.5445, 127.0557));
+        }
+      }, 50);
+    }
+  }, [isVisible, mapInstance, events, activeIndex]);
 
   useEffect(() => {
     if (!mapInstance || !window.kakao || events.length === 0) return;

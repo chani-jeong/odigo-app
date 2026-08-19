@@ -187,7 +187,7 @@ function App() {
           pointerEvents: activeTab === 'map' ? 'auto' : 'none',
           zIndex: activeTab === 'map' ? 1 : 0
         }}>
-          <MapTab />
+          <MapTab isVisible={activeTab === 'map'} />
         </div>
 
         {/* 나머지 탭: 기존 AnimatePresence 유지, map은 제외 */}
