@@ -178,21 +178,35 @@ function App() {
 
       {/* Main Content Area */}
       <div style={{ flex: 1, position: 'relative', display: 'flex', flexDirection: 'column', overflowY: (activeTab === 'discover' && isSwipeMode) || activeTab === 'map' ? 'hidden' : 'auto' }}>
+        
+        {/* Map 탭: 애니메이션 완전 배제, 항상 마운트, visibility로만 전환 */}
+        <div style={{ 
+          position: 'absolute', 
+          inset: 0, 
+          visibility: activeTab === 'map' ? 'visible' : 'hidden',
+          pointerEvents: activeTab === 'map' ? 'auto' : 'none',
+          zIndex: activeTab === 'map' ? 1 : 0
+        }}>
+          <MapTab />
+        </div>
+
+        {/* 나머지 탭: 기존 AnimatePresence 유지, map은 제외 */}
         <AnimatePresence mode="wait">
-          <motion.div
-            key={activeTab + (activeTab === 'discover' ? isSwipeMode : '')}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2, ease: "easeOut" }}
-            style={{ flex: 1, display: 'flex', flexDirection: 'column', height: '100%' }}
-          >
-            {activeTab === 'home' && <HomeTab onSearchClick={() => setIsSearchOpen(true)} />}
-            {activeTab === 'discover' && (isSwipeMode ? <SwipeDeck /> : <DiscoverList activeFilterKey={activeFilterKey} />)}
-            {activeTab === 'saved' && <SavedList isSwipeMode={isSwipeMode} />}
-            {activeTab === 'review' && <ReviewTab />}
-            {activeTab === 'map' && <MapTab />}
-          </motion.div>
+          {activeTab !== 'map' && (
+            <motion.div
+              key={activeTab + (activeTab === 'discover' ? isSwipeMode : '')}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+              style={{ flex: 1, display: 'flex', flexDirection: 'column', height: '100%' }}
+            >
+              {activeTab === 'home' && <HomeTab onSearchClick={() => setIsSearchOpen(true)} />}
+              {activeTab === 'discover' && (isSwipeMode ? <SwipeDeck /> : <DiscoverList activeFilterKey={activeFilterKey} />)}
+              {activeTab === 'saved' && <SavedList isSwipeMode={isSwipeMode} />}
+              {activeTab === 'review' && <ReviewTab />}
+            </motion.div>
+          )}
         </AnimatePresence>
       </div>
       

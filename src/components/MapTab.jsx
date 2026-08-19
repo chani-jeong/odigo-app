@@ -19,7 +19,7 @@ export default function MapTab() {
 
   useEffect(() => {
     if (!window.kakao || !window.kakao.maps) return;
-    
+
     window.kakao.maps.load(() => {
       if (!mapRef.current) return;
       const options = {
@@ -28,6 +28,12 @@ export default function MapTab() {
       };
       const map = new window.kakao.maps.Map(mapRef.current, options);
       setMapInstance(map);
+
+      // 탭 전환 애니메이션이 끝난 뒤 좌표 재계산 강제
+      setTimeout(() => {
+        map.relayout();
+        map.setCenter(options.center);
+      }, 350); // Framer Motion 전환 시간(보통 300ms 내외)보다 살짝 길게
     });
   }, []);
 
