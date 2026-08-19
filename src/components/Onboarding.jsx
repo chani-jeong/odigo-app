@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { IconPhoto, IconSearch, IconMapPin, IconChevronDown } from '@tabler/icons-react';
 import BeautyIcon from '../../public/icons/BeautyFashion.svg?react';
 import KpopIcon from '../../public/icons/Kpop.svg?react';
@@ -43,6 +43,7 @@ const getLanguageForCountry = (countryId) => {
 };
 
 export default function Onboarding() {
+  const mapRef = useRef(null);
   const { t } = useTranslation();
   const completeOnboarding = useDeckStore(state => state.completeOnboarding);
   const setCountry = useDeckStore(state => state.setCountry);
@@ -63,6 +64,33 @@ export default function Onboarding() {
       setCarouselIndex(prev => (prev + 1) % popups.length);
     }, 3000);
     return () => clearInterval(timer);
+  }, [step]);
+
+  useEffect(() => {
+    if (step !== 1 || !mapRef.current) return;
+    if (!window.kakao || !window.kakao.maps) return;
+
+    let mapInstance = null;
+    window.kakao.maps.load(() => {
+      if (!mapRef.current) return;
+      const options = {
+        center: new window.kakao.maps.LatLng(37.5665, 126.9749),
+        level: 4,
+        draggable: false,
+        scrollwheel: false,
+        disableDoubleClickZoom: true
+      };
+      mapInstance = new window.kakao.maps.Map(mapRef.current, options);
+      mapInstance.setZoomable(false);
+      mapInstance.setDraggable(false);
+    });
+
+    return () => {
+      // 컴포넌트 언마운트 또는 step 변경 시 정리(Kakao 지도는 명시적 destroy API가 없으므로 DOM 클리어로 대체)
+      if (mapRef.current) {
+        mapRef.current.innerHTML = '';
+      }
+    };
   }, [step]);
 
   const handleNext = () => {
@@ -111,14 +139,12 @@ export default function Onboarding() {
               flex: 1, minHeight: '200px', margin: '0 20px 16px', borderRadius: '24px', 
               position: 'relative', overflow: 'hidden', boxShadow: '0 8px 24px rgba(0,0,0,0.1)'
             }}>
-              <iframe 
-                title="Map Preview"
-                width="100%" 
-                height="100%" 
-                frameBorder="0" 
-                style={{ border: 0, filter: 'saturate(1.2) contrast(1.1)', position: 'absolute', inset: 0 }} 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.2711674395013!2d126.9749!3d37.5665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDMzJzU5LjQiTiAxMjbCsDU4JzI5LjYiRQ!5e0!3m2!1sen!2skr!4v1620000000000!5m2!1sen!2skr" 
-                allowFullScreen 
+              <div 
+                ref={mapRef}
+                style={{ 
+                  width: '100%', height: '100%', position: 'absolute', inset: 0, 
+                  filter: 'saturate(1.2) contrast(1.1)', pointerEvents: 'none' 
+                }} 
               />
               <div style={{ position: 'absolute', inset: 0, background: 'var(--brand-tint)', opacity: 0.2, pointerEvents: 'none' }} />
             </div>
