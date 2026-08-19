@@ -113,9 +113,9 @@ export default function MapTab() {
         }
 
         const content = document.createElement('div');
-        content.innerHTML = \`
+        content.innerHTML = `
           <div style="width: 16px; height: 16px; background: #007AFF; border: 3px solid #fff; border-radius: 50%; box-shadow: 0 0 8px rgba(0,0,0,0.3);"></div>
-        \`;
+        `;
 
         currentLocMarkerRef.current = new window.kakao.maps.CustomOverlay({
           position: locPosition,
