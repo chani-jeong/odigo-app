@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 
 const cache = {};
 
@@ -8,7 +8,6 @@ const cache = {};
  */
 export default function useKoreanAddress(lat, lng, fallbackAddress, selectedLanguage) {
   const [address, setAddress] = useState(fallbackAddress);
-  const abortRef = useRef(null);
 
   useEffect(() => {
     if (selectedLanguage !== 'ko') {

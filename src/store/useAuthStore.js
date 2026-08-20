@@ -3,7 +3,7 @@ import { loginWithGoogleFirebase, logoutFirebase, auth, db } from '../firebase';
 import { doc, setDoc, serverTimestamp } from 'firebase/firestore';
 import useToastStore from './useToastStore';
 
-const useAuthStore = create((set, get) => ({
+const useAuthStore = create((set) => ({
   user: null,
   isAnonymous: true,
   isAuthModalOpen: false,

@@ -61,11 +61,11 @@ const DiscoverListItem = ({ popup, selectedLanguage, getDDay, openPopup }) => {
 
 export default function DiscoverList({ activeFilterKey }) {
   const { selectedLanguage } = useTranslation();
-  const events = useDeckStore(state => state.events) || [];
+  const events = useDeckStore(state => state.events);
   const openPopup = useDeckStore(state => state.openPopup);
 
   const displayPopups = React.useMemo(() => {
-    if (!events.length) return [];
+    if (!events || !events.length) return [];
     
     if (activeFilterKey === 'foreigner_ready') {
       return events.filter(p => {

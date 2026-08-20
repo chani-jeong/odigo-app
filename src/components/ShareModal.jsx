@@ -3,13 +3,11 @@ import html2canvas from 'html2canvas';
 import { IconX, IconDownload, IconShare } from '@tabler/icons-react';
 import useDeckStore from '../store/useDeckStore';
 import ShareCard from './ShareCard';
-import useTranslation from '../i18n/useTranslation';
 
 export default function ShareModal() {
   const shareModalPopupId = useDeckStore(state => state.shareModalPopupId);
   const closeShareModal = useDeckStore(state => state.closeShareModal);
   const events = useDeckStore(state => state.events);
-  const { t } = useTranslation();
   
   const popup = events.find(p => p.id === shareModalPopupId);
   const cardRef = useRef(null);

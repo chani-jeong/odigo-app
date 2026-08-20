@@ -24,7 +24,7 @@ const CATEGORIES = [
 ];
 
 export default function HomeTab({ onSearchClick }) {
-  const { t, selectedLanguage } = useTranslation();
+  const { selectedLanguage } = useTranslation();
   const events = useDeckStore(state => state.events);
   const openPopup = useDeckStore(state => state.openPopup);
   const [selectedCategory, setSelectedCategory] = useState(null);

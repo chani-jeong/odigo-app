@@ -132,12 +132,12 @@ export default function Onboarding() {
     // React의 DOM 업데이트 이후 다음 tick에 안전하게 실행되도록 setTimeout(0) 적용
     initTimer = setTimeout(initMap, 0);
 
+    const currentMapRef = mapRef.current;
     return () => {
       if (initTimer) clearTimeout(initTimer);
       overlays.forEach(overlay => overlay.setMap(null));
-      // 컴포넌트 언마운트 또는 step 변경 시 정리
-      if (mapRef.current) {
-        mapRef.current.innerHTML = '';
+      if (currentMapRef) {
+        currentMapRef.innerHTML = '';
       }
     };
   }, [step, events]);

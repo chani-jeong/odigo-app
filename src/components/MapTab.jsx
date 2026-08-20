@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { IconMapPin, IconLeaf, IconCurrentLocation } from '@tabler/icons-react';
+import { IconLeaf, IconCurrentLocation } from '@tabler/icons-react';
 import useDeckStore from '../store/useDeckStore';
 import useTranslation from '../i18n/useTranslation';
 
@@ -111,6 +111,7 @@ export default function MapTab({ isVisible }) {
       markersRef.current.forEach(m => m.overlay.setMap(null));
       markersRef.current = [];
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mapInstance, events]);
 
   useEffect(() => {
