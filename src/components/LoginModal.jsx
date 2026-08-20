@@ -6,7 +6,7 @@ import useTranslation from '../i18n/useTranslation';
 
 export default function LoginModal() {
   const { t } = useTranslation();
-  const { isAuthModalOpen, closeAuthModal, loginWithGoogle, loginWithWeChat, authLoading } = useAuthStore();
+  const { isAuthModalOpen, closeAuthModal, loginWithGoogle, loginWithApple, loginWithWeChat, authLoading } = useAuthStore();
 
   return (
     <AnimatePresence>
@@ -73,13 +73,14 @@ export default function LoginModal() {
               </button>
 
               <button 
+                onClick={loginWithApple}
                 disabled={authLoading}
                 style={{
                   display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px',
                   width: '100%', padding: '14px', borderRadius: '12px',
                   background: '#000', border: 'none',
                   fontSize: '16px', fontWeight: 'bold', color: '#fff',
-                  cursor: authLoading ? 'not-allowed' : 'pointer',
+                  cursor: 'pointer',
                   opacity: authLoading ? 0.7 : 1
                 }}
               >

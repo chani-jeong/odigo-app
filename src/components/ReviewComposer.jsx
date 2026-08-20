@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { IconX, IconStarFilled, IconStar } from '@tabler/icons-react';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { db } from '../firebase';
 import useAuthStore from '../store/useAuthStore';
 import useToastStore from '../store/useToastStore';
 import useDeckStore from '../store/useDeckStore';
@@ -16,7 +18,7 @@ export default function ReviewComposer({ isOpen, onClose }) {
   const [text, setText] = useState('');
   const [selectedPopupId, setSelectedPopupId] = useState('');
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!selectedPopupId) {
       showToast(t('review.please_select_popup'), "error");
       return;
@@ -25,13 +27,26 @@ export default function ReviewComposer({ isOpen, onClose }) {
       showToast(t('review.please_select_rating'), "error");
       return;
     }
-    // Mock submission
-    console.log("Mock review submission:", { selectedPopupId, rating, text, lang: selectedLanguage });
-    showToast(t('review.posted_success'));
-    setRating(0);
-    setText('');
-    setSelectedPopupId('');
-    onClose();
+    try {
+      await addDoc(collection(db, 'reviews'), {
+        popupId: selectedPopupId,
+        rating,
+        text,
+        lang: selectedLanguage,
+        authorUid: user?.uid || null,
+        authorName: user?.displayName || 'Anonymous',
+        authorPhotoURL: user?.photoURL || '',
+        createdAt: serverTimestamp(),
+      });
+      showToast(t('review.posted_success'));
+      setRating(0);
+      setText('');
+      setSelectedPopupId('');
+      onClose();
+    } catch (e) {
+      console.error('Failed to submit review:', e);
+      showToast('Failed to post review. Please try again.', 'error');
+    }
   };
 
   return (

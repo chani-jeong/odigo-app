@@ -7,14 +7,14 @@ import useToastStore from '../store/useToastStore';
 
 export default function ReviewTab() {
   const { t, selectedLanguage } = useTranslation();
-  const { user, openAuthModal } = useAuthStore();
+  const { user, isAnonymous, openAuthModal } = useAuthStore();
   const [isComposerOpen, setIsComposerOpen] = useState(false);
   const [translations, setTranslations] = useState({});
   const [showingTranslation, setShowingTranslation] = useState({});
   const [isTranslating, setIsTranslating] = useState({});
   
   const handleWriteReview = () => {
-    if (!user) {
+    if (isAnonymous) {
       openAuthModal();
     } else {
       setIsComposerOpen(true);
