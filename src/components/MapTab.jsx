@@ -97,6 +97,7 @@ export default function MapTab({ isVisible }) {
         mapInstance.panTo(position);
         if (carouselRef.current) {
           const cardWidth = 160 + 12; // card minWidth + gap
+          // padding = calc(50% - 80px) 덕분에 idx번째 카드를 중심으로 이동하려면 scrollLeft = idx * cardWidth
           carouselRef.current.scrollTo({ left: idx * cardWidth, behavior: 'smooth' });
         }
       };
@@ -152,13 +153,15 @@ export default function MapTab({ isVisible }) {
 
   const handleCarouselScroll = (e) => {
     const scrollLeft = e.target.scrollLeft;
-    const cardWidth = 160 + 12; 
+    const cardWidth = 160 + 12; // minWidth + gap
+    // padding = calc(50% - 80px) 덕분에 scroll=0일 때 첫 카드가 중심에 위치
+    // 각 카드마다 cardWidth씩 오른쪽으로 이동하므로 실제 인덱스 = 반올림(scrollLeft / cardWidth)
     const newIndex = Math.round(scrollLeft / cardWidth);
-    
-    if (newIndex !== activeIndex && newIndex >= 0 && newIndex < events.length) {
-      setActiveIndex(newIndex);
-      if (mapInstance && events[newIndex].location?.lat) {
-        mapInstance.panTo(new window.kakao.maps.LatLng(events[newIndex].location.lat, events[newIndex].location.lng));
+    const clamped = Math.max(0, Math.min(newIndex, events.length - 1));
+    if (clamped !== activeIndex) {
+      setActiveIndex(clamped);
+      if (mapInstance && events[clamped].location?.lat) {
+        mapInstance.panTo(new window.kakao.maps.LatLng(events[clamped].location.lat, events[clamped].location.lng));
       }
     }
   };
@@ -280,7 +283,9 @@ export default function MapTab({ isVisible }) {
           display: 'flex', 
           gap: '12px', 
           overflowX: 'auto', 
-          padding: '0 20px 20px', 
+          paddingLeft: 'calc(50% - 80px)',
+          paddingRight: 'calc(50% - 80px)',
+          paddingBottom: '20px',
           scrollSnapType: 'x mandatory'
         }} className="hide-scrollbar">
           {events.map((popup, index) => {
