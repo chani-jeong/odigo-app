@@ -1,17 +1,36 @@
 [
   {
     "id": "seongsu-ollio-2026",
-    "name": { "en": "OLLIO SOCIETY CLUB" },
+    "name": {
+      "en": "OLLIO SOCIETY CLUB"
+    },
     "area": "seongsu",
     "category": "beauty_fashion",
-    "period": { "start": "2026-08-01", "end": "2026-08-29" },
-    "location": { "lat": 37.5407, "lng": 127.0585, "address": "Olive Young Beauty Mansion Seongsu, 108 Seongsui-ro, Seongdong-gu, Seoul" },
-    "price": { "free": true },
-    "dietary": { "halal": "unknown", "vegan": "unknown" },
+    "period": {
+      "start": "2026-08-01",
+      "end": "2026-08-29"
+    },
+    "location": {
+      "lat": 37.5407,
+      "lng": 127.0585,
+      "address": "Olive Young Beauty Mansion Seongsu, 108 Seongsui-ro, Seongdong-gu, Seoul"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
     "access": {
       "booking_required": "walkin_only",
       "url": "https://www.instagram.com/p/DbfQLNmjNCa/",
-      "checks": { "en": true, "phone": true, "card": true, "flow": true },
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
       "walkin_tip": "Operating Hours: Mon-Sun 12:00 - 20:00",
       "verified_at": "2026-08-01",
       "verified_by": "CI"
@@ -21,17 +40,36 @@
   },
   {
     "id": "yeouido-changeok-2026",
-    "name": { "en": "CHANGEOK POP-UP STORE" },
+    "name": {
+      "en": "CHANGEOK POP-UP STORE"
+    },
     "area": "yeouido",
     "category": "food",
-    "period": { "start": "2026-08-14", "end": "2026-08-20" },
-    "location": { "lat": 37.5258, "lng": 126.9284, "address": "B1 Food Hall, The Hyundai Seoul, 108 Yeoui-daero, Yeongdeungpo-gu, Seoul" },
-    "price": { "free": true },
-    "dietary": { "halal": "unknown", "vegan": "options_available" },
+    "period": {
+      "start": "2026-08-14",
+      "end": "2026-08-20"
+    },
+    "location": {
+      "lat": 37.5258,
+      "lng": 126.9284,
+      "address": "B1 Food Hall, The Hyundai Seoul, 108 Yeoui-daero, Yeongdeungpo-gu, Seoul"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "options_available"
+    },
     "access": {
       "booking_required": "walkin_only",
       "url": "",
-      "checks": { "en": true, "phone": true, "card": true, "flow": true },
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
       "walkin_tip": "Mon-Thu 10:30-20:00, Fri-Sun 10:30-20:30",
       "verified_at": "2026-08-14",
       "verified_by": "CI"
@@ -41,17 +79,36 @@
   },
   {
     "id": "busan-pingu-2026",
-    "name": { "en": "PINGU'S CREAMERY POP-UP" },
+    "name": {
+      "en": "PINGU'S CREAMERY POP-UP"
+    },
     "area": "busan_haeundae",
     "category": "character",
-    "period": { "start": "2026-08-12", "end": "2026-08-23" },
-    "location": { "lat": 35.1689, "lng": 129.1298, "address": "B2 Hyper Stage, Shinsegae Centum City, 35 Centum nam-daero, Haeundae-gu, Busan" },
-    "price": { "free": true },
-    "dietary": { "halal": "unknown", "vegan": "unknown" },
+    "period": {
+      "start": "2026-08-12",
+      "end": "2026-08-23"
+    },
+    "location": {
+      "lat": 35.1689,
+      "lng": 129.1298,
+      "address": "B2 Hyper Stage, Shinsegae Centum City, 35 Centum nam-daero, Haeundae-gu, Busan"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
     "access": {
       "booking_required": "walkin_only",
       "url": "",
-      "checks": { "en": true, "phone": true, "card": true, "flow": true },
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
       "walkin_tip": "Mon-Thu 10:30-20:00, Fri-Sun 10:30-20:30",
       "verified_at": "2026-08-12",
       "verified_by": "CI"
@@ -61,17 +118,36 @@
   },
   {
     "id": "suwon-buddhism-2026",
-    "name": { "en": "Inner Peace Store (Buddhism Pop-up)" },
+    "name": {
+      "en": "Inner Peace Store (Buddhism Pop-up)"
+    },
     "area": "suwon",
     "category": "lifestyle",
-    "period": { "start": "2026-08-14", "end": "2026-08-20" },
-    "location": { "lat": 37.2917, "lng": 126.9972, "address": "1F Starfield Suwon, 175 Suseong-ro, Jangan-gu, Suwon-si, Gyeonggi-do" },
-    "price": { "free": true },
-    "dietary": { "halal": "unknown", "vegan": "unknown" },
+    "period": {
+      "start": "2026-08-14",
+      "end": "2026-08-20"
+    },
+    "location": {
+      "lat": 37.2917,
+      "lng": 126.9972,
+      "address": "1F Starfield Suwon, 175 Suseong-ro, Jangan-gu, Suwon-si, Gyeonggi-do"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
     "access": {
       "booking_required": "walkin_only",
       "url": "",
-      "checks": { "en": true, "phone": true, "card": true, "flow": true },
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
       "walkin_tip": "Mon-Sun 10:00-22:00",
       "verified_at": "2026-08-14",
       "verified_by": "CI"
@@ -81,22 +157,161 @@
   },
   {
     "id": "seongsu-edition-denmark-2026",
-    "name": { "en": "EDITION DENMARK X BEAKER" },
+    "name": {
+      "en": "EDITION DENMARK X BEAKER"
+    },
     "area": "seongsu",
     "category": "beauty_fashion",
-    "period": { "start": "2026-08-13", "end": "2026-08-31" },
-    "location": { "lat": 37.5441, "lng": 127.0545, "address": "BEAKER Seongsu, 7-1 Yeonmujang-gil, Seongdong-gu, Seoul" },
-    "price": { "free": true },
-    "dietary": { "halal": "unknown", "vegan": "unknown" },
+    "period": {
+      "start": "2026-08-13",
+      "end": "2026-08-31"
+    },
+    "location": {
+      "lat": 37.5441,
+      "lng": 127.0545,
+      "address": "BEAKER Seongsu, 7-1 Yeonmujang-gil, Seongdong-gu, Seoul"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
     "access": {
       "booking_required": "walkin_only",
       "url": "https://www.instagram.com/p/Db5NbOIJIWH/",
-      "checks": { "en": true, "phone": true, "card": true, "flow": true },
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
       "walkin_tip": "Mon-Sun 11:00-20:00",
       "verified_at": "2026-08-13",
       "verified_by": "CI"
     },
     "description": "EDITION DENMARK X BEAKER\nWhat completes a Danish home is its story. Just like a tablecloth used by a grandmother or a basket made by a mother, items filled with someone's taste and affection make a home more special. Edition Denmark wishes to convey the daily life of Denmark, sharing a relaxed time with precious people at the dining table.\nIn this BEAKER Seongsu pop-up, we present an exclusive fabric collection in collaboration with artist @surfingcoala. Under the theme 'Danish Lifestyle on Your Table', meet Edition Denmark's signature items along with the exclusive fabric collection for 3 weeks starting August 13.",
     "imageUrl": "/images/edition_denmark.png"
+  },
+  {
+    "id": "seongsu-laka-oliveyoung-2026",
+    "name": {
+      "en": "LAKA X Olive Young N Seongsu Pop-up"
+    },
+    "area": "seongsu",
+    "category": "beauty_fashion",
+    "period": {
+      "start": "2026-08-01",
+      "end": "2026-08-29"
+    },
+    "location": {
+      "lat": 37.5441832964048,
+      "lng": 127.05448273353,
+      "address": "13, Yeonmujang 7-gil, Seongdong-gu, Seoul"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "walkin_tip": "Operating Hours: Daily 10:00 - 22:00"
+    },
+    "description": "Experience LAKA's latest beauty trends at the Olive Young N Seongsu pop-up. Discover exclusive makeup collections in a vibrant setting.",
+    "imageUrl": "/images/laka-oliveyoung.png"
+  },
+  {
+    "id": "seongsu-shinramyun-bunsik-2026",
+    "name": {
+      "en": "Shin Ramyun Bunsik The Factory"
+    },
+    "area": "seongsu",
+    "category": "food",
+    "period": {
+      "start": "2026-06-16",
+      "end": "2026-11-30"
+    },
+    "location": {
+      "lat": 37.5424920218068,
+      "lng": 127.054305888145,
+      "address": "52, Seongsui-ro 4-gil, Seongdong-gu, Seoul"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "walkin_tip": "Operating Hours: Daily 11:00 - 20:00"
+    },
+    "description": "Taste the fiery excitement of Shin Ramyun reimagined as classic Korean street food (bunsik). A fun and spicy culinary experience awaits.",
+    "imageUrl": "/images/shinramyun-bunsik.png"
+  },
+  {
+    "id": "seongsu-toystory-2026",
+    "name": {
+      "en": "House of Toy Story Pop-up"
+    },
+    "area": "seongsu",
+    "category": "character",
+    "period": {
+      "start": "2026-05-23",
+      "end": "2026-08-30"
+    },
+    "location": {
+      "lat": 37.5441214519778,
+      "lng": 127.051758452454,
+      "address": "8-9, Yeonmujang 3-gil, Seongdong-gu, Seoul"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "walkin_tip": "Operating Hours: Daily 12:00 - 21:00"
+    },
+    "description": "Step into the magical world of Toy Story. Explore beautifully themed rooms and find your favorite character merchandise.",
+    "imageUrl": "/images/toystory.png"
+  },
+  {
+    "id": "seongsu-kpop-goods-2026",
+    "name": {
+      "en": "K-Pop Goods Store"
+    },
+    "area": "seongsu",
+    "category": "kpop",
+    "period": {
+      "start": "2026-06-01",
+      "end": "2027-12-31"
+    },
+    "location": {
+      "lat": 37.5412879783082,
+      "lng": 127.057247078418,
+      "address": "5, Seongsui-ro 16-gil, Seongdong-gu, Seoul"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "walkin_tip": "Operating Hours: Daily 09:00 - 18:00"
+    },
+    "description": "Your ultimate destination for K-Pop merchandise. Browse through a vast collection of exclusive albums, photocards, and fan items.",
+    "imageUrl": "/images/kpop-goods.png"
   }
 ]
