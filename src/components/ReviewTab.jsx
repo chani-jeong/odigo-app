@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { IconStarFilled, IconStar, IconMapPin, IconPencilPlus, IconPhoto, IconTrash, IconEdit, IconAlertTriangle, IconThumbUp } from '@tabler/icons-react';
-import { collection, query, orderBy, onSnapshot, doc, deleteDoc, addDoc, updateDoc, increment } from 'firebase/firestore';
+import { collection, query, orderBy, onSnapshot, doc, deleteDoc, addDoc, updateDoc, increment, arrayUnion, arrayRemove } from 'firebase/firestore';
 import { db } from '../firebase';
 import useAuthStore from '../store/useAuthStore';
 import ReviewComposer from './ReviewComposer';
@@ -62,10 +62,22 @@ export default function ReviewTab() {
   };
   
   const handleRecommend = async (review) => {
+    if (!user) return;
+    const likedBy = review.likedBy || [];
+    const hasLiked = likedBy.includes(user.uid);
     try {
-      await updateDoc(doc(db, 'reviews', review.id), {
-        likes: increment(1)
-      });
+      const reviewRef = doc(db, 'reviews', review.id);
+      if (hasLiked) {
+        await updateDoc(reviewRef, {
+          likes: increment(-1),
+          likedBy: arrayRemove(user.uid)
+        });
+      } else {
+        await updateDoc(reviewRef, {
+          likes: increment(1),
+          likedBy: arrayUnion(user.uid)
+        });
+      }
     } catch (e) {
       console.error('Failed to recommend:', e);
     }
@@ -220,7 +232,7 @@ export default function ReviewTab() {
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 {/* Small Report/Recommend buttons */}
                 <div style={{ display: 'flex', gap: '12px' }}>
-                  <button onClick={() => handleRecommend(review)} style={{ background: 'transparent', border: 'none', color: 'var(--ink-secondary)', display: 'flex', alignItems: 'center', gap: '4px', fontSize: '11px', cursor: 'pointer', padding: 0, opacity: 0.8 }}>
+                  <button onClick={() => handleRecommend(review)} style={{ background: 'transparent', border: 'none', color: (review.likedBy || []).includes(user?.uid) ? 'var(--brand-primary)' : 'var(--ink-secondary)', display: 'flex', alignItems: 'center', gap: '4px', fontSize: '11px', cursor: 'pointer', padding: 0, opacity: 0.8 }}>
                     <IconThumbUp size={12} /> {review.likes > 0 ? `추천 ${review.likes}` : '추천'}
                   </button>
                   <button onClick={() => handleReport(review)} style={{ background: 'transparent', border: 'none', color: 'var(--ink-secondary)', display: 'flex', alignItems: 'center', gap: '4px', fontSize: '11px', cursor: 'pointer', padding: 0, opacity: 0.8 }}>
