@@ -61,7 +61,10 @@ export default function SavedList() {
               {/* Info */}
               <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                 <div style={{ background: '#E8F5F4', color: '#2D9F98', fontSize: '11px', fontWeight: 'bold', marginBottom: '4px', fontFamily: 'var(--font-display)', padding: '2px 6px', borderRadius: '4px', alignSelf: 'flex-start' }}>
-                  {t(`categories.${popup.category}`)?.toUpperCase()}
+                  {(() => {
+                    const engMap = { beauty_fashion: "BEAUTY & FASHION", food: "FOOD", exhibition: "EXHIBITION", character: "CHARACTER", kpop: "K-POP", lifestyle: "LIFESTYLE" };
+                    return engMap[popup.category] || popup.category.toUpperCase();
+                  })()}
                 </div>
                 <h3 style={{ margin: '0 0 8px 0', fontSize: '16px', color: 'var(--ink)', display: '-webkit-box', WebkitLineClamp: 1, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
                   {selectedLanguage === 'ko' && popup.name.ko ? popup.name.ko : popup.name.en}
