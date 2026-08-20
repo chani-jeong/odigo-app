@@ -518,11 +518,11 @@
     },
     "dietary": {
       "halal": "unknown",
-      "vegan": "unknown"
+      "vegan": "partial"
     },
     "access": {
       "booking_required": "walkin_only",
-      "walkin_tip": "F&B Operating Hours: Daily 10:00 - 22:00 (last order 21:30). Card payment only, no cash accepted. Live performances every Fri/Sat/Sun. F&B menu items have limited quantities and may sell out early."
+      "walkin_tip": "F&B Operating Hours: Daily 10:00 - 22:00 (last order 21:30). Card payment only, no cash accepted. Live performances every Fri/Sat/Sun. F&B menu items have limited quantities and may sell out early. Delight Project (brand behind this pop-up) offers a protein/vegan product line, though vegan status of specific menu items sold here is not officially confirmed — check on-site."
     },
     "description": "A summer-themed F&B pop-up co-hosted by Olive Young and Olive Better, offering healthy gelato, snacks, and refreshing beverages.",
     "imageUrl": "/images/oliveyoung-summerrecipe.png"
