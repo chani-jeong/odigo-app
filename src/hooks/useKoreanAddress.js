@@ -27,40 +27,28 @@ export default function useKoreanAddress(lat, lng, fallbackAddress, selectedLang
       return;
     }
 
-    const controller = new AbortController();
-    abortRef.current = controller;
-
-    const KAKAO_REST_KEY = import.meta.env.VITE_KAKAO_REST_KEY || import.meta.env.VITE_KAKAO_MAP_KEY;
-
-    fetch(
-      `https://dapi.kakao.com/v2/local/geo/coord2address.json?x=${lng}&y=${lat}`,
-      {
-        headers: { Authorization: `KakaoAK ${KAKAO_REST_KEY}` },
-        signal: controller.signal,
-      }
-    )
-      .then(res => res.json())
-      .then(data => {
-        const doc = data?.documents?.[0];
-        if (doc) {
-          const korean =
-            doc.road_address?.address_name ||
-            doc.address?.address_name ||
-            fallbackAddress;
-          cache[key] = korean;
-          setAddress(korean);
-        } else {
-          setAddress(fallbackAddress);
-        }
-      })
-      .catch(err => {
-        if (err.name !== 'AbortError') {
-          console.error('useKoreanAddress error:', err);
-          setAddress(fallbackAddress);
-        }
+    // Use Kakao Maps SDK Geocoder if available
+    if (window.kakao && window.kakao.maps && window.kakao.maps.services) {
+      window.kakao.maps.load(() => {
+        const geocoder = new window.kakao.maps.services.Geocoder();
+        const coord = new window.kakao.maps.LatLng(lat, lng);
+        geocoder.coord2Address(coord.getLng(), coord.getLat(), (result, status) => {
+          if (status === window.kakao.maps.services.Status.OK) {
+            const doc = result[0];
+            const korean =
+              doc.road_address?.address_name ||
+              doc.address?.address_name ||
+              fallbackAddress;
+            cache[key] = korean;
+            setAddress(korean);
+          } else {
+            setAddress(fallbackAddress);
+          }
+        });
       });
-
-    return () => controller.abort();
+    } else {
+      setAddress(fallbackAddress);
+    }
   }, [lat, lng, selectedLanguage, fallbackAddress]);
 
   return address;
