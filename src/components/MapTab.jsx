@@ -243,9 +243,9 @@ export default function MapTab({ isVisible }) {
         }}
         style={{
           position: 'absolute',
-          bottom: '200px',
+          bottom: '265px',
           right: '16px',
-          zIndex: 5,
+          zIndex: 15,
           width: '48px',
           height: '48px',
           borderRadius: '50%',
