@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { IconX, IconStarFilled, IconStar, IconPencilPlus, IconPhoto, IconTrash, IconEdit, IconAlertTriangle, IconThumbUp } from '@tabler/icons-react';
-import { collection, query, where, orderBy, onSnapshot, doc, deleteDoc } from 'firebase/firestore';
+import { collection, query, where, orderBy, onSnapshot, doc, deleteDoc, addDoc, updateDoc, increment } from 'firebase/firestore';
 import { db } from '../firebase';
 import useTranslation from '../i18n/useTranslation';
 import useAuthStore from '../store/useAuthStore';
@@ -82,6 +82,36 @@ export default function ReviewListSheet({ isOpen, onClose, popupId }) {
   const handleEdit = (review) => {
     setEditingReview(review);
     setIsComposerOpen(true);
+  };
+  
+  const handleRecommend = async (review) => {
+    try {
+      await updateDoc(doc(db, 'reviews', review.id), {
+        likes: increment(1)
+      });
+    } catch (e) {
+      console.error('Failed to recommend:', e);
+    }
+  };
+
+  const handleReport = async (review) => {
+    const reason = window.prompt("신고 사유를 입력해주세요 (욕설, 스팸 등)");
+    if (!reason) return;
+    
+    try {
+      await addDoc(collection(db, 'reports'), {
+        reviewId: review.id,
+        reviewText: review.text,
+        authorUid: review.authorUid,
+        reason,
+        reportedBy: user ? user.uid : 'anonymous',
+        createdAt: new Date()
+      });
+      showToast("신고가 접수되었습니다.");
+    } catch (e) {
+      console.error('Failed to report:', e);
+      showToast("신고 접수에 실패했습니다.", "error");
+    }
   };
 
   const toggleTranslation = async (review) => {
@@ -248,10 +278,10 @@ export default function ReviewListSheet({ isOpen, onClose, popupId }) {
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                       {/* Small Report/Recommend buttons */}
                       <div style={{ display: 'flex', gap: '12px' }}>
-                        <button style={{ background: 'transparent', border: 'none', color: 'var(--ink-secondary)', display: 'flex', alignItems: 'center', gap: '4px', fontSize: '11px', cursor: 'pointer', padding: 0, opacity: 0.8 }}>
-                          <IconThumbUp size={12} /> 추천
+                        <button onClick={() => handleRecommend(review)} style={{ background: 'transparent', border: 'none', color: 'var(--ink-secondary)', display: 'flex', alignItems: 'center', gap: '4px', fontSize: '11px', cursor: 'pointer', padding: 0, opacity: 0.8 }}>
+                          <IconThumbUp size={12} /> {review.likes > 0 ? `추천 ${review.likes}` : '추천'}
                         </button>
-                        <button style={{ background: 'transparent', border: 'none', color: 'var(--ink-secondary)', display: 'flex', alignItems: 'center', gap: '4px', fontSize: '11px', cursor: 'pointer', padding: 0, opacity: 0.8 }}>
+                        <button onClick={() => handleReport(review)} style={{ background: 'transparent', border: 'none', color: 'var(--ink-secondary)', display: 'flex', alignItems: 'center', gap: '4px', fontSize: '11px', cursor: 'pointer', padding: 0, opacity: 0.8 }}>
                           <IconAlertTriangle size={12} /> 신고
                         </button>
                       </div>
