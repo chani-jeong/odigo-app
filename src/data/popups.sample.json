@@ -406,5 +406,155 @@
     },
     "description": "A special exhibition exploring the identity and provocative messages of the anonymous street artist Banksy.",
     "imageUrl": "/images/banksy-stillhere.png"
+  },
+  {
+    "id": "gangnam-pompompurin-bakery-2026",
+    "name": {
+      "en": "Pompompurin Bakery Cafe"
+    },
+    "area": "gangnam",
+    "category": "character",
+    "period": {
+      "start": "2026-07-28",
+      "end": "2026-08-31"
+    },
+    "location": {
+      "lat": 37.5039351769908,
+      "lng": 127.002413006799,
+      "address": "176, Sinbanpo-ro, Seocho-gu, Seoul (서울 서초구 신반포로 176, 신세계백화점 강남점 지하 1층 스위트파크)"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "walkin_tip": "Operating Hours: Mon-Thu 10:30-20:00, Fri-Sun 10:30-20:30. Waitlist available if seats are full; takeout and merchandise purchase are walk-in only. Closing date may be extended."
+    },
+    "description": "A delightful bakery cafe themed around Sanrio's beloved character Pompompurin. Enjoy adorable desserts and exclusive merchandise.",
+    "imageUrl": "/images/pompompurin-bakery.png"
+  },
+  {
+    "id": "seongsu-ojos-popup-2026",
+    "name": {
+      "en": "OJOS Pop-up"
+    },
+    "area": "seongsu",
+    "category": "beauty_fashion",
+    "period": {
+      "start": "2026-08-07",
+      "end": "2026-08-26"
+    },
+    "location": {
+      "lat": 37.5414453399304,
+      "lng": 127.055063927479,
+      "address": "13, Seongsui-ro 7ga-gil, Seongdong-gu, Seoul (서울 성동구 성수이로7가길 13)"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "walkin_tip": "Operating Hours: Daily 12:00 - 20:00. Week 1 special discounts through 08.16, limited-quantity gifts with purchase while supplies last."
+    },
+    "description": "OJOS brings its signature style to Seongsu, featuring an exclusive FILA collaboration collection and special discounts on seasonal archives.",
+    "imageUrl": "/images/ojos-popup.png"
+  },
+  {
+    "id": "seongsu-jomalone-seasalt-2026",
+    "name": {
+      "en": "Jo Malone London Pop-up"
+    },
+    "area": "seongsu",
+    "category": "beauty_fashion",
+    "period": {
+      "start": "2026-08-14",
+      "end": "2026-08-23"
+    },
+    "location": {
+      "lat": 37.5409591066928,
+      "lng": 127.059805746809,
+      "address": "96, Yeonmujang-gil, Seongdong-gu, Seoul (서울 성동구 연무장길 96)"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "walkin_tip": "Operating Hours: Daily 11:00 - 18:00. Reservation policy not officially confirmed as of data entry — verify walk-in vs. reservation status before visit."
+    },
+    "description": "Immerse yourself in Jo Malone London's new Sea Salt & Bergamot fragrance. Experience the refreshing coastal scent in a beautifully curated space.",
+    "imageUrl": "/images/jomalone-seasalt.png"
+  },
+  {
+    "id": "seongsu-oliveyoung-summerrecipe-2026",
+    "name": {
+      "en": "Olive Young Summer Recipe Pop-up"
+    },
+    "area": "seongsu",
+    "category": "food",
+    "period": {
+      "start": "2026-07-01",
+      "end": "2026-08-29"
+    },
+    "location": {
+      "lat": 37.5441832964048,
+      "lng": 127.05448273353,
+      "address": "13, Yeonmujang 7-gil, Seongdong-gu, Seoul (서울 성동구 연무장7길 13, 올리브영N 성수)"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "walkin_tip": "F&B Operating Hours: Daily 10:00 - 22:00 (last order 21:30). Card payment only, no cash accepted. Live performances every Fri/Sat/Sun. F&B menu items have limited quantities and may sell out early."
+    },
+    "description": "A summer-themed F&B pop-up co-hosted by Olive Young and Olive Better, offering healthy gelato, snacks, and refreshing beverages.",
+    "imageUrl": "/images/oliveyoung-summerrecipe.png"
+  },
+  {
+    "id": "seongsu-calvinklein-store-2026",
+    "name": {
+      "en": "Calvin Klein Seongsu"
+    },
+    "area": "seongsu",
+    "category": "beauty_fashion",
+    "period": {
+      "start": "2026-05-20",
+      "end": "2026-12-31"
+    },
+    "location": {
+      "lat": 37.5411456134121,
+      "lng": 127.055563950828,
+      "address": "67, Seongsui-ro, Seongdong-gu, Seoul (서울 성동구 성수이로 67)"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "walkin_tip": "Operating Hours: Daily 11:00 - 22:00. This is a long-running store (through 2027), likely walk-in retail — reservation policy not officially confirmed as of data entry, verify before visit."
+    },
+    "description": "Explore the Calvin Klein Seongsu store, showcasing unique artist collaboration collections and exclusive merchandise in a sleek, modern space.",
+    "imageUrl": "/images/ck-seongsu.png"
   }
 ]
