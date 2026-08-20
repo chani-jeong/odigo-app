@@ -5,6 +5,7 @@ import { getForeignerReadyStatus } from '../utils/foreignerReady';
 
 export default function DiscoverList({ activeFilterKey }) {
   const events = useDeckStore(state => state.events) || [];
+  const openPopup = useDeckStore(state => state.openPopup);
 
   const displayPopups = React.useMemo(() => {
     if (!events.length) return [];
@@ -43,7 +44,7 @@ export default function DiscoverList({ activeFilterKey }) {
         {displayPopups.map(popup => (
           <div 
             key={popup.id} 
-            onClick={() => setPopup(popup.id)}
+            onClick={() => openPopup(popup.id)}
             style={{ 
               background: 'var(--paper)', borderRadius: '12px', overflow: 'hidden',
               cursor: 'pointer', border: '1px solid var(--paper-border)',
