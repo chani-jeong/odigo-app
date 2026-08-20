@@ -22,12 +22,16 @@ const useDeckStore = create((set, get) => ({
   userInterests: [],
   userLocation: null,
   hasAgreedToLocation: false,
+  shareModalPopupId: null,
+  sharedPopupsSession: [],
 
   // Onboarding & Location Actions
   setAgreedToLocation: () => set({ hasAgreedToLocation: true }),
   setUserLocation: (lat, lng) => set({ userLocation: { lat, lng } }),
   setCountry: (country) => set({ userCountry: country }),
   setLanguage: (lang) => set({ selectedLanguage: lang }),
+  openShareModal: (popupId) => set({ shareModalPopupId: popupId }),
+  closeShareModal: () => set({ shareModalPopupId: null }),
   toggleInterest: (interest) => {
     const state = get();
     const isAdding = !state.userInterests.includes(interest);
@@ -102,6 +106,17 @@ const useDeckStore = create((set, get) => ({
         ? visitedPopups.filter((id) => id !== popupId)
         : [...visitedPopups, popupId],
     });
+
+    // Share Modal 로직: 처음 방문 처리할 때 (세션당 한 번만) 모달 띄우기
+    if (!isVisited) {
+      const { sharedPopupsSession, openShareModal } = get();
+      if (!sharedPopupsSession.includes(popupId)) {
+        set({ sharedPopupsSession: [...sharedPopupsSession, popupId] });
+        setTimeout(() => {
+          openShareModal(popupId);
+        }, 500); // UI transition delay (like a checkmark animation if any)
+      }
+    }
 
     // Firestore 백그라운드 업데이트
     if (userId) {

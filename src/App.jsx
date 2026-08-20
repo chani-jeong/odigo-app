@@ -14,6 +14,7 @@ import ProfileModal from './components/ProfileModal';
 import Toast from './components/Toast';
 import SearchOverlay from './components/SearchOverlay';
 import HomeTab from './components/HomeTab';
+import ShareModal from './components/ShareModal';
 import useDeckStore from './store/useDeckStore';
 import useAuthStore from './store/useAuthStore';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -259,6 +260,7 @@ function App() {
       {/* Global Modals */}
       <LoginModal />
       <ProfileModal isOpen={isProfileOpen} onClose={() => setIsProfileOpen(false)} />
+      <ShareModal />
       <Toast />
       <SearchOverlay isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
     </div>

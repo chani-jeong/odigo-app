@@ -13,6 +13,7 @@
     "@tabler/icons-react": "^3.46.0",
     "firebase": "^12.18.0",
     "framer-motion": "^13.1.0",
+    "html2canvas": "^1.4.1",
     "i18next": "^26.3.6",
     "leaflet": "^1.9.4",
     "react": "^19.2.8",
