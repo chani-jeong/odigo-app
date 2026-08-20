@@ -84,20 +84,25 @@ export default function Onboarding() {
         if (!mapRef.current) return;
         const options = {
           center: new window.kakao.maps.LatLng(37.5665, 126.9749),
-          level: 4,
-          draggable: false,
-          scrollwheel: false,
+          level: 12,
+          scrollwheel: true,
           disableDoubleClickZoom: true
         };
         const mapInstance = new window.kakao.maps.Map(mapRef.current, options);
-        mapInstance.setZoomable(false);
-        mapInstance.setDraggable(false);
+        mapInstance.setZoomable(true);
 
-        if (events && events.length > 0) {
-          events.forEach((popup) => {
+        const mapData = (events && events.length > 0) ? events : popups;
+
+        if (mapData && mapData.length > 0) {
+          const bounds = new window.kakao.maps.LatLngBounds();
+          let hasBounds = false;
+
+          mapData.forEach((popup) => {
             if (!popup.location || !popup.location.lat) return;
 
             const position = new window.kakao.maps.LatLng(popup.location.lat, popup.location.lng);
+            bounds.extend(position);
+            hasBounds = true;
             
             const content = document.createElement('div');
             content.style.display = 'flex';
@@ -124,6 +129,10 @@ export default function Onboarding() {
             customOverlay.setMap(mapInstance);
             overlays.push(customOverlay);
           });
+          
+          if (hasBounds) {
+            mapInstance.setBounds(bounds);
+          }
         }
       });
     };
@@ -191,7 +200,7 @@ export default function Onboarding() {
                 ref={mapRef}
                 style={{ 
                   width: '100%', height: '100%', position: 'absolute', inset: 0, 
-                  filter: 'saturate(1.2) contrast(1.1)', pointerEvents: 'none' 
+                  filter: 'saturate(1.2) contrast(1.1)'
                 }} 
               />
               <div style={{ position: 'absolute', inset: 0, background: 'var(--brand-tint)', opacity: 0.2, pointerEvents: 'none' }} />
