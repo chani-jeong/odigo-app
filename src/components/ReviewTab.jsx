@@ -3,6 +3,7 @@ import { IconStarFilled, IconStar, IconMapPin, IconPencilPlus, IconPhoto, IconTr
 import { collection, query, orderBy, onSnapshot, doc, deleteDoc, addDoc, updateDoc, increment, arrayUnion, arrayRemove } from 'firebase/firestore';
 import { db } from '../firebase';
 import useAuthStore from '../store/useAuthStore';
+import useDeckStore from '../store/useDeckStore';
 import ReviewComposer from './ReviewComposer';
 import useTranslation from '../i18n/useTranslation';
 import useToastStore from '../store/useToastStore';
@@ -10,6 +11,7 @@ import useToastStore from '../store/useToastStore';
 export default function ReviewTab() {
   const { t, selectedLanguage } = useTranslation();
   const { user, isAnonymous, openAuthModal } = useAuthStore();
+  const events = useDeckStore(state => state.events);
   const [isComposerOpen, setIsComposerOpen] = useState(false);
   const [editingReview, setEditingReview] = useState(null);
   const [reviews, setReviews] = useState([]);
@@ -200,11 +202,21 @@ export default function ReviewTab() {
                 )}
               </div>
               
-              {/* Target Popup Info Box (we don't have popupName inside review doc easily, so let's fallback to popupId for now, or assume it's just general view) */}
+              {/* Target Popup Info Box */}
               <div style={{ 
                 background: 'rgba(89, 203, 183, 0.05)', borderRadius: '12px', padding: '12px 16px', marginBottom: '12px',
                 borderLeft: '4px solid var(--brand-tint)'
               }}>
+                {(() => {
+                  const popup = events.find(e => e.id === review.popupId);
+                  const popupName = popup ? (selectedLanguage === 'ko' && popup.name.ko ? popup.name.ko : popup.name.en) : '알 수 없는 팝업 / Unknown Popup';
+                  return (
+                    <div style={{ fontSize: '13px', fontWeight: 'bold', color: 'var(--ink)', marginBottom: '6px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                      <IconMapPin size={14} style={{ color: 'var(--brand-primary)' }} />
+                      {popupName}
+                    </div>
+                  );
+                })()}
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                   <div style={{ display: 'flex', gap: '2px' }}>
                     {[1, 2, 3, 4, 5].map(i => (
