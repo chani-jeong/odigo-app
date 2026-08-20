@@ -313,5 +313,98 @@
     },
     "description": "Your ultimate destination for K-Pop merchandise. Browse through a vast collection of exclusive albums, photocards, and fan items.",
     "imageUrl": "/images/kpop-goods.png"
+  },
+  {
+    "id": "seongsu-fuggler-finca-2026",
+    "name": {
+      "en": "Fuggler X Finca Pop-up"
+    },
+    "area": "seongsu",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-08-10",
+      "end": "2026-08-23"
+    },
+    "location": {
+      "lat": 37.5423763558831,
+      "lng": 127.055803844555,
+      "address": "57, Yeonmujang-gil, Seongdong-gu, Seoul"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "walkin_tip": "Operating Hours: Daily 11:00 - 22:00"
+    },
+    "description": "A unique DIY bedding customization pop-up where you can match quirky Fuggler character dolls with your bedding.",
+    "imageUrl": "/images/fuggler-finca.png"
+  },
+  {
+    "id": "seongsu-cortis-phonedown-2026",
+    "name": {
+      "en": "CORTIS TOUR <PUT YOUR PHONE DOWN> BIRTHDAY PARTY POP-UP"
+    },
+    "area": "seongsu",
+    "category": "kpop",
+    "period": {
+      "start": "2026-08-14",
+      "end": "2026-08-20"
+    },
+    "location": {
+      "lat": 37.542615837437,
+      "lng": 127.05307667347,
+      "address": "41, Seongsui-ro 7-gil, Seongdong-gu, Seoul"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "booking_required",
+      "walkin_tip": "MERCH SHOP requires advance reservation via Weverse app. DISPLAY ZONE is walk-in accessible (wait times may apply). Operating Hours: Sun-Thu 11:00-20:00, Fri-Sat 11:00-21:00"
+    },
+    "description": "Celebrate HYBE's boy group CORTIS's birthday party pop-up. Features a pre-booked merch shop and a walk-in friendly display zone.",
+    "imageUrl": "/images/cortis-phonedown.png"
+  },
+  {
+    "id": "yeouido-banksy-stillhere-2026",
+    "name": {
+      "en": "BANKSY: Still Here"
+    },
+    "area": "yeouido",
+    "category": "exhibition",
+    "period": {
+      "start": "2026-07-22",
+      "end": "2026-11-03"
+    },
+    "location": {
+      "lat": 37.5252014942155,
+      "lng": 126.929108448093,
+      "address": "108, Yeoui-daero, Yeongdeungpo-gu, Seoul"
+    },
+    "price": {
+      "free": false,
+      "adult": 23000,
+      "youth": 18000,
+      "currency": "KRW"
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "ticket_required",
+      "walkin_tip": "Operating Hours: Mon-Thu 10:30-20:00 (last entry 19:00), Fri-Sun 10:30-20:30 (last entry 19:30)"
+    },
+    "description": "A special exhibition exploring the identity and provocative messages of the anonymous street artist Banksy.",
+    "imageUrl": "/images/banksy-stillhere.png"
   }
 ]
