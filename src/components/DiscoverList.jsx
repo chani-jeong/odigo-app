@@ -49,9 +49,9 @@ const DiscoverListItem = ({ popup, selectedLanguage, getDDay, openPopup }) => {
         <div style={{ color: 'var(--ink)', fontSize: '14px', fontWeight: 'bold', lineHeight: 1.3, marginBottom: '8px', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
           {popup.name[selectedLanguage] || popup.name.en}
         </div>
-        <div style={{ display: 'flex', alignItems: 'flex-start', gap: '4px', color: 'var(--ink-secondary)', fontSize: '11px' }}>
-          <IconMapPin size={12} style={{ flexShrink: 0, marginTop: '2px' }} />
-          <span style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+        <div style={{ display: 'flex', alignItems: 'flex-start', gap: '4px', color: 'var(--ink-secondary)', fontSize: '11px', textAlign: 'left' }}>
+          <IconMapPin size={12} style={{ flexShrink: 0, marginTop: '3px' }} />
+          <span style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden', lineHeight: 1.4 }}>
             {address}
           </span>
         </div>
