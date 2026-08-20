@@ -52,6 +52,7 @@ export default function Onboarding() {
   const userCountry = useDeckStore(state => state.userCountry);
   const selectedLanguage = useDeckStore(state => state.selectedLanguage);
   const setLanguage = useDeckStore(state => state.setLanguage);
+  const events = useDeckStore(state => state.events);
 
   const [step, setStep] = useState(1);
   const [searchQuery, setSearchQuery] = useState('');
@@ -67,31 +68,78 @@ export default function Onboarding() {
   }, [step]);
 
   useEffect(() => {
-    if (step !== 1 || !mapRef.current) return;
-    if (!window.kakao || !window.kakao.maps) return;
+    if (step !== 1) return;
 
-    let mapInstance = null;
-    window.kakao.maps.load(() => {
-      if (!mapRef.current) return;
-      const options = {
-        center: new window.kakao.maps.LatLng(37.5665, 126.9749),
-        level: 4,
-        draggable: false,
-        scrollwheel: false,
-        disableDoubleClickZoom: true
-      };
-      mapInstance = new window.kakao.maps.Map(mapRef.current, options);
-      mapInstance.setZoomable(false);
-      mapInstance.setDraggable(false);
-    });
+    let initTimer = null;
+    let overlays = [];
+
+    const initMap = () => {
+      // DOM 마운트가 완전히 끝나지 않았거나 카카오맵 스크립트가 아직 로드되지 않은 경우 재시도
+      if (!mapRef.current || !window.kakao || !window.kakao.maps) {
+        initTimer = setTimeout(initMap, 100);
+        return;
+      }
+
+      window.kakao.maps.load(() => {
+        if (!mapRef.current) return;
+        const options = {
+          center: new window.kakao.maps.LatLng(37.5665, 126.9749),
+          level: 4,
+          draggable: false,
+          scrollwheel: false,
+          disableDoubleClickZoom: true
+        };
+        const mapInstance = new window.kakao.maps.Map(mapRef.current, options);
+        mapInstance.setZoomable(false);
+        mapInstance.setDraggable(false);
+
+        if (events && events.length > 0) {
+          events.forEach((popup) => {
+            if (!popup.location || !popup.location.lat) return;
+
+            const position = new window.kakao.maps.LatLng(popup.location.lat, popup.location.lng);
+            
+            const content = document.createElement('div');
+            content.style.display = 'flex';
+            content.style.flexDirection = 'column';
+            content.style.alignItems = 'center';
+            
+            // MapTab.jsx 비활성 상태보다 약간 작은 고정 스타일
+            content.innerHTML = `
+              <div style="background: var(--paper); color: var(--text-secondary); border: 1px solid var(--paper-border); border-radius: 50%; padding: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); display: flex; justify-content: center; align-items: center;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"></path>
+                  <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z"></path>
+                </svg>
+              </div>
+              <div style="width: 4px; height: 4px; border-radius: 50%; background: rgba(0,0,0,0.1); margin-top: 3px;"></div>
+            `;
+
+            const customOverlay = new window.kakao.maps.CustomOverlay({
+              position: position,
+              content: content,
+              yAnchor: 1
+            });
+
+            customOverlay.setMap(mapInstance);
+            overlays.push(customOverlay);
+          });
+        }
+      });
+    };
+
+    // React의 DOM 업데이트 이후 다음 tick에 안전하게 실행되도록 setTimeout(0) 적용
+    initTimer = setTimeout(initMap, 0);
 
     return () => {
-      // 컴포넌트 언마운트 또는 step 변경 시 정리(Kakao 지도는 명시적 destroy API가 없으므로 DOM 클리어로 대체)
+      if (initTimer) clearTimeout(initTimer);
+      overlays.forEach(overlay => overlay.setMap(null));
+      // 컴포넌트 언마운트 또는 step 변경 시 정리
       if (mapRef.current) {
         mapRef.current.innerHTML = '';
       }
     };
-  }, [step]);
+  }, [step, events]);
 
   const handleNext = () => {
     if (step < 3) setStep(step + 1);
