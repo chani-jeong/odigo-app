@@ -170,7 +170,7 @@ export default function Onboarding() {
       <div style={{ padding: step === 1 ? '16px 20px' : '32px 20px 16px', textAlign: 'center' }}>
         <h1 style={{ margin: '0 0 8px', fontSize: '36px', color: 'var(--brand-primary)', fontWeight: 'bold' }}>Odigo</h1>
         
-        {step === 1 && <p style={{ margin: 0, fontSize: 'var(--text-subtitle)', color: 'var(--text-primary)', fontWeight: '600' }}>{t('onboarding.title_step1')}</p>}
+        {step === 1 && <p style={{ margin: 0, fontSize: 'var(--text-subtitle)', color: 'var(--text-secondary)', fontWeight: '600' }}>{t('onboarding.title_step1')}</p>}
         {step === 2 && (
           <>
             <h2 style={{ margin: '0 0 4px', fontSize: 'var(--text-title)', color: 'var(--text-primary)', fontWeight: '700' }}>{t('onboarding.title_step2')}</h2>
