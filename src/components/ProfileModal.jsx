@@ -1,11 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   IconX, IconBrandGoogle, IconBrandApple, IconMessageCircle,
-  IconBookmark, IconMapPin, IconLogout, IconUser
+  IconBookmark, IconMapPin, IconLogout, IconUser, IconChevronDown
 } from '@tabler/icons-react';
 import useAuthStore from '../store/useAuthStore';
 import useDeckStore from '../store/useDeckStore';
+import { db } from '../firebase';
+import { doc, setDoc, serverTimestamp } from 'firebase/firestore';
+import { auth } from '../firebase';
+
+const LANGUAGES = [
+  { id: 'en', label: 'English' },
+  { id: 'ko', label: '한국어' },
+  { id: 'ja', label: '日本語' },
+  { id: 'zh', label: '中文' },
+  { id: 'vi', label: 'Tiếng Việt' },
+  { id: 'es', label: 'Español' },
+  { id: 'fr', label: 'Français' },
+];
 
 export default function ProfileModal({ isOpen, onClose }) {
   const { user, isAnonymous, loginWithGoogle, loginWithApple, loginWithWeChat, logout, authLoading } = useAuthStore();
@@ -13,6 +26,26 @@ export default function ProfileModal({ isOpen, onClose }) {
   const visitedPopups = useDeckStore(state => state.visitedPopups) || [];
   const userCountry = useDeckStore(state => state.userCountry);
   const selectedLanguage = useDeckStore(state => state.selectedLanguage);
+  const setCountry = useDeckStore(state => state.setCountry);
+  const setLanguage = useDeckStore(state => state.setLanguage);
+
+  const [editingLang, setEditingLang] = useState(false);
+
+  const saveToFirestore = async (patch) => {
+    const currentUser = auth.currentUser;
+    if (currentUser && !currentUser.isAnonymous) {
+      await setDoc(doc(db, 'users', currentUser.uid), {
+        ...patch,
+        updatedAt: serverTimestamp(),
+      }, { merge: true }).catch(err => console.error('ProfileModal Firestore error:', err));
+    }
+  };
+
+  const handleLanguageChange = async (langId) => {
+    setLanguage(langId);
+    setEditingLang(false);
+    await saveToFirestore({ selectedLanguage: langId });
+  };
 
   const handleLogout = async () => {
     await logout();
@@ -154,7 +187,7 @@ export default function ProfileModal({ isOpen, onClose }) {
                     display: 'flex', alignItems: 'center', justifyContent: 'center'
                   }}>
                     {user?.photoURL
-                      ? <img src={user.photoURL} alt="avatar" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                      ? <img src={user.photoURL} alt="avatar" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                       : <IconUser size={36} style={{ color: 'var(--brand-primary)' }} />
                     }
                   </div>
@@ -170,7 +203,7 @@ export default function ProfileModal({ isOpen, onClose }) {
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '16px' }}>
                   {[
                     { icon: IconBookmark, label: 'Saved', value: savedPopups.length, color: 'var(--brand-primary)' },
-                    { icon: IconMapPin,   label: 'Visited', value: visitedPopups.length, color: '#FF9F45' },
+                    { icon: IconMapPin, label: 'Visited', value: visitedPopups.length, color: '#FF9F45' },
                   ].map(({ icon: Icon, label, value, color }) => (
                     <div key={label} style={{
                       background: 'var(--bg-main)', borderRadius: '16px',
@@ -184,24 +217,62 @@ export default function ProfileModal({ isOpen, onClose }) {
                   ))}
                 </div>
 
-                {/* Country / Language */}
+                {/* Country / Language — Language is editable */}
                 <div style={{
                   background: 'var(--bg-main)', borderRadius: '16px',
                   padding: '4px 16px', marginBottom: '24px',
                   border: '1px solid var(--paper-border)'
                 }}>
-                  {[
-                    { label: 'Country', value: userCountry ? userCountry.toUpperCase() : '—' },
-                    { label: 'Language', value: selectedLanguage ? selectedLanguage.toUpperCase() : '—' },
-                  ].map(({ label, value }, i, arr) => (
-                    <div key={label}>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '14px 0' }}>
-                        <span style={{ fontSize: '14px', color: 'var(--ink-secondary)' }}>{label}</span>
-                        <span style={{ fontSize: '14px', fontWeight: '600', color: 'var(--ink)' }}>{value}</span>
+                  {/* Country row (display only) */}
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '14px 0' }}>
+                    <span style={{ fontSize: '14px', color: 'var(--ink-secondary)' }}>Country</span>
+                    <span style={{ fontSize: '14px', fontWeight: '600', color: 'var(--ink)' }}>
+                      {userCountry ? userCountry.toUpperCase() : '—'}
+                    </span>
+                  </div>
+
+                  <div style={{ height: '1px', background: 'var(--paper-border)' }} />
+
+                  {/* Language row (editable) */}
+                  <div style={{ padding: '14px 0' }}>
+                    <button
+                      onClick={() => setEditingLang(v => !v)}
+                      style={{
+                        width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                        background: 'transparent', border: 'none', cursor: 'pointer', padding: 0
+                      }}
+                    >
+                      <span style={{ fontSize: '14px', color: 'var(--ink-secondary)' }}>Language</span>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                        <span style={{ fontSize: '14px', fontWeight: '600', color: 'var(--ink)' }}>
+                          {LANGUAGES.find(l => l.id === selectedLanguage)?.label || selectedLanguage.toUpperCase()}
+                        </span>
+                        <IconChevronDown size={16} style={{ color: 'var(--ink-secondary)', transform: editingLang ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }} />
                       </div>
-                      {i < arr.length - 1 && <div style={{ height: '1px', background: 'var(--paper-border)' }} />}
-                    </div>
-                  ))}
+                    </button>
+
+                    {editingLang && (
+                      <div style={{ marginTop: '10px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                        {LANGUAGES.map(lang => (
+                          <button
+                            key={lang.id}
+                            onClick={() => handleLanguageChange(lang.id)}
+                            style={{
+                              display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                              padding: '10px 12px', borderRadius: '10px', border: 'none',
+                              background: lang.id === selectedLanguage ? 'var(--brand-tint)' : 'transparent',
+                              cursor: 'pointer', width: '100%', textAlign: 'left'
+                            }}
+                          >
+                            <span style={{ fontSize: '14px', color: 'var(--ink)', fontWeight: lang.id === selectedLanguage ? '600' : '400' }}>{lang.label}</span>
+                            {lang.id === selectedLanguage && (
+                              <span style={{ color: 'var(--brand-primary)', fontSize: '13px', fontWeight: 'bold' }}>✓</span>
+                            )}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 </div>
 
                 {/* Logout */}

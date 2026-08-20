@@ -3,9 +3,15 @@ import { IconX, IconPhoto, IconMapPin, IconCalendar, IconShieldCheck, IconHeart,
 import useDeckStore from '../store/useDeckStore';
 import { getForeignerReadyStatus } from '../utils/foreignerReady';
 import useTranslation from '../i18n/useTranslation';
+import useKoreanAddress from '../hooks/useKoreanAddress';
+
+function KoreanAddressSpan({ lat, lng, fallback, selectedLanguage }) {
+  const address = useKoreanAddress(lat, lng, fallback, selectedLanguage);
+  return <span style={{ fontSize: '15px' }}>{address}</span>;
+}
 
 export default function PopupDetail() {
-  const { t } = useTranslation();
+  const { t, selectedLanguage } = useTranslation();
   const selectedPopup = useDeckStore(state => state.selectedPopup);
   const closePopup = useDeckStore(state => state.closePopup);
   const events = useDeckStore(state => state.events);
@@ -20,6 +26,14 @@ export default function PopupDetail() {
   if (!popup) return null;
   const isVisited = visitedPopups.includes(popup.id);
   const isSaved = savedPopups.includes(popup.id);
+
+  // 언어별 이름 표시 (ko 우선, fallback → en)
+  const displayName = (selectedLanguage === 'ko' && popup.name?.ko)
+    ? popup.name.ko
+    : popup.name.en;
+
+  // URL 유무 확인
+  const hasUrl = !!popup.access?.url;
 
   const status = getForeignerReadyStatus({
     en: popup.access?.checks?.en,
@@ -128,11 +142,11 @@ export default function PopupDetail() {
         
         {/* Info area */}
         <div style={{ padding: '24px', textAlign: 'left', background: 'var(--paper)' }}>
-          <h2 style={{ margin: '0 0 12px', fontSize: '24px', color: 'var(--ink)', fontWeight: 'bold', fontFamily: 'var(--font-display)' }}>{popup.name.en}</h2>
+          <h2 style={{ margin: '0 0 12px', fontSize: '24px', color: 'var(--ink)', fontWeight: 'bold', fontFamily: 'var(--font-display)' }}>{displayName}</h2>
           
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px', color: 'var(--ink-secondary)' }}>
             <IconMapPin size={18} />
-            <span style={{ fontSize: '15px' }}>{popup.location.address}</span>
+            <KoreanAddressSpan lat={popup.location?.lat} lng={popup.location?.lng} fallback={popup.location?.address} selectedLanguage={selectedLanguage} />
           </div>
           
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '20px', color: 'var(--ink-secondary)' }}>
@@ -155,23 +169,25 @@ export default function PopupDetail() {
             </div>
           )}
           
-          <button
-            onClick={status === 'blocked' ? null : openUrl}
-            style={{
-              width: '100%',
-              height: '52px',
-              background: status === 'blocked' ? '#D1D5DB' : 'var(--brand-primary)',
-              color: status === 'blocked' ? '#9CA3AF' : '#fff',
-              border: 'none',
-              borderRadius: '26px',
-              fontSize: '16px',
-              fontWeight: '600',
-              cursor: status === 'blocked' ? 'not-allowed' : 'pointer',
-              marginBottom: '24px',
-            }}
-          >
-            {status === 'blocked' ? t('card.walkin_guide') : t('card.book_now')}
-          </button>
+          {hasUrl && (
+            <button
+              onClick={openUrl}
+              style={{
+                width: '100%',
+                height: '52px',
+                background: 'var(--brand-primary)',
+                color: '#fff',
+                border: 'none',
+                borderRadius: '26px',
+                fontSize: '16px',
+                fontWeight: '600',
+                cursor: 'pointer',
+                marginBottom: '24px',
+              }}
+            >
+              {t('card.view_details')}
+            </button>
+          )}
           
           <div style={{ display: 'flex', justifyContent: 'space-around', borderTop: '1px solid rgba(0,0,0,0.06)', paddingTop: '24px', paddingBottom: '24px' }}>
             <button

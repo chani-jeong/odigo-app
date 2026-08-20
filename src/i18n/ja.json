@@ -28,7 +28,7 @@
     "save": "保存",
     "map": "マップ",
     "review": "レビュー",
-    "book_now": "予約する",
+    "view_details": "詳細を見る",
     "walkin_guide": "ウォークインガイド",
     "foreigner_ready": "外国人対応",
     "halal_friendly": "ハラールフレンドリー",
@@ -73,3 +73,4 @@
     "title_map": "近くのポップアップ"
   }
 }
+

@@ -4,6 +4,13 @@ import { IconPhoto, IconMapPin, IconCalendarEvent, IconShieldCheck, IconX, IconH
 import useDeckStore from '../store/useDeckStore';
 import popups from '../data/popups.sample.json';
 import { getForeignerReadyStatus } from '../utils/foreignerReady';
+import useTranslation from '../i18n/useTranslation';
+import useKoreanAddress from '../hooks/useKoreanAddress';
+
+function KoreanAddressSpan({ lat, lng, fallback, selectedLanguage }) {
+  const address = useKoreanAddress(lat, lng, fallback, selectedLanguage);
+  return <span style={{ lineHeight: 1.4 }}>{address}</span>;
+}
 
 export default function SwipeDeck() {
   const events = useDeckStore(state => state.events);
@@ -16,6 +23,7 @@ export default function SwipeDeck() {
   const toggleSave = useDeckStore(state => state.toggleSave);
   const savedPopups = useDeckStore(state => state.savedPopups);
   const setEvents = useDeckStore(state => state.setEvents);
+  const { selectedLanguage } = useTranslation();
 
   useEffect(() => {
     setEvents(popups);
@@ -100,7 +108,9 @@ export default function SwipeDeck() {
             )}
           </div>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px' }}>
-            <h2 style={{ margin: 0, fontSize: '24px', color: 'var(--ink)', fontFamily: 'var(--font-display)', fontWeight: 'bold' }}>{popup.name.en}</h2>
+            <h2 style={{ margin: 0, fontSize: '24px', color: 'var(--ink)', fontFamily: 'var(--font-display)', fontWeight: 'bold' }}>
+            {(selectedLanguage === 'ko' && popup.name?.ko) ? popup.name.ko : popup.name.en}
+          </h2>
             <div style={{ background: 'transparent', color: 'var(--text-secondary)', padding: '4px 12px', borderRadius: '16px', fontSize: '13px', fontWeight: 'bold', fontFamily: 'var(--font-mono)' }}>
               {Math.round(popup.distance || 0)}km
             </div>
@@ -109,7 +119,7 @@ export default function SwipeDeck() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', color: 'var(--ink-secondary)', fontSize: '15px' }}>
             <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
               <IconMapPin size={22} style={{ flexShrink: 0, marginTop: '2px' }} />
-              <span style={{ lineHeight: 1.4 }}>{popup.location.address}</span>
+              <KoreanAddressSpan lat={popup.location?.lat} lng={popup.location?.lng} fallback={popup.location?.address} selectedLanguage={selectedLanguage} />
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <IconCalendarEvent size={20} style={{ flexShrink: 0 }} />

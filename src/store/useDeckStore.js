@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { db, auth, analytics } from '../firebase';
-import { doc, getDoc, setDoc, updateDoc, arrayUnion, arrayRemove } from 'firebase/firestore';
+import { doc, getDoc, setDoc, updateDoc, arrayUnion, arrayRemove, serverTimestamp } from 'firebase/firestore';
 import { signInAnonymously, onAuthStateChanged } from 'firebase/auth';
 import { logEvent } from 'firebase/analytics';
 
@@ -46,7 +46,21 @@ const useDeckStore = create((set, get) => ({
         : state.userInterests.filter((i) => i !== interest),
     });
   },
-  completeOnboarding: () => set({ hasCompletedOnboarding: true }),
+  completeOnboarding: () => {
+    const { userCountry, selectedLanguage } = get();
+    set({ hasCompletedOnboarding: true });
+    // 로그인된(비익명) 사용자면 Firestore에도 저장
+    const currentUser = auth.currentUser;
+    if (currentUser && !currentUser.isAnonymous) {
+      const userRef = doc(db, 'users', currentUser.uid);
+      setDoc(userRef, {
+        hasCompletedOnboarding: true,
+        userCountry,
+        selectedLanguage,
+        updatedAt: serverTimestamp(),
+      }, { merge: true }).catch(err => console.error('completeOnboarding Firestore error:', err));
+    }
+  },
 
   // Actions
   toggleSave: (popupId) => {
@@ -189,12 +203,20 @@ export default useDeckStore;
         const docSnap = await getDoc(userRef);
         if (docSnap.exists()) {
           const data = docSnap.data();
-          useDeckStore.setState({ 
-            savedPopups: data.savedPopups || [], 
-            visitedPopups: data.visitedPopups || [] 
-          });
+          const update = {
+            savedPopups: data.savedPopups || [],
+            visitedPopups: data.visitedPopups || [],
+          };
+          // 로그인된 사용자의 온보딩 복원
+          if (!user.isAnonymous) {
+            if (data.hasCompletedOnboarding) {
+              update.hasCompletedOnboarding = true;
+            }
+            if (data.userCountry) update.userCountry = data.userCountry;
+            if (data.selectedLanguage) update.selectedLanguage = data.selectedLanguage;
+          }
+          useDeckStore.setState(update);
         } else {
-          // 문서가 없으면 빈 배열로 새로 생성
           await setDoc(userRef, { savedPopups: [], visitedPopups: [] });
         }
       } catch (error) {

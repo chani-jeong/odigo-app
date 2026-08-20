@@ -28,7 +28,7 @@
     "save": "收藏",
     "map": "地图",
     "review": "评价",
-    "book_now": "立即预订",
+    "view_details": "查看详情",
     "walkin_guide": "现场指南",
     "foreigner_ready": "Foreigner-Ready",
     "halal_friendly": "清真友好",
@@ -73,3 +73,4 @@
     "title_map": "附近的快闪店"
   }
 }
+

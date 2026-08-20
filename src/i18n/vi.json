@@ -28,7 +28,7 @@
     "save": "Lưu",
     "map": "Bản đồ",
     "review": "Đánh giá",
-    "book_now": "Đặt ngay",
+    "view_details": "Xem chi tiết",
     "walkin_guide": "Hướng dẫn Walk-in",
     "foreigner_ready": "Foreigner-Ready",
     "halal_friendly": "Thân thiện Halal",
@@ -73,3 +73,4 @@
     "title_map": "Pop-up gần tôi"
   }
 }
+
