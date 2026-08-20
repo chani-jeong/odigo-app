@@ -243,7 +243,7 @@ export default function MapTab({ isVisible }) {
         }}
         style={{
           position: 'absolute',
-          bottom: '265px',
+          bottom: '240px',
           right: '16px',
           zIndex: 15,
           width: '48px',
