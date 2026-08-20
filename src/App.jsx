@@ -10,10 +10,12 @@ import ReviewTab from './components/ReviewTab';
 import MapTab from './components/MapTab';
 import Onboarding from './components/Onboarding';
 import LoginModal from './components/LoginModal';
+import ProfileModal from './components/ProfileModal';
 import Toast from './components/Toast';
 import SearchOverlay from './components/SearchOverlay';
 import HomeTab from './components/HomeTab';
 import useDeckStore from './store/useDeckStore';
+import useAuthStore from './store/useAuthStore';
 import { motion, AnimatePresence } from 'framer-motion';
 import useTranslation from './i18n/useTranslation';
 
@@ -31,6 +33,9 @@ function App() {
   const [activeTab, setActiveTab] = useState('discover');
   const [isSwipeMode, setIsSwipeMode] = useState(true);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
+
+  const { user, isAnonymous } = useAuthStore();
 
   React.useEffect(() => {
     if (hasAgreedToLocation && 'geolocation' in navigator) {
@@ -127,12 +132,19 @@ function App() {
               onClick={() => setIsProfileOpen(true)}
               style={{ 
                 width: '32px', height: '32px', borderRadius: '50%', 
-                background: 'linear-gradient(135deg, var(--brand-primary), var(--brand-secondary))', 
-                border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                background: user?.photoURL
+                  ? 'transparent'
+                  : 'linear-gradient(135deg, var(--brand-primary), var(--brand-secondary))', 
+                border: user?.photoURL ? '2px solid var(--brand-primary)' : 'none',
+                cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                overflow: 'hidden',
                 color: '#000', fontWeight: 'bold', fontSize: '14px', boxShadow: '0 2px 8px rgba(89,203,183,0.3)'
               }}
             >
-              K
+              {user?.photoURL
+                ? <img src={user.photoURL} alt="avatar" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                : (isAnonymous ? 'G' : (user?.displayName?.[0]?.toUpperCase() || 'U'))
+              }
             </button>
           </div>
         </div>
@@ -246,6 +258,7 @@ function App() {
       
       {/* Global Modals */}
       <LoginModal />
+      <ProfileModal isOpen={isProfileOpen} onClose={() => setIsProfileOpen(false)} />
       <Toast />
       <SearchOverlay isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
     </div>
