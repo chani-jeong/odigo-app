@@ -2,8 +2,10 @@ import React from 'react';
 import { IconMapPin, IconBookmark } from '@tabler/icons-react';
 import useDeckStore from '../store/useDeckStore';
 import { getForeignerReadyStatus } from '../utils/foreignerReady';
+import useTranslation from '../i18n/useTranslation';
 
 export default function DiscoverList({ activeFilterKey }) {
+  const { selectedLanguage } = useTranslation();
   const events = useDeckStore(state => state.events) || [];
   const openPopup = useDeckStore(state => state.openPopup);
 
@@ -29,12 +31,27 @@ export default function DiscoverList({ activeFilterKey }) {
     return activeFilterKey ? events.filter(p => p.category === activeFilterKey) : events;
   }, [events, activeFilterKey]);
 
-  const getDDay = (endDateStr) => {
-    const end = new Date(endDateStr);
-    const now = new Date('2026-08-14');
-    const diffTime = end - now;
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    return diffDays > 0 ? `D-${diffDays}` : diffDays === 0 ? 'D-Day' : 'Ended';
+  const getDDay = (popup) => {
+    const start = new Date(popup.period.start);
+    const end = new Date(popup.period.end);
+    const today = new Date();
+    today.setHours(0,0,0,0);
+    start.setHours(0,0,0,0);
+    end.setHours(0,0,0,0);
+
+    if (today > end) {
+      return { text: selectedLanguage === 'ko' ? '종료' : 'Ended', isEnded: true };
+    }
+    
+    if (today < start) {
+      const diffTime = start - today;
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+      return { text: `D-${diffDays}`, isEnded: false };
+    }
+    
+    const diffTime = today - start;
+    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24)) + 1;
+    return { text: `D+${diffDays}`, isEnded: false };
   };
 
   return (
@@ -62,8 +79,8 @@ export default function DiscoverList({ activeFilterKey }) {
               <div style={{ position: 'absolute', top: '12px', right: '12px', width: '28px', height: '28px', borderRadius: '50%', background: 'rgba(0,0,0,0.4)', backdropFilter: 'blur(4px)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 2 }}>
                 <IconBookmark size={14} style={{ color: '#fff' }} />
               </div>
-              <div style={{ position: 'absolute', bottom: '12px', left: '12px', color: '#fff', fontSize: '12px', fontWeight: 'bold', fontFamily: 'var(--font-mono)', zIndex: 2 }}>
-                {getDDay(popup.period.end)}
+              <div style={{ position: 'absolute', bottom: '12px', left: '12px', color: getDDay(popup).isEnded ? 'rgba(255,255,255,0.6)' : '#fff', fontSize: '12px', fontWeight: 'bold', fontFamily: 'var(--font-mono)', zIndex: 2 }}>
+                {getDDay(popup).text}
               </div>
               {/* Gradient bottom for text legibility */}
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 40%)', zIndex: 1 }} />

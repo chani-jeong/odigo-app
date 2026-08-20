@@ -19,12 +19,27 @@ export default function SavedList() {
   const openPopup = useDeckStore(state => state.openPopup);
   const savedItems = savedPopups.map(id => events.find(p => p.id === id)).filter(Boolean);
 
-  const getDDay = (endDateStr) => {
-    const end = new Date(endDateStr);
-    const now = new Date('2026-08-14');
-    const diffTime = end - now;
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    return diffDays > 0 ? `D-${diffDays}` : diffDays === 0 ? 'D-Day' : 'Ended';
+  const getDDay = (popup) => {
+    const start = new Date(popup.period.start);
+    const end = new Date(popup.period.end);
+    const today = new Date();
+    today.setHours(0,0,0,0);
+    start.setHours(0,0,0,0);
+    end.setHours(0,0,0,0);
+
+    if (today > end) {
+      return { text: selectedLanguage === 'ko' ? '종료' : 'Ended', isEnded: true };
+    }
+    
+    if (today < start) {
+      const diffTime = start - today;
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+      return { text: `D-${diffDays}`, isEnded: false };
+    }
+    
+    const diffTime = today - start;
+    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24)) + 1;
+    return { text: `D+${diffDays}`, isEnded: false };
   };
 
   return (
@@ -91,7 +106,7 @@ export default function SavedList() {
                     >
                       {visitedPopups.includes(popup.id) ? `✓ ${t('card.visited')}` : t('card.mark_visited')}
                     </button>
-                    <span style={{ color: 'var(--badge-new)', fontWeight: 'bold', fontSize: '12px', fontFamily: 'var(--font-mono)' }}>{getDDay(popup.period.end)}</span>
+                    <span style={{ color: getDDay(popup).isEnded ? 'var(--ink-tertiary)' : 'var(--badge-new)', fontWeight: 'bold', fontSize: '12px', fontFamily: 'var(--font-mono)' }}>{getDDay(popup).text}</span>
                   </div>
                   <IconBookmarkFilled size={18} style={{ color: 'var(--brand-secondary)' }} />
                 </div>
