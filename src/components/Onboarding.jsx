@@ -83,8 +83,8 @@ export default function Onboarding() {
       window.kakao.maps.load(() => {
         if (!mapRef.current) return;
         const options = {
-          center: new window.kakao.maps.LatLng(37.5665, 126.9749),
-          level: 12,
+          center: new window.kakao.maps.LatLng(37.5445, 127.0557), // 성수동 중심
+          level: 6,
           scrollwheel: true,
           disableDoubleClickZoom: true
         };
@@ -94,15 +94,10 @@ export default function Onboarding() {
         const mapData = (events && events.length > 0) ? events : popups;
 
         if (mapData && mapData.length > 0) {
-          const bounds = new window.kakao.maps.LatLngBounds();
-          let hasBounds = false;
-
           mapData.forEach((popup) => {
             if (!popup.location || !popup.location.lat) return;
 
             const position = new window.kakao.maps.LatLng(popup.location.lat, popup.location.lng);
-            bounds.extend(position);
-            hasBounds = true;
             
             const content = document.createElement('div');
             content.style.display = 'flex';
@@ -129,10 +124,6 @@ export default function Onboarding() {
             customOverlay.setMap(mapInstance);
             overlays.push(customOverlay);
           });
-          
-          if (hasBounds) {
-            mapInstance.setBounds(bounds);
-          }
         }
       });
     };
