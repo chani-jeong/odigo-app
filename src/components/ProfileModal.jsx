@@ -6,9 +6,9 @@ import {
 } from '@tabler/icons-react';
 import useAuthStore from '../store/useAuthStore';
 import useDeckStore from '../store/useDeckStore';
-import { db } from '../firebase';
+import { db, auth } from '../firebase';
 import { doc, setDoc, serverTimestamp } from 'firebase/firestore';
-import { auth } from '../firebase';
+import ALL_COUNTRIES from '../data/countries.json';
 
 const LANGUAGES = [
   { id: 'en', label: 'English' },
@@ -30,6 +30,8 @@ export default function ProfileModal({ isOpen, onClose }) {
   const setLanguage = useDeckStore(state => state.setLanguage);
 
   const [editingLang, setEditingLang] = useState(false);
+  const [editingCountry, setEditingCountry] = useState(false);
+  const [countrySearch, setCountrySearch] = useState('');
 
   const saveToFirestore = async (patch) => {
     const currentUser = auth.currentUser;
@@ -45,6 +47,13 @@ export default function ProfileModal({ isOpen, onClose }) {
     setLanguage(langId);
     setEditingLang(false);
     await saveToFirestore({ selectedLanguage: langId });
+  };
+
+  const handleCountryChange = async (cId) => {
+    setCountry(cId);
+    setEditingCountry(false);
+    setCountrySearch('');
+    await saveToFirestore({ userCountry: cId });
   };
 
   const handleLogout = async () => {
@@ -223,12 +232,78 @@ export default function ProfileModal({ isOpen, onClose }) {
                   padding: '4px 16px', marginBottom: '24px',
                   border: '1px solid var(--paper-border)'
                 }}>
-                  {/* Country row (display only) */}
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '14px 0' }}>
-                    <span style={{ fontSize: '14px', color: 'var(--ink-secondary)' }}>Country</span>
-                    <span style={{ fontSize: '14px', fontWeight: '600', color: 'var(--ink)' }}>
-                      {userCountry ? userCountry.toUpperCase() : '—'}
-                    </span>
+                                  {/* Country row — editable, same pattern as Language */}
+                  <div style={{ padding: '14px 0' }}>
+                    <button
+                      onClick={() => {
+                        setEditingCountry(v => !v);
+                        setEditingLang(false);
+                        setCountrySearch('');
+                      }}
+                      style={{
+                        width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                        background: 'transparent', border: 'none', cursor: 'pointer', padding: 0
+                      }}
+                    >
+                      <span style={{ fontSize: '14px', color: 'var(--ink-secondary)' }}>Country</span>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                        <span style={{ fontSize: '14px', fontWeight: '600', color: 'var(--ink)' }}>
+                          {userCountry
+                            ? (ALL_COUNTRIES.find(c => c.id === userCountry)?.label || userCountry.toUpperCase())
+                            : '—'}
+                        </span>
+                        <IconChevronDown size={16} style={{ color: 'var(--ink-secondary)', transform: editingCountry ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }} />
+                      </div>
+                    </button>
+
+                    {editingCountry && (
+                      <div style={{ marginTop: '10px' }}>
+                        {/* Search input */}
+                        <div style={{
+                          display: 'flex', alignItems: 'center',
+                          background: 'var(--paper)', borderRadius: '10px',
+                          padding: '8px 12px', marginBottom: '8px',
+                          border: '1px solid var(--paper-border)'
+                        }}>
+                          <span style={{ fontSize: '13px', color: 'var(--ink-secondary)', marginRight: '8px' }}>🔍</span>
+                          <input
+                            type="text"
+                            placeholder="Search country..."
+                            value={countrySearch}
+                            onChange={e => setCountrySearch(e.target.value)}
+                            autoFocus
+                            style={{
+                              border: 'none', background: 'transparent', outline: 'none',
+                              width: '100%', fontSize: '14px', color: 'var(--ink)', fontFamily: 'inherit'
+                            }}
+                          />
+                        </div>
+                        {/* Country list */}
+                        <div style={{ maxHeight: '200px', overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '4px' }} className="hide-scrollbar">
+                          {ALL_COUNTRIES
+                            .filter(c => c.label.toLowerCase().includes(countrySearch.toLowerCase()))
+                            .map(c => (
+                              <button
+                                key={c.id}
+                                onClick={() => handleCountryChange(c.id)}
+                                style={{
+                                  display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                                  padding: '10px 12px', borderRadius: '10px', border: 'none',
+                                  background: c.id === userCountry ? 'var(--brand-tint)' : 'transparent',
+                                  cursor: 'pointer', width: '100%', textAlign: 'left'
+                                }}
+                              >
+                                <span style={{ fontSize: '14px', color: 'var(--ink)', fontWeight: c.id === userCountry ? '600' : '400' }}>
+                                  {c.label}
+                                </span>
+                                {c.id === userCountry && (
+                                  <span style={{ color: 'var(--brand-primary)', fontSize: '13px', fontWeight: 'bold' }}>✓</span>
+                                )}
+                              </button>
+                            ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
 
                   <div style={{ height: '1px', background: 'var(--paper-border)' }} />
@@ -236,7 +311,10 @@ export default function ProfileModal({ isOpen, onClose }) {
                   {/* Language row (editable) */}
                   <div style={{ padding: '14px 0' }}>
                     <button
-                      onClick={() => setEditingLang(v => !v)}
+                      onClick={() => {
+                        setEditingLang(v => !v);
+                        setEditingCountry(false);
+                      }}
                       style={{
                         width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center',
                         background: 'transparent', border: 'none', cursor: 'pointer', padding: 0
