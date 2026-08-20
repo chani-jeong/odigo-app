@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { IconX, IconPhoto, IconMapPin, IconCalendar, IconShieldCheck, IconHeart, IconMessage, IconCheck } from '@tabler/icons-react';
 import useDeckStore from '../store/useDeckStore';
 import { getForeignerReadyStatus } from '../utils/foreignerReady';
 import useTranslation from '../i18n/useTranslation';
 import useKoreanAddress from '../hooks/useKoreanAddress';
+import ReviewListSheet from './ReviewListSheet';
 
 function KoreanAddressSpan({ lat, lng, fallback, selectedLanguage }) {
   const address = useKoreanAddress(lat, lng, fallback, selectedLanguage);
@@ -12,6 +13,7 @@ function KoreanAddressSpan({ lat, lng, fallback, selectedLanguage }) {
 
 export default function PopupDetail() {
   const { t, selectedLanguage } = useTranslation();
+  const [showReviewSheet, setShowReviewSheet] = useState(false);
   const selectedPopup = useDeckStore(state => state.selectedPopup);
   const closePopup = useDeckStore(state => state.closePopup);
   const events = useDeckStore(state => state.events);
@@ -218,7 +220,7 @@ export default function PopupDetail() {
               <span style={{ fontSize: '13px', color: 'var(--ink-secondary)', fontWeight: 'bold' }}>{t('card.map')}</span>
             </button>
             <button
-              onClick={() => { console.log('review', popup.id); }}
+              onClick={() => setShowReviewSheet(true)}
               style={{ background: 'transparent', border: 'none', cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}
             >
               <IconMessage size={24} style={{ color: 'var(--ink)' }} />
@@ -227,6 +229,7 @@ export default function PopupDetail() {
           </div>
         </div>
       </div>
+      <ReviewListSheet isOpen={showReviewSheet} onClose={() => setShowReviewSheet(false)} popupId={popup.id} />
     </div>
   );
 }

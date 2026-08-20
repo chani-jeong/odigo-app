@@ -8,7 +8,7 @@ import useToastStore from '../store/useToastStore';
 import useDeckStore from '../store/useDeckStore';
 import useTranslation from '../i18n/useTranslation';
 
-export default function ReviewComposer({ isOpen, onClose }) {
+export default function ReviewComposer({ isOpen, onClose, initialPopupId }) {
   const { t } = useTranslation();
   const { user } = useAuthStore();
   const { showToast } = useToastStore();
@@ -16,7 +16,13 @@ export default function ReviewComposer({ isOpen, onClose }) {
   const selectedLanguage = useDeckStore(state => state.selectedLanguage);
   const [rating, setRating] = useState(0);
   const [text, setText] = useState('');
-  const [selectedPopupId, setSelectedPopupId] = useState('');
+  const [selectedPopupId, setSelectedPopupId] = useState(initialPopupId || '');
+
+  React.useEffect(() => {
+    if (initialPopupId && isOpen) {
+      setSelectedPopupId(initialPopupId);
+    }
+  }, [initialPopupId, isOpen]);
 
   const handleSubmit = async () => {
     if (!selectedPopupId) {
