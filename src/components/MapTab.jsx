@@ -121,8 +121,12 @@ export default function MapTab({ isVisible }) {
 
   const getCurrentLocationAndCenter = useCallback(() => {
     if (!mapInstance || !window.kakao) return;
-    if (!navigator.geolocation) return;
+    if (!navigator.geolocation) {
+      alert("Geolocation is not supported by your browser.");
+      return;
+    }
 
+    // You can also add a loading state here if you want
     navigator.geolocation.getCurrentPosition((pos) => {
       const { latitude, longitude } = pos.coords;
       const locPosition = new window.kakao.maps.LatLng(latitude, longitude);
@@ -145,7 +149,8 @@ export default function MapTab({ isVisible }) {
       mapInstance.panTo(locPosition);
     }, (err) => {
       console.error('Geolocation error', err);
-    });
+      alert("Failed to get location. Please check your browser's location permissions. (" + err.message + ")");
+    }, { timeout: 10000 });
   }, [mapInstance]);
 
   useEffect(() => {
