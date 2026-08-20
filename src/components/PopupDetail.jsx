@@ -189,7 +189,13 @@ export default function PopupDetail() {
               <span style={{ fontSize: '13px', color: isVisited ? 'var(--brand-primary)' : 'var(--ink-secondary)', fontWeight: 'bold' }}>{t('card.visited')}</span>
             </button>
             <button
-              onClick={() => { console.log('map', popup.location); }}
+              onClick={() => {
+                const { lat, lng, address } = popup.location;
+                const query = lat && lng
+                  ? `${lat},${lng}`
+                  : encodeURIComponent(address);
+                window.open(`https://www.google.com/maps/search/?api=1&query=${query}`, '_blank');
+              }}
               style={{ background: 'transparent', border: 'none', cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}
             >
               <IconMapPin size={24} style={{ color: 'var(--ink)' }} />
