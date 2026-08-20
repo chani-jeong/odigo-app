@@ -19,10 +19,10 @@ export default function PopupDetail() {
   const isVisited = visitedPopups.includes(popup.id);
 
   const status = getForeignerReadyStatus({
-    en: popup.access.checks.en,
-    phone: popup.access.checks.phone,
-    card: popup.access.checks.card !== false,
-    flow: popup.access.checks.flow,
+    en: popup.access?.checks?.en,
+    phone: popup.access?.checks?.phone,
+    card: popup.access?.checks?.card !== false,
+    flow: popup.access?.checks?.flow,
   });
 
   const badgeColors = {
