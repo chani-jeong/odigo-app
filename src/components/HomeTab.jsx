@@ -121,7 +121,7 @@ export default function HomeTab({ onSearchClick }) {
 
       {/* Categories */}
       <div>
-        <h3 style={{ margin: '0 0 16px', fontSize: 'var(--text-subtitle)', color: 'var(--text-primary)', fontWeight: '600' }}>Categories</h3>
+        <h3 style={{ margin: '0 0 16px', fontSize: 'var(--text-subtitle)', color: 'var(--ink-secondary)', fontWeight: '600' }}>Categories</h3>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '12px' }}>
           {CATEGORIES.map(cat => {
             const IconComponent = cat.icon;
@@ -147,7 +147,7 @@ export default function HomeTab({ onSearchClick }) {
       <div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
           <IconFlame size={20} style={{ color: 'var(--badge-dday-warning)' }} />
-          <h2 style={{ margin: 0, fontSize: 'var(--text-title)', color: 'var(--text-primary)', fontFamily: 'var(--font-display)', fontWeight: '700' }}>Trending Popups</h2>
+          <h2 style={{ margin: 0, fontSize: 'var(--text-title)', color: 'var(--ink-secondary)', fontFamily: 'var(--font-display)', fontWeight: '700' }}>Trending Popups</h2>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
           {events.slice(1, 4).map(item => {

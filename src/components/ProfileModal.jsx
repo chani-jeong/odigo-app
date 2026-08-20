@@ -2,12 +2,15 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   IconX, IconBrandGoogle, IconBrandApple, IconMessageCircle,
-  IconBookmark, IconMapPin, IconLogout, IconUser, IconChevronDown
+  IconBookmark, IconMapPin, IconLogout, IconUser, IconChevronDown, IconEdit
 } from '@tabler/icons-react';
 import useAuthStore from '../store/useAuthStore';
 import useDeckStore from '../store/useDeckStore';
-import { db, auth } from '../firebase';
+import useToastStore from '../store/useToastStore';
+import { db, auth, storage } from '../firebase';
 import { doc, setDoc, serverTimestamp } from 'firebase/firestore';
+import { updateProfile } from 'firebase/auth';
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import ALL_COUNTRIES from '../data/countries.json';
 
 const LANGUAGES = [
@@ -33,6 +36,8 @@ export default function ProfileModal({ isOpen, onClose }) {
   const [editingCountry, setEditingCountry] = useState(false);
   const [countrySearch, setCountrySearch] = useState('');
 
+  const [isUploading, setIsUploading] = useState(false);
+
   const saveToFirestore = async (patch) => {
     const currentUser = auth.currentUser;
     if (currentUser && !currentUser.isAnonymous) {
@@ -40,6 +45,41 @@ export default function ProfileModal({ isOpen, onClose }) {
         ...patch,
         updatedAt: serverTimestamp(),
       }, { merge: true }).catch(err => console.error('ProfileModal Firestore error:', err));
+    }
+  };
+
+  const handleEditName = async () => {
+    const newName = window.prompt("새로운 이름을 입력하세요:", user?.displayName || "");
+    if (newName && newName.trim() !== "" && newName !== user.displayName) {
+      try {
+        await updateProfile(auth.currentUser, { displayName: newName.trim() });
+        await saveToFirestore({ displayName: newName.trim() });
+        useAuthStore.getState().setUser({ ...auth.currentUser });
+        useToastStore.getState().showToast("이름이 성공적으로 변경되었습니다.");
+      } catch (e) {
+        console.error(e);
+        useToastStore.getState().showToast("이름 변경에 실패했습니다.", "error");
+      }
+    }
+  };
+
+  const handlePhotoUpload = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    setIsUploading(true);
+    try {
+      const storageRef = ref(storage, `profiles/${auth.currentUser.uid}_${Date.now()}`);
+      await uploadBytes(storageRef, file);
+      const url = await getDownloadURL(storageRef);
+      await updateProfile(auth.currentUser, { photoURL: url });
+      await saveToFirestore({ photoURL: url });
+      useAuthStore.getState().setUser({ ...auth.currentUser });
+      useToastStore.getState().showToast("프로필 사진이 변경되었습니다.");
+    } catch (err) {
+      console.error(err);
+      useToastStore.getState().showToast("사진 업로드에 실패했습니다.", "error");
+    } finally {
+      setIsUploading(false);
     }
   };
 
@@ -188,21 +228,31 @@ export default function ProfileModal({ isOpen, onClose }) {
               <div>
                 {/* Avatar + Name */}
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '28px' }}>
-                  <div style={{
-                    width: '80px', height: '80px', borderRadius: '50%',
-                    overflow: 'hidden', background: 'var(--brand-tint)',
-                    border: '3px solid var(--brand-primary)',
-                    marginBottom: '12px',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center'
-                  }}>
+                  <input type="file" accept="image/*" id="profile-upload" style={{ display: 'none' }} onChange={handlePhotoUpload} />
+                  <div 
+                    onClick={() => document.getElementById('profile-upload').click()}
+                    style={{
+                      width: '80px', height: '80px', borderRadius: '50%',
+                      overflow: 'hidden', background: 'var(--brand-tint)',
+                      border: '3px solid var(--brand-primary)',
+                      marginBottom: '12px',
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      cursor: 'pointer', position: 'relative'
+                    }}
+                  >
                     {user?.photoURL
-                      ? <img src={user.photoURL} alt="avatar" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-                      : <IconUser size={36} style={{ color: 'var(--brand-primary)' }} />
+                      ? <img src={user.photoURL} alt="avatar" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', opacity: isUploading ? 0.5 : 1 }} />
+                      : <IconUser size={36} style={{ color: 'var(--brand-primary)', opacity: isUploading ? 0.5 : 1 }} />
                     }
                   </div>
-                  <h2 style={{ margin: '0 0 4px', fontSize: '20px', color: 'var(--ink)', fontWeight: 'bold' }}>
-                    {user?.displayName || 'Odigo User'}
-                  </h2>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', margin: '0 0 4px' }}>
+                    <h2 style={{ margin: 0, fontSize: '20px', color: 'var(--ink)', fontWeight: 'bold' }}>
+                      {user?.displayName || 'Odigo User'}
+                    </h2>
+                    <button onClick={handleEditName} style={{ background: 'transparent', border: 'none', cursor: 'pointer', padding: 0, display: 'flex', alignItems: 'center' }}>
+                      <IconEdit size={16} style={{ color: 'var(--ink-secondary)' }} />
+                    </button>
+                  </div>
                   {user?.email && (
                     <span style={{ fontSize: '13px', color: 'var(--ink-secondary)' }}>{user.email}</span>
                   )}

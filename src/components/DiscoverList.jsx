@@ -3,6 +3,7 @@ import { IconMapPin, IconBookmark } from '@tabler/icons-react';
 import useDeckStore from '../store/useDeckStore';
 import { getForeignerReadyStatus } from '../utils/foreignerReady';
 import useTranslation from '../i18n/useTranslation';
+import enTranslation from '../i18n/en.json';
 
 export default function DiscoverList({ activeFilterKey }) {
   const { selectedLanguage } = useTranslation();
@@ -88,12 +89,17 @@ export default function DiscoverList({ activeFilterKey }) {
 
             {/* Content Area */}
             <div style={{ padding: '16px 12px', display: 'flex', flexDirection: 'column' }}>
-              <div style={{ background: '#E8F5F4', color: '#2D9F98', fontSize: '11px', fontWeight: 'bold', marginBottom: '4px', fontFamily: 'var(--font-display)', padding: '2px 6px', borderRadius: '4px', alignSelf: 'flex-start' }}>{popup.name.en.split(' ')[0].toUpperCase()}</div>
-              <div style={{ color: 'var(--ink)', fontSize: '14px', fontWeight: 'bold', lineHeight: 1.3, marginBottom: '8px', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
-                {popup.name.en}
+              <div style={{ background: '#E8F5F4', color: '#2D9F98', fontSize: '11px', fontWeight: 'bold', marginBottom: '4px', fontFamily: 'var(--font-display)', padding: '2px 6px', borderRadius: '4px', alignSelf: 'flex-start' }}>
+                {enTranslation.categories[popup.category]?.toUpperCase() || popup.category.toUpperCase()}
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '4px', color: 'var(--ink-secondary)', fontSize: '11px' }}>
-                <IconMapPin size={12} /> {popup.location.area}
+              <div style={{ color: 'var(--ink)', fontSize: '14px', fontWeight: 'bold', lineHeight: 1.3, marginBottom: '8px', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                {popup.name[selectedLanguage] || popup.name.en}
+              </div>
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '4px', color: 'var(--ink-secondary)', fontSize: '11px' }}>
+                <IconMapPin size={12} style={{ flexShrink: 0, marginTop: '2px' }} />
+                <span style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                  {popup.location.address}
+                </span>
               </div>
             </div>
           </div>

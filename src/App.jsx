@@ -19,6 +19,7 @@ import useDeckStore from './store/useDeckStore';
 import useAuthStore from './store/useAuthStore';
 import { motion, AnimatePresence } from 'framer-motion';
 import useTranslation from './i18n/useTranslation';
+import enTranslation from './i18n/en.json';
 
 const baseFilters = ['beauty_fashion', 'food', 'exhibition', 'character', 'kpop', 'lifestyle'];
 
@@ -69,9 +70,9 @@ function App() {
   const [activeFilterKey, setActiveFilterKey] = useState(dynamicFilters[0] || 'beauty_fashion');
 
   const getFilterLabel = (key) => {
-    if (key === 'foreigner_ready') return t('card.foreigner_ready');
-    if (key === 'halal_friendly') return t('card.halal_friendly');
-    return t(`categories.${key}`);
+    if (key === 'foreigner_ready') return enTranslation.card.foreigner_ready;
+    if (key === 'halal_friendly') return enTranslation.card.halal_friendly;
+    return enTranslation.categories[key] || key;
   };
 
   if (!hasCompletedOnboarding) {
