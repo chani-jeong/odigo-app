@@ -136,7 +136,7 @@ export default function HomeTab({ onSearchClick }) {
                 <div style={{ width: '40px', height: '40px', background: 'var(--brand-tint)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <IconComponent width={24} height={24} />
                 </div>
-                <span style={{ fontSize: '12px', color: 'var(--ink)', textAlign: 'center', fontWeight: '600' }}>{cat.label}</span>
+                <span style={{ fontSize: '12px', color: 'var(--ink-secondary)', textAlign: 'center' }}>{cat.label}</span>
               </div>
             );
           })}
