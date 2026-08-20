@@ -14,6 +14,7 @@ export default function SavedList() {
   const savedPopups = useDeckStore(state => state.savedPopups) || [];
   const visitedPopups = useDeckStore(state => state.visitedPopups) || [];
   const toggleVisited = useDeckStore(state => state.toggleVisited);
+  const hasAgreedToLocation = useDeckStore(state => state.hasAgreedToLocation);
   const events = useDeckStore(state => state.events) || [];
   const openPopup = useDeckStore(state => state.openPopup);
   const savedItems = savedPopups.map(id => events.find(p => p.id === id)).filter(Boolean);
@@ -69,10 +70,12 @@ export default function SavedList() {
                 <h3 style={{ margin: '0 0 8px 0', fontSize: '16px', color: 'var(--ink)', display: '-webkit-box', WebkitLineClamp: 1, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
                   {selectedLanguage === 'ko' && popup.name.ko ? popup.name.ko : popup.name.en}
                 </h3>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '4px', color: 'var(--ink-secondary)', fontSize: '12px', marginBottom: '12px' }}>
-                  <IconMapPin size={12} style={{ flexShrink: 0 }} /> 
-                  <KoreanAddressSpan lat={popup.location.lat} lng={popup.location.lng} fallback={popup.location.address} selectedLanguage={selectedLanguage} />
-                  <span>· {Math.round(popup.distance || 2.5)}km</span>
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '4px', color: 'var(--ink-secondary)', fontSize: '12px', marginBottom: '12px', lineHeight: '1.4' }}>
+                  <IconMapPin size={12} style={{ flexShrink: 0, marginTop: '2px' }} /> 
+                  <span style={{ wordBreak: 'keep-all' }}>
+                    <KoreanAddressSpan lat={popup.location.lat} lng={popup.location.lng} fallback={popup.location.address} selectedLanguage={selectedLanguage} />
+                    <span style={{ whiteSpace: 'nowrap' }}> · {hasAgreedToLocation && popup.distance != null ? (popup.distance < 1 ? popup.distance.toFixed(1) : Math.round(popup.distance)) : 0}km</span>
+                  </span>
                 </div>
                 
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
