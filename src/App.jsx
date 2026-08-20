@@ -153,7 +153,7 @@ function App() {
         {/* Bottom Row: Tab Title with divider */}
         {activeTab !== 'home' && (
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '2px solid var(--brand-tint)', paddingBottom: '12px' }}>
-            <span style={{ color: 'var(--text-primary)', fontWeight: '600', fontSize: 'var(--text-subtitle)' }}>
+            <span style={{ color: 'var(--ink-secondary)', fontWeight: '600', fontSize: 'var(--text-subtitle)' }}>
               {activeTab === 'discover' && t('header.title_discover')}
               {activeTab === 'map' && t('header.title_map')}
               {activeTab === 'saved' && t('saved.title')}
