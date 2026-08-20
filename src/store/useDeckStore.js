@@ -1,6 +1,10 @@
 import { create } from 'zustand';
+import { db, auth } from '../firebase';
+import { doc, getDoc, setDoc, updateDoc, arrayUnion, arrayRemove } from 'firebase/firestore';
+import { signInAnonymously, onAuthStateChanged } from 'firebase/auth';
 
-const useDeckStore = create((set) => ({
+const useDeckStore = create((set, get) => ({
+  userId: null,
   events: [],
   deckOrder: [],
   currentIndex: 0,
@@ -31,16 +35,45 @@ const useDeckStore = create((set) => ({
   completeOnboarding: () => set({ hasCompletedOnboarding: true }),
 
   // Actions
-  toggleSave: (popupId) => set((state) => ({
-    savedPopups: state.savedPopups.includes(popupId)
-      ? state.savedPopups.filter((id) => id !== popupId)
-      : [...state.savedPopups, popupId],
-  })),
-  toggleVisited: (popupId) => set((state) => ({
-    visitedPopups: state.visitedPopups.includes(popupId)
-      ? state.visitedPopups.filter((id) => id !== popupId)
-      : [...state.visitedPopups, popupId],
-  })),
+  toggleSave: (popupId) => {
+    const { userId, savedPopups } = get();
+    const isSaved = savedPopups.includes(popupId);
+    
+    // 로컬 상태 즉시 업데이트
+    set({
+      savedPopups: isSaved 
+        ? savedPopups.filter((id) => id !== popupId)
+        : [...savedPopups, popupId],
+    });
+
+    // Firestore 백그라운드 업데이트
+    if (userId) {
+      const userRef = doc(db, 'users', userId);
+      updateDoc(userRef, {
+        savedPopups: isSaved ? arrayRemove(popupId) : arrayUnion(popupId)
+      }).catch(err => console.error('Failed to update savedPopups in Firestore:', err));
+    }
+  },
+
+  toggleVisited: (popupId) => {
+    const { userId, visitedPopups } = get();
+    const isVisited = visitedPopups.includes(popupId);
+
+    // 로컬 상태 즉시 업데이트
+    set({
+      visitedPopups: isVisited
+        ? visitedPopups.filter((id) => id !== popupId)
+        : [...visitedPopups, popupId],
+    });
+
+    // Firestore 백그라운드 업데이트
+    if (userId) {
+      const userRef = doc(db, 'users', userId);
+      updateDoc(userRef, {
+        visitedPopups: isVisited ? arrayRemove(popupId) : arrayUnion(popupId)
+      }).catch(err => console.error('Failed to update visitedPopups in Firestore:', err));
+    }
+  },
 
   setEvents: (events) =>
     set(() => {
@@ -93,3 +126,39 @@ const useDeckStore = create((set) => ({
 }));
 
 export default useDeckStore;
+
+// 앱 초기화 시 Firebase 익명 로그인 및 Firestore 데이터 동기화 (IIFE)
+(function initAuth() {
+  // SSR 환경 방지
+  if (typeof window === 'undefined') return;
+
+  onAuthStateChanged(auth, async (user) => {
+    if (user) {
+      // 1. 유저 ID 스토어에 저장
+      useDeckStore.setState({ userId: user.uid });
+      
+      // 2. Firestore에서 기존 데이터 조회
+      const userRef = doc(db, 'users', user.uid);
+      try {
+        const docSnap = await getDoc(userRef);
+        if (docSnap.exists()) {
+          const data = docSnap.data();
+          useDeckStore.setState({ 
+            savedPopups: data.savedPopups || [], 
+            visitedPopups: data.visitedPopups || [] 
+          });
+        } else {
+          // 문서가 없으면 빈 배열로 새로 생성
+          await setDoc(userRef, { savedPopups: [], visitedPopups: [] });
+        }
+      } catch (error) {
+        console.error("Error fetching user data from Firestore:", error);
+      }
+    } else {
+      // 로그인되어 있지 않으면 익명 로그인 시도
+      signInAnonymously(auth).catch((error) => {
+        console.error("Anonymous sign in failed:", error);
+      });
+    }
+  });
+})();

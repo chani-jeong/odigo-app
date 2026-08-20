@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@tabler/icons-react": "^3.46.0",
-    "firebase": "^12.17.1",
+    "firebase": "^12.18.0",
     "framer-motion": "^13.1.0",
     "i18next": "^26.3.6",
     "leaflet": "^1.9.4",
