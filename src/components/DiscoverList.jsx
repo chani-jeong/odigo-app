@@ -8,8 +8,8 @@ import useKoreanAddress from '../hooks/useKoreanAddress';
 
 const DiscoverListItem = ({ popup, selectedLanguage, getDDay, openPopup }) => {
   const address = useKoreanAddress(
-    popup.location.coordinates?.lat,
-    popup.location.coordinates?.lng,
+    popup.location.lat,
+    popup.location.lng,
     popup.location.address,
     selectedLanguage
   );
