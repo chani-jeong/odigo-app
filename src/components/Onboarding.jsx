@@ -9,7 +9,6 @@ import useDeckStore from '../store/useDeckStore';
 import popups from '../data/popups.sample.json';
 import ALL_COUNTRIES from '../data/countries.json';
 import useTranslation from '../i18n/useTranslation';
-import { flagEmoji } from '../utils/flag';
 
 const INTERESTS = [
   { id: 'beauty_fashion', labelKey: 'categories.beauty_fashion', icon: BeautyIcon },
@@ -274,7 +273,6 @@ export default function Onboarding() {
                       boxShadow: '0 2px 8px rgba(0,0,0,0.03)', cursor: 'pointer', transition: 'all 0.2s', gap: '12px'
                     }}
                   >
-                    <span style={{ fontSize: '20px' }}>{flagEmoji(c.id)}</span>
                     <span>{c.label.replace(/^\[.*?\]\s*/, '') /* in case some labels have old codes */}</span>
                   </button>
                 ))}
@@ -295,7 +293,6 @@ export default function Onboarding() {
                 }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <span style={{ fontSize: '20px' }}>{flagEmoji(LANGUAGES.find(l => l.id === selectedLanguage)?.flagCode || 'us')}</span>
                   <span style={{ fontSize: '15px', fontWeight: 'bold', color: 'var(--ink)' }}>
                     {LANGUAGES.find(l => l.id === selectedLanguage)?.label || 'English'}
                   </span>
@@ -320,7 +317,6 @@ export default function Onboarding() {
                         textAlign: 'left', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '12px'
                       }}
                     >
-                      <span style={{ fontSize: '20px' }}>{flagEmoji(lang.flagCode)}</span>
                       <span>{lang.label}</span>
                     </button>
                   ))}
