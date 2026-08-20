@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { IconMapPin, IconLeaf } from '@tabler/icons-react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { IconMapPin, IconLeaf, IconCurrentLocation } from '@tabler/icons-react';
 import useDeckStore from '../store/useDeckStore';
 
 export default function MapTab({ isVisible }) {
@@ -9,6 +9,7 @@ export default function MapTab({ isVisible }) {
   const setAgreedToLocation = useDeckStore(state => state.setAgreedToLocation);
 
   const [isConsentChecked, setIsConsentChecked] = useState(false);
+  const [showConsentModal, setShowConsentModal] = useState(false);
   const [mapInstance, setMapInstance] = useState(null);
   const [activeIndex, setActiveIndex] = useState(0);
   
@@ -115,34 +116,39 @@ export default function MapTab({ isVisible }) {
     });
   }, [activeIndex]);
 
+  const getCurrentLocationAndCenter = useCallback(() => {
+    if (!mapInstance || !window.kakao) return;
+    if (!navigator.geolocation) return;
+
+    navigator.geolocation.getCurrentPosition((pos) => {
+      const { latitude, longitude } = pos.coords;
+      const locPosition = new window.kakao.maps.LatLng(latitude, longitude);
+
+      if (currentLocMarkerRef.current) {
+        currentLocMarkerRef.current.setMap(null);
+      }
+
+      const content = document.createElement('div');
+      content.innerHTML = `
+        <div style="width: 16px; height: 16px; background: #007AFF; border: 3px solid #fff; border-radius: 50%; box-shadow: 0 0 8px rgba(0,0,0,0.3);"></div>
+      `;
+
+      currentLocMarkerRef.current = new window.kakao.maps.CustomOverlay({
+        position: locPosition,
+        content: content,
+      });
+
+      currentLocMarkerRef.current.setMap(mapInstance);
+      mapInstance.panTo(locPosition);
+    }, (err) => {
+      console.error('Geolocation error', err);
+    });
+  }, [mapInstance]);
+
   useEffect(() => {
     if (!hasAgreedToLocation || !mapInstance || !window.kakao) return;
-    
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition((pos) => {
-        const { latitude, longitude } = pos.coords;
-        const locPosition = new window.kakao.maps.LatLng(latitude, longitude);
-        
-        if (currentLocMarkerRef.current) {
-          currentLocMarkerRef.current.setMap(null);
-        }
-
-        const content = document.createElement('div');
-        content.innerHTML = `
-          <div style="width: 16px; height: 16px; background: #007AFF; border: 3px solid #fff; border-radius: 50%; box-shadow: 0 0 8px rgba(0,0,0,0.3);"></div>
-        `;
-
-        currentLocMarkerRef.current = new window.kakao.maps.CustomOverlay({
-          position: locPosition,
-          content: content,
-        });
-
-        currentLocMarkerRef.current.setMap(mapInstance);
-      }, (err) => {
-        console.error("Geolocation error", err);
-      });
-    }
-  }, [hasAgreedToLocation, mapInstance]);
+    getCurrentLocationAndCenter();
+  }, [hasAgreedToLocation, mapInstance, getCurrentLocationAndCenter]);
 
   const handleCarouselScroll = (e) => {
     const scrollLeft = e.target.scrollLeft;
@@ -161,7 +167,7 @@ export default function MapTab({ isVisible }) {
     <div style={{ display: 'flex', flexDirection: 'column', height: '100%', position: 'relative', background: '#e5e3df' }}>
       
       {/* Location Consent Modal */}
-      {!hasAgreedToLocation && (
+      {(!hasAgreedToLocation || showConsentModal) && (
         <div style={{
           position: 'absolute', inset: 0, zIndex: 100,
           background: 'rgba(0,0,0,0.4)', backdropFilter: 'blur(4px)',
@@ -193,7 +199,11 @@ export default function MapTab({ isVisible }) {
 
             <button 
               onClick={() => {
-                if (isConsentChecked) setAgreedToLocation();
+                if (isConsentChecked) {
+                  setAgreedToLocation();
+                  setShowConsentModal(false);
+                  setIsConsentChecked(false);
+                }
               }}
               style={{
                 width: '100%', height: '52px', borderRadius: '26px',
@@ -221,6 +231,38 @@ export default function MapTab({ isVisible }) {
 
       {/* Top Gradient for header readability (if global header overlays) */}
       <div style={{ position: 'absolute', top: 0, width: '100%', height: '100px', background: 'linear-gradient(to bottom, rgba(255,255,255,0.8), transparent)', zIndex: 2, pointerEvents: 'none' }} />
+
+      {/* Current Location Button */}
+      <button
+        onClick={() => {
+          if (!hasAgreedToLocation) {
+            setShowConsentModal(true);
+          } else {
+            getCurrentLocationAndCenter();
+          }
+        }}
+        style={{
+          position: 'absolute',
+          bottom: '200px',
+          right: '16px',
+          zIndex: 5,
+          width: '48px',
+          height: '48px',
+          borderRadius: '50%',
+          background: '#fff',
+          border: 'none',
+          boxShadow: '0 2px 12px rgba(0,0,0,0.18)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          cursor: 'pointer',
+          transition: 'box-shadow 0.2s'
+        }}
+        onMouseEnter={e => e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.25)'}
+        onMouseLeave={e => e.currentTarget.style.boxShadow = '0 2px 12px rgba(0,0,0,0.18)'}
+      >
+        <IconCurrentLocation size={22} style={{ color: '#007AFF' }} />
+      </button>
 
       {/* Bottom Horizontal Carousel */}
       <div style={{ 
