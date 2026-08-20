@@ -30,7 +30,6 @@ const DiscoverListItem = ({ popup, selectedLanguage, getDDay, openPopup }) => {
           <img src={popup.imageUrl} alt={popup.name.en} style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', inset: 0 }} />
         ) : null}
         {/* Overlay elements */}
-        <div style={{ position: 'absolute', top: '12px', left: '12px', background: 'var(--badge-new)', color: '#000', fontSize: '10px', fontWeight: 'bold', padding: '2px 6px', borderRadius: '8px', zIndex: 2, fontFamily: 'var(--font-mono)' }}>NEW</div>
         <div style={{ position: 'absolute', top: '12px', right: '12px', width: '28px', height: '28px', borderRadius: '50%', background: 'rgba(0,0,0,0.4)', backdropFilter: 'blur(4px)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 2 }}>
           <IconBookmark size={14} style={{ color: '#fff' }} />
         </div>

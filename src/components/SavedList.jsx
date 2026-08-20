@@ -71,7 +71,6 @@ export default function SavedList() {
                 {popup.imageUrl && (
                   <img src={popup.imageUrl} alt={popup.name.en} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
                 )}
-                <div style={{ position: 'absolute', top: '8px', left: '8px', background: 'var(--badge-new)', color: '#000', fontSize: '10px', fontWeight: 'bold', padding: '2px 6px', borderRadius: '8px', fontFamily: 'var(--font-mono)', zIndex: 1 }}>NEW</div>
               </div>
               
               {/* Info */}
