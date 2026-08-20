@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { IconX, IconStarFilled, IconStar } from '@tabler/icons-react';
-import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { collection, addDoc, serverTimestamp, doc, updateDoc } from 'firebase/firestore';
 import { db } from '../firebase';
 import useAuthStore from '../store/useAuthStore';
 import useToastStore from '../store/useToastStore';
 import useDeckStore from '../store/useDeckStore';
 import useTranslation from '../i18n/useTranslation';
 
-export default function ReviewComposer({ isOpen, onClose, initialPopupId }) {
+export default function ReviewComposer({ isOpen, onClose, initialPopupId, editingReview }) {
   const { t } = useTranslation();
   const { user } = useAuthStore();
   const { showToast } = useToastStore();
@@ -19,10 +19,18 @@ export default function ReviewComposer({ isOpen, onClose, initialPopupId }) {
   const [selectedPopupId, setSelectedPopupId] = useState(initialPopupId || '');
 
   React.useEffect(() => {
-    if (initialPopupId && isOpen) {
-      setSelectedPopupId(initialPopupId);
+    if (isOpen) {
+      if (editingReview) {
+        setRating(editingReview.rating || 0);
+        setText(editingReview.text || '');
+        setSelectedPopupId(editingReview.popupId || '');
+      } else {
+        setRating(0);
+        setText('');
+        if (initialPopupId) setSelectedPopupId(initialPopupId);
+      }
     }
-  }, [initialPopupId, isOpen]);
+  }, [isOpen, editingReview, initialPopupId]);
 
   const handleSubmit = async () => {
     if (!selectedPopupId) {
@@ -34,17 +42,29 @@ export default function ReviewComposer({ isOpen, onClose, initialPopupId }) {
       return;
     }
     try {
-      await addDoc(collection(db, 'reviews'), {
-        popupId: selectedPopupId,
-        rating,
-        text,
-        lang: selectedLanguage,
-        authorUid: user?.uid || null,
-        authorName: user?.displayName || 'Anonymous',
-        authorPhotoURL: user?.photoURL || '',
-        createdAt: serverTimestamp(),
-      });
-      showToast(t('review.posted_success'));
+      if (editingReview) {
+        const reviewRef = doc(db, 'reviews', editingReview.id);
+        await updateDoc(reviewRef, {
+          popupId: selectedPopupId,
+          rating,
+          text,
+          lang: selectedLanguage, // optionally don't update lang, but we'll update it to current user lang
+          updatedAt: serverTimestamp(),
+        });
+        showToast(t('review.posted_success') || 'Review updated!');
+      } else {
+        await addDoc(collection(db, 'reviews'), {
+          popupId: selectedPopupId,
+          rating,
+          text,
+          lang: selectedLanguage,
+          authorUid: user?.uid || null,
+          authorName: user?.displayName || 'Anonymous',
+          authorPhotoURL: user?.photoURL || '',
+          createdAt: serverTimestamp(),
+        });
+        showToast(t('review.posted_success'));
+      }
       setRating(0);
       setText('');
       setSelectedPopupId('');

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { IconX, IconStarFilled, IconStar, IconPencilPlus, IconPhoto } from '@tabler/icons-react';
-import { collection, query, where, orderBy, onSnapshot } from 'firebase/firestore';
+import { IconX, IconStarFilled, IconStar, IconPencilPlus, IconPhoto, IconTrash, IconEdit, IconAlertTriangle, IconThumbUp } from '@tabler/icons-react';
+import { collection, query, where, orderBy, onSnapshot, doc, deleteDoc } from 'firebase/firestore';
 import { db } from '../firebase';
 import useTranslation from '../i18n/useTranslation';
 import useAuthStore from '../store/useAuthStore';
@@ -10,12 +10,13 @@ import useToastStore from '../store/useToastStore';
 
 export default function ReviewListSheet({ isOpen, onClose, popupId }) {
   const { t, selectedLanguage } = useTranslation();
-  const { isAnonymous, openAuthModal } = useAuthStore();
+  const { isAnonymous, user, openAuthModal } = useAuthStore();
   const showToast = useToastStore(state => state.showToast);
   
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
   const [isComposerOpen, setIsComposerOpen] = useState(false);
+  const [editingReview, setEditingReview] = useState(null);
   
   const [translations, setTranslations] = useState({});
   const [showingTranslation, setShowingTranslation] = useState({});
@@ -61,8 +62,26 @@ export default function ReviewListSheet({ isOpen, onClose, popupId }) {
     if (isAnonymous) {
       openAuthModal();
     } else {
+      setEditingReview(null);
       setIsComposerOpen(true);
     }
+  };
+
+  const handleDelete = async (reviewId) => {
+    if (window.confirm("정말 이 리뷰를 삭제하시겠습니까?")) {
+      try {
+        await deleteDoc(doc(db, 'reviews', reviewId));
+        showToast('Review deleted successfully');
+      } catch (e) {
+        console.error('Failed to delete review:', e);
+        showToast('Failed to delete review', 'error');
+      }
+    }
+  };
+
+  const handleEdit = (review) => {
+    setEditingReview(review);
+    setIsComposerOpen(true);
   };
 
   const toggleTranslation = async (review) => {
@@ -182,16 +201,36 @@ export default function ReviewListSheet({ isOpen, onClose, popupId }) {
               ) : (
                 reviews.map(review => (
                   <div key={review.id} style={{ display: 'flex', flexDirection: 'column', paddingBottom: '24px', borderBottom: '1px solid rgba(0,0,0,0.05)' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
-                      <div style={{ width: '28px', height: '28px', borderRadius: '50%', background: 'var(--brand-tint)', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
-                        {review.authorPhotoURL ? (
-                          <img src={review.authorPhotoURL} alt="avatar" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                        ) : (
-                          <IconPhoto size={16} style={{ color: 'var(--brand-primary)' }} />
-                        )}
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <div style={{ width: '28px', height: '28px', borderRadius: '50%', background: 'var(--brand-tint)', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+                          {review.authorPhotoURL ? (
+                            <img src={review.authorPhotoURL} alt="avatar" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                          ) : (
+                            <IconPhoto size={16} style={{ color: 'var(--brand-primary)' }} />
+                          )}
+                        </div>
+                        <span style={{ fontWeight: 'bold', fontSize: '15px', color: 'var(--ink)' }}>{review.authorName}</span>
+                        <span style={{ fontSize: '12px', color: 'var(--ink-secondary)' }}>· {formatTime(review.createdAt)}</span>
                       </div>
-                      <span style={{ fontWeight: 'bold', fontSize: '15px', color: 'var(--ink)' }}>{review.authorName}</span>
-                      <span style={{ fontSize: '12px', color: 'var(--ink-secondary)' }}>· {formatTime(review.createdAt)}</span>
+
+                      {/* Edit/Delete for author */}
+                      {user && user.uid === review.authorUid && (
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                          <button 
+                            onClick={() => handleEdit(review)}
+                            style={{ background: 'transparent', border: 'none', cursor: 'pointer', padding: 0, color: 'var(--ink-secondary)', display: 'flex', alignItems: 'center', gap: '4px', fontSize: '12px' }}
+                          >
+                            <IconEdit size={14} /> 수정
+                          </button>
+                          <button 
+                            onClick={() => handleDelete(review.id)}
+                            style={{ background: 'transparent', border: 'none', cursor: 'pointer', padding: 0, color: '#FF3B30', display: 'flex', alignItems: 'center', gap: '4px', fontSize: '12px' }}
+                          >
+                            <IconTrash size={14} /> 삭제
+                          </button>
+                        </div>
+                      )}
                     </div>
                     
                     <div style={{ display: 'flex', gap: '2px', marginBottom: '12px' }}>
@@ -202,21 +241,33 @@ export default function ReviewListSheet({ isOpen, onClose, popupId }) {
                       ))}
                     </div>
 
-                    <div style={{ fontSize: '15px', color: 'var(--ink)', lineHeight: '1.5', whiteSpace: 'pre-wrap' }}>
+                    <div style={{ fontSize: '15px', color: 'var(--ink)', lineHeight: '1.5', whiteSpace: 'pre-wrap', marginBottom: '12px' }}>
                       {showingTranslation[review.id] ? translations[review.id] : review.text}
                     </div>
 
-                    {review.lang !== selectedLanguage && (
-                      <div style={{ textAlign: 'right', marginTop: '12px' }}>
-                        <span 
-                          onClick={() => toggleTranslation(review)}
-                          className="interactive-btn" 
-                          style={{ color: 'var(--brand-primary)', fontSize: '13px', cursor: 'pointer', fontWeight: 'bold' }}
-                        >
-                          {isTranslating[review.id] ? t('card.translating') : showingTranslation[review.id] ? t('card.show_original') : `${t('card.translate')} \u2192`}
-                        </span>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      {/* Small Report/Recommend buttons */}
+                      <div style={{ display: 'flex', gap: '12px' }}>
+                        <button style={{ background: 'transparent', border: 'none', color: 'var(--ink-secondary)', display: 'flex', alignItems: 'center', gap: '4px', fontSize: '11px', cursor: 'pointer', padding: 0, opacity: 0.8 }}>
+                          <IconThumbUp size={12} /> 추천
+                        </button>
+                        <button style={{ background: 'transparent', border: 'none', color: 'var(--ink-secondary)', display: 'flex', alignItems: 'center', gap: '4px', fontSize: '11px', cursor: 'pointer', padding: 0, opacity: 0.8 }}>
+                          <IconAlertTriangle size={12} /> 신고
+                        </button>
                       </div>
-                    )}
+
+                      {review.lang !== selectedLanguage && (
+                        <div style={{ textAlign: 'right' }}>
+                          <span 
+                            onClick={() => toggleTranslation(review)}
+                            className="interactive-btn" 
+                            style={{ color: 'var(--brand-primary)', fontSize: '12px', cursor: 'pointer', fontWeight: 'bold' }}
+                          >
+                            {isTranslating[review.id] ? t('card.translating') : showingTranslation[review.id] ? t('card.show_original') : `${t('card.translate')} \u2192`}
+                          </span>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 ))
               )}
@@ -224,7 +275,7 @@ export default function ReviewListSheet({ isOpen, onClose, popupId }) {
           </motion.div>
         </div>
       )}
-      <ReviewComposer isOpen={isComposerOpen} onClose={() => setIsComposerOpen(false)} initialPopupId={popupId} />
+      <ReviewComposer isOpen={isComposerOpen} onClose={() => { setIsComposerOpen(false); setEditingReview(null); }} initialPopupId={popupId} editingReview={editingReview} />
     </AnimatePresence>
   );
 }
