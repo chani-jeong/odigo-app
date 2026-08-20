@@ -11,12 +11,15 @@ export default function PopupDetail() {
   const events = useDeckStore(state => state.events);
   const visitedPopups = useDeckStore(state => state.visitedPopups) || [];
   const toggleVisited = useDeckStore(state => state.toggleVisited);
+  const savedPopups = useDeckStore(state => state.savedPopups) || [];
+  const toggleSave = useDeckStore(state => state.toggleSave);
   
   if (!selectedPopup) return null;
 
   const popup = events.find((p) => p.id === selectedPopup);
   if (!popup) return null;
   const isVisited = visitedPopups.includes(popup.id);
+  const isSaved = savedPopups.includes(popup.id);
 
   const status = getForeignerReadyStatus({
     en: popup.access?.checks?.en,
@@ -172,11 +175,11 @@ export default function PopupDetail() {
           
           <div style={{ display: 'flex', justifyContent: 'space-around', borderTop: '1px solid rgba(0,0,0,0.06)', paddingTop: '24px', paddingBottom: '24px' }}>
             <button
-              onClick={() => { console.log('saved', popup.id); }}
+              onClick={() => toggleSave(popup.id)}
               style={{ background: 'transparent', border: 'none', cursor: 'pointer', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}
             >
-              <IconHeart size={24} style={{ color: 'var(--ink)' }} />
-              <span style={{ fontSize: '13px', color: 'var(--ink-secondary)', fontWeight: 'bold' }}>{t('card.save')}</span>
+              <IconHeart size={24} style={{ color: isSaved ? 'var(--brand-primary)' : 'var(--ink)', fill: isSaved ? 'var(--brand-primary)' : 'none' }} />
+              <span style={{ fontSize: '13px', color: isSaved ? 'var(--brand-primary)' : 'var(--ink-secondary)', fontWeight: 'bold' }}>{t('card.save')}</span>
             </button>
             <button
               onClick={() => toggleVisited(popup.id)}

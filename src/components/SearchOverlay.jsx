@@ -6,11 +6,11 @@ import useDeckStore from '../store/useDeckStore';
 
 export default function SearchOverlay({ isOpen, onClose }) {
   const [query, setQuery] = useState('');
-  const { setPopup } = useDeckStore();
+  const openPopup = useDeckStore(state => state.openPopup);
 
-  const results = popups.filter(p => 
-    p.name.en.toLowerCase().includes(query.toLowerCase()) || 
-    p.location.area.toLowerCase().includes(query.toLowerCase()) ||
+  const results = popups.filter(p =>
+    p.name.en.toLowerCase().includes(query.toLowerCase()) ||
+    (p.area || '').toLowerCase().includes(query.toLowerCase()) ||
     p.category.includes(query)
   );
 
@@ -60,7 +60,7 @@ export default function SearchOverlay({ isOpen, onClose }) {
                     <div 
                       key={popup.id}
                       onClick={() => {
-                        setPopup(popup);
+                        openPopup(popup.id);
                         onClose();
                       }}
                       style={{
@@ -69,13 +69,17 @@ export default function SearchOverlay({ isOpen, onClose }) {
                         boxShadow: '0 2px 8px rgba(0,0,0,0.03)'
                       }}
                     >
-                      <div style={{ width: '64px', height: '64px', borderRadius: '12px', background: 'var(--brand-tint)', flexShrink: 0 }} />
+                      <div style={{ width: '64px', height: '64px', borderRadius: '12px', background: 'var(--brand-tint)', flexShrink: 0, overflow: 'hidden', position: 'relative' }}>
+                        {popup.imageUrl && (
+                          <img src={popup.imageUrl} alt={popup.name.en} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                        )}
+                      </div>
                       <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                         <div style={{ fontWeight: 'bold', fontSize: '15px', color: 'var(--ink)', marginBottom: '4px' }}>
                           {popup.name.en}
                         </div>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '12px', color: 'var(--ink)', opacity: 0.6 }}>
-                          <IconMapPin size={12} /> {popup.location.area}
+                          <IconMapPin size={12} /> {popup.area}
                         </div>
                       </div>
                     </div>
