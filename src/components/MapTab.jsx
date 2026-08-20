@@ -1,12 +1,14 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { IconMapPin, IconLeaf, IconCurrentLocation } from '@tabler/icons-react';
 import useDeckStore from '../store/useDeckStore';
+import useTranslation from '../i18n/useTranslation';
 
 export default function MapTab({ isVisible }) {
   const events = useDeckStore(state => state.events);
   const openPopup = useDeckStore(state => state.openPopup);
   const hasAgreedToLocation = useDeckStore(state => state.hasAgreedToLocation);
   const setAgreedToLocation = useDeckStore(state => state.setAgreedToLocation);
+  const { selectedLanguage } = useTranslation();
 
   const [isConsentChecked, setIsConsentChecked] = useState(false);
   const [showConsentModal, setShowConsentModal] = useState(false);
@@ -334,7 +336,7 @@ export default function MapTab({ isVisible }) {
                     lineHeight: 1.2,
                     display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden'
                   }}>
-                    {popup.name.en.toUpperCase()}
+                    {selectedLanguage === 'ko' && popup.name.ko ? popup.name.ko : popup.name.en.toUpperCase()}
                   </h3>
                   
                   <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
