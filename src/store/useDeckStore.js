@@ -47,7 +47,7 @@ const useDeckStore = create((set, get) => ({
     });
   },
   completeOnboarding: () => {
-    const { userCountry, selectedLanguage } = get();
+    const { userCountry, selectedLanguage, userInterests } = get();
     set({ hasCompletedOnboarding: true });
     // 로그인된(비익명) 사용자면 Firestore에도 저장
     const currentUser = auth.currentUser;
@@ -57,6 +57,7 @@ const useDeckStore = create((set, get) => ({
         hasCompletedOnboarding: true,
         userCountry,
         selectedLanguage,
+        userInterests,
         updatedAt: serverTimestamp(),
       }, { merge: true }).catch(err => console.error('completeOnboarding Firestore error:', err));
     }
@@ -214,6 +215,7 @@ export default useDeckStore;
             }
             if (data.userCountry) update.userCountry = data.userCountry;
             if (data.selectedLanguage) update.selectedLanguage = data.selectedLanguage;
+            if (data.userInterests) update.userInterests = data.userInterests;
           }
           useDeckStore.setState(update);
         } else {
