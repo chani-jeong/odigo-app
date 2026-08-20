@@ -137,12 +137,12 @@ function App() {
                   : 'linear-gradient(135deg, var(--brand-primary), var(--brand-secondary))', 
                 border: user?.photoURL ? '2px solid var(--brand-primary)' : 'none',
                 cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center',
-                overflow: 'hidden',
-                color: '#000', fontWeight: 'bold', fontSize: '14px', boxShadow: '0 2px 8px rgba(89,203,183,0.3)'
+                overflow: 'hidden', padding: 0,
+                color: '#fff', fontWeight: 'bold', fontSize: '14px', boxShadow: '0 2px 8px rgba(89,203,183,0.3)'
               }}
             >
               {user?.photoURL
-                ? <img src={user.photoURL} alt="avatar" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                ? <img src={user.photoURL} alt="avatar" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                 : (isAnonymous ? 'G' : (user?.displayName?.[0]?.toUpperCase() || 'U'))
               }
             </button>
