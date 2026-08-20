@@ -2,9 +2,15 @@ import React from 'react';
 import useDeckStore from '../store/useDeckStore';
 import { IconMapPin, IconBookmarkFilled } from '@tabler/icons-react';
 import useTranslation from '../i18n/useTranslation';
+import useKoreanAddress from '../hooks/useKoreanAddress';
+
+function KoreanAddressSpan({ lat, lng, fallback, selectedLanguage }) {
+  const address = useKoreanAddress(lat, lng, fallback, selectedLanguage);
+  return <span>{address.split(',')[0]}</span>;
+}
 
 export default function SavedList() {
-  const { t } = useTranslation();
+  const { t, selectedLanguage } = useTranslation();
   const savedPopups = useDeckStore(state => state.savedPopups) || [];
   const visitedPopups = useDeckStore(state => state.visitedPopups) || [];
   const toggleVisited = useDeckStore(state => state.toggleVisited);
@@ -54,10 +60,16 @@ export default function SavedList() {
               
               {/* Info */}
               <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                <div style={{ background: '#E8F5F4', color: '#2D9F98', fontSize: '11px', fontWeight: 'bold', marginBottom: '4px', fontFamily: 'var(--font-display)', padding: '2px 6px', borderRadius: '4px', alignSelf: 'flex-start' }}>{popup.category === 'beauty_fashion' ? 'BEAUTY & FASHION' : popup.category.toUpperCase().replace('_', ' ')}</div>
-                <h3 style={{ margin: '0 0 8px 0', fontSize: '16px', color: 'var(--ink)', display: '-webkit-box', WebkitLineClamp: 1, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{popup.name.en}</h3>
+                <div style={{ background: '#E8F5F4', color: '#2D9F98', fontSize: '11px', fontWeight: 'bold', marginBottom: '4px', fontFamily: 'var(--font-display)', padding: '2px 6px', borderRadius: '4px', alignSelf: 'flex-start' }}>
+                  {t(`categories.${popup.category}`)?.toUpperCase()}
+                </div>
+                <h3 style={{ margin: '0 0 8px 0', fontSize: '16px', color: 'var(--ink)', display: '-webkit-box', WebkitLineClamp: 1, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                  {selectedLanguage === 'ko' && popup.name.ko ? popup.name.ko : popup.name.en}
+                </h3>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '4px', color: 'var(--ink-secondary)', fontSize: '12px', marginBottom: '12px' }}>
-                  <IconMapPin size={12} /> {popup.location.address.split(',')[0]} · {Math.round(popup.distance || 2.5)}km
+                  <IconMapPin size={12} style={{ flexShrink: 0 }} /> 
+                  <KoreanAddressSpan lat={popup.location.lat} lng={popup.location.lng} fallback={popup.location.address} selectedLanguage={selectedLanguage} />
+                  <span>· {Math.round(popup.distance || 2.5)}km</span>
                 </div>
                 
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
