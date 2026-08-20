@@ -69,9 +69,20 @@ const useDeckStore = create((set, get) => ({
     // Firestore 백그라운드 업데이트
     if (userId) {
       const userRef = doc(db, 'users', userId);
-      updateDoc(userRef, {
+      const updateData = {
         visitedPopups: isVisited ? arrayRemove(popupId) : arrayUnion(popupId)
-      }).catch(err => console.error('Failed to update visitedPopups in Firestore:', err));
+      };
+
+      // 처음 방문 처리할 때만 visitedLog에 타임스탬프 기록 추가 (취소할 땐 지우지 않음)
+      if (!isVisited) {
+        updateData.visitedLog = arrayUnion({
+          popupId,
+          visitedAt: new Date().toISOString()
+        });
+      }
+
+      updateDoc(userRef, updateData)
+        .catch(err => console.error('Failed to update visitedPopups in Firestore:', err));
     }
   },
 
