@@ -1,7 +1,8 @@
 import { create } from 'zustand';
-import { db, auth } from '../firebase';
+import { db, auth, analytics } from '../firebase';
 import { doc, getDoc, setDoc, updateDoc, arrayUnion, arrayRemove } from 'firebase/firestore';
 import { signInAnonymously, onAuthStateChanged } from 'firebase/auth';
+import { logEvent } from 'firebase/analytics';
 
 const useDeckStore = create((set, get) => ({
   userId: null,
@@ -27,11 +28,24 @@ const useDeckStore = create((set, get) => ({
   setUserLocation: (lat, lng) => set({ userLocation: { lat, lng } }),
   setCountry: (country) => set({ userCountry: country }),
   setLanguage: (lang) => set({ selectedLanguage: lang }),
-  toggleInterest: (interest) => set((state) => ({
-    userInterests: state.userInterests.includes(interest)
-      ? state.userInterests.filter((i) => i !== interest)
-      : [...state.userInterests, interest],
-  })),
+  toggleInterest: (interest) => {
+    const state = get();
+    const isAdding = !state.userInterests.includes(interest);
+    
+    if (isAdding) {
+      try {
+        if (analytics) logEvent(analytics, 'select_interest', { interest: interest });
+      } catch (e) {
+        console.error('Analytics error:', e);
+      }
+    }
+    
+    set({
+      userInterests: isAdding
+        ? [...state.userInterests, interest]
+        : state.userInterests.filter((i) => i !== interest),
+    });
+  },
   completeOnboarding: () => set({ hasCompletedOnboarding: true }),
 
   // Actions
@@ -39,6 +53,14 @@ const useDeckStore = create((set, get) => ({
     const { userId, savedPopups } = get();
     const isSaved = savedPopups.includes(popupId);
     
+    if (!isSaved) {
+      try {
+        if (analytics) logEvent(analytics, 'save_popup', { popup_id: popupId });
+      } catch (e) {
+        console.error('Analytics error:', e);
+      }
+    }
+
     // 로컬 상태 즉시 업데이트
     set({
       savedPopups: isSaved 
@@ -79,6 +101,12 @@ const useDeckStore = create((set, get) => ({
           popupId,
           visitedAt: new Date().toISOString()
         });
+        
+        try {
+          if (analytics) logEvent(analytics, 'mark_visited', { popup_id: popupId });
+        } catch (e) {
+          console.error('Analytics error:', e);
+        }
       }
 
       updateDoc(userRef, updateData)
@@ -132,7 +160,14 @@ const useDeckStore = create((set, get) => ({
   toggleHalal: () => set((state) => ({ halalOn: !state.halalOn })),
   toggleVegan: () => set((state) => ({ veganOn: !state.veganOn })),
 
-  openPopup: (popupId) => set({ selectedPopup: popupId }),
+  openPopup: (popupId) => {
+    try {
+      if (analytics) logEvent(analytics, 'view_popup_detail', { popup_id: popupId });
+    } catch (e) {
+      console.error('Analytics error:', e);
+    }
+    set({ selectedPopup: popupId });
+  },
   closePopup: () => set({ selectedPopup: null }),
 }));
 

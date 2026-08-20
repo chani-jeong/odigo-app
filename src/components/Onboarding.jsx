@@ -9,6 +9,8 @@ import useDeckStore from '../store/useDeckStore';
 import popups from '../data/popups.sample.json';
 import ALL_COUNTRIES from '../data/countries.json';
 import useTranslation from '../i18n/useTranslation';
+import { analytics } from '../firebase';
+import { logEvent } from 'firebase/analytics';
 
 const INTERESTS = [
   { id: 'beauty_fashion', labelKey: 'categories.beauty_fashion', icon: BeautyIcon },
@@ -146,6 +148,13 @@ export default function Onboarding() {
   };
 
   const handleCountrySelect = (cId) => {
+    try {
+      if (analytics) {
+        logEvent(analytics, 'select_country', { country_code: cId });
+      }
+    } catch (e) {
+      console.error('Analytics error:', e);
+    }
     setCountry(cId);
     setLanguage(getLanguageForCountry(cId));
   };
