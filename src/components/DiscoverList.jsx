@@ -4,6 +4,61 @@ import useDeckStore from '../store/useDeckStore';
 import { getForeignerReadyStatus } from '../utils/foreignerReady';
 import useTranslation from '../i18n/useTranslation';
 import enTranslation from '../i18n/en.json';
+import useKoreanAddress from '../hooks/useKoreanAddress';
+
+const DiscoverListItem = ({ popup, selectedLanguage, getDDay, openPopup }) => {
+  const address = useKoreanAddress(
+    popup.location.coordinates?.lat,
+    popup.location.coordinates?.lng,
+    popup.location.address,
+    selectedLanguage
+  );
+
+  return (
+    <div 
+      onClick={() => openPopup(popup.id)}
+      style={{ 
+        background: 'var(--paper)', borderRadius: '12px', overflow: 'hidden',
+        cursor: 'pointer', border: '1px solid var(--paper-border)',
+        display: 'flex', flexDirection: 'column',
+        boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
+      }}
+    >
+      {/* Image Area */}
+      <div style={{ position: 'relative', height: '160px', background: 'var(--brand-tint)', overflow: 'hidden' }}>
+        {popup.imageUrl ? (
+          <img src={popup.imageUrl} alt={popup.name.en} style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', inset: 0 }} />
+        ) : null}
+        {/* Overlay elements */}
+        <div style={{ position: 'absolute', top: '12px', left: '12px', background: 'var(--badge-new)', color: '#000', fontSize: '10px', fontWeight: 'bold', padding: '2px 6px', borderRadius: '8px', zIndex: 2, fontFamily: 'var(--font-mono)' }}>NEW</div>
+        <div style={{ position: 'absolute', top: '12px', right: '12px', width: '28px', height: '28px', borderRadius: '50%', background: 'rgba(0,0,0,0.4)', backdropFilter: 'blur(4px)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 2 }}>
+          <IconBookmark size={14} style={{ color: '#fff' }} />
+        </div>
+        <div style={{ position: 'absolute', bottom: '12px', left: '12px', color: getDDay(popup).isEnded ? 'rgba(255,255,255,0.6)' : '#fff', fontSize: '12px', fontWeight: 'bold', fontFamily: 'var(--font-mono)', zIndex: 2 }}>
+          {getDDay(popup).text}
+        </div>
+        {/* Gradient bottom for text legibility */}
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 40%)', zIndex: 1 }} />
+      </div>
+
+      {/* Content Area */}
+      <div style={{ padding: '16px 12px', display: 'flex', flexDirection: 'column' }}>
+        <div style={{ background: '#E8F5F4', color: '#2D9F98', fontSize: '11px', fontWeight: 'bold', marginBottom: '4px', fontFamily: 'var(--font-display)', padding: '2px 6px', borderRadius: '4px', alignSelf: 'flex-start' }}>
+          {enTranslation.categories[popup.category]?.toUpperCase() || popup.category.toUpperCase()}
+        </div>
+        <div style={{ color: 'var(--ink)', fontSize: '14px', fontWeight: 'bold', lineHeight: 1.3, marginBottom: '8px', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+          {popup.name[selectedLanguage] || popup.name.en}
+        </div>
+        <div style={{ display: 'flex', alignItems: 'flex-start', gap: '4px', color: 'var(--ink-secondary)', fontSize: '11px' }}>
+          <IconMapPin size={12} style={{ flexShrink: 0, marginTop: '2px' }} />
+          <span style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+            {address}
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default function DiscoverList({ activeFilterKey }) {
   const { selectedLanguage } = useTranslation();
@@ -60,49 +115,7 @@ export default function DiscoverList({ activeFilterKey }) {
       
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
         {displayPopups.map(popup => (
-          <div 
-            key={popup.id} 
-            onClick={() => openPopup(popup.id)}
-            style={{ 
-              background: 'var(--paper)', borderRadius: '12px', overflow: 'hidden',
-              cursor: 'pointer', border: '1px solid var(--paper-border)',
-              display: 'flex', flexDirection: 'column',
-              boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
-            }}
-          >
-            {/* Image Area */}
-            <div style={{ position: 'relative', height: '160px', background: 'var(--brand-tint)', overflow: 'hidden' }}>
-              {popup.imageUrl ? (
-                <img src={popup.imageUrl} alt={popup.name.en} style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', inset: 0 }} />
-              ) : null}
-              {/* Overlay elements */}
-              <div style={{ position: 'absolute', top: '12px', left: '12px', background: 'var(--badge-new)', color: '#000', fontSize: '10px', fontWeight: 'bold', padding: '2px 6px', borderRadius: '8px', zIndex: 2, fontFamily: 'var(--font-mono)' }}>NEW</div>
-              <div style={{ position: 'absolute', top: '12px', right: '12px', width: '28px', height: '28px', borderRadius: '50%', background: 'rgba(0,0,0,0.4)', backdropFilter: 'blur(4px)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 2 }}>
-                <IconBookmark size={14} style={{ color: '#fff' }} />
-              </div>
-              <div style={{ position: 'absolute', bottom: '12px', left: '12px', color: getDDay(popup).isEnded ? 'rgba(255,255,255,0.6)' : '#fff', fontSize: '12px', fontWeight: 'bold', fontFamily: 'var(--font-mono)', zIndex: 2 }}>
-                {getDDay(popup).text}
-              </div>
-              {/* Gradient bottom for text legibility */}
-              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 40%)', zIndex: 1 }} />
-            </div>
-
-            {/* Content Area */}
-            <div style={{ padding: '16px 12px', display: 'flex', flexDirection: 'column' }}>
-              <div style={{ background: '#E8F5F4', color: '#2D9F98', fontSize: '11px', fontWeight: 'bold', marginBottom: '4px', fontFamily: 'var(--font-display)', padding: '2px 6px', borderRadius: '4px', alignSelf: 'flex-start' }}>
-                {enTranslation.categories[popup.category]?.toUpperCase() || popup.category.toUpperCase()}
-              </div>
-              <div style={{ color: 'var(--ink)', fontSize: '14px', fontWeight: 'bold', lineHeight: 1.3, marginBottom: '8px', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
-                {popup.name[selectedLanguage] || popup.name.en}
-              </div>
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '4px', color: 'var(--ink-secondary)', fontSize: '11px' }}>
-                <IconMapPin size={12} style={{ flexShrink: 0, marginTop: '2px' }} />
-                <span style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
-                  {popup.location.address}
-                </span>
-              </div>
-            </div>
-          </div>
+          <DiscoverListItem key={popup.id} popup={popup} selectedLanguage={selectedLanguage} getDDay={getDDay} openPopup={openPopup} />
         ))}
       </div>
     </div>
