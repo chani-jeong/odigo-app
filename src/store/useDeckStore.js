@@ -53,9 +53,10 @@ const useDeckStore = create((set, get) => ({
   completeOnboarding: () => {
     const { userCountry, selectedLanguage, userInterests } = get();
     set({ hasCompletedOnboarding: true });
-    // 로그인된(비익명) 사용자면 Firestore에도 저장
+    
+    // 로그인/익명 상관없이 uid가 있으면 Firestore에 저장
     const currentUser = auth.currentUser;
-    if (currentUser && !currentUser.isAnonymous) {
+    if (currentUser) {
       const userRef = doc(db, 'users', currentUser.uid);
       setDoc(userRef, {
         hasCompletedOnboarding: true,
@@ -223,15 +224,14 @@ export default useDeckStore;
             savedPopups: data.savedPopups || [],
             visitedPopups: data.visitedPopups || [],
           };
-          // 로그인된 사용자의 온보딩 복원
-          if (!user.isAnonymous) {
-            if (data.hasCompletedOnboarding) {
-              update.hasCompletedOnboarding = true;
-            }
-            if (data.userCountry) update.userCountry = data.userCountry;
-            if (data.selectedLanguage) update.selectedLanguage = data.selectedLanguage;
-            if (data.userInterests) update.userInterests = data.userInterests;
+          // 온보딩 정보 복원 (익명/비익명 모두 적용)
+          if (data.hasCompletedOnboarding) {
+            update.hasCompletedOnboarding = true;
           }
+          if (data.userCountry) update.userCountry = data.userCountry;
+          if (data.selectedLanguage) update.selectedLanguage = data.selectedLanguage;
+          if (data.userInterests) update.userInterests = data.userInterests;
+
           useDeckStore.setState(update);
         } else {
           await setDoc(userRef, { savedPopups: [], visitedPopups: [] });
