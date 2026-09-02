@@ -25,9 +25,7 @@ export default function SwipeDeck() {
   const setEvents = useDeckStore(state => state.setEvents);
   const { selectedLanguage } = useTranslation();
 
-  useEffect(() => {
-    setEvents(popups);
-  }, [setEvents]);
+  // removed setEvents(popups)
 
   const controls = useAnimation();
   const x = useMotionValue(0);

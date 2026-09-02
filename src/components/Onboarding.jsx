@@ -73,11 +73,20 @@ export default function Onboarding() {
 
     let initTimer = null;
     let overlays = [];
+    const maxRetries = 50;
+    let retries = 0;
 
     const initMap = () => {
       // DOM 마운트가 완전히 끝나지 않았거나 카카오맵 스크립트가 아직 로드되지 않은 경우 재시도
-      if (!mapRef.current || !window.kakao || !window.kakao.maps) {
-        initTimer = setTimeout(initMap, 100);
+      if (!mapRef.current) return;
+      
+      if (!window.kakao || !window.kakao.maps) {
+        if (retries < maxRetries) {
+          retries++;
+          initTimer = setTimeout(initMap, 100);
+        } else {
+          console.error("Failed to load Kakao Maps SDK");
+        }
         return;
       }
 

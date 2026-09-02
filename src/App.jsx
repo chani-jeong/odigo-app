@@ -30,6 +30,7 @@ function App() {
   const userCountry = useDeckStore(state => state.userCountry);
   const setUserLocation = useDeckStore(state => state.setUserLocation);
   const sortEventsByDistance = useDeckStore(state => state.sortEventsByDistance);
+  const fetchEvents = useDeckStore(state => state.fetchEvents);
   const { t } = useTranslation();
 
   const [activeTab, setActiveTab] = useState('discover');
@@ -38,6 +39,10 @@ function App() {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
 
   const { user, isAnonymous } = useAuthStore();
+
+  React.useEffect(() => {
+    fetchEvents();
+  }, [fetchEvents]);
 
   React.useEffect(() => {
     if (hasAgreedToLocation && 'geolocation' in navigator) {

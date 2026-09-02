@@ -3,10 +3,11 @@ import { db, auth, analytics } from '../firebase';
 import { doc, getDoc, setDoc, updateDoc, arrayUnion, arrayRemove, serverTimestamp } from 'firebase/firestore';
 import { signInAnonymously, onAuthStateChanged } from 'firebase/auth';
 import { logEvent } from 'firebase/analytics';
-
+import popupsData from '../data/popups.sample.json';
 const useDeckStore = create((set, get) => ({
   userId: null,
   events: [],
+  isLoading: false,
   deckOrder: [],
   currentIndex: 0,
   likes: [],
@@ -153,6 +154,29 @@ const useDeckStore = create((set, get) => ({
         currentIndex: 0,
       };
     }),
+    
+  fetchEvents: async () => {
+    const { events } = get();
+    // If we already have events, do not overwrite (preserves state across tab switches)
+    if (events && events.length > 0) return;
+    
+    set({ isLoading: true });
+    try {
+      // Simulate network request if we were using Firestore
+      // const snap = await getDocs(collection(db, 'events'));
+      // const data = snap.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      const data = popupsData;
+      set({
+        events: data,
+        deckOrder: data.map((_, i) => i),
+        currentIndex: 0,
+      });
+    } catch (error) {
+      console.error("Error fetching events:", error);
+    } finally {
+      set({ isLoading: false });
+    }
+  },
   
   sortEventsByDistance: () => set((state) => {
     if (!state.userLocation || state.events.length === 0) return state;
