@@ -5,7 +5,14 @@ export default async function handler(req, res) {
   if (!process.env.DEEPL_API_KEY) {
     return res.status(500).json({ error: 'DEEPL_API_KEY is not set' });
   }
+  const SUPPORTED_LANGS = ['BG', 'CS', 'DA', 'DE', 'EL', 'EN', 'ES', 'ET', 'FI', 'FR', 'HU', 'ID', 'IT', 'JA', 'KO', 'LT', 'LV', 'NB', 'NL', 'PL', 'PT', 'RO', 'RU', 'SK', 'SL', 'SV', 'TR', 'UK', 'ZH'];
+  const target = targetLang.toUpperCase();
   
+  if (!SUPPORTED_LANGS.includes(target) && target !== 'EN-US' && target !== 'EN-GB') {
+    // If not supported by DeepL (like VI), just return original text
+    return res.status(200).json({ translated: text, note: 'Language not supported by DeepL' });
+  }
+
   try {
     const r = await fetch('https://api-free.deepl.com/v2/translate', {
       method: 'POST',
@@ -15,12 +22,11 @@ export default async function handler(req, res) {
       },
       body: JSON.stringify({ 
         text: [text], 
-        target_lang: targetLang.toUpperCase() === 'EN' ? 'EN-US' : targetLang.toUpperCase() 
+        target_lang: target === 'EN' ? 'EN-US' : target 
       }),
     });
     
     const raw = await r.text();
-    console.log('DeepL status:', r.status, 'body:', raw);
     
     if (!r.ok) {
       return res.status(r.status).json({ error: 'DeepL error', status: r.status, detail: raw });

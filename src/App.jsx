@@ -52,11 +52,15 @@ function App() {
           sortEventsByDistance();
         },
         (error) => {
-          console.log("Geolocation error or denied:", error);
+          if (!userLocation) {
+            useDeckStore.setState({ 
+              userLocation: { lat: 37.5445, lng: 127.0557 } 
+            });
+          }
         }
       );
     }
-  }, [hasAgreedToLocation, setUserLocation, sortEventsByDistance]);
+  }, [hasAgreedToLocation, setUserLocation, sortEventsByDistance, userLocation]);
   
   const dynamicFilters = React.useMemo(() => {
     let filters = [...baseFilters];

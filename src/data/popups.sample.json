@@ -226,7 +226,15 @@
     "access": {
       "booking_required": "walkin_only",
       "walkin_tip": "Operating Hours: Daily 10:00 - 22:00",
-      "url": "https://www.instagram.com/p/DbYINsYAUl4/"
+      "url": "https://www.instagram.com/p/DbYINsYAUl4/",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "verified_at": "2026-08-01",
+      "verified_by": "CI"
     },
     "description": "Experience LAKA's latest beauty trends at the Olive Young N Seongsu pop-up. Discover exclusive makeup collections in a vibrant setting.",
     "imageUrl": "/images/laka-oliveyoung.png"
@@ -258,7 +266,15 @@
     "access": {
       "booking_required": "walkin_only",
       "walkin_tip": "Operating Hours: Daily 11:00 - 20:00",
-      "url": "https://map.naver.com/p/entry/place/2082644987?placePath=%252Fhome%253Fentry%253Dplt&searchType=place&lng=127.0542863&lat=37.5424845&c=15.00,0,0,0,dh"
+      "url": "https://map.naver.com/p/entry/place/2082644987?placePath=%252Fhome%253Fentry%253Dplt&searchType=place&lng=127.0542863&lat=37.5424845&c=15.00,0,0,0,dh",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "verified_at": "2026-06-16",
+      "verified_by": "CI"
     },
     "description": "Taste the fiery excitement of Shin Ramyun reimagined as classic Korean street food (bunsik). A fun and spicy culinary experience awaits.",
     "imageUrl": "/images/shinramyun-bunsik.png"
@@ -290,7 +306,15 @@
     "access": {
       "booking_required": "walkin_only",
       "walkin_tip": "Operating Hours: Daily 12:00 - 21:00",
-      "url": "https://www.instagram.com/p/DYyvnsfk51x"
+      "url": "https://www.instagram.com/p/DYyvnsfk51x",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "verified_at": "2026-05-23",
+      "verified_by": "CI"
     },
     "description": "Step into the magical world of Toy Story. Explore beautifully themed rooms and find your favorite character merchandise.",
     "imageUrl": "/images/toystory.png"
@@ -322,7 +346,15 @@
     "access": {
       "booking_required": "walkin_only",
       "walkin_tip": "Operating Hours: Daily 09:00 - 18:00",
-      "url": "https://www.instagram.com/mapdal_seoul/"
+      "url": "https://www.instagram.com/mapdal_seoul/",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "verified_at": "2026-06-01",
+      "verified_by": "CI"
     },
     "description": "Your ultimate destination for K-Pop merchandise. Browse through a vast collection of exclusive albums, photocards, and fan items.",
     "imageUrl": "/images/kpop-goods.png"
@@ -354,7 +386,15 @@
     "access": {
       "booking_required": "walkin_only",
       "walkin_tip": "Operating Hours: Daily 11:00 - 22:00",
-      "url": "https://www.instagram.com/p/DbsVywWgX9b/"
+      "url": "https://www.instagram.com/p/DbsVywWgX9b/",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "verified_at": "2026-08-10",
+      "verified_by": "CI"
     },
     "description": "A unique DIY bedding customization pop-up where you can match quirky Fuggler character dolls with your bedding.",
     "imageUrl": "/images/fuggler-finca.png"
@@ -386,7 +426,15 @@
     "access": {
       "booking_required": "booking_required",
       "walkin_tip": "MERCH SHOP requires advance reservation via Weverse app. DISPLAY ZONE is walk-in accessible (wait times may apply). Operating Hours: Sun-Thu 11:00-20:00, Fri-Sat 11:00-21:00",
-      "url": "https://weverse.io/cortis/notice/38165"
+      "url": "https://weverse.io/cortis/notice/38165",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "verified_at": "2026-08-14",
+      "verified_by": "CI"
     },
     "description": "Celebrate HYBE's boy group CORTIS's birthday party pop-up. Features a pre-booked merch shop and a walk-in friendly display zone.",
     "imageUrl": "/images/cortis-phonedown.png"
@@ -421,7 +469,15 @@
     "access": {
       "booking_required": "ticket_required",
       "walkin_tip": "Operating Hours: Mon-Thu 10:30-20:00 (last entry 19:00), Fri-Sun 10:30-20:30 (last entry 19:30)",
-      "url": "https://www.instagram.com/p/DZWQZbCGKiK/MzllZGZ4MnZkbzV6"
+      "url": "https://www.instagram.com/p/DZWQZbCGKiK/MzllZGZ4MnZkbzV6",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "verified_at": "2026-07-22",
+      "verified_by": "CI"
     },
     "description": "A special exhibition exploring the identity and provocative messages of the anonymous street artist Banksy.",
     "imageUrl": "/images/banksy-stillhere.png"
@@ -453,7 +509,15 @@
     "access": {
       "booking_required": "walkin_only",
       "walkin_tip": "Operating Hours: Mon-Thu 10:30-20:00, Fri-Sun 10:30-20:30. Waitlist available if seats are full; takeout and merchandise purchase are walk-in only. Closing date may be extended.",
-      "url": "https://www.instagram.com/p/Da_tfWfDr1B"
+      "url": "https://www.instagram.com/p/Da_tfWfDr1B",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "verified_at": "2026-07-28",
+      "verified_by": "CI"
     },
     "description": "A delightful bakery cafe themed around Sanrio's beloved character Pompompurin. Enjoy adorable desserts and exclusive merchandise.",
     "imageUrl": "/images/pompompurin-bakery.png"
@@ -485,7 +549,15 @@
     "access": {
       "booking_required": "walkin_only",
       "walkin_tip": "Operating Hours: Daily 12:00 - 20:00. Week 1 special discounts through 08.16, limited-quantity gifts with purchase while supplies last.",
-      "url": "https://www.instagram.com/p/DbajnuymQKa/"
+      "url": "https://www.instagram.com/p/DbajnuymQKa/",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "verified_at": "2026-08-07",
+      "verified_by": "CI"
     },
     "description": "OJOS brings its signature style to Seongsu, featuring an exclusive FILA collaboration collection and special discounts on seasonal archives.",
     "imageUrl": "/images/ojos-popup.png"
@@ -517,7 +589,15 @@
     "access": {
       "booking_required": "walkin_only",
       "walkin_tip": "Operating Hours: Daily 11:00 - 18:00. Reservation policy not officially confirmed as of data entry — verify walk-in vs. reservation status before visit.",
-      "url": "https://m.booking.naver.com/booking/12/bizes/1712600/items/7939991?area=bmp&map-search=1&startDateTime=2026-08-20T00%3A00%3A00%2B09%3A00"
+      "url": "https://m.booking.naver.com/booking/12/bizes/1712600/items/7939991?area=bmp&map-search=1&startDateTime=2026-08-20T00%3A00%3A00%2B09%3A00",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "verified_at": "2026-08-14",
+      "verified_by": "CI"
     },
     "description": "Immerse yourself in Jo Malone London's new Sea Salt & Bergamot fragrance. Experience the refreshing coastal scent in a beautifully curated space.",
     "imageUrl": "/images/jomalone-seasalt.png"
@@ -549,7 +629,15 @@
     "access": {
       "booking_required": "walkin_only",
       "walkin_tip": "F&B Operating Hours: Daily 10:00 - 22:00 (last order 21:30). Card payment only, no cash accepted. Live performances every Fri/Sat/Sun. F&B menu items have limited quantities and may sell out early. Delight Project (brand behind this pop-up) offers a protein/vegan product line, though vegan status of specific menu items sold here is not officially confirmed — check on-site.",
-      "url": "https://www.instagram.com/p/DaPpTWBEtaa/"
+      "url": "https://www.instagram.com/p/DaPpTWBEtaa/",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "verified_at": "2026-07-01",
+      "verified_by": "CI"
     },
     "description": "A summer-themed F&B pop-up co-hosted by Olive Young and Olive Better, offering healthy gelato, snacks, and refreshing beverages.",
     "imageUrl": "/images/oliveyoung-summerrecipe.png"
@@ -581,7 +669,15 @@
     "access": {
       "booking_required": "walkin_only",
       "walkin_tip": "Operating Hours: Daily 11:00 - 22:00. This is a long-running store (through 2027), likely walk-in retail — reservation policy not officially confirmed as of data entry, verify before visit.",
-      "url": "https://map.naver.com/p/entry/place/2078711277?placePath=%2Fhome%3FfeedId%3D20916027%26from%3Dmap%26fromPanelNum%3D1%26additionalHeight%3D76%26timestamp%3D202608202244%26locale%3Dko%26svcName%3Dmap_pcv5&scrollTo=feed&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202605291444&locale=ko&svcName=map_pcv5&searchType=place&lng=127.0555804&lat=37.5411505&c=15.00,0,0,0,dh"
+      "url": "https://map.naver.com/p/entry/place/2078711277?placePath=%2Fhome%3FfeedId%3D20916027%26from%3Dmap%26fromPanelNum%3D1%26additionalHeight%3D76%26timestamp%3D202608202244%26locale%3Dko%26svcName%3Dmap_pcv5&scrollTo=feed&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202605291444&locale=ko&svcName=map_pcv5&searchType=place&lng=127.0555804&lat=37.5411505&c=15.00,0,0,0,dh",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "verified_at": "2026-05-20",
+      "verified_by": "CI"
     },
     "description": "Explore the Calvin Klein Seongsu store, showcasing unique artist collaboration collections and exclusive merchandise in a sleek, modern space.",
     "imageUrl": "/images/ck-seongsu.png"
@@ -613,7 +709,15 @@
     "access": {
       "booking_required": "walkin_only",
       "walkin_tip": "Operating Hours: Daily 11:00 - 22:00. POP MART membership required for the random machine event; RIIZE theme zone also at Anguk store.",
-      "url": "https://www.instagram.com/p/Db7ysQ9jGdb/"
+      "url": "https://www.instagram.com/p/Db7ysQ9jGdb/",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "verified_at": "2026-08-14",
+      "verified_by": "CI"
     },
     "description": "A dynamic collaboration pop-up between POP MART and K-pop sensation RIIZE. Features an exclusive theme zone and random merchandise events.",
     "imageUrl": "/images/popmart-riize.png"
@@ -645,7 +749,15 @@
     "access": {
       "booking_required": "walkin_only",
       "walkin_tip": "Operating Hours: Daily 11:00 - 20:00. Schedule subject to change on-site.",
-      "url": "https://www.instagram.com/p/Db4eyr4E5qE/"
+      "url": "https://www.instagram.com/p/Db4eyr4E5qE/",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "verified_at": "2026-08-14",
+      "verified_by": "CI"
     },
     "description": "Discover Torriden's latest 'Deep Dive' skincare line in this refreshing pop-up. Experience deep hydration through engaging interactive zones.",
     "imageUrl": "/images/torriden-deepdive.png"
@@ -677,7 +789,15 @@
     "access": {
       "booking_required": "walkin_only",
       "walkin_tip": "Operating Hours: Daily 10:30 - 22:00. Part of Pokemon 30th anniversary Mega Festa; schedule may change per mall operations.",
-      "url": "https://www.instagram.com/p/DbcQDxbPkdN/"
+      "url": "https://www.instagram.com/p/DbcQDxbPkdN/",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "verified_at": "2026-08-16",
+      "verified_by": "CI"
     },
     "description": "Celebrate Pokemon's 30th anniversary at this Magikarp-themed spectacular. Shop for the very first release of original anniversary merchandise.",
     "imageUrl": "/images/pokemon-muleungdowon.png"
@@ -709,7 +829,15 @@
     "access": {
       "booking_required": "walkin_only",
       "walkin_tip": "Operating Hours: Mon-Thu 10:30-20:00, Fri-Sun 10:30-20:30.",
-      "url": "https://www.instagram.com/p/Da6xqwoEeVG"
+      "url": "https://www.instagram.com/p/Da6xqwoEeVG",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "verified_at": "2026-07-24",
+      "verified_by": "CI"
     },
     "description": "A sweet collaboration pop-up between skincare brand MEDICUBE and beauty label FOREVER CHERRY. Explore exclusive kits and lovely photo zones.",
     "imageUrl": "/images/medicube-forevercherry.png"
@@ -741,7 +869,15 @@
     "access": {
       "booking_required": "walkin_only",
       "walkin_tip": "Operating Hours: Daily 11:00 - 20:00.",
-      "url": "https://www.instagram.com/p/DbnM16ATs2J/"
+      "url": "https://www.instagram.com/p/DbnM16ATs2J/",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "verified_at": "2026-08-06",
+      "verified_by": "CI"
     },
     "description": "Immerse yourself in record culture at the SOUNDS GOOD pop-up. Browse through new arrivals and exclusive lifestyle items curated for music lovers.",
     "imageUrl": "/images/soundsgood-hannam.png"
@@ -773,7 +909,15 @@
     "access": {
       "booking_required": "walkin_only",
       "walkin_tip": "Operating Hours: Mon-Fri 11:00-22:00, Sat-Sun 10:30-22:00. Two-season concept (Vintage & Marine), tied to Detective Conan movie 29.",
-      "url": "https://www.instagram.com/p/DbnMr8LGOr4/"
+      "url": "https://www.instagram.com/p/DbnMr8LGOr4/",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "verified_at": "2026-08-13",
+      "verified_by": "CI"
     },
     "description": "A special collaboration cafe celebrating the 29th Detective Conan movie. Features unique character-themed menus across two distinct seasonal concepts.",
     "imageUrl": "/images/conan-boxcafe.png"
@@ -805,7 +949,15 @@
     "access": {
       "booking_required": "walkin_only",
       "walkin_tip": "Operating Hours: Daily 11:00 - 02:00. bhc's first flagship store with customizable chicken and floor-specific dining concepts.",
-      "url": "https://www.instagram.com/p/Dbrskb6EXiP/"
+      "url": "https://www.instagram.com/p/Dbrskb6EXiP/",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "verified_at": "2026-08-12",
+      "verified_by": "CI"
     },
     "description": "Visit bhc's very first flagship store for a premium fried chicken experience. Enjoy a customizable menu across uniquely designed dining floors.",
     "imageUrl": "/images/bhc-gangnam.png"
