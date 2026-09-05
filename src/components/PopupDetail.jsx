@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import { IconX, IconPhoto, IconMapPin, IconCalendar, IconShieldCheck, IconHeart, IconMessage, IconCheck } from '@tabler/icons-react';
 import useDeckStore from '../store/useDeckStore';
 import { getForeignerReadyStatus } from '../utils/foreignerReady';
+import { getBookingStatusMeta } from '../utils/bookingStatus';
+import { isPopupEnded } from '../utils/popupStatus';
 import useTranslation from '../i18n/useTranslation';
 import useKoreanAddress from '../hooks/useKoreanAddress';
 import ReviewListSheet from './ReviewListSheet';
+import EndedBadge from './EndedBadge';
 
 function KoreanAddressSpan({ lat, lng, fallback, selectedLanguage }) {
   const address = useKoreanAddress(lat, lng, fallback, selectedLanguage);
@@ -43,6 +46,8 @@ export default function PopupDetail() {
     card: popup.access?.checks?.card !== false,
     flow: popup.access?.checks?.flow,
   });
+  const bookingMeta = getBookingStatusMeta(popup.access?.booking_required);
+  const ended = isPopupEnded(popup);
 
   const badgeColors = {
     ready: { bg: '#E8F5F4', color: '#2D9F98' },
@@ -122,6 +127,11 @@ export default function PopupDetail() {
           ) : (
             <IconPhoto size={48} style={{ color: 'var(--ink)' }} />
           )}
+          {ended && (
+            <div style={{ position: 'absolute', top: '16px', left: '16px', zIndex: 5 }}>
+              <EndedBadge label={t('card.ended')} />
+            </div>
+          )}
           {status && (
             <div
               className="ready-badge"
@@ -155,7 +165,15 @@ export default function PopupDetail() {
             <IconCalendar size={18} />
             <span style={{ fontSize: '15px' }}>{popup.period.start} ~ {popup.period.end}</span>
           </div>
-          
+
+          {bookingMeta && (
+            <div style={{ display: 'flex', gap: '8px', marginBottom: '20px' }}>
+              <span style={{ display: 'flex', alignItems: 'center', gap: '4px', background: bookingMeta.bg, color: bookingMeta.color, padding: '4px 10px', borderRadius: '8px', fontSize: '12px', fontWeight: 'bold', fontFamily: 'var(--font-mono)' }}>
+                <bookingMeta.Icon size={14} /> {t(bookingMeta.labelKey)}
+              </span>
+            </div>
+          )}
+
           {popup.category === 'food' && (popup.dietary?.halal !== 'unknown' || popup.dietary?.vegan !== 'unknown') && (
             <div style={{ display: 'flex', gap: '8px', marginBottom: '24px' }}>
               {popup.dietary?.halal && popup.dietary.halal !== 'unknown' && (

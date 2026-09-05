@@ -424,7 +424,7 @@
       "vegan": "unknown"
     },
     "access": {
-      "booking_required": "booking_required",
+      "booking_required": "reservation_required",
       "walkin_tip": "MERCH SHOP requires advance reservation via Weverse app. DISPLAY ZONE is walk-in accessible (wait times may apply). Operating Hours: Sun-Thu 11:00-20:00, Fri-Sat 11:00-21:00",
       "url": "https://weverse.io/cortis/notice/38165",
       "checks": {
@@ -467,7 +467,7 @@
       "vegan": "unknown"
     },
     "access": {
-      "booking_required": "ticket_required",
+      "booking_required": "reservation_required",
       "walkin_tip": "Operating Hours: Mon-Thu 10:30-20:00 (last entry 19:00), Fri-Sun 10:30-20:30 (last entry 19:30)",
       "url": "https://www.instagram.com/p/DZWQZbCGKiK/MzllZGZ4MnZkbzV6",
       "checks": {

@@ -2,13 +2,15 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { IconLeaf, IconCurrentLocation } from '@tabler/icons-react';
 import useDeckStore from '../store/useDeckStore';
 import useTranslation from '../i18n/useTranslation';
+import { isPopupEnded } from '../utils/popupStatus';
+import EndedBadge from './EndedBadge';
 
 export default function MapTab({ isVisible }) {
   const events = useDeckStore(state => state.events);
   const openPopup = useDeckStore(state => state.openPopup);
   const hasAgreedToLocation = useDeckStore(state => state.hasAgreedToLocation);
   const setAgreedToLocation = useDeckStore(state => state.setAgreedToLocation);
-  const { selectedLanguage } = useTranslation();
+  const { selectedLanguage, t } = useTranslation();
 
   const [isConsentChecked, setIsConsentChecked] = useState(false);
   const [showConsentModal, setShowConsentModal] = useState(false);
@@ -329,6 +331,11 @@ export default function MapTab({ isVisible }) {
                 <div style={{ height: '55%', background: 'var(--ink-secondary)', position: 'relative' }}>
                   {popup.imageUrl && (
                     <img src={popup.imageUrl} alt={popup.name.en} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  )}
+                  {isPopupEnded(popup) && (
+                    <div style={{ position: 'absolute', top: '8px', left: '8px', zIndex: 2 }}>
+                      <EndedBadge label={t('card.ended')} style={{ padding: '3px 8px', fontSize: '10px' }} />
+                    </div>
                   )}
                 </div>
                 

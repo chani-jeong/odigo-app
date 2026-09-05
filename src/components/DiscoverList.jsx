@@ -5,8 +5,9 @@ import { getForeignerReadyStatus } from '../utils/foreignerReady';
 import useTranslation from '../i18n/useTranslation';
 import enTranslation from '../i18n/en.json';
 import useKoreanAddress from '../hooks/useKoreanAddress';
+import EndedBadge from './EndedBadge';
 
-const DiscoverListItem = ({ popup, selectedLanguage, getDDay, openPopup }) => {
+const DiscoverListItem = ({ popup, selectedLanguage, getDDay, openPopup, t }) => {
   const address = useKoreanAddress(
     popup.location.lat,
     popup.location.lng,
@@ -30,6 +31,11 @@ const DiscoverListItem = ({ popup, selectedLanguage, getDDay, openPopup }) => {
           <img src={popup.imageUrl} alt={popup.name.en} style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', inset: 0 }} />
         ) : null}
         {/* Overlay elements */}
+        {getDDay(popup).isEnded && (
+          <div style={{ position: 'absolute', top: '12px', left: '12px', zIndex: 2 }}>
+            <EndedBadge label={t('card.ended')} />
+          </div>
+        )}
         <div style={{ position: 'absolute', top: '12px', right: '12px', width: '28px', height: '28px', borderRadius: '50%', background: 'rgba(0,0,0,0.4)', backdropFilter: 'blur(4px)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 2 }}>
           <IconBookmark size={14} style={{ color: '#fff' }} />
         </div>
@@ -60,7 +66,7 @@ const DiscoverListItem = ({ popup, selectedLanguage, getDDay, openPopup }) => {
 };
 
 export default function DiscoverList({ activeFilterKey }) {
-  const { selectedLanguage } = useTranslation();
+  const { selectedLanguage, t } = useTranslation();
   const events = useDeckStore(state => state.events);
   const openPopup = useDeckStore(state => state.openPopup);
 
@@ -114,7 +120,7 @@ export default function DiscoverList({ activeFilterKey }) {
       
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
         {displayPopups.map(popup => (
-          <DiscoverListItem key={popup.id} popup={popup} selectedLanguage={selectedLanguage} getDDay={getDDay} openPopup={openPopup} />
+          <DiscoverListItem key={popup.id} popup={popup} selectedLanguage={selectedLanguage} getDDay={getDDay} openPopup={openPopup} t={t} />
         ))}
       </div>
     </div>

@@ -4,6 +4,7 @@ import { IconPhoto, IconMapPin, IconCalendarEvent, IconShieldCheck, IconX, IconH
 import useDeckStore from '../store/useDeckStore';
 import popups from '../data/popups.sample.json';
 import { getForeignerReadyStatus } from '../utils/foreignerReady';
+import { getBookingStatusMeta } from '../utils/bookingStatus';
 import useTranslation from '../i18n/useTranslation';
 import useKoreanAddress from '../hooks/useKoreanAddress';
 
@@ -23,7 +24,7 @@ export default function SwipeDeck() {
   const toggleSave = useDeckStore(state => state.toggleSave);
   const savedPopups = useDeckStore(state => state.savedPopups);
   const setEvents = useDeckStore(state => state.setEvents);
-  const { selectedLanguage } = useTranslation();
+  const { selectedLanguage, t } = useTranslation();
 
   // removed setEvents(popups)
 
@@ -80,6 +81,7 @@ export default function SwipeDeck() {
       card: popup.access?.checks?.card !== false,
       flow: popup.access?.checks?.flow,
     });
+    const bookingMeta = getBookingStatusMeta(popup.access?.booking_required);
 
     const cardContent = (
       <>
@@ -102,6 +104,11 @@ export default function SwipeDeck() {
             {status === 'ready' && (
               <span style={{ background: '#E8F5F4', color: '#2D9F98', padding: '4px 10px', borderRadius: '8px', fontSize: '12px', fontWeight: 'bold', fontFamily: 'var(--font-mono)', display: 'flex', alignItems: 'center', gap: '4px' }}>
                 <IconShieldCheck size={14} /> Foreigner-Ready
+              </span>
+            )}
+            {bookingMeta && (
+              <span style={{ background: bookingMeta.bg, color: bookingMeta.color, padding: '4px 10px', borderRadius: '8px', fontSize: '12px', fontWeight: 'bold', fontFamily: 'var(--font-mono)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                <bookingMeta.Icon size={14} /> {t(bookingMeta.labelKey)}
               </span>
             )}
           </div>

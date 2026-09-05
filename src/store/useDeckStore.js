@@ -4,6 +4,17 @@ import { doc, getDoc, setDoc, updateDoc, arrayUnion, arrayRemove, serverTimestam
 import { signInAnonymously, onAuthStateChanged } from 'firebase/auth';
 import { logEvent } from 'firebase/analytics';
 import popupsData from '../data/popups.sample.json';
+import { isPopupEnded } from '../utils/popupStatus';
+
+// Discover 스와이프 카드용 deckOrder 계산.
+// events 배열 자체는 그대로 두고(Map/List/Detail 화면에서는 종료된 팝업도 계속 보여줘야 함),
+// 스와이프 덱에 올라갈 인덱스만 종료되지 않은 팝업으로 필터링한다.
+const buildActiveDeckOrder = (events) =>
+  events.reduce((acc, event, index) => {
+    if (!isPopupEnded(event)) acc.push(index);
+    return acc;
+  }, []);
+
 const useDeckStore = create((set, get) => ({
   userId: null,
   events: [],
@@ -150,7 +161,7 @@ const useDeckStore = create((set, get) => ({
     set(() => {
       return {
         events,
-        deckOrder: events.map((_, i) => i),
+        deckOrder: buildActiveDeckOrder(events),
         currentIndex: 0,
       };
     }),
@@ -168,7 +179,7 @@ const useDeckStore = create((set, get) => ({
       const data = popupsData;
       set({
         events: data,
-        deckOrder: data.map((_, i) => i),
+        deckOrder: buildActiveDeckOrder(data),
         currentIndex: 0,
       });
     } catch (error) {
