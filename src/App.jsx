@@ -28,6 +28,7 @@ function App() {
   const hasCompletedOnboarding = useDeckStore(state => state.hasCompletedOnboarding);
   const hasAgreedToLocation = useDeckStore(state => state.hasAgreedToLocation);
   const userCountry = useDeckStore(state => state.userCountry);
+  const userLocation = useDeckStore(state => state.userLocation);
   const setUserLocation = useDeckStore(state => state.setUserLocation);
   const sortEventsByDistance = useDeckStore(state => state.sortEventsByDistance);
   const fetchEvents = useDeckStore(state => state.fetchEvents);
