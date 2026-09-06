@@ -961,5 +961,732 @@
     },
     "description": "Visit bhc's very first flagship store for a premium fried chicken experience. Enjoy a customizable menu across uniquely designed dining floors.",
     "imageUrl": "/images/bhc-gangnam.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "daejeon-bomnaln-2026",
+    "name": {
+      "en": "Bomnaln Pop-Up",
+      "ko": "봄날엔 팝업 @ 대전"
+    },
+    "area": "daejeon_yuseong",
+    "category": "food",
+    "period": {
+      "start": "2026-08-28",
+      "end": "2026-09-06"
+    },
+    "location": {
+      "lat": 36.3751817693989,
+      "lng": 127.381765372066,
+      "address": "Daejeon Shinsegae Art & Science, Yuseong-gu, Daejeon (대전 유성구 엑스포로 1 대전신세계 Art & Science 지하 1층 이벤트홀)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/DcYHZ0Ej_yP/",
+      "walkin_tip": "Operating Hours: Mon-Thu 10:30-20:00, Fri-Sun 10:30-20:30",
+      "verified_at": "2026-09-06",
+      "verified_by": "user_provided"
+    },
+    "description": "A cozy pop-up bringing the comforting flavors of Bomnaln to Daejeon Shinsegae. Enjoy seasonal snacks and treats in a warm, home-style atmosphere."
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "daejeon-dalcashmere-2026",
+    "name": {
+      "en": "Dalcashmere POP UP STORE",
+      "ko": "달캐시미어 팝업스토어"
+    },
+    "area": "daejeon_yuseong",
+    "category": "beauty_fashion",
+    "period": {
+      "start": "2026-08-28",
+      "end": "2026-09-20"
+    },
+    "location": {
+      "lat": 36.3751817693989,
+      "lng": 127.381765372066,
+      "address": "Daejeon Shinsegae Art & Science, Yuseong-gu, Daejeon (대전 유성구 엑스포로 1 대전신세계 Art & Science 지하 1층)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/reel/DclZvgaBiYj/",
+      "walkin_tip": "Operating Hours: Mon-Thu 10:30-20:00, Fri-Sun 10:30-20:30",
+      "verified_at": "2026-09-06",
+      "verified_by": "user_provided"
+    },
+    "description": "Explore Dalcashmere's soft cashmere knitwear and accessories at this Daejeon pop-up store. Discover cozy new-season pieces designed for everyday wear."
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "cheongju-shinchan-2026",
+    "name": {
+      "en": "Crayon Shin-chan Pop-Up - Tteokip Village Residents' Grand Festival @ Cheongju",
+      "ko": "짱구는 못말려 팝업 - 떡잎마을 주민 대축제 @ 청주"
+    },
+    "area": "cheongju_heungdeok",
+    "category": "character",
+    "period": {
+      "start": "2026-08-28",
+      "end": "2026-09-06"
+    },
+    "location": {
+      "lat": 36.6269631809148,
+      "lng": 127.430731962744,
+      "address": "Connect Hyundai Cheongju, Heungdeok-gu, Cheongju (충북 청주시 흥덕구 2순환로 1225 커넥트현대 청주 1층 이벤트플라자)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/DaPUwB-AYs2/",
+      "walkin_tip": "Operating Hours: Mon-Sun 10:30-21:00",
+      "verified_at": "2026-09-06",
+      "verified_by": "user_provided"
+    },
+    "description": "Step into the world of Crayon Shin-chan at this lively pop-up festival celebrating the residents of Tteokip Village. Enjoy character photo zones and exclusive merchandise."
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "cheonan-youngtoys-2026",
+    "name": {
+      "en": "Young Toys Inc. Pop-Up at the Cheonan K-Culture Expo",
+      "ko": "천안 K-컬처 박람회 영실업 팝업"
+    },
+    "area": "cheonan_dongnam",
+    "category": "character",
+    "period": {
+      "start": "2026-09-02",
+      "end": "2026-09-06"
+    },
+    "location": {
+      "lat": 36.7818719998049,
+      "lng": 127.230398111736,
+      "address": "Independence Hall of Korea, Dongnam-gu, Cheonan (충남 천안시 동남구 목천읍 독립기념관로 1 천안 독립기념관 K-플레이그라운드 키즈존 A6 부스)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/Dcr22l3jOxK/",
+      "walkin_tip": "Operating Hours: Wed-Sun 10:00-18:00",
+      "verified_at": "2026-09-06",
+      "verified_by": "user_provided"
+    },
+    "description": "Meet beloved characters from Young Toys at this special pop-up booth during the Cheonan K-Culture Expo. A fun kids-friendly zone with photo spots and merchandise."
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "jeju-ghibli-2026",
+    "name": {
+      "en": "Studio Ghibli Exhibition in Jeju X Acorn Forest Pop-Up",
+      "ko": "스튜디오 지브리展 in Jeju X 도토리숲 팝업"
+    },
+    "area": "jeju",
+    "category": "character",
+    "period": {
+      "start": "2026-07-09",
+      "end": "2026-09-27"
+    },
+    "location": {
+      "lat": 33.5059289896254,
+      "lng": 126.495952397373,
+      "address": "Jeju International Airport, Jeju-si, Jeju (제주특별자치도 제주시 공항로 2 제주국제공항 도착층 3번 게이트 앞)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/DaSKqZdFliu/",
+      "walkin_tip": "Operating Hours: Mon-Sun 08:00-20:00",
+      "verified_at": "2026-09-06",
+      "verified_by": "user_provided"
+    },
+    "description": "Wander through a whimsical Studio Ghibli-themed pop-up right at Jeju International Airport. Meet familiar characters from the Acorn Forest before you take off."
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "seogwipo-onepiece-2026",
+    "name": {
+      "en": "One Piece: The Great Pirate Era Asia Tour",
+      "ko": "원피스 대해적시대 아시아투어"
+    },
+    "area": "seogwipo",
+    "category": "character",
+    "period": {
+      "start": "2026-07-04",
+      "end": "2027-01-03"
+    },
+    "location": {
+      "lat": 33.2462193733057,
+      "lng": 126.509275340644,
+      "address": "Jeju World Cup Stadium, Seogwipo, Jeju (제주특별자치도 서귀포시 월드컵로 33 월드컵경기장 (제주월드컵경기장 내))"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/DZUPQ3pPgRC/",
+      "walkin_tip": "Operating Hours: Mon-Sun 10:00-20:00",
+      "verified_at": "2026-09-06",
+      "verified_by": "user_provided"
+    },
+    "description": "An epic touring exhibition celebrating One Piece's Great Pirate Era, docking at Jeju World Cup Stadium. Explore immersive sets and exclusive merchandise from the beloved series."
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "busan-idolmaster-2026",
+    "name": {
+      "en": "Academy Idol Master Initial Letter Cultural Festival Fair @ Busan",
+      "ko": "학원 아이돌 마스터 초성문화제 페어 @ 부산"
+    },
+    "area": "busan_bujin",
+    "category": "character",
+    "period": {
+      "start": "2026-08-29",
+      "end": "2026-09-13"
+    },
+    "location": {
+      "lat": 35.1529239695577,
+      "lng": 129.059604905121,
+      "address": "Animate Busan, Samjung Tower, Busanjin-gu, Busan (부산 부산진구 중앙대로 672 애니메이트 부산점 삼정타워 11층)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://x.com/animate_hongdae/status/2093322716329791823",
+      "walkin_tip": "Operating Hours: Mon-Thu 11:00-21:40, Fri-Sat 11:00-22:10, Sun 11:00-21:40",
+      "verified_at": "2026-09-06",
+      "verified_by": "user_provided"
+    },
+    "description": "A themed fair celebrating The Idolmaster franchise at Animate Busan. Enjoy exclusive goods and photo spots inspired by the game's idols."
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "busan-identityv-2026",
+    "name": {
+      "en": "Identity V Winter Festival Fair @ Busan",
+      "ko": "제5인격 겨울축제 페어 @ 부산"
+    },
+    "area": "busan_bujin",
+    "category": "character",
+    "period": {
+      "start": "2026-08-29",
+      "end": "2026-09-13"
+    },
+    "location": {
+      "lat": 35.1529239695577,
+      "lng": 129.059604905121,
+      "address": "Animate Busan, Samjung Tower, Busanjin-gu, Busan (부산 부산진구 중앙대로 672 삼정타워 11층 애니메이트 부산점)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://x.com/animate_hongdae/status/2093322707890749885",
+      "walkin_tip": "Operating Hours: Mon-Thu 11:00-21:40, Fri-Sat 11:00-22:10, Sun 11:00-21:40",
+      "verified_at": "2026-09-06",
+      "verified_by": "user_provided"
+    },
+    "description": "Celebrate the Identity V winter festival at Animate Busan with exclusive merchandise and character-themed displays."
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "busan-maru-2026",
+    "name": {
+      "en": "Maru's Dog Pop-Up: Maru's Trip to Busan",
+      "ko": "마루는 강쥐 팝업: 마루의 부산 여행"
+    },
+    "area": "busan_haeundae",
+    "category": "character",
+    "period": {
+      "start": "2026-08-27",
+      "end": "2026-09-30"
+    },
+    "location": {
+      "lat": 35.1698614224623,
+      "lng": 129.12829006113,
+      "address": "Shinsegae Centum City Mall, Haeundae-gu, Busan (부산 해운대구 센텀4로 15 부산 신세계센텀시티몰 B1, X SQUARE)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/Dcfu84UGQcw/",
+      "walkin_tip": "Operating Hours: Mon-Thu 10:30-20:00, Fri-Sun 10:30-20:30",
+      "verified_at": "2026-09-06",
+      "verified_by": "user_provided"
+    },
+    "description": "Follow beloved character Maru the dog on a playful trip to Busan at this Shinsegae Centum City pop-up. Enjoy photo zones and exclusive travel-themed merchandise."
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "busan-pictree-2026",
+    "name": {
+      "en": "PicTree Pop-up",
+      "ko": "픽트리 팝업"
+    },
+    "area": "busan_bujin",
+    "category": "character",
+    "period": {
+      "start": "2026-08-31",
+      "end": "2026-09-30"
+    },
+    "location": {
+      "lat": 35.1529239695577,
+      "lng": 129.059604905121,
+      "address": "Samjung Tower, Busanjin-gu, Busan (부산 부산진구 중앙대로 672 삼정타워 7층 팝업존)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/Dchog2ssGgI/",
+      "walkin_tip": "Operating Hours: Mon-Thu 11:00-22:00, Fri-Sat 11:00-22:30, Sun 11:00-22:00",
+      "verified_at": "2026-09-06",
+      "verified_by": "user_provided"
+    },
+    "description": "A charming pop-up featuring PicTree's illustrated characters and goods. Browse a curated pop-up zone at Samjung Tower in Busan."
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "busan-keydeok-2026",
+    "name": {
+      "en": "Keyboard Enthusiast Tour in Busan",
+      "ko": "키덕투어 in 부산"
+    },
+    "area": "busan_bujin",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-08-31",
+      "end": "2026-09-17"
+    },
+    "location": {
+      "lat": 35.156789983664,
+      "lng": 129.056416218143,
+      "address": "Lotte Department Store Busan, Busanjin-gu, Busan (부산 부산진구 가야대로 772 롯데백화점 부산본점 지하 1층)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/Dcarmc9MNg1/",
+      "walkin_tip": "Operating Hours: Mon-Thu 10:30-20:00, Fri-Sun 10:30-20:30",
+      "verified_at": "2026-09-06",
+      "verified_by": "user_provided"
+    },
+    "description": "A traveling showcase for mechanical keyboard enthusiasts, stopping at Lotte Department Store Busan. Try out and shop for a curated selection of keyboards and accessories."
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "busan-honeymochi-2026",
+    "name": {
+      "en": "Honey Mochi Pop-Up: Straight from Nature",
+      "ko": "자연에서 온 꿀모찌 팝업"
+    },
+    "area": "busan_bujin",
+    "category": "food",
+    "period": {
+      "start": "2026-08-21",
+      "end": "2026-09-10"
+    },
+    "location": {
+      "lat": 35.1529239695577,
+      "lng": 129.059604905121,
+      "address": "Samjung Tower, Busanjin-gu, Busan (부산 부산진구 중앙대로 672 삼정타워 5층 팝업존)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/DcP1I5zMB-0/",
+      "walkin_tip": "Operating Hours: Mon-Thu 11:00-22:00, Fri-Sat 11:00-22:30, Sun 11:00-22:00",
+      "verified_at": "2026-09-06",
+      "verified_by": "user_provided"
+    },
+    "description": "Taste naturally sweetened honey mochi treats at this cozy food pop-up in Busan. A simple, nature-inspired dessert experience at Samjung Tower."
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "busan-minumsa-2026",
+    "name": {
+      "en": "Minumsa X Today's Cuteness Pop-Up - The World Beyond Words: An Ocean of Immersion",
+      "ko": "민음사 X 오늘의귀여움 팝업 - 문장 너머의 세계: 몰입의 바다"
+    },
+    "area": "busan_bujin",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-08-28",
+      "end": "2026-09-30"
+    },
+    "location": {
+      "lat": 35.1529239695577,
+      "lng": 129.059604905121,
+      "address": "Samjung Tower, Busanjin-gu, Busan (부산 부산진구 중앙대로 672 삼정타워 7층 팝업존)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/DcN2nYkhSlI/",
+      "walkin_tip": "Operating Hours: Mon-Thu 11:00-22:00, Fri-Sat 11:00-22:30, Sun 11:00-22:00",
+      "verified_at": "2026-09-06",
+      "verified_by": "user_provided"
+    },
+    "description": "A literary-themed pop-up by publisher Minumsa and Today's Cuteness, inviting visitors into an immersive 'ocean of words'. Browse curated books and cute character goods."
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "busan-maplestory-2026",
+    "name": {
+      "en": "MapleStory Pop-Up at Lotte World Busan",
+      "ko": "메이플스토리 in 롯데월드 부산 팝업"
+    },
+    "area": "busan_gijang",
+    "category": "character",
+    "period": {
+      "start": "2026-08-29",
+      "end": "2026-11-22"
+    },
+    "location": {
+      "lat": 35.1961130003038,
+      "lng": 129.213344761055,
+      "address": "Lotte World Busan, Gijang-gun, Busan (부산 기장군 기장읍 동부산관광로 42 롯데월드 부산)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/mapleisland.official",
+      "walkin_tip": "Operating Hours: Mon-Fri 10:00-19:00, Sat-Sun 10:00-21:00",
+      "verified_at": "2026-09-06",
+      "verified_by": "user_provided"
+    },
+    "description": "Dive into the world of MapleStory at this special pop-up inside Lotte World Busan. Enjoy game-themed photo zones and exclusive merchandise."
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "busan-orv-2026",
+    "name": {
+      "en": "Omniscient Reader's Perspective × Animate Cafe @ Busan",
+      "ko": "전지적 독자 시점 × 애니메이트 카페 @ 부산"
+    },
+    "area": "busan_bujin",
+    "category": "character",
+    "period": {
+      "start": "2026-09-02",
+      "end": "2026-09-13"
+    },
+    "location": {
+      "lat": 35.1529239695577,
+      "lng": 129.059604905121,
+      "address": "Animate Cafe Busan, Busanjin-gu, Busan (부산 부산진구 중앙대로 672 애니메이트 카페 부산점)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/Db2pKlwEuzV",
+      "walkin_tip": "Operating Hours: Mon-Thu 11:00-22:00, Fri-Sat 11:00-22:30, Sun 11:00-22:00",
+      "verified_at": "2026-09-06",
+      "verified_by": "user_provided"
+    },
+    "description": "A themed cafe collaboration celebrating the hit webnovel Omniscient Reader's Perspective at Animate Busan. Enjoy character-inspired menus and exclusive merchandise."
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "busan-madeby-2026",
+    "name": {
+      "en": "Made By X Sukidoki Pop-Up - Self-Esteem Sports Day @ Seomyeon",
+      "ko": "메이드바이 X 수키도키 팝업 - 자존감 운동회 @ 서면"
+    },
+    "area": "busan_bujin",
+    "category": "character",
+    "period": {
+      "start": "2026-07-10",
+      "end": "2026-09-07"
+    },
+    "location": {
+      "lat": 35.154649168409,
+      "lng": 129.063341887008,
+      "address": "Made By Seomyeon, Busanjin-gu, Busan (부산 부산진구 전포대로199번길 34 메이드바이 서면점)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/DaUva1bD1pj/",
+      "walkin_tip": "Operating Hours: Mon-Sun 11:00-20:00",
+      "verified_at": "2026-09-06",
+      "verified_by": "user_provided"
+    },
+    "description": "A playful collaboration between Made By and character brand Sukidoki themed around a 'self-esteem sports day'. Enjoy cheerful photo zones and exclusive goods in Seomyeon."
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "busan-tookind-2026",
+    "name": {
+      "en": "\"Aren't You Too Kind?\" Exhibition @ Busan",
+      "ko": "너무착한데? 전시 @ 부산"
+    },
+    "area": "busan_haeundae",
+    "category": "exhibition",
+    "period": {
+      "start": "2026-06-26",
+      "end": "2026-09-06"
+    },
+    "location": {
+      "lat": 35.1688178394069,
+      "lng": 129.129523260187,
+      "address": "Shinsegae Centum City, Haeundae-gu, Busan (부산 해운대구 센텀남대로 35 신세계백화점 센텀시티점 6층)"
+    },
+    "access": {
+      "booking_required": "reservation_available",
+      "url": "https://www.instagram.com/p/DZunXNpPC5I/",
+      "reservationUrl": "https://ticket.29cm.co.kr/catalog/4052121",
+      "walkin_tip": "Operating Hours: Mon-Sun 10:30-20:00",
+      "verified_at": "2026-09-06",
+      "verified_by": "user_provided"
+    },
+    "description": "A reflective art exhibition exploring what it truly means to be kind, hosted at Shinsegae Centum City. Walk-in is possible, but advance reservation is recommended to guarantee entry."
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "busan-notwrong-2026",
+    "name": {
+      "en": "\"It's Not Wrong, Is It?\" Exhibition @ Busan",
+      "ko": "틀린 건 아닌데 전시 @ 부산"
+    },
+    "area": "busan_haeundae",
+    "category": "exhibition",
+    "period": {
+      "start": "2026-06-26",
+      "end": "2026-09-06"
+    },
+    "location": {
+      "lat": 35.1688178394069,
+      "lng": 129.129523260187,
+      "address": "Shinsegae Centum City, Haeundae-gu, Busan (부산 해운대구 센텀남대로 35 신세계백화점 센텀시티점 6층)"
+    },
+    "access": {
+      "booking_required": "reservation_available",
+      "url": "https://www.instagram.com/p/DZunXNpPC5I/",
+      "reservationUrl": "https://ticket.29cm.co.kr/catalog/4052121",
+      "walkin_tip": "Operating Hours: Mon-Sun 10:30-20:00",
+      "verified_at": "2026-09-06",
+      "verified_by": "user_provided"
+    },
+    "description": "A thought-provoking companion exhibition questioning perceived 'wrongness' and self-judgment, held alongside \"Aren't You Too Kind?\" at Shinsegae Centum City. Walk-in is possible, but advance reservation is recommended to guarantee entry."
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "daegu-gembros-2026",
+    "name": {
+      "en": "Gembros 42nd Anniversary Customer Appreciation Jewelry Special Exhibition",
+      "ko": "젬브로스 창립 42주년 고객감사 주얼리 특별전"
+    },
+    "area": "daegu_jung",
+    "category": "beauty_fashion",
+    "period": {
+      "start": "2026-09-04",
+      "end": "2026-09-13"
+    },
+    "location": {
+      "lat": 35.8666296004242,
+      "lng": 128.590625718585,
+      "address": "The Hyundai Daegu, Jung-gu, Daegu (대구 중구 달구벌대로 2077 더현대 대구)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "walkin_tip": "Operating Hours: Mon-Thu 10:30-20:00, Fri-Sun 10:30-20:30",
+      "verified_at": "2026-09-06",
+      "verified_by": "user_provided"
+    },
+    "description": "Gembros celebrates its 42nd anniversary with a special jewelry exhibition at The Hyundai Daegu. Browse exclusive collections as a token of customer appreciation."
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "daegu-theballon-2026",
+    "name": {
+      "en": "Theballon POP UP STORE",
+      "ko": "더발론 팝업"
+    },
+    "area": "daegu_dong",
+    "category": "beauty_fashion",
+    "period": {
+      "start": "2026-08-28",
+      "end": "2026-09-17"
+    },
+    "location": {
+      "lat": 35.8779406718693,
+      "lng": 128.629190024219,
+      "address": "Shinsegae Department Store Daegu, Dong-gu, Daegu (대구 동구 동부로 149 신세계 백화점대구점 2층 NEW STAGE)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/DcigAKyAcX8/",
+      "walkin_tip": "Operating Hours: Mon-Thu 10:30-20:00, Fri-Sun 10:30-20:30",
+      "verified_at": "2026-09-06",
+      "verified_by": "user_provided"
+    },
+    "description": "Discover Theballon's curated fashion and lifestyle accessories at this Daegu pop-up store inside Shinsegae Department Store."
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "jeonju-nungnungi-2026",
+    "name": {
+      "en": "\"Nungnungi the Snowman\" × Korea National Parks Service Collaboration Pop-Up Store",
+      "ko": "눈사람 눙눙이·국립공원공단 협업 팝업스토어"
+    },
+    "area": "jeonju_wansan",
+    "category": "character",
+    "period": {
+      "start": "2026-09-04",
+      "end": "2026-09-17"
+    },
+    "location": {
+      "lat": 35.8344588976618,
+      "lng": 127.121908184239,
+      "address": "Lotte Department Store Jeonju, Wansan-gu, Jeonju (전북 전주시 완산구 온고을로 2 롯데백화점 전주점 6층 이벤트홀)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/DcknWRECHG1/",
+      "walkin_tip": "Operating Hours: Mon-Thu 10:30-20:00, Fri-Sun 10:30-20:30",
+      "verified_at": "2026-09-06",
+      "verified_by": "user_provided"
+    },
+    "description": "A charming collaboration between snowman character Nungnungi and the Korea National Parks Service. Explore nature-themed merchandise and photo zones at Lotte Department Store Jeonju."
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "jeonju-stationery-2026",
+    "name": {
+      "en": "The Tallest Stationery Store in Jeonju",
+      "ko": "전주에서 가장 높은 문구점"
+    },
+    "area": "jeonju_wansan",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-19",
+      "end": "2026-09-20"
+    },
+    "location": {
+      "lat": 35.8081317640146,
+      "lng": 127.146658585061,
+      "address": "Wansan-gu, Jeonju (전북 전주시 완산구 곤지산3길 21-1, 2층)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/Dc2SvUdTJu2/",
+      "walkin_tip": "Operating Hours: Sat-Sun 11:00-18:00",
+      "verified_at": "2026-09-06",
+      "verified_by": "user_provided"
+    },
+    "description": "A weekend-only pop-up stationery store perched high above Jeonju. Browse a curated selection of paper goods and stationery with a view."
   }
 ]
