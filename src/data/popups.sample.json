@@ -1688,5 +1688,336 @@
       "verified_by": "user_provided"
     },
     "description": "A weekend-only pop-up stationery store perched high above Jeonju. Browse a curated selection of paper goods and stationery with a view."
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "suwon-umamusume-2026",
+    "name": {
+      "en": "Umamusume Pretty Derby Fair @ Suwon",
+      "ko": "우마무스메 프리티 더비 페어 @ 수원"
+    },
+    "area": "suwon_paldal",
+    "category": "character",
+    "period": {
+      "start": "2026-09-05",
+      "end": "2026-09-20"
+    },
+    "location": {
+      "lat": 37.2655920786365,
+      "lng": 127.000179930083,
+      "address": "AK Plaza Suwon, Paldal-gu, Suwon (경기 수원시 팔달구 덕영대로 924 AK플라자 수원점 5층 애니메이트)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://x.com/animate_hongdae/status/2093262328191950933",
+      "walkin_tip": "Operating Hours: Mon-Thu 10:30-20:00, Fri-Sun 10:30-20:30",
+      "verified_at": "2026-09-06",
+      "verified_by": "user_provided"
+    },
+    "description": "A themed fair celebrating the popular game Umamusume: Pretty Derby at Animate AK Plaza Suwon. Enjoy exclusive merchandise and character-themed displays."
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "pangyo-momori-2026",
+    "name": {
+      "en": "Momori Pop-Up @ Pangyo",
+      "ko": "모모리 팝업 @ 판교"
+    },
+    "area": "seongnam_bundang",
+    "category": "character",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-09-13"
+    },
+    "location": {
+      "lat": 37.39279369494,
+      "lng": 127.112017130086,
+      "address": "Hyundai Department Store Pangyo, Bundang-gu, Seongnam (경기 성남시 분당구 판교역로146번길 20 현대백화점 판교점 유플렉스 4층 중앙 아이코닉스퀘어)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://x.com/momorystore/status/2094339920483811444",
+      "walkin_tip": "Operating Hours: Mon-Thu 10:30-20:00, Fri-Sun 10:30-20:30",
+      "verified_at": "2026-09-06",
+      "verified_by": "user_provided"
+    },
+    "description": "A charming pop-up featuring the illustrated character Momori at Hyundai Department Store Pangyo. Browse exclusive goods and photo-friendly displays."
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "suwon-tteumgyeol-2026",
+    "name": {
+      "en": "Tteumgyeol x Esther Bunny Pop-Up: LOVE OUR DIFFERENCES",
+      "ko": "틈결 X 에스더버니 팝업: LOVE OUR DIFFERENCES"
+    },
+    "area": "suwon_jangan",
+    "category": "character",
+    "period": {
+      "start": "2026-09-04",
+      "end": "2026-09-17"
+    },
+    "location": {
+      "lat": 37.2874453391147,
+      "lng": 126.991574559571,
+      "address": "Starfield Suwon, Jangan-gu, Suwon (경기 수원시 장안구 수성로 175 스타필드 수원)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/DckOrD5E_By/",
+      "walkin_tip": "Operating Hours: Mon-Sun 10:00-22:00",
+      "verified_at": "2026-09-06",
+      "verified_by": "user_provided"
+    },
+    "description": "A heartwarming collaboration between Tteumgyeol and Esther Bunny celebrating individuality and differences. Enjoy exclusive merchandise and photo zones at Starfield Suwon."
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "hanam-bloky-2026",
+    "name": {
+      "en": "Bloky x Havi Soul: Soft and Squishy Festa",
+      "ko": "블로키 X 하비소울 말랑말랑 페스타"
+    },
+    "area": "hanam",
+    "category": "character",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-09-15"
+    },
+    "location": {
+      "lat": 37.5454041231797,
+      "lng": 127.223940331575,
+      "address": "Starfield Hanam, Hanam (경기 하남시 미사대로 750 스타필드하남)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://brand.naver.com/blokees/shoppingstory/detail?id=5002961721",
+      "walkin_tip": "Operating Hours: Mon-Sun 10:00-22:00",
+      "verified_at": "2026-09-06",
+      "verified_by": "user_provided"
+    },
+    "description": "A playful festa collaboration between Bloky and Havi Soul themed around soft, squishy fun. Enjoy interactive zones and exclusive merchandise at Starfield Hanam."
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "suwon-littlebitemore-2026",
+    "name": {
+      "en": "Little Bite More Pop-Up",
+      "ko": "리틀바잇모어 팝업"
+    },
+    "area": "suwon_jangan",
+    "category": "food",
+    "period": {
+      "start": "2026-06-09",
+      "end": "2026-09-08"
+    },
+    "location": {
+      "lat": 37.2874453391147,
+      "lng": 126.991574559571,
+      "address": "Starfield Suwon, Jangan-gu, Suwon (경기 수원시 장안구 수성로 175 수원 스타필드 1층 바이츠플레이스)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/DZeqK0_xYbY/",
+      "walkin_tip": "Operating Hours: Mon-Sun 10:00-22:00",
+      "verified_at": "2026-09-06",
+      "verified_by": "user_provided"
+    },
+    "description": "A cozy food pop-up at Starfield Suwon's Bites Place, offering bite-sized treats and snacks. A relaxed spot to grab a quick, tasty bite."
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "pangyo-gstar-2026",
+    "name": {
+      "en": "G-star 2026 Pop-Up",
+      "ko": "지스타 2026 팝업"
+    },
+    "area": "seongnam_bundang",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-09-06"
+    },
+    "location": {
+      "lat": 37.39279369494,
+      "lng": 127.112017130086,
+      "address": "Hyundai Department Store Pangyo, Bundang-gu, Seongnam (경기 성남시 분당구 판교역로146번길 20 현대백화점 판교점 4층 아이코닉스퀘어)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://x.com/gstar_official_/status/2092228050683580431",
+      "walkin_tip": "Operating Hours: Tue-Thu 10:30-20:00, Fri-Sun 10:30-20:30",
+      "verified_at": "2026-09-06",
+      "verified_by": "user_provided"
+    },
+    "description": "A preview pop-up for the G-Star gaming festival at Hyundai Department Store Pangyo. Explore gaming-themed exhibits and exclusive merchandise ahead of the main event."
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "pangyo-astomic-2026",
+    "name": {
+      "en": "Astomic Pop-Up at Hyundai Department Store Pangyo",
+      "ko": "아스토믹 팝업 IN 현대백화점 판교"
+    },
+    "area": "seongnam_bundang",
+    "category": "character",
+    "period": {
+      "start": "2026-09-03",
+      "end": "2026-09-09"
+    },
+    "location": {
+      "lat": 37.39279369494,
+      "lng": 127.112017130086,
+      "address": "Hyundai Department Store Pangyo, Bundang-gu, Seongnam (경기 성남시 분당구 판교역로146번길 20 10층 문화홀)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/astomic_korea/",
+      "walkin_tip": "Operating Hours: Mon-Thu 10:30-20:00, Fri-Sun 10:30-20:30",
+      "verified_at": "2026-09-06",
+      "verified_by": "user_provided"
+    },
+    "description": "Discover Astomic's collectible characters and goods at this special pop-up in the Culture Hall of Hyundai Department Store Pangyo."
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "suwon-inuyasha-2026",
+    "name": {
+      "en": "Inuyasha Pop-Up @ Suwon",
+      "ko": "이누야샤 팝업 @ 수원"
+    },
+    "area": "suwon_paldal",
+    "category": "character",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-09-22"
+    },
+    "location": {
+      "lat": 37.2655920786365,
+      "lng": 127.000179930083,
+      "address": "AK Plaza Suwon, Paldal-gu, Suwon (경기 수원시 팔달구 덕영대로 924 AK 플라자 수원 5F SMG STORE)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/DbaNvQ3T7Um/",
+      "walkin_tip": "Operating Hours: Mon-Sun 10:30-22:00",
+      "verified_at": "2026-09-06",
+      "verified_by": "user_provided"
+    },
+    "description": "Step into the world of Inuyasha at this nostalgic character pop-up at AK Plaza Suwon. Browse exclusive merchandise inspired by the beloved anime series."
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "yongin-caribbeanbay-2026",
+    "name": {
+      "en": "Hello Summer Party with Sanrio characters",
+      "ko": "캐리비안베이 X 산리오캐릭터즈 Hello Summer Party with Sanrio characters"
+    },
+    "area": "yongin_cheoin",
+    "category": "character",
+    "period": {
+      "start": "2026-06-12",
+      "end": "2026-09-06"
+    },
+    "location": {
+      "lat": 37.294066695953,
+      "lng": 127.202128029885,
+      "address": "Caribbean Bay, Everland, Cheoin-gu, Yongin (경기 용인시 처인구 포곡읍 에버랜드로 199 캐리비안 베이)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/DZMfYEIoNgx/",
+      "walkin_tip": "Operating Hours: Mon-Fri 10:00-18:00, Sat-Sun 10:00-19:00",
+      "verified_at": "2026-09-06",
+      "verified_by": "user_provided"
+    },
+    "description": "A splashy summer collaboration between Caribbean Bay and Sanrio characters. Enjoy Sanrio-themed decorations and photo zones while cooling off at the water park."
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "gwangju-nibr-2026",
+    "name": {
+      "en": "National Institute of Biological Resources × LG Sangnok Foundation Joint Exhibition: \"The Life of a Bird\"",
+      "ko": "국립생물자원관 X LG상록재단 공동 기획전 <새의 일생>"
+    },
+    "area": "gwangju_gyeonggi",
+    "category": "exhibition",
+    "period": {
+      "start": "2026-03-27",
+      "end": "2026-11-29"
+    },
+    "location": {
+      "lat": 37.3407647182545,
+      "lng": 127.289422510268,
+      "address": "Hwadamsup, Gwangju, Gyeonggi (경기 광주시 도척면 도척윗로 278-1 화담숲 내 화담채)"
+    },
+    "access": {
+      "booking_required": "reservation_required",
+      "url": "https://www.instagram.com/p/DWAhRAmgfgb/",
+      "reservationUrl": "https://www.hwadamsup.com/pc/ko/reservation/resMain",
+      "walkin_tip": "Operating Hours: Mon-Sun 09:00-18:00",
+      "verified_at": "2026-09-06",
+      "verified_by": "user_provided"
+    },
+    "description": "A joint exhibition exploring the life cycle and ecology of birds, hosted at Hwadamsup's Hwadamchae. Advance reservation is required to visit."
   }
 ]
