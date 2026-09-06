@@ -1,5 +1,10 @@
 import { IconWalk, IconCalendarCheck, IconTicket } from '@tabler/icons-react';
 
+// booking_required 뱃지 전용 폰트.
+// 기존에는 var(--font-mono)를 써서 카테고리 뱃지 등 다른 UI 요소와 이질감이 있었음.
+// 프로젝트 기본 서체(--font-sans: 'Noto Sans KR', 'Pretendard')로 통일한다.
+export const BOOKING_BADGE_FONT_FAMILY = 'var(--font-sans)';
+
 // access.booking_required 4단계 값에 대응하는 뱃지 메타 정보.
 // "unknown" (확인 안 됨)은 뱃지를 표시하지 않으므로 여기 포함하지 않는다.
 export const BOOKING_STATUS_META = {

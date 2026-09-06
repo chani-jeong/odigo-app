@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { IconX, IconPhoto, IconMapPin, IconCalendar, IconShieldCheck, IconHeart, IconMessage, IconCheck } from '@tabler/icons-react';
 import useDeckStore from '../store/useDeckStore';
 import { getForeignerReadyStatus } from '../utils/foreignerReady';
-import { getBookingStatusMeta } from '../utils/bookingStatus';
+import { getBookingStatusMeta, BOOKING_BADGE_FONT_FAMILY } from '../utils/bookingStatus';
 import { isPopupEnded } from '../utils/popupStatus';
 import useTranslation from '../i18n/useTranslation';
 import useKoreanAddress from '../hooks/useKoreanAddress';
@@ -168,7 +168,7 @@ export default function PopupDetail() {
 
           {bookingMeta && (
             <div style={{ display: 'flex', gap: '8px', marginBottom: '20px' }}>
-              <span style={{ display: 'flex', alignItems: 'center', gap: '4px', background: bookingMeta.bg, color: bookingMeta.color, padding: '4px 10px', borderRadius: '8px', fontSize: '12px', fontWeight: 'bold', fontFamily: 'var(--font-mono)' }}>
+              <span style={{ display: 'flex', alignItems: 'center', gap: '4px', background: bookingMeta.bg, color: bookingMeta.color, padding: '4px 10px', borderRadius: '8px', fontSize: '12px', fontWeight: 'bold', fontFamily: BOOKING_BADGE_FONT_FAMILY }}>
                 <bookingMeta.Icon size={14} /> {t(bookingMeta.labelKey)}
               </span>
             </div>

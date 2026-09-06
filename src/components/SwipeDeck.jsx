@@ -4,7 +4,7 @@ import { IconPhoto, IconMapPin, IconCalendarEvent, IconShieldCheck, IconX, IconH
 import useDeckStore from '../store/useDeckStore';
 import popups from '../data/popups.sample.json';
 import { getForeignerReadyStatus } from '../utils/foreignerReady';
-import { getBookingStatusMeta } from '../utils/bookingStatus';
+import { getBookingStatusMeta, BOOKING_BADGE_FONT_FAMILY } from '../utils/bookingStatus';
 import useTranslation from '../i18n/useTranslation';
 import useKoreanAddress from '../hooks/useKoreanAddress';
 
@@ -107,7 +107,7 @@ export default function SwipeDeck() {
               </span>
             )}
             {bookingMeta && (
-              <span style={{ background: bookingMeta.bg, color: bookingMeta.color, padding: '4px 10px', borderRadius: '8px', fontSize: '12px', fontWeight: 'bold', fontFamily: 'var(--font-mono)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+              <span style={{ background: bookingMeta.bg, color: bookingMeta.color, padding: '4px 10px', borderRadius: '8px', fontSize: '12px', fontWeight: 'bold', fontFamily: BOOKING_BADGE_FONT_FAMILY, display: 'flex', alignItems: 'center', gap: '4px' }}>
                 <bookingMeta.Icon size={14} /> {t(bookingMeta.labelKey)}
               </span>
             )}
