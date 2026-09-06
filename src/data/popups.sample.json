@@ -993,7 +993,8 @@
       "verified_at": "2026-09-06",
       "verified_by": "user_provided"
     },
-    "description": "A cozy pop-up bringing the comforting flavors of Bomnaln to Daejeon Shinsegae. Enjoy seasonal snacks and treats in a warm, home-style atmosphere."
+    "description": "A cozy pop-up bringing the comforting flavors of Bomnaln to Daejeon Shinsegae. Enjoy seasonal snacks and treats in a warm, home-style atmosphere.",
+    "imageUrl": "/images/daejeon-bomnaln.png"
   },
   {
     "price": {
@@ -1026,7 +1027,8 @@
       "verified_at": "2026-09-06",
       "verified_by": "user_provided"
     },
-    "description": "Explore Dalcashmere's soft cashmere knitwear and accessories at this Daejeon pop-up store. Discover cozy new-season pieces designed for everyday wear."
+    "description": "Explore Dalcashmere's soft cashmere knitwear and accessories at this Daejeon pop-up store. Discover cozy new-season pieces designed for everyday wear.",
+    "imageUrl": "/images/daejeon-dalcashmere.png"
   },
   {
     "price": {
@@ -1059,7 +1061,8 @@
       "verified_at": "2026-09-06",
       "verified_by": "user_provided"
     },
-    "description": "Step into the world of Crayon Shin-chan at this lively pop-up festival celebrating the residents of Tteokip Village. Enjoy character photo zones and exclusive merchandise."
+    "description": "Step into the world of Crayon Shin-chan at this lively pop-up festival celebrating the residents of Tteokip Village. Enjoy character photo zones and exclusive merchandise.",
+    "imageUrl": "/images/cheongju-shinchan.png"
   },
   {
     "price": {
@@ -1092,7 +1095,8 @@
       "verified_at": "2026-09-06",
       "verified_by": "user_provided"
     },
-    "description": "Meet beloved characters from Young Toys at this special pop-up booth during the Cheonan K-Culture Expo. A fun kids-friendly zone with photo spots and merchandise."
+    "description": "Meet beloved characters from Young Toys at this special pop-up booth during the Cheonan K-Culture Expo. A fun kids-friendly zone with photo spots and merchandise.",
+    "imageUrl": "/images/cheonan-youngtoys.png"
   },
   {
     "price": {
@@ -1125,7 +1129,8 @@
       "verified_at": "2026-09-06",
       "verified_by": "user_provided"
     },
-    "description": "Wander through a whimsical Studio Ghibli-themed pop-up right at Jeju International Airport. Meet familiar characters from the Acorn Forest before you take off."
+    "description": "Wander through a whimsical Studio Ghibli-themed pop-up right at Jeju International Airport. Meet familiar characters from the Acorn Forest before you take off.",
+    "imageUrl": "/images/jeju-ghibli.png"
   },
   {
     "price": {
@@ -1158,7 +1163,8 @@
       "verified_at": "2026-09-06",
       "verified_by": "user_provided"
     },
-    "description": "An epic touring exhibition celebrating One Piece's Great Pirate Era, docking at Jeju World Cup Stadium. Explore immersive sets and exclusive merchandise from the beloved series."
+    "description": "An epic touring exhibition celebrating One Piece's Great Pirate Era, docking at Jeju World Cup Stadium. Explore immersive sets and exclusive merchandise from the beloved series.",
+    "imageUrl": "/images/seogwipo-onepiece.png"
   },
   {
     "price": {
@@ -1191,7 +1197,8 @@
       "verified_at": "2026-09-06",
       "verified_by": "user_provided"
     },
-    "description": "A themed fair celebrating The Idolmaster franchise at Animate Busan. Enjoy exclusive goods and photo spots inspired by the game's idols."
+    "description": "A themed fair celebrating The Idolmaster franchise at Animate Busan. Enjoy exclusive goods and photo spots inspired by the game's idols.",
+    "imageUrl": "/images/busan-idolmaster.png"
   },
   {
     "price": {
@@ -1224,7 +1231,8 @@
       "verified_at": "2026-09-06",
       "verified_by": "user_provided"
     },
-    "description": "Celebrate the Identity V winter festival at Animate Busan with exclusive merchandise and character-themed displays."
+    "description": "Celebrate the Identity V winter festival at Animate Busan with exclusive merchandise and character-themed displays.",
+    "imageUrl": "/images/busan-identityv.png"
   },
   {
     "price": {
@@ -1257,7 +1265,8 @@
       "verified_at": "2026-09-06",
       "verified_by": "user_provided"
     },
-    "description": "Follow beloved character Maru the dog on a playful trip to Busan at this Shinsegae Centum City pop-up. Enjoy photo zones and exclusive travel-themed merchandise."
+    "description": "Follow beloved character Maru the dog on a playful trip to Busan at this Shinsegae Centum City pop-up. Enjoy photo zones and exclusive travel-themed merchandise.",
+    "imageUrl": "/images/busan-maru.png"
   },
   {
     "price": {
@@ -1290,7 +1299,8 @@
       "verified_at": "2026-09-06",
       "verified_by": "user_provided"
     },
-    "description": "A charming pop-up featuring PicTree's illustrated characters and goods. Browse a curated pop-up zone at Samjung Tower in Busan."
+    "description": "A charming pop-up featuring PicTree's illustrated characters and goods. Browse a curated pop-up zone at Samjung Tower in Busan.",
+    "imageUrl": "/images/busan-pictree.png"
   },
   {
     "price": {
@@ -1323,7 +1333,8 @@
       "verified_at": "2026-09-06",
       "verified_by": "user_provided"
     },
-    "description": "A traveling showcase for mechanical keyboard enthusiasts, stopping at Lotte Department Store Busan. Try out and shop for a curated selection of keyboards and accessories."
+    "description": "A traveling showcase for mechanical keyboard enthusiasts, stopping at Lotte Department Store Busan. Try out and shop for a curated selection of keyboards and accessories.",
+    "imageUrl": "/images/busan-keydeok.png"
   },
   {
     "price": {
@@ -1356,7 +1367,8 @@
       "verified_at": "2026-09-06",
       "verified_by": "user_provided"
     },
-    "description": "Taste naturally sweetened honey mochi treats at this cozy food pop-up in Busan. A simple, nature-inspired dessert experience at Samjung Tower."
+    "description": "Taste naturally sweetened honey mochi treats at this cozy food pop-up in Busan. A simple, nature-inspired dessert experience at Samjung Tower.",
+    "imageUrl": "/images/busan-honeymochi.png"
   },
   {
     "price": {
@@ -1389,7 +1401,8 @@
       "verified_at": "2026-09-06",
       "verified_by": "user_provided"
     },
-    "description": "A literary-themed pop-up by publisher Minumsa and Today's Cuteness, inviting visitors into an immersive 'ocean of words'. Browse curated books and cute character goods."
+    "description": "A literary-themed pop-up by publisher Minumsa and Today's Cuteness, inviting visitors into an immersive 'ocean of words'. Browse curated books and cute character goods.",
+    "imageUrl": "/images/busan-minumsa.png"
   },
   {
     "price": {
@@ -1422,7 +1435,8 @@
       "verified_at": "2026-09-06",
       "verified_by": "user_provided"
     },
-    "description": "Dive into the world of MapleStory at this special pop-up inside Lotte World Busan. Enjoy game-themed photo zones and exclusive merchandise."
+    "description": "Dive into the world of MapleStory at this special pop-up inside Lotte World Busan. Enjoy game-themed photo zones and exclusive merchandise.",
+    "imageUrl": "/images/busan-maplestory.png"
   },
   {
     "price": {
@@ -1455,7 +1469,8 @@
       "verified_at": "2026-09-06",
       "verified_by": "user_provided"
     },
-    "description": "A themed cafe collaboration celebrating the hit webnovel Omniscient Reader's Perspective at Animate Busan. Enjoy character-inspired menus and exclusive merchandise."
+    "description": "A themed cafe collaboration celebrating the hit webnovel Omniscient Reader's Perspective at Animate Busan. Enjoy character-inspired menus and exclusive merchandise.",
+    "imageUrl": "/images/busan-orv.png"
   },
   {
     "price": {
@@ -1488,7 +1503,8 @@
       "verified_at": "2026-09-06",
       "verified_by": "user_provided"
     },
-    "description": "A playful collaboration between Made By and character brand Sukidoki themed around a 'self-esteem sports day'. Enjoy cheerful photo zones and exclusive goods in Seomyeon."
+    "description": "A playful collaboration between Made By and character brand Sukidoki themed around a 'self-esteem sports day'. Enjoy cheerful photo zones and exclusive goods in Seomyeon.",
+    "imageUrl": "/images/busan-madeby.png"
   },
   {
     "price": {
@@ -1522,7 +1538,8 @@
       "verified_at": "2026-09-06",
       "verified_by": "user_provided"
     },
-    "description": "A reflective art exhibition exploring what it truly means to be kind, hosted at Shinsegae Centum City. Walk-in is possible, but advance reservation is recommended to guarantee entry."
+    "description": "A reflective art exhibition exploring what it truly means to be kind, hosted at Shinsegae Centum City. Walk-in is possible, but advance reservation is recommended to guarantee entry.",
+    "imageUrl": "/images/busan-tookind.png"
   },
   {
     "price": {
@@ -1556,7 +1573,8 @@
       "verified_at": "2026-09-06",
       "verified_by": "user_provided"
     },
-    "description": "A thought-provoking companion exhibition questioning perceived 'wrongness' and self-judgment, held alongside \"Aren't You Too Kind?\" at Shinsegae Centum City. Walk-in is possible, but advance reservation is recommended to guarantee entry."
+    "description": "A thought-provoking companion exhibition questioning perceived 'wrongness' and self-judgment, held alongside \"Aren't You Too Kind?\" at Shinsegae Centum City. Walk-in is possible, but advance reservation is recommended to guarantee entry.",
+    "imageUrl": "/images/busan-notwrong.png"
   },
   {
     "price": {
@@ -1588,7 +1606,8 @@
       "verified_at": "2026-09-06",
       "verified_by": "user_provided"
     },
-    "description": "Gembros celebrates its 42nd anniversary with a special jewelry exhibition at The Hyundai Daegu. Browse exclusive collections as a token of customer appreciation."
+    "description": "Gembros celebrates its 42nd anniversary with a special jewelry exhibition at The Hyundai Daegu. Browse exclusive collections as a token of customer appreciation.",
+    "imageUrl": "/images/daegu-gembros.png"
   },
   {
     "price": {
@@ -1621,7 +1640,8 @@
       "verified_at": "2026-09-06",
       "verified_by": "user_provided"
     },
-    "description": "Discover Theballon's curated fashion and lifestyle accessories at this Daegu pop-up store inside Shinsegae Department Store."
+    "description": "Discover Theballon's curated fashion and lifestyle accessories at this Daegu pop-up store inside Shinsegae Department Store.",
+    "imageUrl": "/images/daegu-theballon.png"
   },
   {
     "price": {
@@ -1654,7 +1674,8 @@
       "verified_at": "2026-09-06",
       "verified_by": "user_provided"
     },
-    "description": "A charming collaboration between snowman character Nungnungi and the Korea National Parks Service. Explore nature-themed merchandise and photo zones at Lotte Department Store Jeonju."
+    "description": "A charming collaboration between snowman character Nungnungi and the Korea National Parks Service. Explore nature-themed merchandise and photo zones at Lotte Department Store Jeonju.",
+    "imageUrl": "/images/jeonju-nungnungi.png"
   },
   {
     "price": {
@@ -1687,7 +1708,8 @@
       "verified_at": "2026-09-06",
       "verified_by": "user_provided"
     },
-    "description": "A weekend-only pop-up stationery store perched high above Jeonju. Browse a curated selection of paper goods and stationery with a view."
+    "description": "A weekend-only pop-up stationery store perched high above Jeonju. Browse a curated selection of paper goods and stationery with a view.",
+    "imageUrl": "/images/jeonju-stationery.png"
   },
   {
     "price": {
@@ -1720,7 +1742,8 @@
       "verified_at": "2026-09-06",
       "verified_by": "user_provided"
     },
-    "description": "A themed fair celebrating the popular game Umamusume: Pretty Derby at Animate AK Plaza Suwon. Enjoy exclusive merchandise and character-themed displays."
+    "description": "A themed fair celebrating the popular game Umamusume: Pretty Derby at Animate AK Plaza Suwon. Enjoy exclusive merchandise and character-themed displays.",
+    "imageUrl": "/images/suwon-umamusume.png"
   },
   {
     "price": {
@@ -1753,7 +1776,8 @@
       "verified_at": "2026-09-06",
       "verified_by": "user_provided"
     },
-    "description": "A charming pop-up featuring the illustrated character Momori at Hyundai Department Store Pangyo. Browse exclusive goods and photo-friendly displays."
+    "description": "A charming pop-up featuring the illustrated character Momori at Hyundai Department Store Pangyo. Browse exclusive goods and photo-friendly displays.",
+    "imageUrl": "/images/pangyo-momori.png"
   },
   {
     "price": {
@@ -1786,7 +1810,8 @@
       "verified_at": "2026-09-06",
       "verified_by": "user_provided"
     },
-    "description": "A heartwarming collaboration between Tteumgyeol and Esther Bunny celebrating individuality and differences. Enjoy exclusive merchandise and photo zones at Starfield Suwon."
+    "description": "A heartwarming collaboration between Tteumgyeol and Esther Bunny celebrating individuality and differences. Enjoy exclusive merchandise and photo zones at Starfield Suwon.",
+    "imageUrl": "/images/suwon-tteumgyeol.png"
   },
   {
     "price": {
@@ -1819,7 +1844,8 @@
       "verified_at": "2026-09-06",
       "verified_by": "user_provided"
     },
-    "description": "A playful festa collaboration between Bloky and Havi Soul themed around soft, squishy fun. Enjoy interactive zones and exclusive merchandise at Starfield Hanam."
+    "description": "A playful festa collaboration between Bloky and Havi Soul themed around soft, squishy fun. Enjoy interactive zones and exclusive merchandise at Starfield Hanam.",
+    "imageUrl": "/images/hanam-bloky.png"
   },
   {
     "price": {
@@ -1852,7 +1878,8 @@
       "verified_at": "2026-09-06",
       "verified_by": "user_provided"
     },
-    "description": "A cozy food pop-up at Starfield Suwon's Bites Place, offering bite-sized treats and snacks. A relaxed spot to grab a quick, tasty bite."
+    "description": "A cozy food pop-up at Starfield Suwon's Bites Place, offering bite-sized treats and snacks. A relaxed spot to grab a quick, tasty bite.",
+    "imageUrl": "/images/suwon-littlebitemore.png"
   },
   {
     "price": {
@@ -1885,7 +1912,8 @@
       "verified_at": "2026-09-06",
       "verified_by": "user_provided"
     },
-    "description": "A preview pop-up for the G-Star gaming festival at Hyundai Department Store Pangyo. Explore gaming-themed exhibits and exclusive merchandise ahead of the main event."
+    "description": "A preview pop-up for the G-Star gaming festival at Hyundai Department Store Pangyo. Explore gaming-themed exhibits and exclusive merchandise ahead of the main event.",
+    "imageUrl": "/images/pangyo-gstar.png"
   },
   {
     "price": {
@@ -1918,7 +1946,8 @@
       "verified_at": "2026-09-06",
       "verified_by": "user_provided"
     },
-    "description": "Discover Astomic's collectible characters and goods at this special pop-up in the Culture Hall of Hyundai Department Store Pangyo."
+    "description": "Discover Astomic's collectible characters and goods at this special pop-up in the Culture Hall of Hyundai Department Store Pangyo.",
+    "imageUrl": "/images/pangyo-astomic.png"
   },
   {
     "price": {
@@ -1951,7 +1980,8 @@
       "verified_at": "2026-09-06",
       "verified_by": "user_provided"
     },
-    "description": "Step into the world of Inuyasha at this nostalgic character pop-up at AK Plaza Suwon. Browse exclusive merchandise inspired by the beloved anime series."
+    "description": "Step into the world of Inuyasha at this nostalgic character pop-up at AK Plaza Suwon. Browse exclusive merchandise inspired by the beloved anime series.",
+    "imageUrl": "/images/suwon-inuyasha.png"
   },
   {
     "price": {
@@ -1984,7 +2014,8 @@
       "verified_at": "2026-09-06",
       "verified_by": "user_provided"
     },
-    "description": "A splashy summer collaboration between Caribbean Bay and Sanrio characters. Enjoy Sanrio-themed decorations and photo zones while cooling off at the water park."
+    "description": "A splashy summer collaboration between Caribbean Bay and Sanrio characters. Enjoy Sanrio-themed decorations and photo zones while cooling off at the water park.",
+    "imageUrl": "/images/yongin-caribbeanbay.png"
   },
   {
     "price": {
@@ -2018,6 +2049,7 @@
       "verified_at": "2026-09-06",
       "verified_by": "user_provided"
     },
-    "description": "A joint exhibition exploring the life cycle and ecology of birds, hosted at Hwadamsup's Hwadamchae. Advance reservation is required to visit."
+    "description": "A joint exhibition exploring the life cycle and ecology of birds, hosted at Hwadamsup's Hwadamchae. Advance reservation is required to visit.",
+    "imageUrl": "/images/gwangju-nibr.png"
   }
 ]
