@@ -6,6 +6,7 @@ import useTranslation from '../i18n/useTranslation';
 import enTranslation from '../i18n/en.json';
 import useKoreanAddress from '../hooks/useKoreanAddress';
 import EndedBadge from './EndedBadge';
+import { sortByEndedStatus } from '../utils/popupStatus';
 
 const DiscoverListItem = ({ popup, selectedLanguage, getDDay, openPopup, t }) => {
   const address = useKoreanAddress(
@@ -72,9 +73,10 @@ export default function DiscoverList({ activeFilterKey }) {
 
   const displayPopups = React.useMemo(() => {
     if (!events || !events.length) return [];
-    
+
+    let filtered;
     if (activeFilterKey === 'foreigner_ready') {
-      return events.filter(p => {
+      filtered = events.filter(p => {
         const status = getForeignerReadyStatus({
           en: p.access?.checks?.en,
           phone: p.access?.checks?.phone,
@@ -83,13 +85,14 @@ export default function DiscoverList({ activeFilterKey }) {
         });
         return status === 'ready';
       });
-    }
-    
-    if (activeFilterKey === 'halal_friendly') {
-      return events.filter(p => p.dietary?.halal && p.dietary.halal !== 'unknown');
+    } else if (activeFilterKey === 'halal_friendly') {
+      filtered = events.filter(p => p.dietary?.halal && p.dietary.halal !== 'unknown');
+    } else {
+      filtered = activeFilterKey ? events.filter(p => p.category === activeFilterKey) : events;
     }
 
-    return activeFilterKey ? events.filter(p => p.category === activeFilterKey) : events;
+    // 진행 중인 팝업이 항상 종료된 팝업보다 앞에 오도록 정렬
+    return sortByEndedStatus(filtered);
   }, [events, activeFilterKey]);
 
   const getDDay = (popup) => {

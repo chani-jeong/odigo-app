@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import useDeckStore from '../store/useDeckStore';
 import { IconMapPin, IconBookmarkFilled } from '@tabler/icons-react';
 import useTranslation from '../i18n/useTranslation';
 import useKoreanAddress from '../hooks/useKoreanAddress';
+import { sortByEndedStatus } from '../utils/popupStatus';
 
 function KoreanAddressSpan({ lat, lng, fallback, selectedLanguage }) {
   const address = useKoreanAddress(lat, lng, fallback, selectedLanguage);
@@ -11,13 +12,17 @@ function KoreanAddressSpan({ lat, lng, fallback, selectedLanguage }) {
 
 export default function SavedList() {
   const { t, selectedLanguage } = useTranslation();
-  const savedPopups = useDeckStore(state => state.savedPopups) || [];
-  const visitedPopups = useDeckStore(state => state.visitedPopups) || [];
+  const savedPopups = useDeckStore(state => state.savedPopups);
+  const visitedPopups = useDeckStore(state => state.visitedPopups);
   const toggleVisited = useDeckStore(state => state.toggleVisited);
   const hasAgreedToLocation = useDeckStore(state => state.hasAgreedToLocation);
-  const events = useDeckStore(state => state.events) || [];
+  const events = useDeckStore(state => state.events);
   const openPopup = useDeckStore(state => state.openPopup);
-  const savedItems = savedPopups.map(id => events.find(p => p.id === id)).filter(Boolean);
+  const savedItems = useMemo(() => {
+    const items = savedPopups.map(id => events.find(p => p.id === id)).filter(Boolean);
+    // 진행 중인 팝업이 항상 종료된 팝업보다 앞에 오도록 정렬
+    return sortByEndedStatus(items);
+  }, [savedPopups, events]);
 
   const getDDay = (popup) => {
     const start = new Date(popup.period.start);

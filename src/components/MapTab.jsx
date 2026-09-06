@@ -1,12 +1,14 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { IconLeaf, IconCurrentLocation } from '@tabler/icons-react';
 import useDeckStore from '../store/useDeckStore';
 import useTranslation from '../i18n/useTranslation';
-import { isPopupEnded } from '../utils/popupStatus';
+import { isPopupEnded, sortByEndedStatus } from '../utils/popupStatus';
 import EndedBadge from './EndedBadge';
 
 export default function MapTab({ isVisible }) {
-  const events = useDeckStore(state => state.events);
+  const rawEvents = useDeckStore(state => state.events);
+  // 진행 중인 팝업이 항상 종료된 팝업보다 앞에 오도록 정렬 (마커/캐러셀 인덱스 동기화를 위해 공용으로 사용)
+  const events = useMemo(() => sortByEndedStatus(rawEvents), [rawEvents]);
   const openPopup = useDeckStore(state => state.openPopup);
   const hasAgreedToLocation = useDeckStore(state => state.hasAgreedToLocation);
   const setAgreedToLocation = useDeckStore(state => state.setAgreedToLocation);

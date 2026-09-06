@@ -10,3 +10,12 @@ export function isPopupEnded(popup) {
 
   return end < new Date();
 }
+
+// 진행 중인 팝업(isPopupEnded === false)을 앞으로, 종료된 팝업을 뒤로 보내는 안정 정렬.
+// 각 그룹(진행중/종료) 내부의 상대적 순서는 그대로 유지된다.
+// Array.prototype.sort는 ES2019+ 스펙상 안정 정렬이 보장되므로 별도의 인덱스 태깅이 필요 없다.
+// 원본 배열은 변경하지 않고 새 배열을 반환한다.
+export function sortByEndedStatus(popups) {
+  if (!Array.isArray(popups)) return popups;
+  return [...popups].sort((a, b) => Number(isPopupEnded(a)) - Number(isPopupEnded(b)));
+}
