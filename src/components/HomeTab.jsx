@@ -3,6 +3,7 @@ import { IconSearch, IconFlame, IconArrowLeft, IconMapPin, IconCalendarEvent } f
 import useDeckStore from '../store/useDeckStore';
 import useTranslation from '../i18n/useTranslation';
 import useKoreanAddress from '../hooks/useKoreanAddress';
+import { getShortAddress } from '../utils/address';
 
 import BeautyIcon from '../../public/icons/BeautyFashion.svg?react';
 import KpopIcon from '../../public/icons/Kpop.svg?react';
@@ -13,6 +14,13 @@ import CharacterIcon from '../../public/icons/Character.svg?react';
 function KoreanAddressSpan({ lat, lng, fallback, selectedLanguage }) {
   const address = useKoreanAddress(lat, lng, fallback, selectedLanguage);
   return <span>{address.split(',')[0]}</span>;
+}
+
+// 카테고리별 목록(홈 화면 > 카테고리 클릭)에서만 사용하는 축약 주소 표시.
+// "시/도 + 구" 수준까지만 보여주고, 상세 화면(PopupDetail)에서는 그대로 전체 주소를 사용한다.
+function ShortAddressSpan({ lat, lng, fallback, selectedLanguage }) {
+  const address = useKoreanAddress(lat, lng, fallback, selectedLanguage);
+  return <span>{getShortAddress(address)}</span>;
 }
 
 const CATEGORIES = [
@@ -67,7 +75,7 @@ export default function HomeTab({ onSearchClick }) {
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '4px', color: 'var(--ink-secondary)', fontSize: '12px' }}>
                       <IconMapPin size={14} style={{ flexShrink: 0 }} />
-                      <KoreanAddressSpan lat={item.location.lat} lng={item.location.lng} fallback={item.location.address} selectedLanguage={selectedLanguage} />
+                      <ShortAddressSpan lat={item.location.lat} lng={item.location.lng} fallback={item.location.address} selectedLanguage={selectedLanguage} />
                     </div>
                   </div>
                 </div>

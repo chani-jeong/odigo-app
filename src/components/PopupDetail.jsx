@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { IconX, IconPhoto, IconMapPin, IconCalendar, IconShieldCheck, IconHeart, IconMessage, IconCheck } from '@tabler/icons-react';
 import useDeckStore from '../store/useDeckStore';
 import { getForeignerReadyStatus } from '../utils/foreignerReady';
-import { getBookingStatusMeta, BOOKING_BADGE_FONT_FAMILY } from '../utils/bookingStatus';
+import { getBookingStatusMeta } from '../utils/bookingStatus';
+import { PILL_BADGE_BASE_STYLE } from '../utils/badgeStyle';
 import { isPopupEnded } from '../utils/popupStatus';
 import useTranslation from '../i18n/useTranslation';
 import useKoreanAddress from '../hooks/useKoreanAddress';
@@ -11,7 +12,7 @@ import EndedBadge from './EndedBadge';
 
 function KoreanAddressSpan({ lat, lng, fallback, selectedLanguage }) {
   const address = useKoreanAddress(lat, lng, fallback, selectedLanguage);
-  return <span style={{ fontSize: '15px' }}>{address}</span>;
+  return <span style={{ fontSize: '15px', textAlign: 'left' }}>{address}</span>;
 }
 
 export default function PopupDetail() {
@@ -136,18 +137,16 @@ export default function PopupDetail() {
             <div
               className="ready-badge"
               style={{
+                ...PILL_BADGE_BASE_STYLE,
                 position: 'absolute',
                 top: '16px',
                 right: '56px',
                 background: badge.bg,
-                borderRadius: '20px',
-                padding: '6px 10px',
-                display: 'flex',
-                alignItems: 'center',
+                color: badge.color,
               }}
             >
-              <IconShieldCheck size={16} style={{ marginRight: '6px', color: badge.color }} />
-              <span style={{ fontSize: '13px', fontWeight: 'bold', color: badge.color, fontFamily: 'var(--font-mono)' }}>{t('card.foreigner_ready')}</span>
+              <IconShieldCheck size={14} style={{ color: badge.color }} />
+              <span>{t('card.foreigner_ready')}</span>
             </div>
           )}
         </div>
@@ -156,19 +155,23 @@ export default function PopupDetail() {
         <div style={{ padding: '24px', textAlign: 'left', background: 'var(--paper)' }}>
           <h2 style={{ margin: '0 0 12px', fontSize: '24px', color: 'var(--ink)', fontWeight: 'bold', fontFamily: 'var(--font-display)' }}>{displayName}</h2>
           
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px', color: 'var(--ink-secondary)' }}>
-            <IconMapPin size={18} />
-            <KoreanAddressSpan lat={popup.location?.lat} lng={popup.location?.lng} fallback={popup.location?.address} selectedLanguage={selectedLanguage} />
-          </div>
-          
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '20px', color: 'var(--ink-secondary)' }}>
-            <IconCalendar size={18} />
-            <span style={{ fontSize: '15px' }}>{popup.period.start} ~ {popup.period.end}</span>
+          {/* 위치/기간: 아이콘 열(20px 고정 너비)과 텍스트 열을 grid로 통일해
+              두 줄의 아이콘 x좌표와 텍스트 시작점(x좌표)이 정확히 일치하도록 함 */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '20px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '20px 1fr', columnGap: '8px', alignItems: 'start', color: 'var(--ink-secondary)' }}>
+              <IconMapPin size={18} style={{ justifySelf: 'center' }} />
+              <KoreanAddressSpan lat={popup.location?.lat} lng={popup.location?.lng} fallback={popup.location?.address} selectedLanguage={selectedLanguage} />
+            </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: '20px 1fr', columnGap: '8px', alignItems: 'start', color: 'var(--ink-secondary)' }}>
+              <IconCalendar size={18} style={{ justifySelf: 'center' }} />
+              <span style={{ fontSize: '15px', textAlign: 'left' }}>{popup.period.start} ~ {popup.period.end}</span>
+            </div>
           </div>
 
           {bookingMeta && (
             <div style={{ display: 'flex', gap: '8px', marginBottom: '20px' }}>
-              <span style={{ display: 'flex', alignItems: 'center', gap: '4px', background: bookingMeta.bg, color: bookingMeta.color, padding: '4px 10px', borderRadius: '8px', fontSize: '12px', fontWeight: 'bold', fontFamily: BOOKING_BADGE_FONT_FAMILY }}>
+              <span style={{ ...PILL_BADGE_BASE_STYLE, background: bookingMeta.bg, color: bookingMeta.color }}>
                 <bookingMeta.Icon size={14} /> {t(bookingMeta.labelKey)}
               </span>
             </div>

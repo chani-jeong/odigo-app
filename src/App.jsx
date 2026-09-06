@@ -116,7 +116,7 @@ function App() {
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
           <h1 
             onClick={() => setActiveTab('home')}
-            style={{ margin: 0, padding: 0, lineHeight: '1', fontSize: '30px', color: 'var(--brand-primary)', fontWeight: '900', cursor: 'pointer', fontFamily: 'var(--font-display)' }}
+            style={{ margin: 0, padding: 0, lineHeight: '1', fontSize: '30px', color: 'var(--brand-primary)', fontWeight: '600', cursor: 'pointer', fontFamily: 'var(--font-display)' }}
           >
             Odigo
           </h1>

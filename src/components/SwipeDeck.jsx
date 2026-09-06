@@ -4,7 +4,8 @@ import { IconPhoto, IconMapPin, IconCalendarEvent, IconShieldCheck, IconX, IconH
 import useDeckStore from '../store/useDeckStore';
 import popups from '../data/popups.sample.json';
 import { getForeignerReadyStatus } from '../utils/foreignerReady';
-import { getBookingStatusMeta, BOOKING_BADGE_FONT_FAMILY } from '../utils/bookingStatus';
+import { getBookingStatusMeta } from '../utils/bookingStatus';
+import { PILL_BADGE_BASE_STYLE } from '../utils/badgeStyle';
 import useTranslation from '../i18n/useTranslation';
 import useKoreanAddress from '../hooks/useKoreanAddress';
 
@@ -92,22 +93,23 @@ export default function SwipeDeck() {
           ) : (
             <IconPhoto size={64} style={{ color: 'rgba(0,0,0,0.1)' }} />
           )}
+          {/* Foreigner-Ready: 사진 내부 우측 상단 오버레이 */}
+          {status === 'ready' && (
+            <span style={{ ...PILL_BADGE_BASE_STYLE, position: 'absolute', top: '12px', right: '12px', background: 'rgba(255,255,255,0.92)', color: '#2D9F98', boxShadow: '0 2px 8px rgba(0,0,0,0.12)' }}>
+              <IconShieldCheck size={14} /> Foreigner-Ready
+            </span>
+          )}
         </div>
 
         {/* Info Area */}
         <div style={{ padding: '20px 24px', background: 'var(--paper)' }}>
-          {/* Tags */}
-          <div style={{ display: 'flex', gap: '8px', marginBottom: '8px' }}>
-            <span style={{ background: 'var(--bg-main)', border: '1px solid var(--paper-border)', padding: '4px 10px', borderRadius: '8px', fontSize: '12px', color: 'var(--ink-secondary)', fontWeight: 'bold', fontFamily: 'var(--font-mono)' }}>
+          {/* Tags: 카테고리 + 예약상태만 사진 아래에 한 줄로 표시 */}
+          <div style={{ display: 'flex', gap: '6px', marginBottom: '8px', flexWrap: 'nowrap', overflow: 'hidden' }}>
+            <span style={{ ...PILL_BADGE_BASE_STYLE, background: 'var(--bg-main)', border: '1px solid var(--paper-border)', color: 'var(--ink-secondary)' }}>
               {popup.category === 'beauty_fashion' ? 'Beauty & Fashion' : popup.category.toUpperCase().replace('_', ' ')}
             </span>
-            {status === 'ready' && (
-              <span style={{ background: '#E8F5F4', color: '#2D9F98', padding: '4px 10px', borderRadius: '8px', fontSize: '12px', fontWeight: 'bold', fontFamily: 'var(--font-mono)', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                <IconShieldCheck size={14} /> Foreigner-Ready
-              </span>
-            )}
             {bookingMeta && (
-              <span style={{ background: bookingMeta.bg, color: bookingMeta.color, padding: '4px 10px', borderRadius: '8px', fontSize: '12px', fontWeight: 'bold', fontFamily: BOOKING_BADGE_FONT_FAMILY, display: 'flex', alignItems: 'center', gap: '4px' }}>
+              <span style={{ ...PILL_BADGE_BASE_STYLE, background: bookingMeta.bg, color: bookingMeta.color }}>
                 <bookingMeta.Icon size={14} /> {t(bookingMeta.labelKey)}
               </span>
             )}
