@@ -10,9 +10,25 @@ import useKoreanAddress from '../hooks/useKoreanAddress';
 import ReviewListSheet from './ReviewListSheet';
 import EndedBadge from './EndedBadge';
 
+// 위치/기간 줄의 아이콘 wrapper 높이 & 텍스트 line-height에 공통으로 사용하는 고정값(px).
+// 두 값을 동일하게 맞춰야, 텍스트가 여러 줄로 줄바꿈되더라도 아이콘의 세로 중심이
+// "텍스트 전체 블록 중심"이 아니라 "텍스트 첫 줄의 세로 중심"과 정확히 일치한다.
+const INFO_ROW_LINE_HEIGHT = 22;
+
 function KoreanAddressSpan({ lat, lng, fallback, selectedLanguage }) {
   const address = useKoreanAddress(lat, lng, fallback, selectedLanguage);
-  return <span style={{ fontSize: '15px', textAlign: 'left' }}>{address}</span>;
+  return <span style={{ fontSize: '15px', textAlign: 'left', lineHeight: `${INFO_ROW_LINE_HEIGHT}px` }}>{address}</span>;
+}
+
+// 위치/기간 줄에서 공용으로 쓰는 아이콘 wrapper.
+// 고정 높이(INFO_ROW_LINE_HEIGHT)를 텍스트 첫 줄의 line-height와 동일하게 주고,
+// 그 안에서 flex + alignItems:center로 아이콘을 수직 중앙에 배치한다.
+function InfoRowIconWrapper({ children }) {
+  return (
+    <div style={{ height: `${INFO_ROW_LINE_HEIGHT}px`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      {children}
+    </div>
+  );
 }
 
 export default function PopupDetail() {
@@ -156,16 +172,23 @@ export default function PopupDetail() {
           <h2 style={{ margin: '0 0 12px', fontSize: '24px', color: 'var(--ink)', fontWeight: 'bold', fontFamily: 'var(--font-display)' }}>{displayName}</h2>
           
           {/* 위치/기간: 아이콘 열(20px 고정 너비)과 텍스트 열을 grid로 통일해
-              두 줄의 아이콘 x좌표와 텍스트 시작점(x좌표)이 정확히 일치하도록 함 */}
+              두 줄의 아이콘 x좌표와 텍스트 시작점(x좌표)이 정확히 일치하도록 함.
+              alignItems:'start'로 grid row 상단에 두 열을 맞추고, 아이콘은
+              InfoRowIconWrapper(텍스트 첫 줄과 동일한 고정 높이 + flex center)로 감싸서
+              주소가 여러 줄이 되어도 아이콘이 첫 줄 중심에 오도록 함 */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '20px' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '20px 1fr', columnGap: '8px', alignItems: 'start', color: 'var(--ink-secondary)' }}>
-              <IconMapPin size={18} style={{ justifySelf: 'center' }} />
+              <InfoRowIconWrapper>
+                <IconMapPin size={18} />
+              </InfoRowIconWrapper>
               <KoreanAddressSpan lat={popup.location?.lat} lng={popup.location?.lng} fallback={popup.location?.address} selectedLanguage={selectedLanguage} />
             </div>
 
             <div style={{ display: 'grid', gridTemplateColumns: '20px 1fr', columnGap: '8px', alignItems: 'start', color: 'var(--ink-secondary)' }}>
-              <IconCalendar size={18} style={{ justifySelf: 'center' }} />
-              <span style={{ fontSize: '15px', textAlign: 'left' }}>{popup.period.start} ~ {popup.period.end}</span>
+              <InfoRowIconWrapper>
+                <IconCalendar size={18} />
+              </InfoRowIconWrapper>
+              <span style={{ fontSize: '15px', textAlign: 'left', lineHeight: `${INFO_ROW_LINE_HEIGHT}px` }}>{popup.period.start} ~ {popup.period.end}</span>
             </div>
           </div>
 

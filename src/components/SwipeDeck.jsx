@@ -11,7 +11,7 @@ import useKoreanAddress from '../hooks/useKoreanAddress';
 
 function KoreanAddressSpan({ lat, lng, fallback, selectedLanguage }) {
   const address = useKoreanAddress(lat, lng, fallback, selectedLanguage);
-  return <span style={{ lineHeight: 1.4 }}>{address}</span>;
+  return <span style={{ lineHeight: 1.4, textAlign: 'left' }}>{address}</span>;
 }
 
 export default function SwipeDeck() {
@@ -123,14 +123,17 @@ export default function SwipeDeck() {
             </div>
           </div>
           
+          {/* 위치/기간: 두 아이콘의 size를 동일하게(18) 통일하고, 고정폭(20px) 아이콘 열 +
+              1fr 텍스트 열의 grid 구조로 통일해 아이콘 좌우 끝점과 텍스트 시작 x좌표를 정확히 맞춤
+              (PopupDetail.jsx에 적용한 것과 동일한 구조) */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', color: 'var(--ink-secondary)', fontSize: '15px' }}>
-            <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
-              <IconMapPin size={22} style={{ flexShrink: 0, marginTop: '2px' }} />
+            <div style={{ display: 'grid', gridTemplateColumns: '20px 1fr', columnGap: '8px', alignItems: 'start' }}>
+              <IconMapPin size={18} style={{ justifySelf: 'center' }} />
               <KoreanAddressSpan lat={popup.location?.lat} lng={popup.location?.lng} fallback={popup.location?.address} selectedLanguage={selectedLanguage} />
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <IconCalendarEvent size={20} style={{ flexShrink: 0 }} />
-              <span>{popup.period.start} ~ {popup.period.end}</span>
+            <div style={{ display: 'grid', gridTemplateColumns: '20px 1fr', columnGap: '8px', alignItems: 'start' }}>
+              <IconCalendarEvent size={18} style={{ justifySelf: 'center' }} />
+              <span style={{ textAlign: 'left' }}>{popup.period.start} ~ {popup.period.end}</span>
             </div>
           </div>
           

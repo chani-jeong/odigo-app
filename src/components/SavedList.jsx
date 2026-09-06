@@ -86,7 +86,7 @@ export default function SavedList() {
                     return engMap[popup.category] || popup.category.toUpperCase();
                   })()}
                 </div>
-                <h3 style={{ margin: '0 0 8px 0', fontSize: '16px', color: 'var(--ink)', display: '-webkit-box', WebkitLineClamp: 1, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                <h3 style={{ margin: '0 0 8px 0', fontSize: '16px', color: 'var(--ink)', textAlign: 'left', display: '-webkit-box', WebkitLineClamp: 1, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
                   {selectedLanguage === 'ko' && popup.name.ko ? popup.name.ko : popup.name.en}
                 </h3>
                 <div style={{ display: 'flex', alignItems: 'flex-start', gap: '4px', color: 'var(--ink-secondary)', fontSize: '12px', marginBottom: '12px', lineHeight: '1.4' }}>
