@@ -3,11 +3,12 @@ import useDeckStore from '../store/useDeckStore';
 import { IconMapPin, IconBookmarkFilled } from '@tabler/icons-react';
 import useTranslation from '../i18n/useTranslation';
 import useKoreanAddress from '../hooks/useKoreanAddress';
+import { getShortAddress } from '../utils/address';
 import { sortByEndedStatus } from '../utils/popupStatus';
 
 function KoreanAddressSpan({ lat, lng, fallback, selectedLanguage }) {
   const address = useKoreanAddress(lat, lng, fallback, selectedLanguage);
-  return <span>{address.split(',')[0]}</span>;
+  return <span>{getShortAddress(address)}</span>;
 }
 
 export default function SavedList() {
