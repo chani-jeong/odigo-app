@@ -2051,5 +2051,819 @@
     },
     "description": "A joint exhibition exploring the life cycle and ecology of birds, hosted at Hwadamsup's Hwadamchae. Advance reservation is required to visit.",
     "imageUrl": "/images/gwangju-nibr.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "gimpo-hipbuddhism-2026",
+    "name": {
+      "en": "Hip Buddhism at Lotte Mall",
+      "ko": "힙불교 in 롯데몰"
+    },
+    "area": "gimpo",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-03",
+      "end": "2026-09-09"
+    },
+    "location": {
+      "lat": 37.5713695798026,
+      "lng": 126.802960133589,
+      "address": "Lotte Mall Gimpo Airport, Gangseo-gu, Seoul (서울 강서구 하늘길 38 롯데몰 김포공항점 GF층 메인 팝업존)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/DcvgTEMIBF6/",
+      "walkin_tip": "Operating Hours: Daily 10:30-22:00",
+      "verified_at": "2026-09-08",
+      "verified_by": "user_provided"
+    },
+    "description": "A lifestyle pop-up bringing a modern, playful take on Buddhist culture to Lotte Mall Gimpo Airport. Browse themed goods and photo zones in the main pop-up zone on the GF floor.",
+    "imageUrl": "/images/gimpo-hipbuddhism.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "hongdae-gunyangi-2026",
+    "name": {
+      "en": "Gunyang-i × Made By Pop-up",
+      "ko": "구냥이 × 메이드바이 팝업"
+    },
+    "area": "hongdae",
+    "category": "character",
+    "period": {
+      "start": "2026-09-07",
+      "end": "2026-11-05"
+    },
+    "location": {
+      "lat": 37.5598714945494,
+      "lng": 126.926300212385,
+      "address": "Made By Hongdae, Mapo-gu, Seoul (서울 마포구 연희로 11 메이드바이 홍대점)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/Dc0bdCLj0qK/",
+      "walkin_tip": "Operating Hours: Mon-Sun 11:00-22:00",
+      "verified_at": "2026-09-08",
+      "verified_by": "user_provided"
+    },
+    "description": "A character pop-up collaboration between Gunyang-i and Made By at the Hongdae store. Meet the beloved cat character through exclusive merchandise and photo spots.",
+    "imageUrl": "/images/hongdae-gunyangi.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "hongdae-idolmaster-2026",
+    "name": {
+      "en": "Gakuen Idolmaster Initial-Character Cultural Festival Fair @ Hongdae",
+      "ko": "학원 아이돌 마스터 초성문화제 페어 @ 홍대"
+    },
+    "area": "hongdae",
+    "category": "character",
+    "period": {
+      "start": "2026-08-29",
+      "end": "2026-09-13"
+    },
+    "location": {
+      "lat": 37.5577458058734,
+      "lng": 126.926498328277,
+      "address": "Animate Hongdae, AK Plaza Hongdae, Mapo-gu, Seoul (서울 마포구 양화로 188 AK PLAZA 홍대 5층 애니메이트 홍대점)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://x.com/animate_hongdae/status/2093322716329791823",
+      "walkin_tip": "Operating Hours: Mon-Fri 11:00-21:40, Sat-Sun 10:30-21:40",
+      "verified_at": "2026-09-08",
+      "verified_by": "user_provided"
+    },
+    "description": "A Gakuen Idolmaster fair at Animate Hongdae celebrating the Initial-Character Cultural Festival. Find limited goods and displays dedicated to the idol game series.",
+    "imageUrl": "/images/hongdae-idolmaster.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "hongdae-identityv-2026",
+    "name": {
+      "en": "Identity V Winter Festival Fair @ Hongdae",
+      "ko": "제5인격 겨울축제 페어 @ 홍대"
+    },
+    "area": "hongdae",
+    "category": "character",
+    "period": {
+      "start": "2026-08-29",
+      "end": "2026-09-13"
+    },
+    "location": {
+      "lat": 37.5577458058734,
+      "lng": 126.926498328277,
+      "address": "Animate Hongdae, AK Plaza Hongdae, Mapo-gu, Seoul (서울 마포구 양화로 188 AK PLAZA 홍대 5층 애니메이트 홍대점)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://x.com/animate_hongdae/status/2093322707890749885",
+      "walkin_tip": "Operating Hours: Mon-Fri 11:00-21:40, Sat-Sun 10:30-21:40",
+      "verified_at": "2026-09-08",
+      "verified_by": "user_provided"
+    },
+    "description": "An Identity V Winter Festival fair at Animate Hongdae. Explore seasonal displays and exclusive merchandise from the popular asymmetric survival game.",
+    "imageUrl": "/images/hongdae-identityv.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "hongdae-umamusume-2026",
+    "name": {
+      "en": "Uma Musume: Pretty Derby Fair @ Hongdae",
+      "ko": "우마무스메 프리티 더비 페어 @ 홍대"
+    },
+    "area": "hongdae",
+    "category": "character",
+    "period": {
+      "start": "2026-09-05",
+      "end": "2026-09-20"
+    },
+    "location": {
+      "lat": 37.5577458058734,
+      "lng": 126.926498328277,
+      "address": "Animate Hongdae BLUR HALL, AK Plaza Hongdae, Mapo-gu, Seoul (서울 마포구 양화로 188 AK PLAZA 홍대 5층 애니메이트 홍대점 BLUR HALL)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://x.com/animate_hongdae/status/2093262328191950933",
+      "walkin_tip": "Operating Hours: Mon-Fri 11:00-21:40, Sat-Sun 10:30-21:40",
+      "verified_at": "2026-09-08",
+      "verified_by": "user_provided"
+    },
+    "description": "An Uma Musume: Pretty Derby fair at Animate Hongdae's BLUR HALL. Shop exclusive goods and enjoy themed displays of the racing-idol series.",
+    "imageUrl": "/images/hongdae-umamusume.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "hongdae-naganomarket-2026",
+    "name": {
+      "en": "Nagano Market Pop-up @ Hongdae",
+      "ko": "나가노마켓 팝업 @ 홍대"
+    },
+    "area": "hongdae",
+    "category": "character",
+    "period": {
+      "start": "2026-08-28",
+      "end": "2026-10-11"
+    },
+    "location": {
+      "lat": 37.5566304252897,
+      "lng": 126.922359477854,
+      "address": "0% SEOUL, Mapo-gu, Seoul (서울 마포구 월드컵북로2길 29 0% SEOUL)"
+    },
+    "access": {
+      "booking_required": "reservation_available",
+      "url": "https://x.com/naganomkt_seoul/status/2092145616814211471",
+      "walkin_tip": "Operating Hours: Mon-Sun 11:00-21:00",
+      "verified_at": "2026-09-08",
+      "verified_by": "user_provided"
+    },
+    "description": "Nagano Market brings its character pop-up to 0% SEOUL in Hongdae. Browse collectibles and limited items, with advance reservations available.",
+    "imageUrl": "/images/hongdae-naganomarket.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "gangnam-rew-2026",
+    "name": {
+      "en": "REW Pop-up",
+      "ko": "리더블유 팝업"
+    },
+    "area": "gangnam",
+    "category": "beauty_fashion",
+    "period": {
+      "start": "2026-09-04",
+      "end": "2026-09-10"
+    },
+    "location": {
+      "lat": 37.5273661232786,
+      "lng": 127.027468526838,
+      "address": "Hyundai Department Store Apgujeong, Gangnam-gu, Seoul (서울 강남구 압구정로 165 현대백화점 압구정본점 B2 PS0)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/Dch_Ie3mDeN/",
+      "walkin_tip": "Operating Hours: Mon-Thu 10:00-20:00, Fri-Sun 10:00-20:30",
+      "verified_at": "2026-09-08",
+      "verified_by": "user_provided"
+    },
+    "description": "A beauty and fashion pop-up for REW at Hyundai Department Store Apgujeong. Discover the brand's latest looks on B2 PS0.",
+    "imageUrl": "/images/gangnam-rew.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "gangnam-kodakdosan-2026",
+    "name": {
+      "en": "Kodak Dosan Studio Opening Event",
+      "ko": "코닥 도산 스튜디오 오픈 이벤트"
+    },
+    "area": "gangnam",
+    "category": "beauty_fashion",
+    "period": {
+      "start": "2026-08-28",
+      "end": "2026-09-30"
+    },
+    "location": {
+      "lat": 37.5263549444829,
+      "lng": 127.035217858669,
+      "address": "Kodak Dosan Studio, Gangnam-gu, Seoul (서울 강남구 언주로168길 19 KODAK DOSAN STUDIO 1층)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/DciJ7wTAaNn/",
+      "walkin_tip": "Operating Hours: Mon-Sun 10:30-20:00",
+      "verified_at": "2026-09-08",
+      "verified_by": "user_provided"
+    },
+    "description": "Celebrate the opening of Kodak Dosan Studio with this beauty-and-fashion event. Visit the new 1F studio space for photo-inspired experiences and Kodak goods.",
+    "imageUrl": "/images/gangnam-kodakdosan.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "gangnam-vivaitalia-2026",
+    "name": {
+      "en": "Italian Products Exhibition: VIVA ITALIA",
+      "ko": "이탈리아 제품전: VIVA ITALIA"
+    },
+    "area": "gangnam",
+    "category": "food",
+    "period": {
+      "start": "2026-08-26",
+      "end": "2026-09-13"
+    },
+    "location": {
+      "lat": 37.5225631447478,
+      "lng": 127.022370997236,
+      "address": "Highstreet Italia, Garosu-gil, Gangnam-gu, Seoul (서울 강남구 가로수길 69 하이스트리트 이탈리아 1~4층)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/DcaYRWDTWvM/",
+      "walkin_tip": "Operating Hours: Mon-Sun 11:00-20:00",
+      "verified_at": "2026-09-08",
+      "verified_by": "user_provided"
+    },
+    "description": "A food-focused Italian products exhibition at Highstreet Italia on Garosu-gil. Sample and shop Italian flavors across four floors.",
+    "imageUrl": "/images/gangnam-vivaitalia.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "hongdae-ahro-2026",
+    "name": {
+      "en": "ahro Pop-up",
+      "ko": "ahro 팝업"
+    },
+    "area": "hongdae",
+    "category": "beauty_fashion",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-09-14"
+    },
+    "location": {
+      "lat": 37.5577458058734,
+      "lng": 126.926498328277,
+      "address": "AK Plaza Hongdae 1F, Mapo-gu, Seoul (서울 마포구 양화로 188 AK플라자 홍대 1층)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/DciXI_WE9vS/",
+      "walkin_tip": "Operating Hours: Mon-Sun 11:00-22:00",
+      "verified_at": "2026-09-08",
+      "verified_by": "user_provided"
+    },
+    "description": "A beauty pop-up for ahro at AK Plaza Hongdae 1F. Explore the brand's latest products and exclusive pop-up offers.",
+    "imageUrl": "/images/hongdae-ahro.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "gangnam-kheritage-2026",
+    "name": {
+      "en": "National Geographic x Korea Heritage Service K-HERITAGE Pop-up",
+      "ko": "내셔널지오그래픽 X 국가유산청 K-HERITAGE 팝업"
+    },
+    "area": "gangnam",
+    "category": "exhibition",
+    "period": {
+      "start": "2026-08-27",
+      "end": "2026-09-08"
+    },
+    "location": {
+      "lat": 37.5118239121138,
+      "lng": 127.059159043842,
+      "address": "Starfield COEX Mall, Gangnam-gu, Seoul (서울 강남구 영동대로 513 스타필드 코엑스몰 B1F 잠바주스 앞 행사장)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/Dcc4Uzjjygx/",
+      "walkin_tip": "Operating Hours: Mon-Sun 10:30-22:00",
+      "verified_at": "2026-09-08",
+      "verified_by": "user_provided"
+    },
+    "description": "A National Geographic and Korea Heritage Service collaboration exhibition at Starfield COEX Mall. Discover K-heritage stories in a walk-in pop-up next to Jamba Juice on B1F.",
+    "imageUrl": "/images/gangnam-kheritage.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "hongdae-summermt-2026",
+    "name": {
+      "en": "Youth is Right Now! Summer MT Pop-up",
+      "ko": "청춘은 바로 지금! Summer MT 팝업"
+    },
+    "area": "hongdae",
+    "category": "character",
+    "period": {
+      "start": "2026-09-04",
+      "end": "2026-09-17"
+    },
+    "location": {
+      "lat": 37.5576896349106,
+      "lng": 126.925430561045,
+      "address": "Fanbase Hongdae, Mapo-gu, Seoul (서울 마포구 양화로 178-5 팬베이스 홍대점)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/DcQEcPaDeiU/",
+      "walkin_tip": "Operating Hours: Mon-Thu 10:30-20:00, Fri-Sun 10:30-20:30",
+      "verified_at": "2026-09-08",
+      "verified_by": "user_provided"
+    },
+    "description": "A youthful character pop-up themed around a summer MT at Fanbase Hongdae. Enjoy photo zones and exclusive merch celebrating \"Youth is Right Now!\"",
+    "imageUrl": "/images/hongdae-summermt.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "hongdae-cravity-2026",
+    "name": {
+      "en": "CRAVITY CHARACTER [DETECTIVE CCREW] POP-UP STORE",
+      "ko": "크래비티 팝업 - 탐정 크크루"
+    },
+    "area": "hongdae",
+    "category": "character",
+    "period": {
+      "start": "2026-09-02",
+      "end": "2026-09-13"
+    },
+    "location": {
+      "lat": 37.5577458058734,
+      "lng": 126.926498328277,
+      "address": "AK Plaza Hongdae 1F, Mapo-gu, Seoul (서울 마포구 양화로 188 AK PLAZA 홍대 1층)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/DcOHSB2nRGJ/",
+      "walkin_tip": "Operating Hours: Mon-Sun 11:00-20:00",
+      "verified_at": "2026-09-08",
+      "verified_by": "user_provided"
+    },
+    "description": "CRAVITY's Detective CCREW character pop-up at AK Plaza Hongdae 1F. Meet the detective-themed characters and shop exclusive idol goods.",
+    "imageUrl": "/images/hongdae-cravity.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "hongdae-maidcountess-2026",
+    "name": {
+      "en": "The Count's Secret Maid Pop-up",
+      "ko": "백작가의 비밀스런 시녀님 팝업"
+    },
+    "area": "hongdae",
+    "category": "character",
+    "period": {
+      "start": "2026-08-28",
+      "end": "2026-09-10"
+    },
+    "location": {
+      "lat": 37.5645068654898,
+      "lng": 126.923212997141,
+      "address": "Goods Moment, Mapo-gu, Seoul (서울 마포구 성미산로 151-1 굿즈모먼트 2층, 4층)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "walkin_tip": "Operating Hours: Mon-Fri 11:00-22:00, Sat-Sun 10:30-22:00",
+      "verified_at": "2026-09-08",
+      "verified_by": "user_provided"
+    },
+    "description": "A character pop-up for The Count's Secret Maid at Goods Moment. Browse webtoon-inspired merchandise across the 2nd and 4th floors.",
+    "imageUrl": "/images/hongdae-maidcountess.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "hongdae-unove-powerpuff-2026",
+    "name": {
+      "en": "UNOVE x The Powerpuff Girls Pop-up @ Hongdae",
+      "ko": "어노브 X 파워퍼프걸 팝업 @ 홍대"
+    },
+    "area": "hongdae",
+    "category": "character",
+    "period": {
+      "start": "2026-08-30",
+      "end": "2026-09-11"
+    },
+    "location": {
+      "lat": 37.5566180233646,
+      "lng": 126.924351712061,
+      "address": "Olive Young Hongdae Town, Mapo-gu, Seoul (서울 마포구 홍익로6길 57 올리브영 홍대타운점)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/Dciff6xkvWp/",
+      "walkin_tip": "Operating Hours: Mon-Sun 11:00-02:00",
+      "verified_at": "2026-09-08",
+      "verified_by": "user_provided"
+    },
+    "description": "UNOVE teams up with The Powerpuff Girls for a character pop-up at Olive Young Hongdae Town. Shop the playful collab collection late into the night.",
+    "imageUrl": "/images/hongdae-unove-powerpuff.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "hongdae-toonique-rentgf-2026",
+    "name": {
+      "en": "Rent-a-Girlfriend x Toonique Collaboration Cafe",
+      "ko": "여친, 빌리겠습니다 X 투니크 콜라보 카페"
+    },
+    "area": "hongdae",
+    "category": "character",
+    "period": {
+      "start": "2026-08-20",
+      "end": "2026-09-13"
+    },
+    "location": {
+      "lat": 37.5512943767386,
+      "lng": 126.917861304309,
+      "address": "Cafe Toonique Universe, Mapo-gu, Seoul (서울 마포구 양화로 78-17 카페 투니크 유니버스점)"
+    },
+    "access": {
+      "booking_required": "reservation_available",
+      "url": "https://www.instagram.com/p/Db7zyJryKla/",
+      "walkin_tip": "Operating Hours: Mon-Sun 11:00-21:00",
+      "verified_at": "2026-09-08",
+      "verified_by": "user_provided"
+    },
+    "description": "A collaboration cafe for Rent-a-Girlfriend at Cafe Toonique Universe. Enjoy themed drinks and goods, with advance reservations available.",
+    "imageUrl": "/images/hongdae-toonique-rentgf.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "hongdae-orv-cafe-2026",
+    "name": {
+      "en": "Omniscient Reader's Viewpoint × Animate Cafe @ Hongdae",
+      "ko": "전지적 독자 시점 × 애니메이트 카페 @ 홍대"
+    },
+    "area": "hongdae",
+    "category": "character",
+    "period": {
+      "start": "2026-09-02",
+      "end": "2026-09-13"
+    },
+    "location": {
+      "lat": 37.5577458058734,
+      "lng": 126.926498328277,
+      "address": "Animate Cafe, AK Plaza Hongdae, Mapo-gu, Seoul (서울 마포구 양화로 188 AK 플라자 홍대 5층 애니메이트 카페)"
+    },
+    "access": {
+      "booking_required": "reservation_available",
+      "url": "https://www.instagram.com/p/Db2pKlwEuzV",
+      "walkin_tip": "Operating Hours: Mon-Fri 11:00-22:00, Sat-Sun 10:30-22:00",
+      "verified_at": "2026-09-08",
+      "verified_by": "user_provided"
+    },
+    "description": "An Omniscient Reader's Viewpoint collaboration cafe at Animate Cafe Hongdae. Enjoy themed menu items and exclusive merch, with advance reservations available.",
+    "imageUrl": "/images/hongdae-orv-cafe.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "hongdae-inuyasha-2026",
+    "name": {
+      "en": "Inuyasha Pop-up @ Hongdae",
+      "ko": "이누야샤 팝업 @ 홍대"
+    },
+    "area": "hongdae",
+    "category": "character",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-09-22"
+    },
+    "location": {
+      "lat": 37.5577458058734,
+      "lng": 126.926498328277,
+      "address": "LIMITION, AK Plaza Hongdae 4F, Mapo-gu, Seoul (서울 마포구 양화로 188 AK PLAZA 홍대 4층 LIMITION)"
+    },
+    "access": {
+      "booking_required": "reservation_available",
+      "url": "https://www.instagram.com/p/DbnMr8LGOr4/",
+      "walkin_tip": "Operating Hours: Mon-Fri 11:00-22:00, Sat-Sun 10:30-22:00",
+      "verified_at": "2026-09-08",
+      "verified_by": "user_provided"
+    },
+    "description": "An Inuyasha character pop-up at LIMITION on the 4th floor of AK Plaza Hongdae. Shop nostalgic anime goods, with advance reservations available.",
+    "imageUrl": "/images/hongdae-inuyasha.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "hongdae-conanexhibit-2026",
+    "name": {
+      "en": "Detective Conan Exhibition",
+      "ko": "명탐정 코난 전시"
+    },
+    "area": "hongdae",
+    "category": "exhibition",
+    "period": {
+      "start": "2026-08-12",
+      "end": "2026-11-29"
+    },
+    "location": {
+      "lat": 37.5577458058734,
+      "lng": 126.926498328277,
+      "address": "AK Plaza Hongdae 4F, Mapo-gu, Seoul (서울 마포구 양화로 188 AK PLAZA 홍대 4층)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/Daw_jqIETHk",
+      "walkin_tip": "Operating Hours: Mon-Fri 11:00-22:00, Sat-Sun 10:30-22:00",
+      "verified_at": "2026-09-08",
+      "verified_by": "user_provided"
+    },
+    "description": "A Detective Conan exhibition at AK Plaza Hongdae 4F. Explore displays and exclusive merchandise from the long-running mystery series.",
+    "imageUrl": "/images/hongdae-conanexhibit.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "magok-kaws-2026",
+    "name": {
+      "en": "KAWS: Friends and Neighbors Exhibition",
+      "ko": "카우스: 친구, 그리고 이웃 전시"
+    },
+    "area": "magok",
+    "category": "exhibition",
+    "period": {
+      "start": "2026-07-23",
+      "end": "2026-12-27"
+    },
+    "location": {
+      "lat": 37.5610929270592,
+      "lng": 126.830974669978,
+      "address": "SpaceK Seoul, Magok, Gangseo-gu, Seoul (서울 강서구 마곡중앙8로 32 스페이스K 서울)"
+    },
+    "access": {
+      "booking_required": "reservation_available",
+      "url": "https://www.instagram.com/p/DaO1KpbTKGt/",
+      "walkin_tip": "Operating Hours: Mon-Sun 10:00-18:00",
+      "verified_at": "2026-09-08",
+      "verified_by": "user_provided"
+    },
+    "description": "A major KAWS exhibition, Friends and Neighbors, at SpaceK Seoul in Magok. View large-scale works by the artist, with advance reservations available.",
+    "imageUrl": "/images/magok-kaws.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "hongdae-pharmacist-2026",
+    "name": {
+      "en": "Pharmacist's Monologue Special Exhibition",
+      "ko": "약사의 혼잣말 특별전"
+    },
+    "area": "hongdae",
+    "category": "character",
+    "period": {
+      "start": "2026-07-04",
+      "end": "2026-09-30"
+    },
+    "location": {
+      "lat": 37.5559641636615,
+      "lng": 126.91970385951,
+      "address": "Stage Bimil, Mapo-gu, Seoul (서울 마포구 동교로 161 스테이지비밀 2층)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/DZeE9LQIFlZ/",
+      "walkin_tip": "Operating Hours: Mon-Sun 11:00-20:00",
+      "verified_at": "2026-09-08",
+      "verified_by": "user_provided"
+    },
+    "description": "A special exhibition for The Pharmacist's Monologue at Stage Bimil. Discover displays and goods from the popular series on the 2nd floor.",
+    "imageUrl": "/images/hongdae-pharmacist.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "hongdae-aot-final-2026",
+    "name": {
+      "en": "Attack on Titan Exhibition FINAL Pop-up",
+      "ko": "진격의 거인展 FINAL 팝업"
+    },
+    "area": "hongdae",
+    "category": "character",
+    "period": {
+      "start": "2026-06-19",
+      "end": "2026-11-01"
+    },
+    "location": {
+      "lat": 37.5576684824211,
+      "lng": 126.92589313527,
+      "address": "LC TOWER DUEX Hongdae, Mapo-gu, Seoul (서울 마포구 양화로 186 LC TOWER DUEX(덕스) 홍대)"
+    },
+    "access": {
+      "booking_required": "reservation_available",
+      "url": "https://www.instagram.com/p/DYL5TyAgYzk/",
+      "walkin_tip": "Operating Hours: Mon-Sun 12:00-19:00",
+      "verified_at": "2026-09-08",
+      "verified_by": "user_provided"
+    },
+    "description": "The Attack on Titan Exhibition FINAL pop-up at DUEX Hongdae. Experience the concluding chapter of the series through displays and exclusive merch, with advance reservations available.",
+    "imageUrl": "/images/hongdae-aot-final.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "gangnam-lgfirst-2026",
+    "name": {
+      "en": "LG Electronics \"THE FIRST: Origins\" Brand Exhibition Pop-up",
+      "ko": "LG전자 \"THE FIRST : Origins\" 브랜드 전시 팝업"
+    },
+    "area": "gangnam",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-04-02",
+      "end": "2026-12-31"
+    },
+    "location": {
+      "lat": 37.5236371207764,
+      "lng": 127.039611950875,
+      "address": "LG Electronics Flagship D5, Gangnam-gu, Seoul (서울 강남구 도산대로 403 LG전자 플래그십 D5)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/lgelectronics_kr/",
+      "walkin_tip": "Operating Hours: Mon-Sat 10:30-20:30, Sun 11:00-20:30",
+      "verified_at": "2026-09-08",
+      "verified_by": "user_provided"
+    },
+    "description": "LG Electronics' long-running brand exhibition pop-up, THE FIRST: Origins, at Flagship D5 in Dosan. Explore the brand's design origins in a walk-in lifestyle exhibit.",
+    "imageUrl": "/images/gangnam-lgfirst.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "gimpo-bomnaln-2026",
+    "name": {
+      "en": "Pop-up in spring",
+      "ko": "봄날엔 팝업"
+    },
+    "area": "gimpo",
+    "category": "food",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-09-17"
+    },
+    "location": {
+      "lat": 37.5713695798026,
+      "lng": 126.802960133589,
+      "address": "Lotte Mall Gimpo Airport, Gangseo-gu, Seoul (서울 강서구 하늘길 38 롯데몰 김포공항점 GF층 시시호시 앞)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "walkin_tip": "Operating Hours: Daily 10:30-22:00",
+      "verified_at": "2026-09-08",
+      "verified_by": "user_provided"
+    },
+    "description": "A food pop-up bringing Bomnaln's comforting flavors to Lotte Mall Gimpo Airport. Find seasonal snacks near Sisihoshi on the GF floor.",
+    "imageUrl": "/images/gimpo-bomnaln.png"
   }
 ]
