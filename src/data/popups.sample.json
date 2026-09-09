@@ -2865,5 +2865,889 @@
     },
     "description": "A food pop-up bringing Bomnaln's comforting flavors to Lotte Mall Gimpo Airport. Find seasonal snacks near Sisihoshi on the GF floor.",
     "imageUrl": "/images/gimpo-bomnaln.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "seongsu-jungjinwoon-2026",
+    "name": {
+      "en": "Jung Jinwoon Photo Exhibition",
+      "ko": "정진운 사진전"
+    },
+    "area": "seongsu",
+    "category": "exhibition",
+    "period": {
+      "start": "2026-09-02",
+      "end": "2026-09-20"
+    },
+    "location": {
+      "lat": 37.5405360337686,
+      "lng": 127.0489664671,
+      "address": "FACADE Seoul Forest, Seongdong-gu, Seoul (서울 성동구 뚝섬로 343 FACADE 서울숲)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "walkin_tip": "Operating Hours: Mon-Fri 11:00-19:00, Sat-Sun 11:00-20:00",
+      "verified_at": "2026-09-09",
+      "verified_by": "user_provided"
+    },
+    "description": "Jung Jinwoon's photo exhibition at FACADE Seoul Forest. Walk in to view photographic works in a gallery setting in Seongsu.",
+    "imageUrl": "/images/seongsu-jungjinwoon.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "seongsu-perfulounge-2026",
+    "name": {
+      "en": "Perfu Lounge Pop-up",
+      "ko": "퍼퓨라운지 팝업"
+    },
+    "area": "seongsu",
+    "category": "beauty_fashion",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-09-20"
+    },
+    "location": {
+      "lat": 37.5444395849865,
+      "lng": 127.050322034872,
+      "address": "Perfu Lounge, Seongdong-gu, Seoul (서울 성동구 연무장길 9-36 1F)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/perfulounge/",
+      "walkin_tip": "Operating Hours: Mon-Sun 13:00-20:00",
+      "verified_at": "2026-09-09",
+      "verified_by": "user_provided"
+    },
+    "description": "Perfu Lounge's fragrance pop-up in Seongsu. Discover scents and beauty experiences on the 1st floor, with walk-in access.",
+    "imageUrl": "/images/seongsu-perfulounge.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "seongsu-oliveyoung-citylog-2026",
+    "name": {
+      "en": "Olive Young City Log Pop-up",
+      "ko": "올리브영 시티 로그 팝업"
+    },
+    "area": "seongsu",
+    "category": "beauty_fashion",
+    "period": {
+      "start": "2026-08-29",
+      "end": "2026-09-13"
+    },
+    "location": {
+      "lat": 37.5441832964048,
+      "lng": 127.05448273353,
+      "address": "Olive Young N Seongsu, Seongdong-gu, Seoul (서울 성동구 연무장7길 13)"
+    },
+    "access": {
+      "booking_required": "reservation_required",
+      "url": "https://www.instagram.com/p/Ddj7Bv1EqIR/",
+      "walkin_tip": "Operating Hours: Mon-Sun 10:00-22:00",
+      "verified_at": "2026-09-09",
+      "verified_by": "user_provided"
+    },
+    "description": "Olive Young's City Log beauty pop-up in Seongsu. Explore city-inspired beauty experiences; advance reservation is required.",
+    "imageUrl": "/images/seongsu-oliveyoung-citylog.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "seongsu-yogibo-2026",
+    "name": {
+      "en": "Yogibo Seongsu Pop-up",
+      "ko": "요기보 성수 팝업"
+    },
+    "area": "seongsu",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-08-27",
+      "end": "2026-09-13"
+    },
+    "location": {
+      "lat": 37.5449131125173,
+      "lng": 127.051661118608,
+      "address": "Pop at Kim, Seongdong-gu, Seoul (서울 성동구 연무장3길 13 팝앳킴 1층)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/DciKxDqm2pG/",
+      "walkin_tip": "Operating Hours: Mon-Fri 11:00-18:00, Sat-Sun 11:00-19:00",
+      "verified_at": "2026-09-09",
+      "verified_by": "user_provided"
+    },
+    "description": "Yogibo's Seongsu lifestyle pop-up at Pop at Kim. Lounge on signature beanbag furniture and home comforts, walk-in welcome.",
+    "imageUrl": "/images/seongsu-yogibo.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "seongsu-illigo-asur-2026",
+    "name": {
+      "en": "ILLIGO X ASUR MUSINSA MEGA STORE SEONGSU POP-UP",
+      "ko": "일리고 X 애즈유아 팝업"
+    },
+    "area": "seongsu",
+    "category": "beauty_fashion",
+    "period": {
+      "start": "2026-08-28",
+      "end": "2026-09-11"
+    },
+    "location": {
+      "lat": 37.5403623257773,
+      "lng": 127.05585778727,
+      "address": "MUSINSA MEGA STORE Seongsu, Seongdong-gu, Seoul (서울 성동구 성수이로 62 무신사 메가스토어 성수 1F)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/Dcikv2Bid-F/",
+      "walkin_tip": "Operating Hours: Mon-Sun 11:00-22:00",
+      "verified_at": "2026-09-09",
+      "verified_by": "user_provided"
+    },
+    "description": "ILLIGO X ASUR collaboration pop-up at MUSINSA MEGA STORE Seongsu. Shop the beauty collab on the 1st floor, with walk-in access.",
+    "imageUrl": "/images/seongsu-illigo-asur.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "seongsu-hillstate-29cm-2026",
+    "name": {
+      "en": "HILLSTATE X 29CM HOME Seongsu Pop-up",
+      "ko": "힐스테이트 X 29CM HOME 성수 팝업"
+    },
+    "area": "seongsu",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-04",
+      "end": "2026-09-10"
+    },
+    "location": {
+      "lat": 37.5423763558831,
+      "lng": 127.055803844555,
+      "address": "29HOME Seongsu 1, Seongdong-gu, Seoul (서울 성동구 연무장길 57 29홈 성수 1호점)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/Dca3WnNyfpF/",
+      "walkin_tip": "Operating Hours: Mon-Sun 11:00-22:00",
+      "verified_at": "2026-09-09",
+      "verified_by": "user_provided"
+    },
+    "description": "HILLSTATE X 29CM HOME pop-up at 29HOME Seongsu. Explore home and lifestyle pieces from the collaboration, walk-in welcome.",
+    "imageUrl": "/images/seongsu-hillstate-29cm.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "seongsu-lensme-2026",
+    "name": {
+      "en": "LensMe Seongsu Pop-up",
+      "ko": "렌즈미 성수 팝업"
+    },
+    "area": "seongsu",
+    "category": "beauty_fashion",
+    "period": {
+      "start": "2026-09-04",
+      "end": "2026-09-11"
+    },
+    "location": {
+      "lat": 37.543590182633,
+      "lng": 127.051230667752,
+      "address": "LensMe Seongsu, Seongdong-gu, Seoul (서울 성동구 연무장길 16-2 1층)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.lens-me.com/shop/page.php?ps_code=PEJTZSWOLF",
+      "walkin_tip": "Operating Hours: Mon-Sun 10:30-21:30",
+      "verified_at": "2026-09-09",
+      "verified_by": "user_provided"
+    },
+    "description": "LensMe's Seongsu pop-up for contact lenses and eyewear. Try on styles and shop on the 1st floor, with walk-in access.",
+    "imageUrl": "/images/seongsu-lensme.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "seongsu-dragonball-2026",
+    "name": {
+      "en": "Dragon Ball Heroes Rise Seoul",
+      "ko": "드래곤볼 히어로즈 라이즈 서울"
+    },
+    "area": "seongsu",
+    "category": "character",
+    "period": {
+      "start": "2026-08-22",
+      "end": "2026-11-15"
+    },
+    "location": {
+      "lat": 37.538836140327,
+      "lng": 127.055627976198,
+      "address": "STAGE X Seongsu 403, Seongdong-gu, Seoul (서울 성동구 뚝섬로 403 스테이지 엑스 성수 403)"
+    },
+    "access": {
+      "booking_required": "reservation_required",
+      "url": "https://www.instagram.com/p/DbSglEkyOqR/",
+      "walkin_tip": "Operating Hours: Mon-Sun 11:00-21:00",
+      "verified_at": "2026-09-09",
+      "verified_by": "user_provided"
+    },
+    "description": "Dragon Ball Heroes Rise Seoul at STAGE X Seongsu 403. Step into the Dragon Ball universe; advance reservation is required.",
+    "imageUrl": "/images/seongsu-dragonball.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "seongsu-fra422-2026",
+    "name": {
+      "en": "FRA422 Pop-up",
+      "ko": "프라포투투 팝업"
+    },
+    "area": "seongsu",
+    "category": "beauty_fashion",
+    "period": {
+      "start": "2026-03-06",
+      "end": "2026-11-30"
+    },
+    "location": {
+      "lat": 37.5419941512587,
+      "lng": 127.055995467187,
+      "address": "FRA422 Seongsu, Seongdong-gu, Seoul (서울 성동구 성수이로 77)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "be-mill.com/products/view/DMZESK2RU0",
+      "walkin_tip": "Operating Hours: Mon-Sun 10:30-21:30",
+      "verified_at": "2026-09-09",
+      "verified_by": "user_provided"
+    },
+    "description": "FRA422's long-running beauty pop-up in Seongsu. Shop the brand's products with walk-in access through late November.",
+    "imageUrl": "/images/seongsu-fra422.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "seongsu-torriden-connect-2026",
+    "name": {
+      "en": "Torriden Pop-up",
+      "ko": "토리든 팝업"
+    },
+    "area": "seongsu",
+    "category": "beauty_fashion",
+    "period": {
+      "start": "2026-07-15",
+      "end": "2026-12-31"
+    },
+    "location": {
+      "lat": 37.5418230245885,
+      "lng": 127.055287568766,
+      "address": "Torriden Connect Seongsu, Seongdong-gu, Seoul (서울 성동구 성수이로7가길 17 토리든 커넥트 성수)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/DVhdccOk0RE/",
+      "walkin_tip": "Operating Hours: Mon-Sun 11:00-20:00",
+      "verified_at": "2026-09-09",
+      "verified_by": "user_provided"
+    },
+    "description": "Torriden's skincare pop-up at Torriden Connect Seongsu. Experience the brand's products at this flagship-style space, walk-in welcome.",
+    "imageUrl": "/images/seongsu-torriden-connect.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "seongsu-carin-takubannai-2026",
+    "name": {
+      "en": "CARIN X TAKU BANNAI: Moments on the Road",
+      "ko": "카린 X 타쿠 반나이 전시: Moments on the Road"
+    },
+    "area": "seongsu",
+    "category": "exhibition",
+    "period": {
+      "start": "2026-07-17",
+      "end": "2026-10-15"
+    },
+    "location": {
+      "lat": 37.5429523072063,
+      "lng": 127.055735136465,
+      "address": "CARIN Seongsu Flagship Store, Seongdong-gu, Seoul (서울 성동구 연무장9길 7 CARIN 성수 플래그십 스토어)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/Day_Fmvmmoi/",
+      "walkin_tip": "Operating Hours: Mon-Sun 11:00-20:00",
+      "verified_at": "2026-09-09",
+      "verified_by": "user_provided"
+    },
+    "description": "CARIN X TAKU BANNAI: Moments on the Road at CARIN's Seongsu flagship. A photography exhibition capturing moments on the road, walk-in welcome.",
+    "imageUrl": "/images/seongsu-carin-takubannai.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "seongsu-storya-beautysurvival-2026",
+    "name": {
+      "en": "STORY A Seongsu: Beauty Survival Murder Case",
+      "ko": "STORY A 성수: 뷰티서바이벌 살인사건"
+    },
+    "area": "seongsu",
+    "category": "exhibition",
+    "period": {
+      "start": "2026-07-28",
+      "end": "2026-10-18"
+    },
+    "location": {
+      "lat": 37.5445478113822,
+      "lng": 127.059042202077,
+      "address": "STORY A Seongsu, Amore Seongsu, Seongdong-gu, Seoul (서울 성동구 아차산로11길 7 아모레성수 2층 STORY A 성수)"
+    },
+    "access": {
+      "booking_required": "reservation_required",
+      "url": "https://www.instagram.com/p/DaxIe02CSfr/",
+      "walkin_tip": "Operating Hours: Tue-Sun 11:00-20:00",
+      "verified_at": "2026-09-09",
+      "verified_by": "user_provided"
+    },
+    "description": "STORY A Seongsu presents Beauty Survival Murder Case at Amore Seongsu. An immersive exhibition on the 2nd floor; advance reservation is required.",
+    "imageUrl": "/images/seongsu-storya-beautysurvival.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "seongsu-thelook-2026",
+    "name": {
+      "en": "The Look",
+      "ko": "더 룩"
+    },
+    "area": "seongsu",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-08-14",
+      "end": "2026-09-13"
+    },
+    "location": {
+      "lat": 37.5412879783082,
+      "lng": 127.057247078418,
+      "address": "Seongsui-ro 16-gil 5, 3F, Seongdong-gu, Seoul (서울 성동구 성수이로16길 5 3층)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/the_look_popup/",
+      "walkin_tip": "Operating Hours: Mon-Sun 11:00-20:50",
+      "verified_at": "2026-09-09",
+      "verified_by": "user_provided"
+    },
+    "description": "The Look lifestyle pop-up on the 3rd floor in Seongsu. Browse curated looks and pieces, with walk-in access.",
+    "imageUrl": "/images/seongsu-thelook.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "seongsu-oldferrydonut-2026",
+    "name": {
+      "en": "OldFerryDonut Seongsu",
+      "ko": "올드페리도넛 성수"
+    },
+    "area": "seongsu",
+    "category": "food",
+    "period": {
+      "start": "2026-06-29",
+      "end": "2026-12-31"
+    },
+    "location": {
+      "lat": 37.5412879783082,
+      "lng": 127.057247078418,
+      "address": "OldFerryDonut Seongsu, Seongdong-gu, Seoul (서울 성동구 성수이로16길 5 1층)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/oldferrydonut/",
+      "walkin_tip": "Operating Hours: Mon-Sun 11:00-21:00",
+      "verified_at": "2026-09-09",
+      "verified_by": "user_provided"
+    },
+    "description": "OldFerryDonut Seongsu serves the brand's signature donuts on the 1st floor. Walk in for donuts and a sweet break in Seongsu.",
+    "imageUrl": "/images/seongsu-oldferrydonut.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "seongsu-secretastronomy-2026",
+    "name": {
+      "en": "Secret Astronomy: Counting the Stars Pop-up",
+      "ko": "암행천문: 별을 헤다 팝업"
+    },
+    "area": "seongsu",
+    "category": "exhibition",
+    "period": {
+      "start": "2026-07-02",
+      "end": "2026-09-13"
+    },
+    "location": {
+      "lat": 37.5449348677609,
+      "lng": 127.050524806473,
+      "address": "T Factory Seongsu, Seongdong-gu, Seoul (서울 성동구 연무장1길 7-1 T팩토리 성수)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/DUcd3KqEtcu/",
+      "walkin_tip": "Operating Hours: Mon-Sun 11:00-20:00",
+      "verified_at": "2026-09-09",
+      "verified_by": "user_provided"
+    },
+    "description": "Secret Astronomy: Counting the Stars pop-up at T Factory Seongsu. An exhibition inviting visitors to count the stars, walk-in welcome.",
+    "imageUrl": "/images/seongsu-secretastronomy.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "seongsu-ongredients-2026",
+    "name": {
+      "en": "Ongredients Flagship Store",
+      "ko": "온그리디언츠 플래그십 스토어"
+    },
+    "area": "seongsu",
+    "category": "beauty_fashion",
+    "period": {
+      "start": "2026-06-05",
+      "end": "2027-05-31"
+    },
+    "location": {
+      "lat": 37.5409241382461,
+      "lng": 127.061057060068,
+      "address": "LES601 Seongsu, Seongdong-gu, Seoul (서울 성동구 연무장17길 2 LES601성수)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/DZYvrNZGBkR/",
+      "walkin_tip": "Operating Hours: Mon-Sun 11:00-20:00",
+      "verified_at": "2026-09-09",
+      "verified_by": "user_provided"
+    },
+    "description": "Ongredients Flagship Store at LES601 Seongsu. Shop clean beauty and skincare at the long-running flagship, walk-in welcome.",
+    "imageUrl": "/images/seongsu-ongredients.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "seongsu-demonslayer-2026",
+    "name": {
+      "en": "Demon Slayer: Total Concentration Exhibition",
+      "ko": "귀멸의 칼날 전집중展"
+    },
+    "area": "seongsu",
+    "category": "character",
+    "period": {
+      "start": "2026-06-27",
+      "end": "2026-09-27"
+    },
+    "location": {
+      "lat": 37.5428221053246,
+      "lng": 127.058905961286,
+      "address": "S Factory Building D, Seongdong-gu, Seoul (서울 성동구 연무장15길 11 에스팩토리 D동 1F)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/DY56_PnD5rC/",
+      "walkin_tip": "Operating Hours: Mon-Sun 09:00-20:00",
+      "verified_at": "2026-09-09",
+      "verified_by": "user_provided"
+    },
+    "description": "Demon Slayer: Total Concentration Exhibition at S Factory Seongsu. A character exhibition for fans of the hit series, walk-in welcome.",
+    "imageUrl": "/images/seongsu-demonslayer.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "seongsu-mercedesbenz-2026",
+    "name": {
+      "en": "Mercedes-Benz Studio Seoul Pop-up",
+      "ko": "메르세데스-벤츠 스튜디오 서울 팝업"
+    },
+    "area": "seongsu",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-05-19",
+      "end": "2027-02-14"
+    },
+    "location": {
+      "lat": 37.5420239622273,
+      "lng": 127.057705005778,
+      "address": "XYZ SEOUL, Seongdong-gu, Seoul (서울 성동구 연무장길 73 XYZ SEOUL)"
+    },
+    "access": {
+      "booking_required": "reservation_available",
+      "url": "https://naver.me/GvW99YEf",
+      "walkin_tip": "Operating Hours: Mon-Sun 11:00-20:00",
+      "verified_at": "2026-09-09",
+      "verified_by": "user_provided"
+    },
+    "description": "Mercedes-Benz Studio Seoul pop-up at XYZ SEOUL. Experience the brand's lifestyle studio, with advance reservations available.",
+    "imageUrl": "/images/seongsu-mercedesbenz.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "seongsu-lil-lamborghini-2026",
+    "name": {
+      "en": "Lil X Tonino Lamborghini Ground",
+      "ko": "릴X토니노 람보르기니 그라운드"
+    },
+    "area": "seongsu",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-15",
+      "end": "2026-09-23"
+    },
+    "location": {
+      "lat": 37.5414643923109,
+      "lng": 127.056124517118,
+      "address": "Seongsui-ro 72, Seongdong-gu, Seoul (서울 성동구 성수이로 72)"
+    },
+    "access": {
+      "booking_required": "reservation_required",
+      "url": "https://www.instagram.com/ktng_lil_official/",
+      "reservationUrl": "https://m.booking.naver.com/booking/6/bizes/1643675/items/7627870",
+      "walkin_tip": "Operating Hours: Mon-Sun 11:00-20:00",
+      "verified_at": "2026-09-09",
+      "verified_by": "user_provided"
+    },
+    "description": "Lil X Tonino Lamborghini Ground pop-up in Seongsu. A limited lifestyle collaboration; advance reservation is required.",
+    "imageUrl": "/images/seongsu-lil-lamborghini.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "seongsu-byredo-2026",
+    "name": {
+      "en": "Byredo Pop-up: BYREDO FUTURE MEMORIES Seoul",
+      "ko": "바이레도 팝업: BYREDO FUTURE MEMORIES 서울"
+    },
+    "area": "seongsu",
+    "category": "beauty_fashion",
+    "period": {
+      "start": "2026-09-11",
+      "end": "2026-09-20"
+    },
+    "location": {
+      "lat": 37.5426586816432,
+      "lng": 127.057034718003,
+      "address": "Yeonmujang 11-gil 7, Seongdong-gu, Seoul (서울 성동구 연무장11길 7)"
+    },
+    "access": {
+      "booking_required": "reservation_required",
+      "url": "https://brand.naver.com/byredo/shoppingstory/detail?id=5002955804",
+      "walkin_tip": "Operating Hours: Mon-Sun 11:00-20:00",
+      "verified_at": "2026-09-09",
+      "verified_by": "user_provided"
+    },
+    "description": "Byredo Future Memories Seoul pop-up. Experience the fragrance house's Future Memories collection; advance reservation is required.",
+    "imageUrl": "/images/seongsu-byredo.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "seongsu-spotifyhouse-2026",
+    "name": {
+      "en": "Spotify House Seoul",
+      "ko": "스포티파이 하우스 서울"
+    },
+    "area": "seongsu",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-10",
+      "end": "2026-09-13"
+    },
+    "location": {
+      "lat": 37.5443317433265,
+      "lng": 127.053778894723,
+      "address": "Seongsuillo 6-gil 36, Seongdong-gu, Seoul (서울 성동구 성수일로6길 36)"
+    },
+    "access": {
+      "booking_required": "reservation_required",
+      "url": "https://booking.naver.com/booking/12/bizes/1717191",
+      "walkin_tip": "Operating Hours: Thu-Sun 10:00-20:00",
+      "verified_at": "2026-09-09",
+      "verified_by": "user_provided"
+    },
+    "description": "Spotify House Seoul, a music lifestyle pop-up. Join the Spotify House experience; advance reservation is required.",
+    "imageUrl": "/images/seongsu-spotifyhouse.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "seongsu-coupang-onlyfesta-2026",
+    "name": {
+      "en": "Coupang Only Festa Pop-up",
+      "ko": "쿠팡 온리 페스타 팝업"
+    },
+    "area": "seongsu",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-17",
+      "end": "2026-09-20"
+    },
+    "location": {
+      "lat": 37.5443317433265,
+      "lng": 127.053778894723,
+      "address": "Anderson C Seongsu, Seongdong-gu, Seoul (서울 성동구 성수일로6길 36 앤더슨씨 성수)"
+    },
+    "access": {
+      "booking_required": "reservation_required",
+      "url": "https://www.instagram.com/p/DcKpqW-E8d5/",
+      "reservationUrl": "https://booking.naver.com/booking/12/bizes/1717462/items/7962977",
+      "walkin_tip": "Operating Hours: Thu-Sun 14:00-20:00",
+      "verified_at": "2026-09-09",
+      "verified_by": "user_provided"
+    },
+    "description": "Coupang Only Festa pop-up at Anderson C Seongsu. A Coupang-only festa with exclusive finds; advance reservation is required.",
+    "imageUrl": "/images/seongsu-coupang-onlyfesta.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "seongsu-pokemon-pocopia-2026",
+    "name": {
+      "en": "Pokémon Pocopia Concept Store",
+      "ko": "포켓몬 포코피아 컨셉스토어"
+    },
+    "area": "seongsu",
+    "category": "character",
+    "period": {
+      "start": "2026-09-12",
+      "end": "2026-09-29"
+    },
+    "location": {
+      "lat": 37.5403623257773,
+      "lng": 127.05585778727,
+      "address": "MUSINSA MEGA STORE Seongsu, Seongdong-gu, Seoul (서울 성동구 성수이로 62 무신사 메가스토어 성수 1층)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/DcuoIxFGNoG/",
+      "walkin_tip": "Operating Hours: Mon-Sun 11:00-22:00",
+      "verified_at": "2026-09-09",
+      "verified_by": "user_provided"
+    },
+    "description": "Pokémon Pocopia Concept Store at MUSINSA MEGA STORE Seongsu. A Pokémon concept store on the 1st floor, with walk-in access.",
+    "imageUrl": "/images/seongsu-pokemon-pocopia.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "seongsu-offside-2026",
+    "name": {
+      "en": "OFFFSIDE MARKET on BATTLEGROUNDS",
+      "ko": "오프사이드 팝업 성수"
+    },
+    "area": "seongsu",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-19",
+      "end": "2026-09-20"
+    },
+    "location": {
+      "lat": 37.5458428080295,
+      "lng": 127.04564872643,
+      "address": "PUBG Seongsu, Seongdong-gu, Seoul (서울 성동구 왕십리로4길 5 펍지 성수)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/Dcs5Z60xnpA/",
+      "walkin_tip": "Operating Hours: Sat-Sun 11:00-20:00",
+      "verified_at": "2026-09-09",
+      "verified_by": "user_provided"
+    },
+    "description": "OFFFSIDE MARKET on BATTLEGROUNDS at PUBG Seongsu. A Battlegrounds-themed weekend pop-up, walk-in welcome.",
+    "imageUrl": "/images/seongsu-offside.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "seongsu-jonone-nyunyu-2026",
+    "name": {
+      "en": "JONONE X NYUNYU Squishy Pop-up",
+      "ko": "죠노네X뉴뉴 말랑이 팝업"
+    },
+    "area": "seongsu",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-07",
+      "end": "2026-09-13"
+    },
+    "location": {
+      "lat": 37.5415208661419,
+      "lng": 127.059297236519,
+      "address": "Seongsu-dong 2-ga 271-2, Seongdong-gu, Seoul (서울 성동구 성수동2가 271-2)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/Dc2OmVln5bG/",
+      "walkin_tip": "Operating Hours: Mon-Sun 11:00-21:00",
+      "verified_at": "2026-09-09",
+      "verified_by": "user_provided"
+    },
+    "description": "JONONE X NYUNYU squishy pop-up in Seongsu. Shop cute squishy goods from the collaboration, walk-in welcome.",
+    "imageUrl": "/images/seongsu-jonone-nyunyu.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "seongsu-oggitt-2026",
+    "name": {
+      "en": "Oggitt Pop-up",
+      "ko": "오끼뜨 방앗간"
+    },
+    "area": "seongsu",
+    "category": "beauty_fashion",
+    "period": {
+      "start": "2026-09-11",
+      "end": "2026-10-01"
+    },
+    "location": {
+      "lat": 37.5439383699687,
+      "lng": 127.055140104488,
+      "address": "Seongsu-dong 2-ga 315-58, Seongdong-gu, Seoul (서울 성동구 성수동2가 315-58)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "walkin_tip": "Operating Hours: Thu-Sun 11:00-21:00",
+      "verified_at": "2026-09-09",
+      "verified_by": "user_provided"
+    },
+    "description": "Oggitt mill pop-up in Seongsu. A beauty pop-up themed as a traditional mill, open Thursday through Sunday with walk-in access.",
+    "imageUrl": "/images/seongsu-oggitt.png"
   }
 ]
