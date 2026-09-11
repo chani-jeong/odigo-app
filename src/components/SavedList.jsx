@@ -58,7 +58,12 @@ export default function SavedList() {
       
       <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', overflowY: 'auto' }} className="hide-scrollbar">
         {savedItems.length === 0 ? (
-          <div style={{ textAlign: 'center', padding: '40px 0', color: 'var(--ink-secondary)' }}>
+          <div style={{ textAlign: 'center', padding: '40px 0', color: 'var(--ink-secondary)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px' }}>
+            <img
+              src="/images/empty_saved.svg"
+              alt=""
+              style={{ width: '180px', height: '180px', display: 'block' }}
+            />
             {t('saved.no_saved')}
           </div>
         ) : (
