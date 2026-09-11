@@ -75,6 +75,10 @@
     "categories": "Danh mục",
     "title_discover": "Dành cho bạn",
     "title_map": "Pop-up gần tôi"
+  },
+  "deck": {
+    "complete": "Bạn đã xem hết tất cả pop-up! Thông tin pop-up store mới sẽ sớm được thêm vào, vui lòng chờ nhé.",
+    "explore_again": "Khám phá lại"
   }
 }
 

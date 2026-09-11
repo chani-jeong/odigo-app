@@ -75,6 +75,10 @@
     "categories": "分类",
     "title_discover": "为你推荐",
     "title_map": "附近的快闪店"
+  },
+  "deck": {
+    "complete": "您已看完所有快闪店！新的快闪店信息即将上线，敬请期待。",
+    "explore_again": "重新探索"
   }
 }
 

@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { motion, useMotionValue, useTransform, useAnimation } from 'framer-motion';
 import { IconPhoto, IconMapPin, IconCalendarEvent, IconShieldCheck, IconX, IconHeart } from '@tabler/icons-react';
 import useDeckStore from '../store/useDeckStore';
-import popups from '../data/popups.sample.json';
+import useAuthStore from '../store/useAuthStore';
 import { getForeignerReadyStatus } from '../utils/foreignerReady';
 import { getBookingStatusMeta } from '../utils/bookingStatus';
 import { PILL_BADGE_BASE_STYLE } from '../utils/badgeStyle';
@@ -24,10 +24,10 @@ export default function SwipeDeck() {
   const openPopup = useDeckStore(state => state.openPopup);
   const toggleSave = useDeckStore(state => state.toggleSave);
   const savedPopups = useDeckStore(state => state.savedPopups);
-  const setEvents = useDeckStore(state => state.setEvents);
+  const isLoading = useDeckStore(state => state.isLoading);
+  const restartDeck = useDeckStore(state => state.restartDeck);
+  const { user, isAnonymous } = useAuthStore();
   const { selectedLanguage, t } = useTranslation();
-
-  // removed setEvents(popups)
 
   const controls = useAnimation();
   const x = useMotionValue(0);
@@ -45,7 +45,7 @@ export default function SwipeDeck() {
       pass(id);
       await controls.start({ x: -400, opacity: 0, transition: { duration: 0.3 } });
     }
-    nextCard();
+    nextCard(id);
     x.set(0);
   };
 
@@ -199,7 +199,7 @@ export default function SwipeDeck() {
   };
 
   const cardsToRender = [];
-  if (events.length && deckOrder.length) {
+  if (events.length && deckOrder.length && currentIndex < deckOrder.length) {
     const topIdx = deckOrder[currentIndex];
     const secondIdx = deckOrder[currentIndex + 1];
     const thirdIdx = deckOrder[currentIndex + 2];
@@ -208,6 +208,64 @@ export default function SwipeDeck() {
     if (events[thirdIdx]) cardsToRender.push(renderCard(events[thirdIdx], 2, false));
     if (events[secondIdx]) cardsToRender.push(renderCard(events[secondIdx], 1, false));
     if (events[topIdx]) cardsToRender.push(renderCard(events[topIdx], 0, true));
+  }
+
+  const isLoggedIn = user && !isAnonymous;
+  const deckExhausted = !isLoading && events.length > 0 && (deckOrder.length === 0 || currentIndex >= deckOrder.length);
+
+  const handleExploreAgain = () => {
+    restartDeck();
+    x.set(0);
+    controls.set({ x: 0, opacity: 1, rotate: 0 });
+  };
+
+  if (isLoggedIn && deckExhausted) {
+    return (
+      <div style={{
+        flex: 1,
+        margin: '0 20px 20px',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        textAlign: 'center',
+        padding: '24px 8px',
+      }}>
+        <img
+          src="/images/empty_saved.svg"
+          alt=""
+          style={{ width: '180px', height: '180px', display: 'block' }}
+        />
+        <p style={{
+          margin: '16px 0 24px',
+          color: 'var(--ink-secondary)',
+          fontSize: '15px',
+          lineHeight: 1.6,
+          maxWidth: '280px',
+        }}>
+          {t('deck.complete')}
+        </p>
+        <button
+          type="button"
+          className="interactive-btn"
+          onClick={handleExploreAgain}
+          style={{
+            width: '100%',
+            maxWidth: '320px',
+            height: '52px',
+            borderRadius: '26px',
+            background: 'var(--brand-primary)',
+            color: '#fff',
+            fontSize: '16px',
+            fontWeight: '600',
+            border: 'none',
+            cursor: 'pointer',
+          }}
+        >
+          {t('deck.explore_again')}
+        </button>
+      </div>
+    );
   }
 
   return (

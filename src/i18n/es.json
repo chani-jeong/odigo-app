@@ -75,6 +75,10 @@
     "categories": "Categorías",
     "title_discover": "Selección para ti",
     "title_map": "Pop-ups cerca de mí"
+  },
+  "deck": {
+    "complete": "¡Ya has visto todos los pop-ups! Pronto añadiremos información de nuevas pop-up stores. ¡Mantente atento!",
+    "explore_again": "Explorar de nuevo"
   }
 }
 

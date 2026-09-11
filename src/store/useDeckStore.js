@@ -4,16 +4,19 @@ import { doc, getDoc, setDoc, updateDoc, arrayUnion, arrayRemove, serverTimestam
 import { signInAnonymously, onAuthStateChanged } from 'firebase/auth';
 import { logEvent } from 'firebase/analytics';
 import popupsData from '../data/popups.sample.json';
-import { isPopupEnded } from '../utils/popupStatus';
+import { buildActiveDeckOrder } from '../utils/buildDeckOrder';
 
-// Discover 스와이프 카드용 deckOrder 계산.
-// events 배열 자체는 그대로 두고(Map/List/Detail 화면에서는 종료된 팝업도 계속 보여줘야 함),
-// 스와이프 덱에 올라갈 인덱스만 종료되지 않은 팝업으로 필터링한다.
-const buildActiveDeckOrder = (events) =>
-  events.reduce((acc, event, index) => {
-    if (!isPopupEnded(event)) acc.push(index);
-    return acc;
-  }, []);
+const shouldExcludeSeen = () =>
+  !!(auth.currentUser && !auth.currentUser.isAnonymous);
+
+const deckFieldsFrom = (state, { resetIndex = true } = {}) => {
+  const deckOrder = buildActiveDeckOrder(state.events || [], {
+    userInterests: state.userInterests,
+    seenPopupIds: state.seenPopups,
+    excludeSeen: shouldExcludeSeen(),
+  });
+  return resetIndex ? { deckOrder, currentIndex: 0 } : { deckOrder };
+};
 
 const useDeckStore = create((set, get) => ({
   userId: null,
@@ -28,6 +31,7 @@ const useDeckStore = create((set, get) => ({
   selectedPopup: null,
   savedPopups: [],
   visitedPopups: [],
+  seenPopups: [],
   hasCompletedOnboarding: false,
   selectedLanguage: 'en',
   userCountry: '',
@@ -63,8 +67,12 @@ const useDeckStore = create((set, get) => ({
     });
   },
   completeOnboarding: () => {
-    const { userCountry, selectedLanguage, userInterests } = get();
-    set({ hasCompletedOnboarding: true });
+    const state = get();
+    const { userCountry, selectedLanguage, userInterests } = state;
+    set({
+      hasCompletedOnboarding: true,
+      ...deckFieldsFrom(state, { resetIndex: true }),
+    });
     
     // 로그인/익명 상관없이 uid가 있으면 Firestore에 저장
     const currentUser = auth.currentUser;
@@ -158,13 +166,10 @@ const useDeckStore = create((set, get) => ({
   },
 
   setEvents: (events) =>
-    set(() => {
-      return {
-        events,
-        deckOrder: buildActiveDeckOrder(events),
-        currentIndex: 0,
-      };
-    }),
+    set((state) => ({
+      events,
+      ...deckFieldsFrom({ ...state, events }, { resetIndex: true }),
+    })),
     
   fetchEvents: async () => {
     const { events } = get();
@@ -177,10 +182,10 @@ const useDeckStore = create((set, get) => ({
       // const snap = await getDocs(collection(db, 'events'));
       // const data = snap.docs.map(doc => ({ id: doc.id, ...doc.data() }));
       const data = popupsData;
+      const state = get();
       set({
         events: data,
-        deckOrder: buildActiveDeckOrder(data),
-        currentIndex: 0,
+        ...deckFieldsFrom({ ...state, events: data }, { resetIndex: true }),
       });
     } catch (error) {
       console.error("Error fetching events:", error);
@@ -189,39 +194,47 @@ const useDeckStore = create((set, get) => ({
     }
   },
   
-  sortEventsByDistance: () => set((state) => {
-    if (!state.userLocation || state.events.length === 0) return state;
-    
-    // We need to sync import since state updates must be synchronous
-    // We'll calculate distances and map them to deckOrder indices
-    // Actually, let's just do it directly here using a simple formula to avoid async import in reducer
-    const { lat, lng } = state.userLocation;
-    
-    const distanceCache = state.events.map((event) => {
-      if (!event.location || !event.location.lat) return { id: event.id, dist: 999999 };
-      const dLat = (event.location.lat - lat) * (Math.PI/180);
-      const dLon = (event.location.lng - lng) * (Math.PI/180);
-      // Simplified distance for sorting
-      const dist = Math.sqrt(dLat*dLat + dLon*dLon);
-      return { id: event.id, dist };
-    });
-
-    const newDeckOrder = state.deckOrder.slice().sort((a, b) => {
-      const distA = distanceCache[a].dist;
-      const distB = distanceCache[b].dist;
-      return distA - distB;
-    });
-
-    return { deckOrder: newDeckOrder, currentIndex: 0 };
-  }),
+  // 위치는 km 표시 등 다른 화면에 쓰이지만, Discover 덱 순서는 관심사 셔플을 유지한다.
+  sortEventsByDistance: () => {},
 
   like: (id) => set((state) => ({ likes: [...state.likes, id] })),
   pass: (id) => set((state) => ({ passes: [...state.passes, id] })),
 
-  nextCard: () =>
+  markPopupSeen: (popupId) => {
+    if (!popupId) return;
+    const currentUser = auth.currentUser;
+    if (!currentUser || currentUser.isAnonymous) return;
+
+    const { seenPopups } = get();
+    if (seenPopups.includes(popupId)) return;
+
+    set({ seenPopups: [...seenPopups, popupId] });
+
+    const userRef = doc(db, 'users', currentUser.uid);
+    updateDoc(userRef, { seenPopups: arrayUnion(popupId) })
+      .catch((err) => console.error('Failed to update seenPopups in Firestore:', err));
+  },
+
+  nextCard: (popupId) => {
+    if (popupId) get().markPopupSeen(popupId);
     set((state) => ({
-      currentIndex: Math.min(state.currentIndex + 1, state.deckOrder.length - 1),
-    })),
+      currentIndex: Math.min(state.currentIndex + 1, state.deckOrder.length),
+    }));
+  },
+
+  restartDeck: () => {
+    const currentUser = auth.currentUser;
+    set((state) => ({
+      seenPopups: [],
+      ...deckFieldsFrom({ ...state, seenPopups: [] }, { resetIndex: true }),
+    }));
+
+    if (currentUser && !currentUser.isAnonymous) {
+      const userRef = doc(db, 'users', currentUser.uid);
+      updateDoc(userRef, { seenPopups: [] })
+        .catch((err) => console.error('Failed to reset seenPopups in Firestore:', err));
+    }
+  },
 
   toggleHalal: () => set((state) => ({ halalOn: !state.halalOn })),
   toggleVegan: () => set((state) => ({ veganOn: !state.veganOn })),
@@ -258,6 +271,7 @@ export default useDeckStore;
           const update = {
             savedPopups: data.savedPopups || [],
             visitedPopups: data.visitedPopups || [],
+            seenPopups: data.seenPopups || [],
           };
           // 온보딩 정보 복원 (익명/비익명 모두 적용)
           if (data.hasCompletedOnboarding) {
@@ -267,9 +281,16 @@ export default useDeckStore;
           if (data.selectedLanguage) update.selectedLanguage = data.selectedLanguage;
           if (data.userInterests) update.userInterests = data.userInterests;
 
-          useDeckStore.setState(update);
+          useDeckStore.setState((state) => {
+            const next = { ...state, ...update };
+            // 스와이프 중간에 Firestore hydrate가 오면 덱을 다시 섞지 않는다
+            if (state.events.length > 0 && state.currentIndex === 0) {
+              return { ...update, ...deckFieldsFrom(next, { resetIndex: true }) };
+            }
+            return update;
+          });
         } else {
-          await setDoc(userRef, { savedPopups: [], visitedPopups: [] });
+          await setDoc(userRef, { savedPopups: [], visitedPopups: [], seenPopups: [] });
         }
       } catch (error) {
         console.error("Error fetching user data from Firestore:", error);

@@ -75,5 +75,9 @@
     "categories": "카테고리",
     "title_discover": "당신을 위한 팝업 추천",
     "title_map": "내 주변 팝업"
+  },
+  "deck": {
+    "complete": "모든 팝업을 확인하셨어요! 곧 새로운 팝업스토어 정보가 추가될 예정이니 기다려주세요.",
+    "explore_again": "다시 탐색하기"
   }
 }
