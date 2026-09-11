@@ -79,7 +79,7 @@ export default function ReviewComposer({ isOpen, onClose, initialPopupId, editin
     <AnimatePresence>
       {isOpen && (
         <div style={{
-          position: 'fixed', inset: 0, zIndex: 1000,
+          position: 'fixed', inset: 0, zIndex: 2200,
           display: 'flex', flexDirection: 'column', justifyContent: 'flex-end',
           pointerEvents: 'none'
         }}>

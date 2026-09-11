@@ -3,12 +3,30 @@ import { IconLeaf, IconCurrentLocation } from '@tabler/icons-react';
 import useDeckStore from '../store/useDeckStore';
 import useTranslation from '../i18n/useTranslation';
 import { isPopupEnded, sortByEndedStatus } from '../utils/popupStatus';
+import { formatAreaLabel, fitMapToPopups, MAP_CATEGORIES } from '../utils/mapBounds';
 import EndedBadge from './EndedBadge';
+
+function chipStyle(isActive) {
+  return {
+    flexShrink: 0,
+    height: '36px',
+    padding: '0 14px',
+    borderRadius: '18px',
+    border: '1px solid var(--paper-border)',
+    background: isActive ? '#E8F5F4' : 'rgba(255,255,255,0.95)',
+    color: isActive ? '#2D9F98' : 'var(--ink-secondary)',
+    fontSize: '13px',
+    fontWeight: isActive ? 'bold' : 'normal',
+    cursor: 'pointer',
+    whiteSpace: 'nowrap',
+    boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+  };
+}
 
 export default function MapTab({ isVisible }) {
   const rawEvents = useDeckStore(state => state.events);
   // 진행 중인 팝업이 항상 종료된 팝업보다 앞에 오도록 정렬 (마커/캐러셀 인덱스 동기화를 위해 공용으로 사용)
-  const events = useMemo(() => sortByEndedStatus(rawEvents), [rawEvents]);
+  const allEvents = useMemo(() => sortByEndedStatus(rawEvents), [rawEvents]);
   const openPopup = useDeckStore(state => state.openPopup);
   const hasAgreedToLocation = useDeckStore(state => state.hasAgreedToLocation);
   const setAgreedToLocation = useDeckStore(state => state.setAgreedToLocation);
@@ -18,11 +36,31 @@ export default function MapTab({ isVisible }) {
   const [showConsentModal, setShowConsentModal] = useState(false);
   const [mapInstance, setMapInstance] = useState(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [categoryFilter, setCategoryFilter] = useState(null);
+  const [areaFilter, setAreaFilter] = useState(null);
+
+  const events = useMemo(() => {
+    return allEvents.filter((popup) => {
+      if (categoryFilter && popup.category !== categoryFilter) return false;
+      if (areaFilter && popup.area !== areaFilter) return false;
+      return true;
+    });
+  }, [allEvents, categoryFilter, areaFilter]);
+
+  const areaOptions = useMemo(() => {
+    const unique = [...new Set(allEvents.map((p) => p.area).filter(Boolean))];
+    return unique.sort((a, b) =>
+      formatAreaLabel(a, selectedLanguage).localeCompare(formatAreaLabel(b, selectedLanguage), selectedLanguage === 'ko' ? 'ko' : 'en')
+    );
+  }, [allEvents, selectedLanguage]);
+
+  const hasActiveFilter = !!(categoryFilter || areaFilter);
   
   const mapRef = useRef(null);
   const carouselRef = useRef(null);
   const markersRef = useRef([]);
   const currentLocMarkerRef = useRef(null);
+  const hadFilterRef = useRef(false);
 
   useEffect(() => {
     if (!window.kakao || !window.kakao.maps) return;
@@ -119,6 +157,25 @@ export default function MapTab({ isVisible }) {
   }, [mapInstance, events]);
 
   useEffect(() => {
+    setActiveIndex(0);
+    if (carouselRef.current) carouselRef.current.scrollLeft = 0;
+  }, [categoryFilter, areaFilter]);
+
+  useEffect(() => {
+    if (!mapInstance || !window.kakao?.maps) return;
+    if (hasActiveFilter) {
+      fitMapToPopups(mapInstance, events);
+      hadFilterRef.current = true;
+      return;
+    }
+    if (hadFilterRef.current) {
+      mapInstance.setCenter(new window.kakao.maps.LatLng(37.5445, 127.0557));
+      mapInstance.setLevel(5);
+      hadFilterRef.current = false;
+    }
+  }, [mapInstance, events, hasActiveFilter]);
+
+  useEffect(() => {
     markersRef.current.forEach((marker, idx) => {
       marker.update(idx === activeIndex);
     });
@@ -160,10 +217,12 @@ export default function MapTab({ isVisible }) {
 
   useEffect(() => {
     if (!hasAgreedToLocation || !mapInstance || !window.kakao) return;
+    if (hasActiveFilter) return;
     getCurrentLocationAndCenter();
-  }, [hasAgreedToLocation, mapInstance, getCurrentLocationAndCenter]);
+  }, [hasAgreedToLocation, mapInstance, getCurrentLocationAndCenter, hasActiveFilter]);
 
   const handleCarouselScroll = (e) => {
+    if (events.length === 0) return;
     const scrollLeft = e.target.scrollLeft;
     const cardWidth = 160 + 12; // minWidth + gap
     // padding = calc(50% - 80px) 덕분에 scroll=0일 때 첫 카드가 중심에 위치
@@ -244,6 +303,64 @@ export default function MapTab({ isVisible }) {
       {/* Subtle overlay to make map look slightly muted/branded */}
       <div style={{ position: 'absolute', inset: 0, background: 'var(--brand-tint)', opacity: 0.2, pointerEvents: 'none', zIndex: 1 }} />
 
+      {/* Category / area filters */}
+      <div style={{
+        position: 'absolute',
+        top: '8px',
+        left: 0,
+        right: 0,
+        zIndex: 20,
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '8px',
+        padding: '0 12px',
+        pointerEvents: 'none',
+      }}>
+        <div style={{ display: 'flex', gap: '8px', overflowX: 'auto', pointerEvents: 'auto' }} className="hide-scrollbar">
+          <button
+            type="button"
+            onClick={() => setCategoryFilter(null)}
+            style={chipStyle(!categoryFilter)}
+          >
+            {t('map.filter_all')}
+          </button>
+          {MAP_CATEGORIES.map((id) => (
+            <button
+              key={id}
+              type="button"
+              onClick={() => setCategoryFilter((prev) => (prev === id ? null : id))}
+              style={chipStyle(categoryFilter === id)}
+            >
+              {t(`categories.${id}`)}
+            </button>
+          ))}
+        </div>
+        <div style={{ display: 'flex', gap: '8px', alignItems: 'center', pointerEvents: 'auto' }}>
+          <select
+            value={areaFilter || ''}
+            onChange={(e) => setAreaFilter(e.target.value || null)}
+            style={{
+              flex: 1,
+              height: '36px',
+              borderRadius: '18px',
+              border: '1px solid var(--paper-border)',
+              background: areaFilter ? '#E8F5F4' : 'rgba(255,255,255,0.95)',
+              color: areaFilter ? '#2D9F98' : 'var(--ink-secondary)',
+              fontSize: '13px',
+              fontWeight: areaFilter ? 'bold' : 'normal',
+              padding: '0 12px',
+              outline: 'none',
+              boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+            }}
+          >
+            <option value="">{t('map.filter_area_all')}</option>
+            {areaOptions.map((area) => (
+              <option key={area} value={area}>{formatAreaLabel(area, selectedLanguage)}</option>
+            ))}
+          </select>
+        </div>
+      </div>
+
       {/* Top Gradient for header readability (if global header overlays) */}
       <div style={{ position: 'absolute', top: 0, width: '100%', height: '100px', background: 'linear-gradient(to bottom, rgba(255,255,255,0.8), transparent)', zIndex: 2, pointerEvents: 'none' }} />
 
@@ -300,7 +417,21 @@ export default function MapTab({ isVisible }) {
           paddingBottom: '20px',
           scrollSnapType: 'x mandatory'
         }} className="hide-scrollbar">
-          {events.map((popup, index) => {
+          {events.length === 0 ? (
+            <div style={{
+              minWidth: '240px',
+              margin: '40px auto 0',
+              padding: '16px 20px',
+              borderRadius: '16px',
+              background: 'rgba(255,255,255,0.95)',
+              color: 'var(--ink-secondary)',
+              fontSize: '13px',
+              textAlign: 'center',
+              boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+            }}>
+              {t('map.no_results')}
+            </div>
+          ) : events.map((popup, index) => {
             const isActive = index === activeIndex; 
             return (
               <div 

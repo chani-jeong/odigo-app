@@ -76,6 +76,11 @@
     "title_discover": "Pop-ups picked for you",
     "title_map": "Pop-ups near me"
   },
+  "map": {
+    "filter_all": "All",
+    "filter_area_all": "All areas",
+    "no_results": "No pop-ups match these filters."
+  },
   "deck": {
     "complete": "You've seen all the pop-ups! New pop-up store info will be added soon — please stay tuned.",
     "explore_again": "Explore again"

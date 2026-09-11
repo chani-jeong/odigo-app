@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { IconSearch, IconFlame, IconArrowLeft, IconMapPin, IconCalendarEvent } from '@tabler/icons-react';
 import useDeckStore from '../store/useDeckStore';
 import useTranslation from '../i18n/useTranslation';
@@ -36,21 +36,68 @@ export default function HomeTab({ onSearchClick }) {
   const events = useDeckStore(state => state.events);
   const openPopup = useDeckStore(state => state.openPopup);
   const [selectedCategory, setSelectedCategory] = useState(null);
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    el.scrollTop = 0;
+    el.scrollTo?.({ top: 0 });
+
+    let parent = el.parentElement;
+    while (parent) {
+      const overflowY = window.getComputedStyle(parent).overflowY;
+      if (overflowY === 'auto' || overflowY === 'scroll') {
+        parent.scrollTop = 0;
+        break;
+      }
+      parent = parent.parentElement;
+    }
+  }, [selectedCategory?.id]);
 
   if (selectedCategory) {
     const filteredEvents = events.filter(e => e.category === selectedCategory.id);
     return (
-      <div style={{ padding: '20px', display: 'flex', flexDirection: 'column', height: '100%', background: 'var(--surface)', overflowY: 'auto' }} className="hide-scrollbar">
+      <div style={{ display: 'flex', flexDirection: 'column', height: '100%', background: 'var(--surface)' }}>
+        <div style={{ padding: '20px 20px 0', flexShrink: 0 }}>
         {/* Header */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '24px', paddingBottom: '16px', borderBottom: '1px solid var(--paper-border)' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px', paddingBottom: '16px', borderBottom: '1px solid var(--paper-border)' }}>
           <button onClick={() => setSelectedCategory(null)} style={{ background: 'transparent', border: 'none', cursor: 'pointer', padding: 0, display: 'flex', alignItems: 'center' }}>
             <IconArrowLeft size={24} style={{ color: 'var(--ink)' }} />
           </button>
           <h2 style={{ margin: 0, fontSize: '20px', fontWeight: 'bold', color: 'var(--ink)' }}>{selectedCategory.label}</h2>
         </div>
 
+        <div style={{ display: 'flex', gap: '8px', overflowX: 'auto', marginBottom: '12px', paddingBottom: '4px' }} className="hide-scrollbar">
+          {CATEGORIES.map(cat => {
+            const isActive = cat.id === selectedCategory.id;
+            return (
+              <button
+                key={cat.id}
+                type="button"
+                onClick={() => setSelectedCategory(cat)}
+                style={{
+                  flexShrink: 0,
+                  background: isActive ? '#E8F5F4' : 'var(--paper)',
+                  color: isActive ? '#2D9F98' : 'var(--ink-secondary)',
+                  border: '1px solid var(--paper-border)',
+                  padding: '8px 16px',
+                  borderRadius: '20px',
+                  fontSize: '13px',
+                  fontWeight: isActive ? 'bold' : 'normal',
+                  cursor: 'pointer',
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                {cat.label}
+              </button>
+            );
+          })}
+        </div>
+        </div>
+
         {/* List */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', paddingBottom: '100px' }}>
+        <div ref={containerRef} style={{ flex: 1, overflowY: 'auto', padding: '0 20px 100px', display: 'flex', flexDirection: 'column', gap: '16px' }} className="hide-scrollbar">
           {filteredEvents.length === 0 ? (
             <div style={{ textAlign: 'center', color: 'var(--ink-secondary)', marginTop: '40px' }}>No popups found in this category.</div>
           ) : (
@@ -88,7 +135,7 @@ export default function HomeTab({ onSearchClick }) {
   }
 
   return (
-    <div style={{ padding: '20px', display: 'flex', flexDirection: 'column', gap: '24px', overflowY: 'auto', paddingBottom: '100px' }} className="hide-scrollbar">
+    <div ref={containerRef} style={{ padding: '20px', display: 'flex', flexDirection: 'column', gap: '24px', height: '100%', overflowY: 'auto', paddingBottom: '100px' }} className="hide-scrollbar">
       
       {/* Search Trigger */}
       <div 

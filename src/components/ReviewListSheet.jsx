@@ -197,33 +197,49 @@ export default function ReviewListSheet({ isOpen, onClose, popupId }) {
               display: 'flex', flexDirection: 'column'
             }}
           >
-            {/* Handle */}
+            {/* Handle + close */}
             <div style={{
-              width: '40px', height: '4px', borderRadius: '2px',
-              background: 'rgba(0,0,0,0.12)', margin: '8px auto 20px', flexShrink: 0
-            }} />
-            
-            <button
-              onClick={onClose}
-              style={{
-                position: 'absolute', top: '20px', right: '20px',
-                background: 'var(--bg-main)', border: 'none', borderRadius: '50%',
-                width: '32px', height: '32px', display: 'flex',
-                alignItems: 'center', justifyContent: 'center', cursor: 'pointer'
-              }}
-            >
-              <IconX size={18} style={{ color: 'var(--ink-secondary)' }} />
-            </button>
+              position: 'relative',
+              height: '36px',
+              flexShrink: 0,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
+              <div style={{
+                width: '40px', height: '4px', borderRadius: '2px',
+                background: 'rgba(0,0,0,0.12)',
+              }} />
+              <button
+                type="button"
+                onClick={onClose}
+                aria-label="Close"
+                style={{
+                  position: 'absolute', top: '2px', right: '0',
+                  background: 'var(--bg-main)', border: 'none', borderRadius: '50%',
+                  width: '32px', height: '32px', display: 'flex',
+                  alignItems: 'center', justifyContent: 'center', cursor: 'pointer',
+                  zIndex: 2,
+                }}
+              >
+                <IconX size={18} style={{ color: 'var(--ink-secondary)' }} />
+              </button>
+            </div>
 
             {/* Header */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px', flexShrink: 0 }}>
-              <h2 style={{ margin: 0, fontSize: '20px', fontWeight: 'bold', color: 'var(--ink)' }}>{t('review.title')}</h2>
-              <button 
-                onClick={handleWriteReview}
+            <div style={{ marginBottom: '12px', flexShrink: 0, paddingRight: '8px' }}>
+              <h2 style={{ margin: '0 0 12px', fontSize: '20px', fontWeight: 'bold', color: 'var(--ink)' }}>{t('review.title')}</h2>
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleWriteReview();
+                }}
                 style={{
+                  width: '100%',
                   background: 'var(--brand-primary)', color: '#fff', border: 'none',
-                  borderRadius: '20px', padding: '8px 16px', fontSize: '14px', fontWeight: 'bold',
-                  display: 'flex', alignItems: 'center', gap: '6px', cursor: 'pointer'
+                  borderRadius: '20px', padding: '12px 16px', fontSize: '14px', fontWeight: 'bold',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px', cursor: 'pointer'
                 }}
               >
                 <IconPencilPlus size={16} />

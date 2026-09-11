@@ -76,6 +76,11 @@
     "title_discover": "당신을 위한 팝업 추천",
     "title_map": "내 주변 팝업"
   },
+  "map": {
+    "filter_all": "전체",
+    "filter_area_all": "전체 지역",
+    "no_results": "조건에 맞는 팝업이 없습니다."
+  },
   "deck": {
     "complete": "모든 팝업을 확인하셨어요! 곧 새로운 팝업스토어 정보가 추가될 예정이니 기다려주세요.",
     "explore_again": "다시 탐색하기"
