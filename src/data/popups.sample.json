@@ -4395,5 +4395,175 @@
     },
     "description": "Yoo Youngkuk: The Mountain Is Within Me at Seoul Museum of Art. A major exhibition of the Korean abstract master's mountain paintings, closed Mondays.",
     "imageUrl": "/images/jung-yooyoungkuk.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "changwon-parkddugi-saltbread-2026",
+    "name": {
+      "en": "Park Ddugi Salt Bread Pop-up @ Changwon",
+      "ko": "박뚜기소금빵 팝업 @ 창원"
+    },
+    "area": "changwon_seongsan",
+    "category": "food",
+    "period": {
+      "start": "2026-09-11",
+      "end": "2026-11-30"
+    },
+    "location": {
+      "lat": 35.2245696276926,
+      "lng": 128.681839748806,
+      "address": "Lotte Department Store Changwon B1 Food Hall, Seongsan-gu, Changwon (경남 창원시 성산구 중앙대로 124 롯데백화점 창원점 B1층 식품관)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/Dc43oMSz6t9/",
+      "walkin_tip": "Operating Hours: Mon-Thu 10:30-20:00, Fri-Sun 10:30-20:30",
+      "verified_at": "2026-09-11",
+      "verified_by": "user_provided"
+    },
+    "description": "Park Ddugi Salt Bread pop-up at Lotte Department Store Changwon. Sample the bakery's signature salt bread at the B1 food hall, walk-in welcome.",
+    "imageUrl": "/images/changwon-parkddugi-saltbread.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "daejeon-withsome-2026",
+    "name": {
+      "en": "Withsome Pop-up",
+      "ko": "위드썸 팝업"
+    },
+    "area": "daejeon_yuseong",
+    "category": "beauty_fashion",
+    "period": {
+      "start": "2026-09-11",
+      "end": "2026-09-27"
+    },
+    "location": {
+      "lat": 36.3751817693989,
+      "lng": 127.381765372066,
+      "address": "Daejeon Shinsegae 6F Hyperground Art Terrace, Yuseong-gu, Daejeon (대전 유성구 엑스포로 1 신세계백화점 대전점 6F 하이퍼그라운드 아트테라스)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/DdDyCockxRC/",
+      "walkin_tip": "Operating Hours: Mon-Thu 10:30-20:00, Fri-Sun 10:30-20:30. Closed for Chuseok holiday 9/24(Thu)-9/25(Fri).",
+      "verified_at": "2026-09-11",
+      "verified_by": "user_provided"
+    },
+    "description": "Withsome pop-up at Daejeon Shinsegae's Hyperground Art Terrace. A fashion brand pop-up on the 6th floor, closed for Chuseok on Sep 24-25.",
+    "imageUrl": "/images/daejeon-withsome.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "daejeon-madeby-mammaham-2026",
+    "name": {
+      "en": "Made By X Mamma Ham Store Pop-up @ Daejeon",
+      "ko": "메이드바이 X 맘마 햄스토어 팝업 @ 대전"
+    },
+    "area": "daejeon_jung",
+    "category": "character",
+    "period": {
+      "start": "2026-09-09",
+      "end": "2026-11-05"
+    },
+    "location": {
+      "lat": 36.3273021485749,
+      "lng": 127.427480504003,
+      "address": "Made By Daejeon, Jung-gu, Daejeon (대전 중구 중교로73번길 14 메이드바이 대전점)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/DdArLlWEuw_/",
+      "walkin_tip": "Operating Hours: Daily 11:00-22:00. On the closing day, the pop-up operates until 3 hours before store closing (rest of store operates normally).",
+      "verified_at": "2026-09-11",
+      "verified_by": "user_provided"
+    },
+    "description": "Made By x Mamma Ham Store pop-up at Made By Daejeon. A character collaboration featuring the Mamma Ham Store IP, walk-in welcome.",
+    "imageUrl": "/images/daejeon-madeby-mammaham.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "cheongju-wongeugig-2026",
+    "name": {
+      "en": "Wongeugig Pop-up @ Chungcheong",
+      "ko": "왼그기그 팝업 @충청"
+    },
+    "area": "cheongju_heungdeok",
+    "category": "beauty_fashion",
+    "period": {
+      "start": "2026-09-11",
+      "end": "2026-10-01"
+    },
+    "location": {
+      "lat": 36.6448651780226,
+      "lng": 127.426560206577,
+      "address": "Hyundai Department Store Chungcheong 1F, Heungdeok-gu, Cheongju (충북 청주시 흥덕구 직지대로 308 현대백화점 충청점 1층)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/Dc2nWTFPZw9/",
+      "walkin_tip": "Operating Hours: Mon-Thu 10:30-20:00, Fri-Sun 10:30-20:30",
+      "verified_at": "2026-09-11",
+      "verified_by": "user_provided"
+    },
+    "description": "Wongeugig pop-up at Hyundai Department Store Chungcheong. A fashion pop-up on the 1st floor, walk-in welcome.",
+    "imageUrl": "/images/cheongju-wongeugig.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "cheongju-cookierun-kingdom-2026",
+    "name": {
+      "en": "Cookie Run: Kingdom - Legacy of a Great Kingdom Pop-up",
+      "ko": "쿠키런: 킹덤 - 위대한 왕국의 유산 팝업"
+    },
+    "area": "cheongju_heungdeok",
+    "category": "character",
+    "period": {
+      "start": "2026-09-11",
+      "end": "2026-10-05"
+    },
+    "location": {
+      "lat": 36.6448651780226,
+      "lng": 127.426560206577,
+      "address": "Hyundai Department Store Chungcheong 7F Topaz Hall, Heungdeok-gu, Cheongju (충북 청주시 흥덕구 직지대로 308 현대백화점 충청점 7층 토파즈홀)"
+    },
+    "access": {
+      "booking_required": "reservation_available",
+      "reservationUrl": "https://booking.naver.com/booking/12/bizes/1569215",
+      "walkin_tip": "Operating Hours: Mon-Thu 10:30-20:00, Fri-Sun 10:30-20:30. Free reservation available; walk-in also accepted.",
+      "verified_at": "2026-09-11",
+      "verified_by": "user_provided"
+    },
+    "description": "Cookie Run: Kingdom - Legacy of a Great Kingdom pop-up at Hyundai Department Store Chungcheong Topaz Hall. A game-themed character pop-up; free reservations are available and walk-ins are also accepted.",
+    "imageUrl": "/images/cheongju-cookierun-kingdom.png"
   }
 ]
