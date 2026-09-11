@@ -3749,5 +3749,651 @@
     },
     "description": "Oggitt mill pop-up in Seongsu. A beauty pop-up themed as a traditional mill, open Thursday through Sunday with walk-in access.",
     "imageUrl": "/images/seongsu-oggitt.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "yongsan-peer-2026",
+    "name": {
+      "en": "Peer Pop-up",
+      "ko": "피어 팝업"
+    },
+    "area": "yongsan",
+    "category": "beauty_fashion",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-09-30"
+    },
+    "location": {
+      "lat": 37.5297718014452,
+      "lng": 126.964741503485,
+      "address": "Yongsan I'Park Mall Fashion Park PEER, Yongsan-gu, Seoul (서울 용산구 한강대로23길 55 용산아이파크몰 6층 패션파크 PEER)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/Dcp0cGiAf1b/",
+      "walkin_tip": "Operating Hours: Mon-Thu 10:30-20:30, Fri-Sat 10:30-21:00, Sun 10:30-20:30",
+      "verified_at": "2026-09-10",
+      "verified_by": "user_provided"
+    },
+    "description": "Peer pop-up at Yongsan I'Park Mall Fashion Park. A beauty and fashion pop-up on the 6th floor, walk-in welcome.",
+    "imageUrl": "/images/yongsan-peer.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "yongsan-pompompurin-wangmandu-2026",
+    "name": {
+      "en": "Pompompurin's \"Wa-ang\" Dumpling Pop-up",
+      "ko": "폼폼푸린의 와-앙만두 팝업"
+    },
+    "area": "yongsan",
+    "category": "character",
+    "period": {
+      "start": "2026-09-02",
+      "end": "2026-09-27"
+    },
+    "location": {
+      "lat": 37.5297718014452,
+      "lng": 126.964741503485,
+      "address": "Yongsan I'Park Mall Living Park, Yongsan-gu, Seoul (서울 용산구 한강대로23길 55 용산아이파크몰 6층 리빙파크)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/DcZ8ITHmQv7/",
+      "walkin_tip": "Operating Hours: Mon-Thu 10:30-20:30, Fri-Sat 10:30-21:00, Sun 10:30-20:30",
+      "verified_at": "2026-09-10",
+      "verified_by": "user_provided"
+    },
+    "description": "Pompompurin's \"Wa-ang\" Dumpling pop-up at Yongsan I'Park Mall Living Park. A Sanrio character pop-up themed around dumplings, walk-in welcome.",
+    "imageUrl": "/images/yongsan-pompompurin-wangmandu.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "yongsan-vibee-2026",
+    "name": {
+      "en": "Vibee Pop-up",
+      "ko": "바이비 팝업"
+    },
+    "area": "yongsan",
+    "category": "food",
+    "period": {
+      "start": "2026-08-14",
+      "end": "2026-10-01"
+    },
+    "location": {
+      "lat": 37.5297718014452,
+      "lng": 126.964741503485,
+      "address": "Yongsan I'Park Mall Dopamine Station, Yongsan-gu, Seoul (서울 용산구 한강대로23길 55 용산아이파크몰 3층 도파민스테이션)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/Dbzz1OQk_bs/",
+      "walkin_tip": "Operating Hours: Mon-Sun 10:30-22:00",
+      "verified_at": "2026-09-10",
+      "verified_by": "user_provided"
+    },
+    "description": "Vibee pop-up at Dopamine Station on the 3rd floor of Yongsan I'Park Mall. A food pop-up serving the brand's treats, walk-in welcome.",
+    "imageUrl": "/images/yongsan-vibee.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "yongsan-hyundaicard-alphabet-2026",
+    "name": {
+      "en": "Hyundai Card Alphabet Card Pop-up",
+      "ko": "현대카드 알파벳카드 팝업"
+    },
+    "area": "yongsan",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-07-21",
+      "end": "2026-09-13"
+    },
+    "location": {
+      "lat": 37.5368105457993,
+      "lng": 127.000866126411,
+      "address": "Hyundai Card Vinyl & Plastic, Yongsan-gu, Seoul (서울 용산구 이태원로 248 현대카드 바이닐앤플라스틱)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/DbDHdK2IN1I/",
+      "walkin_tip": "Operating Hours: Closed Mon, Tue-Sat 12:00-21:00, Sun 12:00-18:00",
+      "verified_at": "2026-09-10",
+      "verified_by": "user_provided"
+    },
+    "description": "Hyundai Card Alphabet Card pop-up at Hyundai Card Vinyl & Plastic. A lifestyle pop-up celebrating the Alphabet Card, closed Mondays.",
+    "imageUrl": "/images/yongsan-hyundaicard-alphabet.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "yongsan-herewakuku-2026",
+    "name": {
+      "en": "Here Wakuku Pop-up",
+      "ko": "히얼 와쿠쿠 팝업"
+    },
+    "area": "yongsan",
+    "category": "character",
+    "period": {
+      "start": "2026-07-03",
+      "end": "2026-09-28"
+    },
+    "location": {
+      "lat": 37.5297718014452,
+      "lng": 126.964741503485,
+      "address": "Yongsan I'Park Mall 6F, Yongsan-gu, Seoul (서울 용산구 한강대로23길 55 용산아이파크몰 6층)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/DZuYcwOSu0p/",
+      "walkin_tip": "Operating Hours: Mon-Thu 10:00-20:00, Fri-Sat 10:00-21:00, Sun 10:00-20:00",
+      "verified_at": "2026-09-10",
+      "verified_by": "user_provided"
+    },
+    "description": "Here Wakuku character pop-up on the 6th floor of Yongsan I'Park Mall. Meet Wakuku and shop exclusive goods, walk-in welcome.",
+    "imageUrl": "/images/yongsan-herewakuku.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "yeouido-dinotang-quokka-2026",
+    "name": {
+      "en": "Dinotang Pop-up: Quokka Home Run!",
+      "ko": "다이노탱 팝업: 쿼카 홈런2"
+    },
+    "area": "yeouido",
+    "category": "character",
+    "period": {
+      "start": "2026-09-10",
+      "end": "2026-09-16"
+    },
+    "location": {
+      "lat": 37.5252014942155,
+      "lng": 126.929108448093,
+      "address": "The Hyundai Seoul B2F Popup Central, Yeongdeungpo-gu, Seoul (서울 영등포구 여의대로 108 더현대서울 B2F 팝업센트럴)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/DdA51N3lI4d/",
+      "walkin_tip": "Operating Hours: Mon-Thu 10:30-20:00, Fri-Sun 10:30-20:30",
+      "verified_at": "2026-09-10",
+      "verified_by": "user_provided"
+    },
+    "description": "Dinotang Pop-up: Quokka Home Run! at The Hyundai Seoul Popup Central. A character pop-up starring Dinotang's quokka, walk-in welcome.",
+    "imageUrl": "/images/yeouido-dinotang-quokka.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "yeouido-lanvin-2026",
+    "name": {
+      "en": "Lanvin Collection Pop-up",
+      "ko": "랑방컬렉션 팝업"
+    },
+    "area": "yeouido",
+    "category": "beauty_fashion",
+    "period": {
+      "start": "2026-09-04",
+      "end": "2026-09-20"
+    },
+    "location": {
+      "lat": 37.5252014942155,
+      "lng": 126.929108448093,
+      "address": "The Hyundai Seoul 2F Lanvin Collection, Yeongdeungpo-gu, Seoul (서울 영등포구 여의대로 108 더현대서울 2층 랑방컬렉션 매장)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/Dclr1OcAUgI/",
+      "walkin_tip": "Operating Hours: Mon-Thu 10:30-20:00, Fri-Sun 10:30-20:30",
+      "verified_at": "2026-09-10",
+      "verified_by": "user_provided"
+    },
+    "description": "Lanvin Collection pop-up at the brand's store on the 2nd floor of The Hyundai Seoul. Shop the fashion house's latest pieces, walk-in welcome.",
+    "imageUrl": "/images/yeouido-lanvin.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "yeouido-guess-2026",
+    "name": {
+      "en": "Guess Pop-up",
+      "ko": "게스 팝업"
+    },
+    "area": "yeouido",
+    "category": "beauty_fashion",
+    "period": {
+      "start": "2026-09-03",
+      "end": "2026-09-13"
+    },
+    "location": {
+      "lat": 37.5172332566615,
+      "lng": 126.903715993779,
+      "address": "Times Square 3F GUESS, Yeongdeungpo-gu, Seoul (서울 영등포구 영중로 15 타임스퀘어 3층 GUESS 매장 앞)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/Dc0sTqSCULr/",
+      "walkin_tip": "Operating Hours: Mon-Sun 10:30-22:00",
+      "verified_at": "2026-09-10",
+      "verified_by": "user_provided"
+    },
+    "description": "Guess pop-up in front of the GUESS store on the 3rd floor of Times Square. A beauty and fashion pop-up, walk-in welcome.",
+    "imageUrl": "/images/yeouido-guess.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "yeouido-somewherebutter-2026",
+    "name": {
+      "en": "Somewhere Butter Pop-up",
+      "ko": "썸웨어버터 팝업"
+    },
+    "area": "yeouido",
+    "category": "beauty_fashion",
+    "period": {
+      "start": "2026-09-10",
+      "end": "2026-09-16"
+    },
+    "location": {
+      "lat": 37.5252014942155,
+      "lng": 126.929108448093,
+      "address": "The Hyundai Seoul B2 Iconic Zone, Yeongdeungpo-gu, Seoul (서울 영등포구 여의대로 108 더현대서울 B2 아이코닉존)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/reel/Dc0p7lUDwUs/",
+      "walkin_tip": "Operating Hours: Mon-Thu 10:30-20:00, Fri-Sun 10:30-20:30",
+      "verified_at": "2026-09-10",
+      "verified_by": "user_provided"
+    },
+    "description": "Somewhere Butter pop-up at The Hyundai Seoul Iconic Zone. A beauty and fashion pop-up, walk-in welcome.",
+    "imageUrl": "/images/yeouido-somewherebutter.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "yeouido-cubists-2026",
+    "name": {
+      "en": "Cubists: Visionaries of Sight",
+      "ko": "큐비스트: 시각의 혁신가들"
+    },
+    "area": "yeouido",
+    "category": "exhibition",
+    "period": {
+      "start": "2026-06-04",
+      "end": "2026-10-04"
+    },
+    "location": {
+      "lat": 37.5196641552816,
+      "lng": 126.939909338068,
+      "address": "63 Building, Yeongdeungpo-gu, Seoul (서울 영등포구 63로 50 63빌딩)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/DYoafhvs0iq/",
+      "walkin_tip": "Operating Hours: Closed Mon, Tue 10:00-18:00, Wed 10:00-21:00, Thu-Fri 10:00-18:00, Sat 10:00-21:00, Sun 10:00-18:00",
+      "verified_at": "2026-09-10",
+      "verified_by": "user_provided"
+    },
+    "description": "Cubists: Visionaries of Sight at 63 Building. An exhibition exploring the Cubist masters, closed Mondays.",
+    "imageUrl": "/images/yeouido-cubists.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "yeouido-amaimochi-donut-2026",
+    "name": {
+      "en": "Amaimochi Donut Pop-up",
+      "ko": "아마이모찌도넛 팝업"
+    },
+    "area": "yeouido",
+    "category": "food",
+    "period": {
+      "start": "2026-08-21",
+      "end": "2026-09-15"
+    },
+    "location": {
+      "lat": 37.5252014942155,
+      "lng": 126.929108448093,
+      "address": "The Hyundai Seoul B1 Glass Wall Popup Studio, Yeongdeungpo-gu, Seoul (서울 영등포구 여의대로 108 더현대서울 B1 유리월 팝업스튜디오)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/DbsQQmLnUzB/",
+      "walkin_tip": "Operating Hours: Mon-Thu 10:30-20:00, Fri-Sun 10:30-20:30",
+      "verified_at": "2026-09-10",
+      "verified_by": "user_provided"
+    },
+    "description": "Amaimochi Donut pop-up at The Hyundai Seoul B1 Glass Wall Popup Studio. Taste Japanese-style mochi donuts, walk-in welcome.",
+    "imageUrl": "/images/yeouido-amaimochi-donut.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "yeouido-vandythepink-2026",
+    "name": {
+      "en": "VANDYTHEPINK Pop-up",
+      "ko": "VANDYTHEPINK 팝업"
+    },
+    "area": "yeouido",
+    "category": "beauty_fashion",
+    "period": {
+      "start": "2026-09-10",
+      "end": "2026-09-16"
+    },
+    "location": {
+      "lat": 37.5252014942155,
+      "lng": 126.929108448093,
+      "address": "The Hyundai Seoul B2 WEST Popup Zone, Yeongdeungpo-gu, Seoul (서울 영등포구 여의대로 108 더현대서울 지하2층 WEST 팝업존)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/Dc2sV0uiVN6/",
+      "walkin_tip": "Operating Hours: Mon-Thu 10:30-20:00, Fri-Sun 10:30-20:30",
+      "verified_at": "2026-09-10",
+      "verified_by": "user_provided"
+    },
+    "description": "VANDYTHEPINK pop-up at The Hyundai Seoul WEST Popup Zone. A beauty and fashion pop-up from the streetwear brand, walk-in welcome.",
+    "imageUrl": "/images/yeouido-vandythepink.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "jung-aot-undermycar-2026",
+    "name": {
+      "en": "Attack on Titan x Undermycar Pop-up",
+      "ko": "진격의 거인 X 언더마이카 팝업"
+    },
+    "area": "jung",
+    "category": "beauty_fashion",
+    "period": {
+      "start": "2026-09-09",
+      "end": "2026-09-20"
+    },
+    "location": {
+      "lat": 37.5630973114019,
+      "lng": 127.016333264471,
+      "address": "Undermycar Sindang, Jung-gu, Seoul (서울 중구 다산로38길 12 언더마이카 신당)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/Dc-jtFVGivg/",
+      "walkin_tip": "Operating Hours: Mon-Sun 13:00-19:00",
+      "verified_at": "2026-09-10",
+      "verified_by": "user_provided"
+    },
+    "description": "Attack on Titan x Undermycar pop-up at Undermycar Sindang. A fashion collaboration celebrating the hit series, walk-in welcome.",
+    "imageUrl": "/images/jung-aot-undermycar.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "jung-verivery-confetti-2026",
+    "name": {
+      "en": "VERIVERY Pop-up: CONFETTI",
+      "ko": "베리베리 팝업: CONFETTI"
+    },
+    "area": "jung",
+    "category": "kpop",
+    "period": {
+      "start": "2026-08-27",
+      "end": "2026-09-17"
+    },
+    "location": {
+      "lat": 37.5688849422849,
+      "lng": 127.008775114213,
+      "address": "Olive Young Doota, Jung-gu, Seoul (서울 중구 장충단로 275 올리브영 두타점)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://x.com/MINIRECORD_SHOP/status/2092839527291535635",
+      "walkin_tip": "Operating Hours: Mon-Sun 10:30-00:00",
+      "verified_at": "2026-09-10",
+      "verified_by": "user_provided"
+    },
+    "description": "VERIVERY Pop-up: CONFETTI at Olive Young Doota. A K-pop pop-up for VERIVERY's CONFETTI era, walk-in welcome.",
+    "imageUrl": "/images/jung-verivery-confetti.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "jung-heisan-2026",
+    "name": {
+      "en": "Heisan Pop-up",
+      "ko": "하이산 팝업"
+    },
+    "area": "jung",
+    "category": "beauty_fashion",
+    "period": {
+      "start": "2026-09-04",
+      "end": "2026-09-17"
+    },
+    "location": {
+      "lat": 37.5547278494914,
+      "lng": 126.969526329341,
+      "address": "Lotte Outlet Seoul Station 2F EVENT ZONE, Jung-gu, Seoul (서울 중구 한강대로 405 롯데아울렛 서울역점 2층 EVENT ZONE)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/DclDaTjEqMy/",
+      "walkin_tip": "Operating Hours: Mon-Sun 10:30-21:00",
+      "verified_at": "2026-09-10",
+      "verified_by": "user_provided"
+    },
+    "description": "Heisan pop-up at Lotte Outlet Seoul Station EVENT ZONE. A beauty and fashion pop-up, walk-in welcome.",
+    "imageUrl": "/images/jung-heisan.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "jung-nongshim-sanrio-2026",
+    "name": {
+      "en": "Nongshim x Sanrio Characters Pop-up",
+      "ko": "농심 X 산리오캐릭터즈 팝업"
+    },
+    "area": "jung",
+    "category": "food",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-09-30"
+    },
+    "location": {
+      "lat": 37.5625312330845,
+      "lng": 126.985166774442,
+      "address": "Olive Young Central Myeongdong Town, Jung-gu, Seoul (서울 중구 명동8길 27 올리브영 센트럴 명동타운)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/Dcc8Y-wEcuO/",
+      "walkin_tip": "Operating Hours: Mon-Sun 10:00-22:30",
+      "verified_at": "2026-09-10",
+      "verified_by": "user_provided"
+    },
+    "description": "Nongshim x Sanrio Characters pop-up at Olive Young Central Myeongdong Town. A food collaboration bringing Sanrio charm to Nongshim, walk-in welcome.",
+    "imageUrl": "/images/jung-nongshim-sanrio.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "myeongdong-unove-powerpuff-2026",
+    "name": {
+      "en": "UNOVE x The Powerpuff Girls Pop-up @ Myeongdong",
+      "ko": "어노브 X 파워퍼프걸 팝업 @ 명동"
+    },
+    "area": "myeongdong",
+    "category": "beauty_fashion",
+    "period": {
+      "start": "2026-08-30",
+      "end": "2026-09-30"
+    },
+    "location": {
+      "lat": 37.5625312330845,
+      "lng": 126.985166774442,
+      "address": "Olive Young Central Myeongdong Town, Jung-gu, Seoul (서울 중구 명동8길 27 올리브영 센트럴 명동타운점)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/Dciff6xkvWp/",
+      "walkin_tip": "Operating Hours: Mon-Sun 10:00-22:00",
+      "verified_at": "2026-09-10",
+      "verified_by": "user_provided"
+    },
+    "description": "UNOVE x The Powerpuff Girls pop-up at Olive Young Central Myeongdong Town. A beauty collaboration with the iconic cartoon trio, walk-in welcome.",
+    "imageUrl": "/images/myeongdong-unove-powerpuff.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "jung-lalarecipe-meme-2026",
+    "name": {
+      "en": "Lala Recipe x MeME Art Collaboration Pop-up",
+      "ko": "라라레서피 X MeME 아트 콜라보 팝업"
+    },
+    "area": "jung",
+    "category": "beauty_fashion",
+    "period": {
+      "start": "2026-08-01",
+      "end": "2026-09-30"
+    },
+    "location": {
+      "lat": 37.5680445876689,
+      "lng": 127.010890355484,
+      "address": "Dongdaemun DDP B2F B the B, Jung-gu, Seoul (서울 중구 을지로 281 동대문 DDP B2F B the B)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/DbsHJRakmtQ/",
+      "walkin_tip": "Operating Hours: Mon-Sun 12:00-20:00",
+      "verified_at": "2026-09-10",
+      "verified_by": "user_provided"
+    },
+    "description": "Lala Recipe x MeME Art Collaboration pop-up at DDP B the B. A beauty and art collab pop-up, walk-in welcome.",
+    "imageUrl": "/images/jung-lalarecipe-meme.png"
+  },
+  {
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "id": "jung-yooyoungkuk-2026",
+    "name": {
+      "en": "Yoo Youngkuk: The Mountain Is Within Me",
+      "ko": "유영국: 산은 내 안에 있다"
+    },
+    "area": "jung",
+    "category": "exhibition",
+    "period": {
+      "start": "2026-05-19",
+      "end": "2026-10-25"
+    },
+    "location": {
+      "lat": 37.5641060692766,
+      "lng": 126.973699316136,
+      "address": "Seoul Museum of Art, Jung-gu, Seoul (서울 중구 덕수궁길 61 서울시립미술관)"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "https://www.instagram.com/p/DYjLUSltfSo/",
+      "walkin_tip": "Operating Hours: Closed Mon, Tue-Thu 10:00-20:00, Fri 10:00-21:00, Sat-Sun 10:00-19:00",
+      "verified_at": "2026-09-10",
+      "verified_by": "user_provided"
+    },
+    "description": "Yoo Youngkuk: The Mountain Is Within Me at Seoul Museum of Art. A major exhibition of the Korean abstract master's mountain paintings, closed Mondays.",
+    "imageUrl": "/images/jung-yooyoungkuk.png"
   }
 ]
