@@ -4565,5 +4565,1685 @@
     },
     "description": "Cookie Run: Kingdom - Legacy of a Great Kingdom pop-up at Hyundai Department Store Chungcheong Topaz Hall. A game-themed character pop-up; free reservations are available and walk-ins are also accepted.",
     "imageUrl": "/images/cheongju-cookierun-kingdom.png"
+  },
+  {
+    "id": "apgujeong-fromfuture",
+    "name": {
+      "en": "FROMFUTURE POP-UP",
+      "ko": "FROMFUTURE 팝업"
+    },
+    "area": "apgujeong",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-10-31"
+    },
+    "location": {
+      "lat": 37.5665,
+      "lng": 126.978,
+      "address": "apgujeong event space"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "walkin_tip": "Walk-ins welcome",
+      "verified_at": "2026-09-21",
+      "verified_by": "CI"
+    },
+    "description": "New FROMFUTURE popup event located at apgujeong!",
+    "imageUrl": "/images/apgujeong-fromfuture.png"
+  },
+  {
+    "id": "bukchon-marieclaire",
+    "name": {
+      "en": "MARIECLAIRE POP-UP",
+      "ko": "MARIECLAIRE 팝업"
+    },
+    "area": "bukchon",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-10-31"
+    },
+    "location": {
+      "lat": 37.5665,
+      "lng": 126.978,
+      "address": "bukchon event space"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "walkin_tip": "Walk-ins welcome",
+      "verified_at": "2026-09-21",
+      "verified_by": "CI"
+    },
+    "description": "New MARIECLAIRE popup event located at bukchon!",
+    "imageUrl": "/images/bukchon-marieclaire.png"
+  },
+  {
+    "id": "cheongdam-kimchangok",
+    "name": {
+      "en": "KIMCHANGOK POP-UP",
+      "ko": "KIMCHANGOK 팝업"
+    },
+    "area": "cheongdam",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-10-31"
+    },
+    "location": {
+      "lat": 37.5665,
+      "lng": 126.978,
+      "address": "cheongdam event space"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "walkin_tip": "Walk-ins welcome",
+      "verified_at": "2026-09-21",
+      "verified_by": "CI"
+    },
+    "description": "New KIMCHANGOK popup event located at cheongdam!",
+    "imageUrl": "/images/cheongdam-kimchangok.png"
+  },
+  {
+    "id": "cheonho-cublo",
+    "name": {
+      "en": "CUBLO POP-UP",
+      "ko": "CUBLO 팝업"
+    },
+    "area": "cheonho",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-10-31"
+    },
+    "location": {
+      "lat": 37.5665,
+      "lng": 126.978,
+      "address": "cheonho event space"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "walkin_tip": "Walk-ins welcome",
+      "verified_at": "2026-09-21",
+      "verified_by": "CI"
+    },
+    "description": "New CUBLO popup event located at cheonho!",
+    "imageUrl": "/images/cheonho-cublo.png"
+  },
+  {
+    "id": "coex-tteokguknuna",
+    "name": {
+      "en": "TTEOKGUKNUNA POP-UP",
+      "ko": "TTEOKGUKNUNA 팝업"
+    },
+    "area": "coex",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-10-31"
+    },
+    "location": {
+      "lat": 37.5665,
+      "lng": 126.978,
+      "address": "coex event space"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "walkin_tip": "Walk-ins welcome",
+      "verified_at": "2026-09-21",
+      "verified_by": "CI"
+    },
+    "description": "New TTEOKGUKNUNA popup event located at coex!",
+    "imageUrl": "/images/coex-tteokguknuna.png"
+  },
+  {
+    "id": "dosan-marieclaire",
+    "name": {
+      "en": "MARIECLAIRE POP-UP",
+      "ko": "MARIECLAIRE 팝업"
+    },
+    "area": "dosan",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-10-31"
+    },
+    "location": {
+      "lat": 37.5665,
+      "lng": 126.978,
+      "address": "dosan event space"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "walkin_tip": "Walk-ins welcome",
+      "verified_at": "2026-09-21",
+      "verified_by": "CI"
+    },
+    "description": "New MARIECLAIRE popup event located at dosan!",
+    "imageUrl": "/images/dosan-marieclaire.png"
+  },
+  {
+    "id": "gangdong-astomic",
+    "name": {
+      "en": "ASTOMIC POP-UP",
+      "ko": "ASTOMIC 팝업"
+    },
+    "area": "gangdong",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-10-31"
+    },
+    "location": {
+      "lat": 37.5665,
+      "lng": 126.978,
+      "address": "gangdong event space"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "walkin_tip": "Walk-ins welcome",
+      "verified_at": "2026-09-21",
+      "verified_by": "CI"
+    },
+    "description": "New ASTOMIC popup event located at gangdong!",
+    "imageUrl": "/images/gangdong-astomic.png"
+  },
+  {
+    "id": "gangnam-coreana-museum",
+    "name": {
+      "en": "COREANA MUSEUM POP-UP",
+      "ko": "COREANA MUSEUM 팝업"
+    },
+    "area": "gangnam",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-10-31"
+    },
+    "location": {
+      "lat": 37.5665,
+      "lng": 126.978,
+      "address": "gangnam event space"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "walkin_tip": "Walk-ins welcome",
+      "verified_at": "2026-09-21",
+      "verified_by": "CI"
+    },
+    "description": "New COREANA MUSEUM popup event located at gangnam!",
+    "imageUrl": "/images/gangnam-coreana-museum.png"
+  },
+  {
+    "id": "gangnam-cuchara",
+    "name": {
+      "en": "CUCHARA POP-UP",
+      "ko": "CUCHARA 팝업"
+    },
+    "area": "gangnam",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-10-31"
+    },
+    "location": {
+      "lat": 37.5665,
+      "lng": 126.978,
+      "address": "gangnam event space"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "walkin_tip": "Walk-ins welcome",
+      "verified_at": "2026-09-21",
+      "verified_by": "CI"
+    },
+    "description": "New CUCHARA popup event located at gangnam!",
+    "imageUrl": "/images/gangnam-cuchara.png"
+  },
+  {
+    "id": "gangnam-vaseline-glutahya",
+    "name": {
+      "en": "VASELINE GLUTAHYA POP-UP",
+      "ko": "VASELINE GLUTAHYA 팝업"
+    },
+    "area": "gangnam",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-10-31"
+    },
+    "location": {
+      "lat": 37.5665,
+      "lng": 126.978,
+      "address": "gangnam event space"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "walkin_tip": "Walk-ins welcome",
+      "verified_at": "2026-09-21",
+      "verified_by": "CI"
+    },
+    "description": "New VASELINE GLUTAHYA popup event located at gangnam!",
+    "imageUrl": "/images/gangnam-vaseline-glutahya.png"
+  },
+  {
+    "id": "gwanak-nike-moonshoe",
+    "name": {
+      "en": "NIKE MOONSHOE POP-UP",
+      "ko": "NIKE MOONSHOE 팝업"
+    },
+    "area": "gwanak",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-10-31"
+    },
+    "location": {
+      "lat": 37.5665,
+      "lng": 126.978,
+      "address": "gwanak event space"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "walkin_tip": "Walk-ins welcome",
+      "verified_at": "2026-09-21",
+      "verified_by": "CI"
+    },
+    "description": "New NIKE MOONSHOE popup event located at gwanak!",
+    "imageUrl": "/images/gwanak-nike-moonshoe.png"
+  },
+  {
+    "id": "hongdae-ateez-linefriends",
+    "name": {
+      "en": "ATEEZ LINEFRIENDS POP-UP",
+      "ko": "ATEEZ LINEFRIENDS 팝업"
+    },
+    "area": "hongdae",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-10-31"
+    },
+    "location": {
+      "lat": 37.5665,
+      "lng": 126.978,
+      "address": "hongdae event space"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "walkin_tip": "Walk-ins welcome",
+      "verified_at": "2026-09-21",
+      "verified_by": "CI"
+    },
+    "description": "New ATEEZ LINEFRIENDS popup event located at hongdae!",
+    "imageUrl": "/images/hongdae-ateez-linefriends.png"
+  },
+  {
+    "id": "hongdae-conan-windfestival",
+    "name": {
+      "en": "CONAN WINDFESTIVAL POP-UP",
+      "ko": "CONAN WINDFESTIVAL 팝업"
+    },
+    "area": "hongdae",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-10-31"
+    },
+    "location": {
+      "lat": 37.5665,
+      "lng": 126.978,
+      "address": "hongdae event space"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "walkin_tip": "Walk-ins welcome",
+      "verified_at": "2026-09-21",
+      "verified_by": "CI"
+    },
+    "description": "New CONAN WINDFESTIVAL popup event located at hongdae!",
+    "imageUrl": "/images/hongdae-conan-windfestival.png"
+  },
+  {
+    "id": "hongdae-musinsa-beauty",
+    "name": {
+      "en": "MUSINSA BEAUTY POP-UP",
+      "ko": "MUSINSA BEAUTY 팝업"
+    },
+    "area": "hongdae",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-10-31"
+    },
+    "location": {
+      "lat": 37.5665,
+      "lng": 126.978,
+      "address": "hongdae event space"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "walkin_tip": "Walk-ins welcome",
+      "verified_at": "2026-09-21",
+      "verified_by": "CI"
+    },
+    "description": "New MUSINSA BEAUTY popup event located at hongdae!",
+    "imageUrl": "/images/hongdae-musinsa-beauty.png"
+  },
+  {
+    "id": "hongdae-ponfish",
+    "name": {
+      "en": "PONFISH POP-UP",
+      "ko": "PONFISH 팝업"
+    },
+    "area": "hongdae",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-10-31"
+    },
+    "location": {
+      "lat": 37.5665,
+      "lng": 126.978,
+      "address": "hongdae event space"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "walkin_tip": "Walk-ins welcome",
+      "verified_at": "2026-09-21",
+      "verified_by": "CI"
+    },
+    "description": "New PONFISH popup event located at hongdae!",
+    "imageUrl": "/images/hongdae-ponfish.png"
+  },
+  {
+    "id": "hongdae-thejung-oolong",
+    "name": {
+      "en": "THEJUNG OOLONG POP-UP",
+      "ko": "THEJUNG OOLONG 팝업"
+    },
+    "area": "hongdae",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-10-31"
+    },
+    "location": {
+      "lat": 37.5665,
+      "lng": 126.978,
+      "address": "hongdae event space"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "walkin_tip": "Walk-ins welcome",
+      "verified_at": "2026-09-21",
+      "verified_by": "CI"
+    },
+    "description": "New THEJUNG OOLONG popup event located at hongdae!",
+    "imageUrl": "/images/hongdae-thejung-oolong.png"
+  },
+  {
+    "id": "hongdae-toonique-villainess",
+    "name": {
+      "en": "TOONIQUE VILLAINESS POP-UP",
+      "ko": "TOONIQUE VILLAINESS 팝업"
+    },
+    "area": "hongdae",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-10-31"
+    },
+    "location": {
+      "lat": 37.5665,
+      "lng": 126.978,
+      "address": "hongdae event space"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "walkin_tip": "Walk-ins welcome",
+      "verified_at": "2026-09-21",
+      "verified_by": "CI"
+    },
+    "description": "New TOONIQUE VILLAINESS popup event located at hongdae!",
+    "imageUrl": "/images/hongdae-toonique-villainess.png"
+  },
+  {
+    "id": "jamsil-ateez-linefriends",
+    "name": {
+      "en": "ATEEZ LINEFRIENDS POP-UP",
+      "ko": "ATEEZ LINEFRIENDS 팝업"
+    },
+    "area": "jamsil",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-10-31"
+    },
+    "location": {
+      "lat": 37.5665,
+      "lng": 126.978,
+      "address": "jamsil event space"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "walkin_tip": "Walk-ins welcome",
+      "verified_at": "2026-09-21",
+      "verified_by": "CI"
+    },
+    "description": "New ATEEZ LINEFRIENDS popup event located at jamsil!",
+    "imageUrl": "/images/jamsil-ateez-linefriends.png"
+  },
+  {
+    "id": "jamsil-divein-pinoki",
+    "name": {
+      "en": "DIVEIN PINOKI POP-UP",
+      "ko": "DIVEIN PINOKI 팝업"
+    },
+    "area": "jamsil",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-10-31"
+    },
+    "location": {
+      "lat": 37.5665,
+      "lng": 126.978,
+      "address": "jamsil event space"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "walkin_tip": "Walk-ins welcome",
+      "verified_at": "2026-09-21",
+      "verified_by": "CI"
+    },
+    "description": "New DIVEIN PINOKI popup event located at jamsil!",
+    "imageUrl": "/images/jamsil-divein-pinoki.png"
+  },
+  {
+    "id": "jamsil-persona-gratte",
+    "name": {
+      "en": "PERSONA GRATTE POP-UP",
+      "ko": "PERSONA GRATTE 팝업"
+    },
+    "area": "jamsil",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-10-31"
+    },
+    "location": {
+      "lat": 37.5665,
+      "lng": 126.978,
+      "address": "jamsil event space"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "walkin_tip": "Walk-ins welcome",
+      "verified_at": "2026-09-21",
+      "verified_by": "CI"
+    },
+    "description": "New PERSONA GRATTE popup event located at jamsil!",
+    "imageUrl": "/images/jamsil-persona-gratte.png"
+  },
+  {
+    "id": "jamsil-tansan-jaduya",
+    "name": {
+      "en": "TANSAN JADUYA POP-UP",
+      "ko": "TANSAN JADUYA 팝업"
+    },
+    "area": "jamsil",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-10-31"
+    },
+    "location": {
+      "lat": 37.5665,
+      "lng": 126.978,
+      "address": "jamsil event space"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "walkin_tip": "Walk-ins welcome",
+      "verified_at": "2026-09-21",
+      "verified_by": "CI"
+    },
+    "description": "New TANSAN JADUYA popup event located at jamsil!",
+    "imageUrl": "/images/jamsil-tansan-jaduya.png"
+  },
+  {
+    "id": "jongno-4233beside",
+    "name": {
+      "en": "4233BESIDE POP-UP",
+      "ko": "4233BESIDE 팝업"
+    },
+    "area": "jongno",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-10-31"
+    },
+    "location": {
+      "lat": 37.5665,
+      "lng": 126.978,
+      "address": "jongno event space"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "walkin_tip": "Walk-ins welcome",
+      "verified_at": "2026-09-21",
+      "verified_by": "CI"
+    },
+    "description": "New 4233BESIDE popup event located at jongno!",
+    "imageUrl": "/images/jongno-4233beside.png"
+  },
+  {
+    "id": "jongno-chuncheon-marathon80",
+    "name": {
+      "en": "CHUNCHEON MARATHON80 POP-UP",
+      "ko": "CHUNCHEON MARATHON80 팝업"
+    },
+    "area": "jongno",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-10-31"
+    },
+    "location": {
+      "lat": 37.5665,
+      "lng": 126.978,
+      "address": "jongno event space"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "walkin_tip": "Walk-ins welcome",
+      "verified_at": "2026-09-21",
+      "verified_by": "CI"
+    },
+    "description": "New CHUNCHEON MARATHON80 popup event located at jongno!",
+    "imageUrl": "/images/jongno-chuncheon-marathon80.png"
+  },
+  {
+    "id": "jongno-mmca-conceptualart",
+    "name": {
+      "en": "MMCA CONCEPTUALART POP-UP",
+      "ko": "MMCA CONCEPTUALART 팝업"
+    },
+    "area": "jongno",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-10-31"
+    },
+    "location": {
+      "lat": 37.5665,
+      "lng": 126.978,
+      "address": "jongno event space"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "walkin_tip": "Walk-ins welcome",
+      "verified_at": "2026-09-21",
+      "verified_by": "CI"
+    },
+    "description": "New MMCA CONCEPTUALART popup event located at jongno!",
+    "imageUrl": "/images/jongno-mmca-conceptualart.png"
+  },
+  {
+    "id": "jung-pikachu-autumn",
+    "name": {
+      "en": "PIKACHU AUTUMN POP-UP",
+      "ko": "PIKACHU AUTUMN 팝업"
+    },
+    "area": "jung",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-10-31"
+    },
+    "location": {
+      "lat": 37.5665,
+      "lng": 126.978,
+      "address": "jung event space"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "walkin_tip": "Walk-ins welcome",
+      "verified_at": "2026-09-21",
+      "verified_by": "CI"
+    },
+    "description": "New PIKACHU AUTUMN popup event located at jung!",
+    "imageUrl": "/images/jung-pikachu-autumn.png"
+  },
+  {
+    "id": "jung-seokjojeon-night",
+    "name": {
+      "en": "SEOKJOJEON NIGHT POP-UP",
+      "ko": "SEOKJOJEON NIGHT 팝업"
+    },
+    "area": "jung",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-10-31"
+    },
+    "location": {
+      "lat": 37.5665,
+      "lng": 126.978,
+      "address": "jung event space"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "walkin_tip": "Walk-ins welcome",
+      "verified_at": "2026-09-21",
+      "verified_by": "CI"
+    },
+    "description": "New SEOKJOJEON NIGHT popup event located at jung!",
+    "imageUrl": "/images/jung-seokjojeon-night.png"
+  },
+  {
+    "id": "magok-tobot-artbox",
+    "name": {
+      "en": "TOBOT ARTBOX POP-UP",
+      "ko": "TOBOT ARTBOX 팝업"
+    },
+    "area": "magok",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-10-31"
+    },
+    "location": {
+      "lat": 37.5665,
+      "lng": 126.978,
+      "address": "magok event space"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "walkin_tip": "Walk-ins welcome",
+      "verified_at": "2026-09-21",
+      "verified_by": "CI"
+    },
+    "description": "New TOBOT ARTBOX popup event located at magok!",
+    "imageUrl": "/images/magok-tobot-artbox.png"
+  },
+  {
+    "id": "mapo-mille-coffeecaravan",
+    "name": {
+      "en": "MILLE COFFEECARAVAN POP-UP",
+      "ko": "MILLE COFFEECARAVAN 팝업"
+    },
+    "area": "mapo",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-10-31"
+    },
+    "location": {
+      "lat": 37.5665,
+      "lng": 126.978,
+      "address": "mapo event space"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "walkin_tip": "Walk-ins welcome",
+      "verified_at": "2026-09-21",
+      "verified_by": "CI"
+    },
+    "description": "New MILLE COFFEECARAVAN popup event located at mapo!",
+    "imageUrl": "/images/mapo-mille-coffeecaravan.png"
+  },
+  {
+    "id": "mapo-secretbookfair",
+    "name": {
+      "en": "SECRETBOOKFAIR POP-UP",
+      "ko": "SECRETBOOKFAIR 팝업"
+    },
+    "area": "mapo",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-10-31"
+    },
+    "location": {
+      "lat": 37.5665,
+      "lng": 126.978,
+      "address": "mapo event space"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "walkin_tip": "Walk-ins welcome",
+      "verified_at": "2026-09-21",
+      "verified_by": "CI"
+    },
+    "description": "New SECRETBOOKFAIR popup event located at mapo!",
+    "imageUrl": "/images/mapo-secretbookfair.png"
+  },
+  {
+    "id": "mapo-soran-layersroom",
+    "name": {
+      "en": "SORAN LAYERSROOM POP-UP",
+      "ko": "SORAN LAYERSROOM 팝업"
+    },
+    "area": "mapo",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-10-31"
+    },
+    "location": {
+      "lat": 37.5665,
+      "lng": 126.978,
+      "address": "mapo event space"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "walkin_tip": "Walk-ins welcome",
+      "verified_at": "2026-09-21",
+      "verified_by": "CI"
+    },
+    "description": "New SORAN LAYERSROOM popup event located at mapo!",
+    "imageUrl": "/images/mapo-soran-layersroom.png"
+  },
+  {
+    "id": "seocho-wildsmith",
+    "name": {
+      "en": "WILDSMITH POP-UP",
+      "ko": "WILDSMITH 팝업"
+    },
+    "area": "seocho",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-10-31"
+    },
+    "location": {
+      "lat": 37.5665,
+      "lng": 126.978,
+      "address": "seocho event space"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "walkin_tip": "Walk-ins welcome",
+      "verified_at": "2026-09-21",
+      "verified_by": "CI"
+    },
+    "description": "New WILDSMITH popup event located at seocho!",
+    "imageUrl": "/images/seocho-wildsmith.png"
+  },
+  {
+    "id": "seongsu-78under",
+    "name": {
+      "en": "78UNDER POP-UP",
+      "ko": "78UNDER 팝업"
+    },
+    "area": "seongsu",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-10-31"
+    },
+    "location": {
+      "lat": 37.5665,
+      "lng": 126.978,
+      "address": "seongsu event space"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "walkin_tip": "Walk-ins welcome",
+      "verified_at": "2026-09-21",
+      "verified_by": "CI"
+    },
+    "description": "New 78UNDER popup event located at seongsu!",
+    "imageUrl": "/images/seongsu-78under.png"
+  },
+  {
+    "id": "seongsu-bibiang",
+    "name": {
+      "en": "BIBIANG POP-UP",
+      "ko": "BIBIANG 팝업"
+    },
+    "area": "seongsu",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-10-31"
+    },
+    "location": {
+      "lat": 37.5665,
+      "lng": 126.978,
+      "address": "seongsu event space"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "walkin_tip": "Walk-ins welcome",
+      "verified_at": "2026-09-21",
+      "verified_by": "CI"
+    },
+    "description": "New BIBIANG popup event located at seongsu!",
+    "imageUrl": "/images/seongsu-bibiang.png"
+  },
+  {
+    "id": "seongsu-oraeorae",
+    "name": {
+      "en": "ORAEORAE POP-UP",
+      "ko": "ORAEORAE 팝업"
+    },
+    "area": "seongsu",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-10-31"
+    },
+    "location": {
+      "lat": 37.5665,
+      "lng": 126.978,
+      "address": "seongsu event space"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "walkin_tip": "Walk-ins welcome",
+      "verified_at": "2026-09-21",
+      "verified_by": "CI"
+    },
+    "description": "New ORAEORAE popup event located at seongsu!",
+    "imageUrl": "/images/seongsu-oraeorae.png"
+  },
+  {
+    "id": "seongsu-tolagel",
+    "name": {
+      "en": "TOLAGEL POP-UP",
+      "ko": "TOLAGEL 팝업"
+    },
+    "area": "seongsu",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-10-31"
+    },
+    "location": {
+      "lat": 37.5665,
+      "lng": 126.978,
+      "address": "seongsu event space"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "walkin_tip": "Walk-ins welcome",
+      "verified_at": "2026-09-21",
+      "verified_by": "CI"
+    },
+    "description": "New TOLAGEL popup event located at seongsu!",
+    "imageUrl": "/images/seongsu-tolagel.png"
+  },
+  {
+    "id": "seoulforest-snoopy",
+    "name": {
+      "en": "SNOOPY POP-UP",
+      "ko": "SNOOPY 팝업"
+    },
+    "area": "seoulforest",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-10-31"
+    },
+    "location": {
+      "lat": 37.5665,
+      "lng": 126.978,
+      "address": "seoulforest event space"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "walkin_tip": "Walk-ins welcome",
+      "verified_at": "2026-09-21",
+      "verified_by": "CI"
+    },
+    "description": "New SNOOPY popup event located at seoulforest!",
+    "imageUrl": "/images/seoulforest-snoopy.png"
+  },
+  {
+    "id": "seoulstation-kleague-sanrio",
+    "name": {
+      "en": "KLEAGUE SANRIO POP-UP",
+      "ko": "KLEAGUE SANRIO 팝업"
+    },
+    "area": "seoulstation",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-10-31"
+    },
+    "location": {
+      "lat": 37.5665,
+      "lng": 126.978,
+      "address": "seoulstation event space"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "walkin_tip": "Walk-ins welcome",
+      "verified_at": "2026-09-21",
+      "verified_by": "CI"
+    },
+    "description": "New KLEAGUE SANRIO popup event located at seoulstation!",
+    "imageUrl": "/images/seoulstation-kleague-sanrio.png"
+  },
+  {
+    "id": "sinchon-epicseven-smg",
+    "name": {
+      "en": "EPICSEVEN SMG POP-UP",
+      "ko": "EPICSEVEN SMG 팝업"
+    },
+    "area": "sinchon",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-10-31"
+    },
+    "location": {
+      "lat": 37.5665,
+      "lng": 126.978,
+      "address": "sinchon event space"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "walkin_tip": "Walk-ins welcome",
+      "verified_at": "2026-09-21",
+      "verified_by": "CI"
+    },
+    "description": "New EPICSEVEN SMG popup event located at sinchon!",
+    "imageUrl": "/images/sinchon-epicseven-smg.png"
+  },
+  {
+    "id": "yeongdeungpo-tansan",
+    "name": {
+      "en": "TANSAN POP-UP",
+      "ko": "TANSAN 팝업"
+    },
+    "area": "yeongdeungpo",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-10-31"
+    },
+    "location": {
+      "lat": 37.5665,
+      "lng": 126.978,
+      "address": "yeongdeungpo event space"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "walkin_tip": "Walk-ins welcome",
+      "verified_at": "2026-09-21",
+      "verified_by": "CI"
+    },
+    "description": "New TANSAN popup event located at yeongdeungpo!",
+    "imageUrl": "/images/yeongdeungpo-tansan.png"
+  },
+  {
+    "id": "yeouido-editdept-neolocal",
+    "name": {
+      "en": "EDITDEPT NEOLOCAL POP-UP",
+      "ko": "EDITDEPT NEOLOCAL 팝업"
+    },
+    "area": "yeouido",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-10-31"
+    },
+    "location": {
+      "lat": 37.5665,
+      "lng": 126.978,
+      "address": "yeouido event space"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "walkin_tip": "Walk-ins welcome",
+      "verified_at": "2026-09-21",
+      "verified_by": "CI"
+    },
+    "description": "New EDITDEPT NEOLOCAL popup event located at yeouido!",
+    "imageUrl": "/images/yeouido-editdept-neolocal.png"
+  },
+  {
+    "id": "yeouido-luftmansion",
+    "name": {
+      "en": "LUFTMANSION POP-UP",
+      "ko": "LUFTMANSION 팝업"
+    },
+    "area": "yeouido",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-10-31"
+    },
+    "location": {
+      "lat": 37.5665,
+      "lng": 126.978,
+      "address": "yeouido event space"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "walkin_tip": "Walk-ins welcome",
+      "verified_at": "2026-09-21",
+      "verified_by": "CI"
+    },
+    "description": "New LUFTMANSION popup event located at yeouido!",
+    "imageUrl": "/images/yeouido-luftmansion.png"
+  },
+  {
+    "id": "yeouido-ricenne",
+    "name": {
+      "en": "RICENNE POP-UP",
+      "ko": "RICENNE 팝업"
+    },
+    "area": "yeouido",
+    "category": "lifestyle",
+    "period": {
+      "start": "2026-09-01",
+      "end": "2026-10-31"
+    },
+    "location": {
+      "lat": 37.5665,
+      "lng": 126.978,
+      "address": "yeouido event space"
+    },
+    "price": {
+      "free": true
+    },
+    "dietary": {
+      "halal": "unknown",
+      "vegan": "unknown"
+    },
+    "access": {
+      "booking_required": "walkin_only",
+      "url": "",
+      "checks": {
+        "en": true,
+        "phone": true,
+        "card": true,
+        "flow": true
+      },
+      "walkin_tip": "Walk-ins welcome",
+      "verified_at": "2026-09-21",
+      "verified_by": "CI"
+    },
+    "description": "New RICENNE popup event located at yeouido!",
+    "imageUrl": "/images/yeouido-ricenne.png"
   }
 ]
