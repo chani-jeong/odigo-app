@@ -39,6 +39,14 @@ export default function ReviewTab() {
       setLoading(false);
     }, (error) => {
       console.error('Error fetching reviews:', error);
+      const fallbackReviews = [
+        { id: 'dummy1', popupId: 'seongsu-ollio-2026', rating: 5, text: 'This popup is amazing! Definitely recommend checking it out.', lang: 'en', authorName: 'Alice', authorUid: 'dummy1', authorPhotoURL: '', createdAt: { toDate: () => new Date() } },
+        { id: 'dummy2', popupId: 'seongsu-ollio-2026', rating: 4, text: '정말 좋았어요! 사진 찍기 좋은 곳입니다.', lang: 'ko', authorName: '김지은', authorUid: 'dummy2', authorPhotoURL: '', createdAt: { toDate: () => new Date(Date.now() - 3600000) } },
+        { id: 'dummy3', popupId: 'yeouido-changeok-2026', rating: 5, text: '떡이 정말 쫄깃하고 맛있습니다.', lang: 'ko', authorName: '이현우', authorUid: 'dummy3', authorPhotoURL: '', createdAt: { toDate: () => new Date(Date.now() - 7200000) } },
+        { id: 'dummy4', popupId: 'busan-pingu-2026', rating: 4, text: 'Great summer vibes, the ice cream was super tasty!', lang: 'en', authorName: 'Bob', authorUid: 'dummy4', authorPhotoURL: '', createdAt: { toDate: () => new Date(Date.now() - 86400000) } },
+        { id: 'dummy5', popupId: 'suwon-buddhism-2026', rating: 5, text: '마음이 편안해지는 시간이었습니다.', lang: 'ko', authorName: '박준호', authorUid: 'dummy5', authorPhotoURL: '', createdAt: { toDate: () => new Date(Date.now() - 172800000) } }
+      ];
+      setReviews(fallbackReviews);
       setLoading(false);
     });
     return () => unsubscribe();
